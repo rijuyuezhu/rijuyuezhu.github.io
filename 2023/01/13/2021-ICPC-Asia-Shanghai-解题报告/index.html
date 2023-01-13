@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="比赛链接：link">
 <meta property="og:type" content="article">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="比赛链接：link">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-12T16:03:06.000Z">
-<meta property="article:modified_time" content="2023-01-12T16:04:31.907Z">
+<meta property="article:modified_time" content="2023-01-12T16:13:49.086Z">
 <meta property="article:author" content="Rijuyuezhu">
 <meta property="article:tag" content="ICPC">
 <meta property="article:tag" content="集训">
@@ -109,7 +109,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">1.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G"><span class="nav-number">2.</span> <span class="nav-text">G</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#d"><span class="nav-number">1.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#g"><span class="nav-number">2.</span> <span class="nav-text">G</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +184,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-13 00:03:06 / 修改时间：00:04:31" itemprop="dateCreated datePublished" datetime="2023-01-13T00:03:06+08:00">2023-01-13</time>
+      <time title="创建时间：2023-01-13 00:03:06 / 修改时间：00:13:49" itemprop="dateCreated datePublished" datetime="2023-01-13T00:03:06+08:00">2023-01-13</time>
     </span>
 
   
@@ -199,35 +199,102 @@
     <div class="post-body" itemprop="articleBody">
         <p>比赛链接：<a target="_blank" rel="noopener" href="https://codeforces.com/gym/103446">link</a></p>
 <span id="more"></span>
-
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>输入 $p, q\in\mathbb N^+$, 求 $a, b\in \mathbb N^+$ 使得 $\dfrac{p}{q}&#x3D;\dfrac{a}{b}+\dfrac{b}{a}$.</p>
+<h2 id="d">D</h2>
+<p>输入 <span class="math inline">\(p, q\in\mathbb N^+\)</span>, 求
+<span class="math inline">\(a, b\in \mathbb N^+\)</span> 使得 <span
+class="math inline">\(\dfrac{p}{q}=\dfrac{a}{b}+\dfrac{b}{a}\)</span>.</p>
 <p><strong>解法 1</strong></p>
-<p>令 $x&#x3D;\dfrac{a}{b}$, 那么 $x+\dfrac{1}{x}&#x3D;\dfrac{p}{q}$, 即 $x^2-\dfrac{p}{q}x+1&#x3D;0$, 求其有理根, 则 $x&#x3D;\dfrac{\frac{p}{q}\pm \sqrt{\frac{p^2}{q^2}-4}}{2}&#x3D;\dfrac{p\pm \sqrt {p^2-4q^2}}{2q}$. 其中取正负得到的结果互为倒数. 如果 $\sqrt {p^2-4q^2}$ 为整数, 那么令 $a’&#x3D;p+\sqrt {p^2-4q^2}, b’&#x3D;2q$ 再进行约分即可得到答案. 单次询问时间复杂度为 $O(1)$</p>
+<p>令 <span class="math inline">\(x=\dfrac{a}{b}\)</span>, 那么 <span
+class="math inline">\(x+\dfrac{1}{x}=\dfrac{p}{q}\)</span>, 即 <span
+class="math inline">\(x^2-\dfrac{p}{q}x+1=0\)</span>, 求其有理根, 则
+<span class="math inline">\(x=\dfrac{\frac{p}{q}\pm
+\sqrt{\frac{p^2}{q^2}-4}}{2}=\dfrac{p\pm \sqrt {p^2-4q^2}}{2q}\)</span>.
+其中取正负得到的结果互为倒数. 如果 <span class="math inline">\(\sqrt
+{p^2-4q^2}\)</span> 为整数, 那么令 <span
+class="math inline">\(a&#39;=p+\sqrt {p^2-4q^2}, b&#39;=2q\)</span>
+再进行约分即可得到答案. 单次询问时间复杂度为 <span
+class="math inline">\(O(1)\)</span></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> db = <span class="type">double</span>;</span><br><span class="line"><span class="keyword">constexpr</span> db eps = <span class="number">1e-6</span>;</span><br><span class="line">db p, q;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !b ? a : <span class="built_in">gcd</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; p &gt;&gt; q;</span><br><span class="line">    <span class="type">int</span> g1 = <span class="built_in">gcd</span>(<span class="built_in">round</span>(p), <span class="built_in">round</span>(q));</span><br><span class="line">    p /= g1; q /= g1;</span><br><span class="line">    <span class="keyword">if</span>(p - <span class="number">2</span> * q &lt; <span class="number">2</span> * eps)</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    db m = (p + <span class="built_in">sqrt</span>(p * p - <span class="number">4</span> * q * q)) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">fabs</span>(m - <span class="built_in">round</span>(m)) &gt; eps)</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> a = <span class="built_in">round</span>(q), b = <span class="built_in">round</span>(m), g = <span class="built_in">gcd</span>(a, b);</span><br><span class="line">    <span class="keyword">return</span> &#123;a / g, b / g&#125;;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; ans = <span class="built_in">work</span>();</span><br><span class="line">        cout &lt;&lt; ans.first &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; ans.second &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>解法 2</strong></p>
-<p>不妨设 $a\perp b, p\perp q$, 由 $\dfrac{p}{q}&#x3D;\dfrac{a^2+b^2}{ab}$ 且 $(a^2+b^2)\perp ab$ 可知 $q&#x3D;ab, p&#x3D;a^2+b^2$.</p>
+<p>不妨设 <span class="math inline">\(a\perp b, p\perp q\)</span>, 由
+<span class="math inline">\(\dfrac{p}{q}=\dfrac{a^2+b^2}{ab}\)</span> 且
+<span class="math inline">\((a^2+b^2)\perp ab\)</span> 可知 <span
+class="math inline">\(q=ab, p=a^2+b^2\)</span>.</p>
 <blockquote>
-<p>证明 $a\perp b$ 时, $(a^2+b^2)\perp ab$.<br>由于 $a\perp b$, 有 $\gcd(a^2+b^2, ab)&#x3D;\gcd(a^2+b^2, a)\cdot \gcd(a^2+b^2, b)&#x3D;\gcd(b^2, a)\cdot \gcd(a^2, b)&#x3D;1$</p>
+<p>证明 <span class="math inline">\(a\perp b\)</span> 时, <span
+class="math inline">\((a^2+b^2)\perp ab\)</span>. 由于 <span
+class="math inline">\(a\perp b\)</span>, 有 <span
+class="math inline">\(\gcd(a^2+b^2, ab)=\gcd(a^2+b^2, a)\cdot
+\gcd(a^2+b^2, b)=\gcd(b^2, a)\cdot \gcd(a^2, b)=1\)</span></p>
 </blockquote>
-<p>那么枚举 $q$ 的所有满足 $t\perp (q&#x2F;t)$ 的因子 $t$. 如果 $q&#x3D;p_1^{k_1}p_2^{k_2}\cdots p_s^{k_s}$, 那么选择的 $t&#x3D;p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_s^{\alpha_s}$ 中必有 $\alpha_i&#x3D;0 \text{ or } k_i$. 设 $q$ 的质因子个数为 $p_{cnt}(q)$, 那么单次询问时间复杂度为 $O(2^{p_{cnt}(q)})$, 能过. </p>
+<p>那么枚举 <span class="math inline">\(q\)</span> 的所有满足 <span
+class="math inline">\(t\perp (q/t)\)</span> 的因子 <span
+class="math inline">\(t\)</span>. 如果 <span
+class="math inline">\(q=p_1^{k_1}p_2^{k_2}\cdots p_s^{k_s}\)</span>,
+那么选择的 <span
+class="math inline">\(t=p_1^{\alpha_1}p_2^{\alpha_2}\cdots
+p_s^{\alpha_s}\)</span> 中必有 <span class="math inline">\(\alpha_i=0
+\text{ or } k_i\)</span>. 设 <span class="math inline">\(q\)</span>
+的质因子个数为 <span class="math inline">\(p_{cnt}(q)\)</span>,
+那么单次询问时间复杂度为 <span
+class="math inline">\(O(2^{p_{cnt}(q)})\)</span>, 能过.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"></span><br><span class="line">ll p, q;</span><br><span class="line">vector&lt;pair&lt;ll, ll&gt; &gt; division;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !b ? a : <span class="built_in">gcd</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">divide</span><span class="params">(ll n)</span> </span>&#123;</span><br><span class="line">    division.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span>(n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            pair&lt;ll, ll&gt; ret = &#123;i, <span class="number">1</span>&#125;;</span><br><span class="line">            <span class="keyword">while</span>(n % i == <span class="number">0</span>) &#123;</span><br><span class="line">                ret.second *= i;</span><br><span class="line">                n /= i;</span><br><span class="line">            &#125;</span><br><span class="line">            division.<span class="built_in">push_back</span>(ret);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(n &gt; <span class="number">1</span>)</span><br><span class="line">        division.<span class="built_in">push_back</span>(&#123;n, n&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; p &gt;&gt; q;</span><br><span class="line">    ll g = <span class="built_in">gcd</span>(p, q);</span><br><span class="line">    p /= g; q /= g;</span><br><span class="line">    <span class="built_in">divide</span>(q);</span><br><span class="line">    <span class="type">int</span> n = division.<span class="built_in">size</span>(), U = <span class="number">1</span> &lt;&lt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; U; k++) &#123;</span><br><span class="line">        ll a = <span class="number">1</span>, b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            <span class="keyword">if</span>((k &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">                a *= division[i].second;</span><br><span class="line">        b = q / a;</span><br><span class="line">        <span class="keyword">if</span>(a * a + b * b == p) &#123;</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; b &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">        <span class="built_in">work</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><p>给一棵 $n$ 个节点的树, 其中 $n$ 为奇数. 要把它的 $n-1$ 条边分成 $(n-1)&#x2F;2$ 组, 且满足:</p>
-<ol>
+<h2 id="g">G</h2>
+<p>给一棵 <span class="math inline">\(n\)</span> 个节点的树, 其中 <span
+class="math inline">\(n\)</span> 为奇数. 要把它的 <span
+class="math inline">\(n-1\)</span> 条边分成 <span
+class="math inline">\((n-1)/2\)</span> 组, 且满足:</p>
+<ol type="1">
 <li>每组中有且仅有两条边.</li>
 <li>这两条边共顶点.</li>
 </ol>
-<p>组不计顺序, 组中边不计顺序, 求方案数. </p>
+<p>组不计顺序, 组中边不计顺序, 求方案数.</p>
 <p><strong>解法</strong></p>
-<p>随便取一个根, 化无根树为有根树. 考虑一棵以 $u$ 为根的子树(包括可能出现的 $u$ 通向父节点的那条边 $e_u$). 设 $f(u)$ 表示以 $u$ 为子树(根据情况灵活选择是否要包含 $e_u$)进行选择的方案数. 记 $u$ 的儿子们为 $v_1, v_2, \cdots, v_s$, 且其中有 $cnt$ 个 $v_i$ 子树大小为奇数. 由于这些 $v_i$ 子树大小为奇数, 它子树的边(包含 $e_{v_i}$) 就有奇数条, 所以必须留出一条(即 $e_{v_i}$)给 $u$ 进行匹配. 如果 $cnt$ 为偶数, 直接 $e_{v_i}$ 间进行匹配即可; 如果 $cnt$ 为奇数, 则要把 $e_{v_i}$ 和 $e_u$ 一起进行匹配. 设 $g(s)$ 表示 $cnt$ 为 $s$ 的情况下这些边进行匹配的方案数, 容易得到</p>
-<p>$$<br>    f(u)&#x3D;g(cnt_u)\cdot \prod_{v\in son(u)}f(v)<br>$$</p>
-<p>下面我们来计算 $g(s)$.</p>
-<p>当 $s$ 为偶数时, 直接把 $s$ 条边分成 $s&#x2F;2$ 组. 故</p>
-<p>$$<br>g(s)&#x3D;\dfrac{1}{(s&#x2F;2)!}\binom{s}{2, 2, \cdots, 2}&#x3D;\dfrac{s!}{(s&#x2F;2)!2^{s&#x2F;2}}<br>$$</p>
-<p>当 $s$ 为奇数时, 把 $s+1$ 条边分成 $(s+1)&#x2F;2$ 组. 故</p>
-<p>$$<br>g(s)&#x3D;g(s+1)<br>$$</p>
-<p>直接进行 dp 即可, 时间复杂度 $O(n)$.</p>
+<p>随便取一个根, 化无根树为有根树. 考虑一棵以 <span
+class="math inline">\(u\)</span> 为根的子树(包括可能出现的 <span
+class="math inline">\(u\)</span> 通向父节点的那条边 <span
+class="math inline">\(e_u\)</span>). 设 <span
+class="math inline">\(f(u)\)</span> 表示以 <span
+class="math inline">\(u\)</span> 为子树(根据情况灵活选择是否要包含 <span
+class="math inline">\(e_u\)</span>)进行选择的方案数. 记 <span
+class="math inline">\(u\)</span> 的儿子们为 <span
+class="math inline">\(v_1, v_2, \cdots, v_s\)</span>, 且其中有 <span
+class="math inline">\(cnt\)</span> 个 <span
+class="math inline">\(v_i\)</span> 子树大小为奇数. 由于这些 <span
+class="math inline">\(v_i\)</span> 子树大小为奇数, 它子树的边(包含 <span
+class="math inline">\(e_{v_i}\)</span>) 就有奇数条, 所以必须留出一条(即
+<span class="math inline">\(e_{v_i}\)</span>)给 <span
+class="math inline">\(u\)</span> 进行匹配. 如果 <span
+class="math inline">\(cnt\)</span> 为偶数, 直接 <span
+class="math inline">\(e_{v_i}\)</span> 间进行匹配即可; 如果 <span
+class="math inline">\(cnt\)</span> 为奇数, 则要把 <span
+class="math inline">\(e_{v_i}\)</span> 和 <span
+class="math inline">\(e_u\)</span> 一起进行匹配. 设 <span
+class="math inline">\(g(s)\)</span> 表示 <span
+class="math inline">\(cnt\)</span> 为 <span
+class="math inline">\(s\)</span> 的情况下这些边进行匹配的方案数,
+容易得到</p>
+<p><span class="math display">\[
+    f(u)=g(cnt_u)\cdot \prod_{v\in son(u)}f(v)
+\]</span></p>
+<p>下面我们来计算 <span class="math inline">\(g(s)\)</span>.</p>
+<p>当 <span class="math inline">\(s\)</span> 为偶数时, 直接把 <span
+class="math inline">\(s\)</span> 条边分成 <span
+class="math inline">\(s/2\)</span> 组. 故</p>
+<p><span class="math display">\[
+g(s)=\dfrac{1}{(s/2)!}\binom{s}{2, 2, \cdots,
+2}=\dfrac{s!}{(s/2)!2^{s/2}}
+\]</span></p>
+<p>当 <span class="math inline">\(s\)</span> 为奇数时, 把 <span
+class="math inline">\(s+1\)</span> 条边分成 <span
+class="math inline">\((s+1)/2\)</span> 组. 故</p>
+<p><span class="math display">\[
+g(s)=g(s+1)
+\]</span></p>
+<p>直接进行 dp 即可, 时间复杂度 <span
+class="math inline">\(O(n)\)</span>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> P = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">mint</span> &#123;</span><br><span class="line">    <span class="type">int</span> v;</span><br><span class="line">    <span class="built_in">mint</span>(<span class="type">int</span> v = <span class="number">0</span>) : <span class="built_in">v</span>(v) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">MOD</span><span class="params">(<span class="type">int</span> v)</span> </span>&#123;<span class="keyword">return</span> v &gt;= P ? v - P : v;&#125;</span><br><span class="line">mint <span class="keyword">operator</span> + (mint a, mint b) &#123;<span class="keyword">return</span> <span class="built_in">MOD</span>(a.v + b.v);&#125;</span><br><span class="line">mint <span class="keyword">operator</span> - (mint a, mint b) &#123;<span class="keyword">return</span> <span class="built_in">MOD</span>(a.v - b.v + P);&#125;</span><br><span class="line">mint <span class="keyword">operator</span> * (mint a, mint b) &#123;<span class="keyword">return</span> <span class="number">1ll</span> * a.v * b.v % P;&#125;</span><br><span class="line"><span class="function">mint <span class="title">qpow</span><span class="params">(mint a, <span class="type">int</span> n=P<span class="number">-2</span>)</span> </span>&#123;mint ret = <span class="number">1</span>; <span class="keyword">for</span>(; n; a = a * a, n &gt;&gt;= <span class="number">1</span>) <span class="keyword">if</span>(n &amp; <span class="number">1</span>) ret = ret * a; <span class="keyword">return</span> ret;&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="type">int</span> v, nxt;</span><br><span class="line">&#125;e[MAXN &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="type">int</span> head[MAXN], cnt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> v)</span> </span>&#123;</span><br><span class="line">    e[++cnt] = &#123;v, head[u]&#125;;</span><br><span class="line">    head[u] = cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mint f[MAXN];</span><br><span class="line"><span class="type">int</span> siz[MAXN];</span><br><span class="line">mint g[MAXN], fac[MAXN], ifac[MAXN], invpow2[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">    f[u] = <span class="number">1</span>;</span><br><span class="line">    siz[u] = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> tot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = head[u]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="type">int</span> v = e[i].v; <span class="keyword">if</span>(v == fa) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(v, u);</span><br><span class="line">        f[u] = f[u] * f[v];</span><br><span class="line">        siz[u] += siz[v];</span><br><span class="line">        <span class="keyword">if</span>(siz[v] &amp; <span class="number">1</span>)</span><br><span class="line">            ++tot;</span><br><span class="line">    &#125;</span><br><span class="line">    f[u] = f[u] * g[tot];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        <span class="built_in">addedge</span>(u, v);</span><br><span class="line">        <span class="built_in">addedge</span>(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        fac[i] = fac[i<span class="number">-1</span>] * i;</span><br><span class="line">    ifac[n] = <span class="built_in">qpow</span>(fac[n]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        ifac[i] = ifac[i+<span class="number">1</span>] * (i+<span class="number">1</span>);</span><br><span class="line">    invpow2[<span class="number">0</span>] = <span class="number">1</span>; invpow2[<span class="number">1</span>] = <span class="built_in">qpow</span>(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        invpow2[i] = invpow2[i<span class="number">-1</span>] * invpow2[<span class="number">1</span>];</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n+<span class="number">1</span>; i += <span class="number">2</span>)</span><br><span class="line">        g[i] = fac[i] * invpow2[i / <span class="number">2</span>] * ifac[i / <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i += <span class="number">2</span>)</span><br><span class="line">        g[i] = g[i+<span class="number">1</span>];</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    cout &lt;&lt; f[<span class="number">1</span>].v &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -266,19 +333,13 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Rijuyuezhu</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
   </footer>
 
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -291,7 +352,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 

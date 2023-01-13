@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客简介</title>
+    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2023-1-13 日记</title>
+    <url>/2023/01/13/2023-1-13-%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="375c4960b99990d474568347766b7a802d74eb23dd9cc098a6ce29e8401fb0f8">ebfac267c39067e061265010f63356e64ccd751dd2e54ad61474a01e763a65b7b05e5f5949b5a1bea3bc7f3271ae309b</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Please input the password.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021 CCPC Harbin 解题报告</title>
     <url>/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/</url>
     <content><![CDATA[<p>比赛链接：<a href="https://codeforces.com/gym/103447">link</a></p>
@@ -155,16 +183,13 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXN = <span class="number">1e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="type">int</span> n, m, A[MAXN][MAXN], row[MAXN], col[MAXN];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="built_in">max</span>(n, m); i++)</span><br><span class="line">        row[i] = col[i] = INF;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">            cin &gt;&gt; A[i][j];</span><br><span class="line">            row[i] = <span class="built_in">min</span>(row[i], A[i][j]);</span><br><span class="line">            col[j] = <span class="built_in">min</span>(col[j], A[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="keyword">if</span>(A[i][j] == row[i] &amp;&amp; A[i][j] == col[j])</span><br><span class="line">                ans++;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </details>
 ]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
       <tags>
         <tag>XCPC</tag>
         <tag>集训</tag>
         <tag>程序设计</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>博客简介</title>
-    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
-]]></content>
   </entry>
 </search>

@@ -19,25 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Knowledge and Practice!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rijuyuezhu&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+    <meta name="description" content="比赛链接：link">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 CCPC Harbin 解题报告">
+<meta property="og:url" content="http://example.com/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
-<meta property="og:description" content="Knowledge and Practice!">
+<meta property="og:description" content="比赛链接：link">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-13T03:23:19.000Z">
+<meta property="article:modified_time" content="2023-01-13T03:28:06.695Z">
 <meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="集训">
+<meta property="article:tag" content="CCPC">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/","path":"2023/01/13/2021-CCPC-Harbin-解题报告/","title":"2021 CCPC Harbin 解题报告"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | Rijuyuezhu's Blog</title>
+<title>2021 CCPC Harbin 解题报告 | Rijuyuezhu's Blog</title>
   
 
 
@@ -69,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Rijuyuezhu's Blog</h1>
+      <p class="site-title">Rijuyuezhu's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Find every drop in my life</p>
@@ -92,7 +96,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -105,6 +109,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#b-magical-subsequence"><span class="nav-number">1.</span> <span class="nav-text">B Magical Subsequence</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -138,69 +143,109 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2021 CCPC Harbin 解题报告 | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021 CCPC Harbin 解题报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-01-13 11:23:19 / 修改时间：11:28:06" itemprop="dateCreated datePublished" datetime="2023-01-13T11:23:19+08:00">2023-01-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>比赛链接：<a target="_blank" rel="noopener" href="https://codeforces.com/gym/103447">link</a></p>
+<span id="more"></span>
+<h2 id="b-magical-subsequence">B Magical Subsequence</h2>
+<p><strong>题意</strong>：给一个长度为 <span
+class="math inline">\(n\)</span> 的数列 <span
+class="math inline">\(A_i\)</span>，选取其中 <span
+class="math inline">\(m\)</span> 项 <span class="math inline">\(A_{b_1},
+A_{b_2},\cdots, A_{b_m}\)</span> 且满足：</p>
+<ol type="1">
+<li>要求 <span class="math inline">\(m\)</span> 为偶数；</li>
+<li>要求 <span
+class="math inline">\(A_{b_1}+A_{b_2}=A_{b_3}+A_{b_4}=\cdots=A_{b_{m-1}}+A_{b_m}\)</span>。</li>
+</ol>
+<p>求最大的 <span class="math inline">\(m\)</span>。</p>
+<p>数据范围：<span class="math inline">\(n\le 10^5, 1\le A_i\le
+100\)</span>。</p>
+<p><strong>题解</strong>：</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-01-13T11:23:19+08:00"
-              content="2023-01-13">
-          01-13
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url">
-            <span itemprop="name">2021 CCPC Harbin 解题报告</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9B%86%E8%AE%AD/" rel="tag"># 集训</a>
+              <a href="/tags/CCPC/" rel="tag"># CCPC</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/13/2021-ICPC-Asia-Shanghai-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" rel="prev" title="2021 ICPC Asia Shanghai 解题报告">
+                  <i class="fa fa-chevron-left"></i> 2021 ICPC Asia Shanghai 解题报告
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-01-13T00:03:06+08:00"
-              content="2023-01-13">
-          01-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/13/2021-ICPC-Asia-Shanghai-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url">
-            <span itemprop="name">2021 ICPC Asia Shanghai 解题报告</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>

@@ -27,7 +27,7 @@
 <meta property="og:description" content="比赛链接：link">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-13T03:23:19.000Z">
-<meta property="article:modified_time" content="2023-01-13T03:28:06.695Z">
+<meta property="article:modified_time" content="2023-01-13T03:34:34.101Z">
 <meta property="article:author" content="Rijuyuezhu">
 <meta property="article:tag" content="集训">
 <meta property="article:tag" content="CCPC">
@@ -109,7 +109,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#b-magical-subsequence"><span class="nav-number">1.</span> <span class="nav-text">B Magical Subsequence</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Magical-Subsequence"><span class="nav-number">1.</span> <span class="nav-text">B Magical Subsequence</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +184,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-13 11:23:19 / 修改时间：11:28:06" itemprop="dateCreated datePublished" datetime="2023-01-13T11:23:19+08:00">2023-01-13</time>
+      <time title="创建时间：2023-01-13 11:23:19 / 修改时间：11:34:34" itemprop="dateCreated datePublished" datetime="2023-01-13T11:23:19+08:00">2023-01-13</time>
     </span>
 
   
@@ -199,22 +199,17 @@
     <div class="post-body" itemprop="articleBody">
         <p>比赛链接：<a target="_blank" rel="noopener" href="https://codeforces.com/gym/103447">link</a></p>
 <span id="more"></span>
-<h2 id="b-magical-subsequence">B Magical Subsequence</h2>
-<p><strong>题意</strong>：给一个长度为 <span
-class="math inline">\(n\)</span> 的数列 <span
-class="math inline">\(A_i\)</span>，选取其中 <span
-class="math inline">\(m\)</span> 项 <span class="math inline">\(A_{b_1},
-A_{b_2},\cdots, A_{b_m}\)</span> 且满足：</p>
-<ol type="1">
-<li>要求 <span class="math inline">\(m\)</span> 为偶数；</li>
-<li>要求 <span
-class="math inline">\(A_{b_1}+A_{b_2}=A_{b_3}+A_{b_4}=\cdots=A_{b_{m-1}}+A_{b_m}\)</span>。</li>
-</ol>
-<p>求最大的 <span class="math inline">\(m\)</span>。</p>
-<p>数据范围：<span class="math inline">\(n\le 10^5, 1\le A_i\le
-100\)</span>。</p>
-<p><strong>题解</strong>：</p>
 
+<h2 id="B-Magical-Subsequence"><a href="#B-Magical-Subsequence" class="headerlink" title="B Magical Subsequence"></a>B Magical Subsequence</h2><p><strong>题意</strong>：给一个长度为 $n$ 的数列 $A_i$，选取其中 $m$ 项 $A_{b_1}, A_{b_2},\cdots, A_{b_m}$ 且满足：</p>
+<ol>
+<li>要求 $m$ 为偶数；</li>
+<li>要求 $A_{b_1}+A_{b_2}&#x3D;A_{b_3}+A_{b_4}&#x3D;\cdots&#x3D;A_{b_{m-1}}+A_{b_m}$。</li>
+</ol>
+<p>求最大的 $m$。</p>
+<p>数据范围：$n\le 10^5, 1\le A_i\le 100$。</p>
+<p><strong>题解</strong>：</p>
+<p>注意到 $1\le A_i\le 100$，我们可以枚举 $A_{b_1}+A_{b_2}&#x3D;v$ 的值。对于一个 $A_i$，如果我们把它作为 $A_{b_x}+A_{b_{x+1}}$ 的前一项，那么后一项 $A_{b_{x+1}}$ 需满足：值等于 $v-A_i$ 且 $b_{x+1}&gt;i$。贪心地，我们选择 $b_{x+1}$ 尽量小的那个。我们对每个值维护一个 <code>vector</code>，那么二分编号即可。于是我们得到了若干条线段，问题转化为选取最多条线段，互不相交，这是一个经典的贪心问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXV = <span class="number">101</span>;</span><br><span class="line"><span class="type">int</span> n, A[MAXN], minv, maxv;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; V[MAXV];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Seg</span> &#123;</span><br><span class="line">    <span class="type">int</span> l, r;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">bool</span> <span class="keyword">operator</span> &lt; (Seg a, Seg b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a.r &lt; b.r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">check</span><span class="params">(<span class="type">int</span> v)</span> </span>&#123;</span><br><span class="line">    vector&lt;Seg&gt; seg;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> op = v - A[i];</span><br><span class="line">        <span class="keyword">if</span>(op &lt; minv || op &gt; maxv)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt;::iterator it = <span class="built_in">upper_bound</span>(V[op].<span class="built_in">begin</span>(), V[op].<span class="built_in">end</span>(), i);</span><br><span class="line">        <span class="keyword">if</span>(it != V[op].<span class="built_in">end</span>()) &#123;</span><br><span class="line">            seg.<span class="built_in">push_back</span>(&#123;i, *it&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(seg.<span class="built_in">empty</span>()) </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(seg.<span class="built_in">begin</span>(), seg.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> lst = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v : seg) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v.l &gt; lst) &#123;</span><br><span class="line">            ++ans;</span><br><span class="line">            lst = v.r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    minv = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; A[i];</span><br><span class="line">        V[A[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">        minv = <span class="built_in">min</span>(minv, A[i]);</span><br><span class="line">        maxv = <span class="built_in">max</span>(maxv, A[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v = <span class="number">2</span> * minv; v &lt;= <span class="number">2</span> * maxv; v++)</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, <span class="built_in">check</span>(v));</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     

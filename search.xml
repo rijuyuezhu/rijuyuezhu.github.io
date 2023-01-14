@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客简介</title>
-    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>2021 CCPC Harbin 解题报告</title>
     <url>/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/</url>
     <content><![CDATA[<p>比赛链接：<a href="https://codeforces.com/gym/103447">link</a></p>
@@ -171,10 +165,10 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
-    <title>2023-01-14 日记</title>
-    <url>/2023/01/14/2023-01-14-%E6%97%A5%E8%AE%B0/</url>
+    <title>2023-01-13 日记</title>
+    <url>/2023/01/13/2023-01-13-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="368e4f5981d1be4778f6ee2618f3ff76373f6efde23f33f93821513ffe503c0a">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2b97e35e070bb705e476b0eb7a0b051da79b5ff17a073247a349fcc84c1a84713d94ad5790dacdef70e61959a976c43ab79e6223fbdfa7bae571c4c419e113ea2c8412ed90971060c6ae785bd704f671fc99684ed8506afe6f761a94651290cddfc626e4d04b23303851301e01e6b9977e62f6837eacdf49661119f2e0e5daf279efd25de35e0cb55524870f886ed32288f98694415d3fd8c3537275186ddf77d80e229eeacb05ce3a619cf2142bf11c6cdd36c668f3821968a16643bbf4344c896c54b011f5d922c4d6c45a2c21c8166bd24aef42f11d5490d2d60501313dd789dc30a93572b8113726b6fc9a8f20dbb55b42a0563c44256b02785b5557dbb0f5e68ee1fd9970e82e32f18927c956446f07b49d8e10d433765b55acbe3ea42427e0e392245c9b78d8fcc1d46e0c1c70d597b55e92b64f783304f2359c579848bb86ffd5b313d88054596654f818c2e00</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b17cf0a2fb0abfa08692f9e3212a4d357da4e896266f8f6dad4d29c2446c3fe5">ebfac267c39067e061265010f63356e64680d85664516099e48037fcf686813774ab9f27e1f8d8cfdf434d3025c923651d1615c4123937e26247442178aa79445fb8e67077f0df8f9fa383fdb299940d6288146a59debecf41cd4e8eab71074ee7a1514ca1bdc56545f7a1ef7dab8ee724f2b8a2450bac551dc40b9a5f01bcf7d2664c72b2cdccaabfca4f824fd2ed480a5bebc9711008de3dee7626818addaf5780dc7d7ba5320474a05cad55ef9e6e88cf4505946b1d7163797d175e9caf7f333318c62823ae0f40209ace82fb01efba5ce997838e5657dd2323ba3abe0d3bc0d71d7cd4b2717b335ae0ad582ec9adb3ad1f938afc5e8d7f37bb01b252060a1bbd29479fb0b634ffa1e64cf90a3192f364d3cee81939133713323cc812de0918e43b79358ea817a5597d7e12740fc91edc10839f4208c82826cbafe18be20cfbfbe3fe9c0651ac6b6eaff90c3dcc34f2dbe9994e08952024c1d03db7ce677d38bc6d3657833eba3092f642c5a9abc6b8a82ad7d5d60ea7d4f3dc0579ebc40a2109b1084e7551a033d7b1121ab7700e3765cd095079bdf9d2fdb45f09cc692738e6fdb47d6aea804ecaea0349231a2875e33042917f9e43ac018657a6c58e515cbdca5be598166eaea99f1414bb8ac74c1984a10620ac71ca2a3717d01b405bf348124d2b73056f544ff7825ea9480330604030c668cfac4dd1c8b69a4da512</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -193,10 +187,290 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
-    <title>2023-01-13 日记</title>
-    <url>/2023/01/13/2023-01-13-%E6%97%A5%E8%AE%B0/</url>
+    <title>博客简介</title>
+    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>微积分（一）总结 PART I</title>
+    <url>/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
+    <content><![CDATA[<p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="分析基础">分析基础</h1>
+<h2 id="界-确界">界, 确界</h2>
+<p>(上, 下)界, 有界.</p>
+<p><strong>确界</strong>: 若 <span class="math inline">\(\alpha\)</span>
+是 <span class="math inline">\(A\)</span> 的上确界(即 <span
+class="math inline">\(\alpha = \sup A\)</span>), 那么:</p>
+<ol type="1">
+<li><p>一方面, <span class="math inline">\(\alpha\)</span> 是上界, 即
+<span class="math inline">\(\forall x\in A, x \le
+\alpha\)</span>.</p></li>
+<li><p>另一方面, <span class="math inline">\(\forall \varepsilon&gt;0,
+\exists x_0\in A\)</span> 使得 <span
+class="math inline">\(\alpha-\varepsilon&lt;x_0\)</span>.
+(不可再小)</p></li>
+</ol>
+<blockquote>
+<p>证明与上下确界有关的不等式需要根据定义, 如证明 <span
+class="math inline">\(\sup_{x\in X, y\in Y}\{x+y\}=\sup_{x\in
+X}\{x\}+\sup_{y\in Y}\{y\}\)</span></p>
+</blockquote>
+<h2 id="几大互相等价的定理">几大互相等价的定理</h2>
+<p><strong>1. 实数的连续性原理</strong></p>
+<p>若 <span class="math inline">\(A, B\)</span> 为非空实数集, 且 <span
+class="math inline">\(\forall x\in A, \forall y\in B, x&lt;y\)</span>,
+则 <span class="math inline">\(\exists c\in \mathbb R\)</span> 使得
+<span class="math inline">\(\forall x\in A, \forall y\in B, x\le c\le
+y\)</span>.</p>
+<p><strong>2. 确界存在定理</strong></p>
+<p>若 <span class="math inline">\(A\)</span> 非空有上(下)界, 则 <span
+class="math inline">\(A\)</span> 必有上(下)确界.</p>
+<p><strong>3. 单调有界定理</strong></p>
+<p>若 <span class="math inline">\(\{a_n\}\)</span>
+单调递增/减且有上/下界, 则 <span class="math inline">\(\{a_n\}\)</span>
+收敛(为 <span class="math inline">\(\sup a_n\)</span> / <span
+class="math inline">\(\inf a_n\)</span>)</p>
+<p><strong>4. 闭区间套定理</strong></p>
+<p>若 <span class="math inline">\(\{[a_n, b_n]\}\)</span> 是一列闭区间,
+且满足 <span class="math inline">\([a_1, b_1]\supset [a_2,
+b_2]\supset\cdots \supset [a_n, b_n]\supset \cdots\)</span>, 及 <span
+class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span>.
+则存在唯一 <span class="math inline">\(c\in [a_n, b_n]\)</span>, 使得
+<span class="math inline">\(\lim_{n\to
+\infty}a_n=\lim_{n\to\infty}b_n=c\)</span>.</p>
+<p><strong>5. 收敛子列定理</strong></p>
+<p>有限数列必存在收敛子列(但是收敛的值不唯一)</p>
+<p><strong>6. 柯西收敛准则</strong></p>
+<p><span class="math inline">\(\{a_n\}\)</span> 收敛等价于 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N &gt; 0,
+\forall m, n&gt;N, |a_m-a_n|&lt;\varepsilon\)</span>.</p>
+<p><strong>7. 有限覆盖定理</strong></p>
+<p>闭区间的一个覆盖必存在有限子覆盖.</p>
+<p><a href="/file/六大定理互证.pdf">神技: 六大定理互相证明!</a> ##
+常用的等式、不等式</p>
+<details>
+<summary>
+<b>展开</b>
+</summary>
+<p><img src="equal_nequal1.png" /> <img src="equal_nequal2.png" /> <img
+src="equal_nequal3.png" /></p>
+</details>
+<blockquote>
+<p>这些不等式在后面都用得着.</p>
+</blockquote>
+<h2 id="极限定义">极限定义</h2>
+<p><strong>数列极限</strong>: <span
+class="math inline">\(\{a_n\}\)</span> 为一数列, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N&gt;0,
+\forall n&gt;N, |a_n-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{n\to \infty}a_n=A\)</span>.</p>
+<p><strong>函数定义1</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\(U(x_0)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta&gt;0,
+\forall x\in U^o(x_0, \delta), |f(x)-A|&lt;\varepsilon\)</span>, 则
+<span class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
+<p><strong>函数定义2</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\([H, +\infty)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists H &gt; 0,
+\forall x &gt; H, |f(x)-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
+<p>上面三个定义, 如果要写成 <span class="math inline">\(\lim
+f=+\infty\)</span> 或 <span class="math inline">\(\lim
+f=-\infty\)</span> 的形式, 则要把 <span
+class="math inline">\(\varepsilon\)</span>
+的限制改为上/下界限制(即任意一个上/下界, <span
+class="math inline">\(f\)</span> 均可超出); 如果 <span
+class="math inline">\(\lim f=\infty\)</span> 则把 <span
+class="math inline">\(f\)</span> 套上个绝对值,转化为上界. (换句话说,
+<span class="math inline">\(\lim f=\infty\)</span> 等价于 <span
+class="math inline">\(\lim |f|=+\infty\)</span>)</p>
+<blockquote>
+<p>一些找 <span class="math inline">\(N,\delta\)</span> 的方法.</p>
+<ol type="1">
+<li><p>直接法, 如 <span class="math inline">\(1/n, q^n,
+\sqrt[n]a\)</span>.</p></li>
+<li><p>二项式定理法, 如 <span class="math inline">\(\sqrt[n]n,
+\frac{poly(n)}{a^n}\)</span>.</p></li>
+<li><p>放缩法. 如 <span class="math inline">\(\sin x &lt; x(x &gt;
+0)\)</span></p></li>
+<li><p>有理化.</p></li>
+</ol>
+<p>善用取整符, 善用限制范围(特别是函数的极限)的方法.</p>
+</blockquote>
+<p><strong>单侧极限</strong>: 极限存在等价于左右极限存在且相等.</p>
+<h2 id="极限的性质">极限的性质</h2>
+<ol type="1">
+<li><p>数列有限项不影响敛散性.</p></li>
+<li><p>极限存在则唯一.</p></li>
+<li><p>收敛数列有界, 收敛函数局部有界.</p></li>
+<li><p>极限的保序性: 若 <span class="math inline">\(a_n\to A, b_n\to
+B\)</span>, 且 <span class="math inline">\(a_n\ge b_n\)</span>, 则 <span
+class="math inline">\(A\ge B\)</span>.</p></li>
+<li><p>极限的四则运算(注意: 需保证得到的两部分极限均存在!)</p></li>
+<li><p>极限的复合运算: 若 <span class="math inline">\(\lim\limits_{x\to
+x_0}\varphi(x)=b, \lim\limits_{t\to b}g(t)=A\)</span>, 且在 <span
+class="math inline">\(U^o(x_0)\)</span> 内 <span
+class="math inline">\(\varphi(x)\ne b\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to
+x_0}g(\varphi(x))=A\)</span>.</p></li>
+<li><p>海涅定理: <span class="math inline">\(\lim\limits_{x\to
+x_0}=A\)</span> 等价于 <span class="math inline">\(\forall\{x_n\},
+x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
+class="math inline">\(\lim\limits_{n\to
+\infty}f(x_n)=A\)</span>.</p></li>
+</ol>
+<blockquote>
+<p>常常用它的逆否证明一个函数没有极限</p>
+</blockquote>
+<details>
+<summary>
+<b>海涅定理的证明(右到左)</b>
+</summary>
+<p><img src="heineproof.png" /></p>
+</details>
+<ol start="8" type="1">
+<li>夹逼定理: 存在 <span class="math inline">\(U^o(x_0,
+\delta)\)</span>, <span class="math inline">\(f(x)\le g(x)\le
+h(x)\)</span> 且 <span class="math inline">\(x\to x_0\)</span> 时 <span
+class="math inline">\(f(x)\to A, h(x)\to A\)</span>, 则 <span
+class="math inline">\(g(x)\to A\)</span>.</li>
+</ol>
+<h2 id="两个重要极限">两个重要极限</h2>
+<p><span class="math inline">\(\lim\limits_{x\to 0}\dfrac{\sin
+x}{x}=1\)</span>, 使用不等式 <span class="math inline">\(\sin x &lt; x
+&lt; \tan x\)</span> 夹逼证得.</p>
+<p><span class="math inline">\(\lim\limits_{x\to
++\infty}(1+\dfrac{1}{x})^x=e\)</span>, 使用 <span
+class="math inline">\((1+\dfrac{1}{n})^n\)</span> 递增证得数列极限, 再与
+<span class="math inline">\((1+\dfrac{1}{n})^{n+1}\)</span>
+夹逼证得函数极限.</p>
+<details>
+<summary>
+<b>数列单调的证明</b>
+</summary>
+<p><img src="e_lim_proof.png" /></p>
+<p>这里还有另一种证明:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    a_n&amp;=(1+\dfrac{1}{n})^n
+    \\
+    &amp;=1+C_n^1\dfrac{1}{n}+C_n^2\dfrac{1}{n^2}+\cdots+C_n^k\dfrac{1}{n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+    \\
+    &amp;=1+1+\cdots+\dfrac{n(n-1)\cdots(n-k+1)}{k!n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+    \\
+    &amp;=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n})\cdots(1-\frac{k-1}{n})}{k!}+\cdots+C_n^n\dfrac{1}{n^n}
+\end{aligned}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+a_{n+1}=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n+1})\cdots(1-\frac{k-1}{n+1})}{k!}+\cdots+C_{n+1}^{n+1}\dfrac{1}{(n+1)^{n+1}}
+\]</span></p>
+<p>我们发现 <span class="math inline">\(a_{n+1}\)</span> 项数多,
+且每项都大, 故 <span class="math inline">\(a_{n+1}&gt;a_n\)</span>.</p>
+<p>又</p>
+<p><span class="math display">\[
+\begin{aligned}
+    a_n&amp;&lt;1+1+\cdots+\dfrac{1}{k!}+\cdots+\dfrac{1}{n!}
+    \\
+    &amp;=\sum_{i=1}^n\dfrac{1}{i!}
+    \\
+    &amp;&lt;1+\sum_{i=1}^n\dfrac{1}{2^{i-1}}
+    \\
+    &amp;=3-\dfrac{1}{2^{n-1}}
+\end{aligned}
+\]</span></p>
+<p>故单调有界.</p>
+</details>
+<details>
+<summary>
+<b>推论: 调和级数的估计</b>
+</summary>
+<p><img src="e_lim_concl1.png" /> <img src="e_lim_concl2.png" /></p>
+</details>
+<h2 id="连续性">连续性</h2>
+<p>定义(函数在某点连续): 若 <span
+class="math inline">\(\lim\limits_{x\to x_0}f(x)=f(x_0)\)</span> 则
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(x_0\)</span> 连续.</p>
+<p>条件: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(U(x_0)\)</span> 有定义, 在 <span
+class="math inline">\(x\to x_0\)</span> 有极限, 极限值等于函数值.</p>
+<p>或者使用增量: <span class="math inline">\(\lim\limits_{\Delta x\to
+0}(f(x_0+\Delta x)-f(x_0))=0\)</span>.</p>
+<p>同时, 有相应的 <span
+class="math inline">\(\varepsilon-\delta\)</span> 语言, 海涅定理等.</p>
+<p>若不满足, 则称为不连续; 若在 <span class="math inline">\(x_0\)</span>
+处不连续, 但左极限、右极限中至少有一个存在, 那我们可以说它间断, <span
+class="math inline">\(x_0\)</span> 即为间断点.</p>
+<details>
+<summary>
+<b>间断点的分类</b>
+</summary>
+<p><img src="discontinuity_point.png" /></p>
+</details>
+<p>连续等价于左连续且右连续.</p>
+<p>初等函数在其定义域中都是连续的.</p>
+<h2 id="连续的性质">连续的性质</h2>
+<ol type="1">
+<li><p>局部有界性</p></li>
+<li><p>局部保号性</p></li>
+<li><p>四则运算与复合连续</p></li>
+<li><p>严格单调的函数有反函数, 严格单调的连续函数反函数连续.</p></li>
+<li><p>闭区间连续函数满足有界性定理, 最值定理, 零点定理, 介值定理,
+康托尔定理.</p></li>
+</ol>
+<h2 id="一致连续">一致连续</h2>
+<p>定义: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上有定义, 若 <span
+class="math inline">\(\forall \varepsilon \exists \delta &gt; 0, \forall
+x_1, x_2\in I, |x_1-x_2|&lt;\delta\)</span>, 有 <span
+class="math inline">\(|f(x_1)-f(x_2)|&lt;\varepsilon\)</span>, 则称
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上一致连续.</p>
+<p><strong>康托尔定理</strong>: 闭区间上的连续函数一致连续.</p>
+<h2 id="无穷小">无穷小</h2>
+<p>无穷小: 以 <span class="math inline">\(0\)</span> 为极限的变量.</p>
+<p>无穷大: 分为三种, <span class="math inline">\(+\infty\)</span>, <span
+class="math inline">\(-\infty\)</span>, 两者统称为 <span
+class="math inline">\(\infty\)</span>.</p>
+<p><strong>无穷小的性质</strong></p>
+<ol type="1">
+<li><p>有界性.(数列整体有界, 函数局部有界)</p></li>
+<li><p>无穷小的线性组合是无穷小.</p></li>
+<li><p>无穷小乘有界函数是无穷小.</p></li>
+<li><p>无穷小的乘积是无穷小.</p></li>
+<li><p>无穷小的倒数是无穷大.</p></li>
+</ol>
+<p><strong>无穷小的比较</strong></p>
+<p>根据 <span class="math inline">\(\lim\limits_{x\to
+x_0}\dfrac{\alpha(x)}{\beta(x)}\)</span> 的值,
+把无穷小直接的关系分为高阶、低阶、等阶, 若值为 <span
+class="math inline">\(1\)</span>, 称为等价. <span
+class="math inline">\(x(x\to 0)\)</span> 称为基准无穷小, 等阶于 <span
+class="math inline">\(x^s(x\to 0)\)</span> 的称为 <span
+class="math inline">\(s\)</span> 阶无穷小. 等价无穷小可替换.</p>
+<p>常见的等价无穷小替换:</p>
+<p><span class="math inline">\(\sin x\sim \tan x \sim \ln(1+x)\sim e^x-1
+\sim \arcsin x\sim \arctan x \sim x\)</span>.</p>
+<p><span class="math inline">\(1-\cos x \sim
+\dfrac{1}{2}x^2\)</span>.</p>
+<p><span class="math inline">\((1+x)^k-1\sim kx\)</span>.</p>
+]]></content>
+      <categories>
+        <category>课程笔记</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023-01-14 日记</title>
+    <url>/2023/01/14/2023-01-14-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="b17cf0a2fb0abfa08692f9e3212a4d357da4e896266f8f6dad4d29c2446c3fe5">ebfac267c39067e061265010f63356e64680d85664516099e48037fcf686813774ab9f27e1f8d8cfdf434d3025c923651d1615c4123937e26247442178aa79445fb8e67077f0df8f9fa383fdb299940d6288146a59debecf41cd4e8eab71074ee7a1514ca1bdc56545f7a1ef7dab8ee724f2b8a2450bac551dc40b9a5f01bcf7d2664c72b2cdccaabfca4f824fd2ed480a5bebc9711008de3dee7626818addaf5780dc7d7ba5320474a05cad55ef9e6e88cf4505946b1d7163797d175e9caf7f333318c62823ae0f40209ace82fb01efba5ce997838e5657dd2323ba3abe0d3bc0d71d7cd4b2717b335ae0ad582ec9adb3ad1f938afc5e8d7f37bb01b252060a1bbd29479fb0b634ffa1e64cf90a3192f364d3cee81939133713323cc812de0918e43b79358ea817a5597d7e12740fc91edc10839f4208c82826cbafe18be20cfbfbe3fe9c0651ac6b6eaff90c3dcc34f2dbe9994e08952024c1d03db7ce677d38bc6d3657833eba3092f642c5a9abc6b8a82ad7d5d60ea7d4f3dc0579ebc40a2109b1084e7551a033d7b1121ab7700e3765cd095079bdf9d2fdb45f09cc692738e6fdb47d6aea804ecaea0349231a2875e33042917f9e43ac018657a6c58e515cbdca5be598166eaea99f1414bb8ac74c1984a10620ac71ca2a3717d01b405bf348124d2b73056f544ff7825ea9480330604030c668cfac4dd1c8b69a4da512</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="a83f7bc56e3cbfb6ee3fffc384b70aefe87a8b4be79ae53224c0e8d958e033ed">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2b97e35e070bb705e476b0eb7a0b051da79b5ff17a073247a349fcc84c1a84713d94ad5790dacdef70e61959a976c43ab79e6223fbdfa7bae571c4c419e113ea2c8412ed90971060c6ae785bd704f671fc99684ed8506afe6f761a94651290cdd4812b54dcbfedf51e566ada2c29deb85813d753b9500529adfb3004b47002fede7d72553c81f311c30ed088734eee8a29a6e3f70a761997d11df3ec11bd6eaae90cbe9939dd6302eb0ff52f7020a7f7058d362b60fc0a48e13368b2297bb718bd013567cb8b32f9581d379cd48eba2463c309206e725e13890cfaa2f4dcbf80f1058eea8fe4b85160c92cd2ab7c3edfbe82e3d4ac5d2b8eaecfd84c222c66630218bfa7ff7932712d341d7426f8ee84c1bc9674b81b36024316e9a97d26a168b34bf4b4f92a01182cd6ca1e3670f07e992f5949c9f9a59fe84f40f85a75af49ac916513e3389a6c00795d3c1cc3b094359afa2687997489b572cce2755c581090de91b27974ff0264b151f87b2acc5945239bc40a6b273bf6bfb83221e5026a294fa8fed829bcb379c3081e88e15246a7c0a5ebeda99fa8210c881cff6b0594af1a7faec64b2f619a852aceeb8183a83ec863d10d408870af41d386f00d59b26b44342c08bd6e5a7604b8e13682141abf33891db6addd825ff6a6a7f0b972c1780f36015460a26fc64bd8d56a9ec6ea1e3c26ca92350c8c043c91757e8c5e931a820f52804c1934517e4e46214eed9b7b233e9da4f695de1cb31e6a53f6f74ab8133583af6a1d0092090bd396d6f81257b4485c45e88c82a040f85c0566e1d1a5fe140158a0b598d37c2a221b931eea49adc52fe1580a25d6bd8599bf4cadb99e5a74a65b7ed4e1183a855fba48ac0206f9a7c8938fc995f4d0ea80741bdc78e1662ef0574ec79f75a50387e064fcd6af4b0067d85bc276a77199900c3391d173210dafd827523d8d9d6eb8581008d83</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">

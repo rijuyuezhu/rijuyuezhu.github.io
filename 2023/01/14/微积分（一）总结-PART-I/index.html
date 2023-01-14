@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分（一）总结 PART I">
+<meta property="og:url" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/index.html">
+<meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
+<meta property="og:description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/equal_nequal1.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/equal_nequal2.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/heineproof.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/e_lim_proof.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/e_lim_concl1.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/e_lim_concl2.png">
+<meta property="og:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/discontinuity_point.png">
+<meta property="article:published_time" content="2023-01-14T04:00:25.000Z">
+<meta property="article:modified_time" content="2023-01-14T05:57:23.534Z">
+<meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/equal_nequal1.png">
+
+
+<link rel="canonical" href="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/","path":"2023/01/14/微积分（一）总结-PART-I/","title":"微积分（一）总结 PART I"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微积分（一）总结 PART I | Rijuyuezhu's Blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rijuyuezhu's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Record every drop in my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C-%E7%A1%AE%E7%95%8C"><span class="nav-number">1.1.</span> <span class="nav-text">界, 确界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E5%A4%A7%E4%BA%92%E7%9B%B8%E7%AD%89%E4%BB%B7%E7%9A%84%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">几大互相等价的定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.</span> <span class="nav-text">极限定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text">极限的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9E%81%E9%99%90"><span class="nav-number">1.5.</span> <span class="nav-text">两个重要极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="nav-number">1.6.</span> <span class="nav-text">连续性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.7.</span> <span class="nav-text">连续的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E8%BF%9E%E7%BB%AD"><span class="nav-number">1.8.</span> <span class="nav-text">一致连续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%B0%8F"><span class="nav-number">1.9.</span> <span class="nav-text">无穷小</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rijuyuezhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Rijuyuezhu</p>
+  <div class="site-description" itemprop="description">Knowledge and Practice!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="微积分（一）总结 PART I | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微积分（一）总结 PART I
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-14 12:00:25 / 修改时间：13:57:23" itemprop="dateCreated datePublished" datetime="2023-01-14T12:00:25+08:00">2023-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="分析基础">分析基础</h1>
+<h2 id="界-确界">界, 确界</h2>
+<p>(上, 下)界, 有界.</p>
+<p><strong>确界</strong>: 若 <span class="math inline">\(\alpha\)</span>
+是 <span class="math inline">\(A\)</span> 的上确界(即 <span
+class="math inline">\(\alpha = \sup A\)</span>), 那么:</p>
+<ol type="1">
+<li><p>一方面, <span class="math inline">\(\alpha\)</span> 是上界, 即
+<span class="math inline">\(\forall x\in A, x \le
+\alpha\)</span>.</p></li>
+<li><p>另一方面, <span class="math inline">\(\forall \varepsilon&gt;0,
+\exists x_0\in A\)</span> 使得 <span
+class="math inline">\(\alpha-\varepsilon&lt;x_0\)</span>.
+(不可再小)</p></li>
+</ol>
+<blockquote>
+<p>证明与上下确界有关的不等式需要根据定义, 如证明 <span
+class="math inline">\(\sup_{x\in X, y\in Y}\{x+y\}=\sup_{x\in
+X}\{x\}+\sup_{y\in Y}\{y\}\)</span></p>
+</blockquote>
+<h2 id="几大互相等价的定理">几大互相等价的定理</h2>
+<p><strong>1. 实数的连续性原理</strong></p>
+<p>若 <span class="math inline">\(A, B\)</span> 为非空实数集, 且 <span
+class="math inline">\(\forall x\in A, \forall y\in B, x&lt;y\)</span>,
+则 <span class="math inline">\(\exists c\in \mathbb R\)</span> 使得
+<span class="math inline">\(\forall x\in A, \forall y\in B, x\le c\le
+y\)</span>.</p>
+<p><strong>2. 确界存在定理</strong></p>
+<p>若 <span class="math inline">\(A\)</span> 非空有上(下)界, 则 <span
+class="math inline">\(A\)</span> 必有上(下)确界.</p>
+<p><strong>3. 单调有界定理</strong></p>
+<p>若 <span class="math inline">\(\{a_n\}\)</span>
+单调递增/减且有上/下界, 则 <span class="math inline">\(\{a_n\}\)</span>
+收敛(为 <span class="math inline">\(\sup a_n\)</span> / <span
+class="math inline">\(\inf a_n\)</span>)</p>
+<p><strong>4. 闭区间套定理</strong></p>
+<p>若 <span class="math inline">\(\{[a_n, b_n]\}\)</span> 是一列闭区间,
+且满足 <span class="math inline">\([a_1, b_1]\supset [a_2,
+b_2]\supset\cdots \supset [a_n, b_n]\supset \cdots\)</span>, 及 <span
+class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span>.
+则存在唯一 <span class="math inline">\(c\in [a_n, b_n]\)</span>, 使得
+<span class="math inline">\(\lim_{n\to
+\infty}a_n=\lim_{n\to\infty}b_n=c\)</span>.</p>
+<p><strong>5. 收敛子列定理</strong></p>
+<p>有限数列必存在收敛子列(但是收敛的值不唯一)</p>
+<p><strong>6. 柯西收敛准则</strong></p>
+<p><span class="math inline">\(\{a_n\}\)</span> 收敛等价于 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N &gt; 0,
+\forall m, n&gt;N, |a_m-a_n|&lt;\varepsilon\)</span>.</p>
+<p><strong>7. 有限覆盖定理</strong></p>
+<p>闭区间的一个覆盖必存在有限子覆盖.</p>
+<p><a href="/file/六大定理互证.pdf">神技: 六大定理互相证明!</a> ##
+常用的等式、不等式</p>
+<details>
+<summary>
+<b>展开</b>
+</summary>
+<p><img src="equal_nequal1.png" /> <img src="equal_nequal2.png" /> <img
+src="equal_nequal3.png" /></p>
+</details>
+<blockquote>
+<p>这些不等式在后面都用得着.</p>
+</blockquote>
+<h2 id="极限定义">极限定义</h2>
+<p><strong>数列极限</strong>: <span
+class="math inline">\(\{a_n\}\)</span> 为一数列, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N&gt;0,
+\forall n&gt;N, |a_n-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{n\to \infty}a_n=A\)</span>.</p>
+<p><strong>函数定义1</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\(U(x_0)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta&gt;0,
+\forall x\in U^o(x_0, \delta), |f(x)-A|&lt;\varepsilon\)</span>, 则
+<span class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
+<p><strong>函数定义2</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\([H, +\infty)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists H &gt; 0,
+\forall x &gt; H, |f(x)-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
+<p>上面三个定义, 如果要写成 <span class="math inline">\(\lim
+f=+\infty\)</span> 或 <span class="math inline">\(\lim
+f=-\infty\)</span> 的形式, 则要把 <span
+class="math inline">\(\varepsilon\)</span>
+的限制改为上/下界限制(即任意一个上/下界, <span
+class="math inline">\(f\)</span> 均可超出); 如果 <span
+class="math inline">\(\lim f=\infty\)</span> 则把 <span
+class="math inline">\(f\)</span> 套上个绝对值,转化为上界. (换句话说,
+<span class="math inline">\(\lim f=\infty\)</span> 等价于 <span
+class="math inline">\(\lim |f|=+\infty\)</span>)</p>
+<blockquote>
+<p>一些找 <span class="math inline">\(N,\delta\)</span> 的方法.</p>
+<ol type="1">
+<li><p>直接法, 如 <span class="math inline">\(1/n, q^n,
+\sqrt[n]a\)</span>.</p></li>
+<li><p>二项式定理法, 如 <span class="math inline">\(\sqrt[n]n,
+\frac{poly(n)}{a^n}\)</span>.</p></li>
+<li><p>放缩法. 如 <span class="math inline">\(\sin x &lt; x(x &gt;
+0)\)</span></p></li>
+<li><p>有理化.</p></li>
+</ol>
+<p>善用取整符, 善用限制范围(特别是函数的极限)的方法.</p>
+</blockquote>
+<p><strong>单侧极限</strong>: 极限存在等价于左右极限存在且相等.</p>
+<h2 id="极限的性质">极限的性质</h2>
+<ol type="1">
+<li><p>数列有限项不影响敛散性.</p></li>
+<li><p>极限存在则唯一.</p></li>
+<li><p>收敛数列有界, 收敛函数局部有界.</p></li>
+<li><p>极限的保序性: 若 <span class="math inline">\(a_n\to A, b_n\to
+B\)</span>, 且 <span class="math inline">\(a_n\ge b_n\)</span>, 则 <span
+class="math inline">\(A\ge B\)</span>.</p></li>
+<li><p>极限的四则运算(注意: 需保证得到的两部分极限均存在!)</p></li>
+<li><p>极限的复合运算: 若 <span class="math inline">\(\lim\limits_{x\to
+x_0}\varphi(x)=b, \lim\limits_{t\to b}g(t)=A\)</span>, 且在 <span
+class="math inline">\(U^o(x_0)\)</span> 内 <span
+class="math inline">\(\varphi(x)\ne b\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to
+x_0}g(\varphi(x))=A\)</span>.</p></li>
+<li><p>海涅定理: <span class="math inline">\(\lim\limits_{x\to
+x_0}=A\)</span> 等价于 <span class="math inline">\(\forall\{x_n\},
+x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
+class="math inline">\(\lim\limits_{n\to
+\infty}f(x_n)=A\)</span>.</p></li>
+</ol>
+<blockquote>
+<p>常常用它的逆否证明一个函数没有极限</p>
+</blockquote>
+<details>
+<summary>
+<b>海涅定理的证明(右到左)</b>
+</summary>
+<p><img src="heineproof.png" /></p>
+</details>
+<ol start="8" type="1">
+<li>夹逼定理: 存在 <span class="math inline">\(U^o(x_0,
+\delta)\)</span>, <span class="math inline">\(f(x)\le g(x)\le
+h(x)\)</span> 且 <span class="math inline">\(x\to x_0\)</span> 时 <span
+class="math inline">\(f(x)\to A, h(x)\to A\)</span>, 则 <span
+class="math inline">\(g(x)\to A\)</span>.</li>
+</ol>
+<h2 id="两个重要极限">两个重要极限</h2>
+<p><span class="math inline">\(\lim\limits_{x\to 0}\dfrac{\sin
+x}{x}=1\)</span>, 使用不等式 <span class="math inline">\(\sin x &lt; x
+&lt; \tan x\)</span> 夹逼证得.</p>
+<p><span class="math inline">\(\lim\limits_{x\to
++\infty}(1+\dfrac{1}{x})^x=e\)</span>, 使用 <span
+class="math inline">\((1+\dfrac{1}{n})^n\)</span> 递增证得数列极限, 再与
+<span class="math inline">\((1+\dfrac{1}{n})^{n+1}\)</span>
+夹逼证得函数极限.</p>
+<details>
+<summary>
+<b>数列单调的证明</b>
+</summary>
+<p><img src="e_lim_proof.png" /></p>
+<p>这里还有另一种证明:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    a_n&amp;=(1+\dfrac{1}{n})^n
+    \\
+    &amp;=1+C_n^1\dfrac{1}{n}+C_n^2\dfrac{1}{n^2}+\cdots+C_n^k\dfrac{1}{n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+    \\
+    &amp;=1+1+\cdots+\dfrac{n(n-1)\cdots(n-k+1)}{k!n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+    \\
+    &amp;=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n})\cdots(1-\frac{k-1}{n})}{k!}+\cdots+C_n^n\dfrac{1}{n^n}
+\end{aligned}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+a_{n+1}=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n+1})\cdots(1-\frac{k-1}{n+1})}{k!}+\cdots+C_{n+1}^{n+1}\dfrac{1}{(n+1)^{n+1}}
+\]</span></p>
+<p>我们发现 <span class="math inline">\(a_{n+1}\)</span> 项数多,
+且每项都大, 故 <span class="math inline">\(a_{n+1}&gt;a_n\)</span>.</p>
+<p>又</p>
+<p><span class="math display">\[
+\begin{aligned}
+    a_n&amp;&lt;1+1+\cdots+\dfrac{1}{k!}+\cdots+\dfrac{1}{n!}
+    \\
+    &amp;=\sum_{i=1}^n\dfrac{1}{i!}
+    \\
+    &amp;&lt;1+\sum_{i=1}^n\dfrac{1}{2^{i-1}}
+    \\
+    &amp;=3-\dfrac{1}{2^{n-1}}
+\end{aligned}
+\]</span></p>
+<p>故单调有界.</p>
+</details>
+<details>
+<summary>
+<b>推论: 调和级数的估计</b>
+</summary>
+<p><img src="e_lim_concl1.png" /> <img src="e_lim_concl2.png" /></p>
+</details>
+<h2 id="连续性">连续性</h2>
+<p>定义(函数在某点连续): 若 <span
+class="math inline">\(\lim\limits_{x\to x_0}f(x)=f(x_0)\)</span> 则
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(x_0\)</span> 连续.</p>
+<p>条件: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(U(x_0)\)</span> 有定义, 在 <span
+class="math inline">\(x\to x_0\)</span> 有极限, 极限值等于函数值.</p>
+<p>或者使用增量: <span class="math inline">\(\lim\limits_{\Delta x\to
+0}(f(x_0+\Delta x)-f(x_0))=0\)</span>.</p>
+<p>同时, 有相应的 <span
+class="math inline">\(\varepsilon-\delta\)</span> 语言, 海涅定理等.</p>
+<p>若不满足, 则称为不连续; 若在 <span class="math inline">\(x_0\)</span>
+处不连续, 但左极限、右极限中至少有一个存在, 那我们可以说它间断, <span
+class="math inline">\(x_0\)</span> 即为间断点.</p>
+<details>
+<summary>
+<b>间断点的分类</b>
+</summary>
+<p><img src="discontinuity_point.png" /></p>
+</details>
+<p>连续等价于左连续且右连续.</p>
+<p>初等函数在其定义域中都是连续的.</p>
+<h2 id="连续的性质">连续的性质</h2>
+<ol type="1">
+<li><p>局部有界性</p></li>
+<li><p>局部保号性</p></li>
+<li><p>四则运算与复合连续</p></li>
+<li><p>严格单调的函数有反函数, 严格单调的连续函数反函数连续.</p></li>
+<li><p>闭区间连续函数满足有界性定理, 最值定理, 零点定理, 介值定理,
+康托尔定理.</p></li>
+</ol>
+<h2 id="一致连续">一致连续</h2>
+<p>定义: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上有定义, 若 <span
+class="math inline">\(\forall \varepsilon \exists \delta &gt; 0, \forall
+x_1, x_2\in I, |x_1-x_2|&lt;\delta\)</span>, 有 <span
+class="math inline">\(|f(x_1)-f(x_2)|&lt;\varepsilon\)</span>, 则称
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上一致连续.</p>
+<p><strong>康托尔定理</strong>: 闭区间上的连续函数一致连续.</p>
+<h2 id="无穷小">无穷小</h2>
+<p>无穷小: 以 <span class="math inline">\(0\)</span> 为极限的变量.</p>
+<p>无穷大: 分为三种, <span class="math inline">\(+\infty\)</span>, <span
+class="math inline">\(-\infty\)</span>, 两者统称为 <span
+class="math inline">\(\infty\)</span>.</p>
+<p><strong>无穷小的性质</strong></p>
+<ol type="1">
+<li><p>有界性.(数列整体有界, 函数局部有界)</p></li>
+<li><p>无穷小的线性组合是无穷小.</p></li>
+<li><p>无穷小乘有界函数是无穷小.</p></li>
+<li><p>无穷小的乘积是无穷小.</p></li>
+<li><p>无穷小的倒数是无穷大.</p></li>
+</ol>
+<p><strong>无穷小的比较</strong></p>
+<p>根据 <span class="math inline">\(\lim\limits_{x\to
+x_0}\dfrac{\alpha(x)}{\beta(x)}\)</span> 的值,
+把无穷小直接的关系分为高阶、低阶、等阶, 若值为 <span
+class="math inline">\(1\)</span>, 称为等价. <span
+class="math inline">\(x(x\to 0)\)</span> 称为基准无穷小, 等阶于 <span
+class="math inline">\(x^s(x\to 0)\)</span> 的称为 <span
+class="math inline">\(s\)</span> 阶无穷小. 等价无穷小可替换.</p>
+<p>常见的等价无穷小替换:</p>
+<p><span class="math inline">\(\sin x\sim \tan x \sim \ln(1+x)\sim e^x-1
+\sim \arcsin x\sim \arctan x \sim x\)</span>.</p>
+<p><span class="math inline">\(1-\cos x \sim
+\dfrac{1}{2}x^2\)</span>.</p>
+<p><span class="math inline">\((1+x)^k-1\sim kx\)</span>.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/14/2023-01-14-%E6%97%A5%E8%AE%B0/" rel="prev" title="2023-01-14 日记">
+                  <i class="fa fa-chevron-left"></i> 2023-01-14 日记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rijuyuezhu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

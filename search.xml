@@ -125,7 +125,8 @@ class="math inline">\(\varepsilon\)</span>.)</p>
 </blockquote></li>
 <li><p>收敛数列有界, 收敛函数局部有界.</p>
 <blockquote>
-<p>证明: 由 <span class="math inline">\(A+\varepsilon\)</span> 限制.</p>
+<p>证明: 由 <span class="math inline">\(\max\{A+\varepsilon,
+A-\varepsilon\}\)</span> 限制.</p>
 </blockquote></li>
 <li><p>极限的保序性: 若 <span class="math inline">\(f\to A, g\to
 B\)</span>, 且 <span class="math inline">\(f\ge g\)</span>, 则 <span

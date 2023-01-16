@@ -1,6 +1,821 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客简介</title>
+    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>微积分（一）总结 PART I</title>
+    <url>/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
+    <content><![CDATA[<p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="分析基础">分析基础</h1>
+<h2 id="界-确界">界, 确界</h2>
+<p>(上, 下)界, 有界.</p>
+<p><strong>确界</strong>: 若 <span class="math inline">\(\alpha\)</span>
+是 <span class="math inline">\(A\)</span> 的上确界(即 <span
+class="math inline">\(\alpha = \sup A\)</span>), 那么:</p>
+<ol type="1">
+<li><p>一方面, <span class="math inline">\(\alpha\)</span> 是上界, 即
+<span class="math inline">\(\forall x\in A, x \le
+\alpha\)</span>.</p></li>
+<li><p>另一方面, <span class="math inline">\(\forall \varepsilon&gt;0,
+\exists x_0\in A\)</span> 使得 <span
+class="math inline">\(\alpha-\varepsilon&lt;x_0\)</span>.
+(不可再小)</p></li>
+</ol>
+<blockquote>
+<p>证明与上下确界有关的不等式需要根据定义, 如证明 <span
+class="math inline">\(\sup\limits_{x\in X, y\in
+Y}\{x+y\}=\sup\limits_{x\in X}\{x\}+\sup\limits_{y\in Y}\{y\}\)</span>
+等式子.</p>
+</blockquote>
+<h2 id="几大互相等价的定理">几大互相等价的定理</h2>
+<p><strong>1. 实数的连续性原理</strong></p>
+<p>若 <span class="math inline">\(A, B\)</span> 为非空实数集, 且 <span
+class="math inline">\(\forall x\in A, \forall y\in B, x\le y\)</span>,
+则 <span class="math inline">\(\exists c\in \mathbb R\)</span> 使得
+<span class="math inline">\(\forall x\in A, \forall y\in B, x\le c\le
+y\)</span>.</p>
+<p><strong>2. 确界存在定理</strong></p>
+<p>若 <span class="math inline">\(A\)</span> 非空有上(下)界, 则 <span
+class="math inline">\(A\)</span> 必有上(下)确界.</p>
+<p><strong>3. 单调有界定理</strong></p>
+<p>若 <span class="math inline">\(\{a_n\}\)</span>
+单调递增/减且有上/下界, 则 <span class="math inline">\(\{a_n\}\)</span>
+收敛(为 <span class="math inline">\(\sup a_n\)</span> / <span
+class="math inline">\(\inf a_n\)</span>)</p>
+<p><strong>4. 闭区间套定理</strong></p>
+<p>若 <span class="math inline">\(\{[a_n, b_n]\}\)</span> 是一列闭区间,
+且满足 <span class="math inline">\([a_1, b_1]\supset [a_2,
+b_2]\supset\cdots \supset [a_n, b_n]\supset \cdots\)</span>, 及 <span
+class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span>.
+则存在唯一 <span class="math inline">\(c\in [a_n, b_n]\)</span>, 使得
+<span class="math inline">\(\lim\limits_{n\to
+\infty}a_n=\lim\limits_{n\to\infty}b_n=c\)</span>.</p>
+<p><strong>5. 收敛子列定理</strong></p>
+<p>有限数列必存在收敛子列.(但是收敛的值不唯一)</p>
+<p><strong>6. 柯西收敛准则</strong></p>
+<p><span class="math inline">\(\{a_n\}\)</span> 收敛等价于 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N &gt; 0,
+\forall m, n&gt;N, |a_m-a_n|&lt;\varepsilon\)</span>.</p>
+<p><strong>7. 有限覆盖定理</strong></p>
+<p>闭区间的一个覆盖必存在有限子覆盖.</p>
+<details>
+<summary>
+<b>一些互相证明</b>
+</summary>
+<blockquote>
+<p>下面是上课讲的:</p>
+<p><strong>1 推 2</strong> 非空数集与它的上界组成的集合之间,
+由实数的连续性原理, 夹着一个 <span class="math inline">\(c\)</span>,
+一方面 <span class="math inline">\(\forall x\in X, x\le c\)</span>, 故
+<span class="math inline">\(c\)</span> 为上界; 反设 <span
+class="math inline">\(c\)</span> 不是上确界, 那么存在 <span
+class="math inline">\(\varepsilon &gt; 0, \forall x\in X, x\le
+c-\varepsilon\)</span>, 故 <span
+class="math inline">\(c-\varepsilon\)</span> 也是上界, 故 <span
+class="math inline">\(c\le c-\varepsilon\)</span>, 矛盾.</p>
+<p><strong>2 推 3</strong> (证递增上界的情况)数列有上界则有上确界 <span
+class="math inline">\(A\)</span>, 则对任意 <span
+class="math inline">\(\varepsilon&gt;0\)</span> 存在 <span
+class="math inline">\(N\)</span>, 使得 <span
+class="math inline">\(A-\varepsilon&lt; a_N\le A\)</span>, 故当 <span
+class="math inline">\(n&gt;N\)</span> 时 <span
+class="math inline">\(A-\varepsilon&lt;a_N\le a_n\le
+A&lt;A+\varepsilon\)</span>, 故极限存在为 <span
+class="math inline">\(A\)</span>.</p>
+<p><strong>3 推 4</strong> <span class="math inline">\(\{a_n\}\)</span>
+递增且上界存在为 <span class="math inline">\(b_1\)</span>, <span
+class="math inline">\(\{b_n\}\)</span> 递减且下界存在为 <span
+class="math inline">\(a_1\)</span>, 分别设两数列极限为 <span
+class="math inline">\(A, B\)</span>. 由 <span
+class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span> 可得
+<span class="math inline">\(A=B=c\)</span>, 且 <span
+class="math inline">\(\forall n, a_n\le c\le b_n\)</span>. 设另有 <span
+class="math inline">\(c&#39;\)</span> 使得 <span
+class="math inline">\(a_n\le c&#39;\le b_n\)</span>, 则 <span
+class="math inline">\(|c-c&#39;|\le b_n-a_n\)</span>, 由极限保号性得
+<span class="math inline">\(|c-c&#39;|\le 0\)</span>, 故 <span
+class="math inline">\(c=c&#39;\)</span>.</p>
+<p><strong>4 推 5</strong> 设数列为 <span
+class="math inline">\(\{x_n\}\)</span>, 从 <span
+class="math inline">\([-M, M]\)</span>
+开始使用二分法(即套用闭区间套定理), 构造得到区间套 <span
+class="math inline">\([l_n, r_n]\)</span>,
+因为左右区间至少有一个是无穷多项, 选择无穷多项的一边一直下去,
+最后收敛到一个点 <span class="math inline">\(c\)</span>. 因为每个 <span
+class="math inline">\([l_n, r_n]\)</span> 中都有无穷多项,
+所以我们如下构造 <span class="math inline">\(a_{n_k}\)</span>: 在 <span
+class="math inline">\([l_k, r_k]\)</span> 的范围内挑选一个 <span
+class="math inline">\(a_{n_k}\)</span>, 满足 <span
+class="math inline">\(n_k&gt;n_{k-1}\)</span>. 这是显然可以做到的, 因为
+<span class="math inline">\(n_{k-1}\)</span> 前只有有限项. 于是我们得到
+<span class="math inline">\(l_k\le a_{n_k}\le r_k\)</span>, 取极限得
+<span class="math inline">\(a_{n_k}\to c\)</span>.</p>
+<p><strong>5 推 6</strong> 证明柯西收敛准则: 一方面, 左推右,
+由绝对值不等式显然. 另一方面, 右推左. 取 <span
+class="math inline">\(\varepsilon_0=1\)</span>, 则存在 <span
+class="math inline">\(N_0&gt;0, \forall n&gt;N_0,
+|a_n-a_{N_0+1}|&lt;1\)</span>, 故可得 <span
+class="math inline">\(\{a_n\}\)</span> 有界, 故有收敛子列 <span
+class="math inline">\(\{a_{n_k}\}\to A\)</span>. 于是对任意 <span
+class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
+class="math inline">\(N&gt;0\)</span>, 因 <span
+class="math inline">\(a_{n_k}\)</span> 无穷多项, 故存在 <span
+class="math inline">\(n_{k_0}&gt;N\)</span>, 满足 <span
+class="math inline">\(\forall n&gt;N\)</span>, <span
+class="math inline">\(|a_n-a_{n_{k_0}}|&lt;\varepsilon/2\)</span>.
+然后由绝对值不等式易得.</p>
+<p><strong>4 推 7</strong> 反证 <span class="math inline">\([a,
+b]\)</span> 不能够有限覆盖, 二分, 则左右区间至少有一个不能够有限覆盖.
+得到一系列 <span class="math inline">\([l_n,
+r_n]\)</span>(闭区间套)均不能被有限覆盖, 由闭区间套定理可得 <span
+class="math inline">\(l_n, r_n\)</span> 收敛于 <span
+class="math inline">\(c\)</span>. 取覆盖 <span
+class="math inline">\(c\)</span> 的覆盖 <span
+class="math inline">\((c-\alpha, c+\beta)\)</span>, 取 <span
+class="math inline">\(\varepsilon=\min(\alpha, \beta)\)</span>, 那么存在
+<span class="math inline">\(N&gt;0\)</span>, 当 <span
+class="math inline">\(n&gt;N\)</span>, <span class="math inline">\([l_n,
+r_n]\subsetneqq (c-\varepsilon, c+\varepsilon)\subseteq (c-\alpha,
+c+\beta)\)</span>, 故可以被有限覆盖(1 个), 矛盾.</p>
+<p><a href="六大定理互证.pdf">拓展: 六大定理互相证明!</a></p>
+</blockquote>
+</details>
+<h2 id="常用的等式不等式">常用的等式、不等式</h2>
+<details>
+<summary>
+<b>展开</b>
+</summary>
+<p><img src="equal_nequal1.png" /> <img src="equal_nequal2.png" /> <img
+src="equal_nequal3.png" /></p>
+</details>
+<blockquote>
+<p>这些不等式在后面都用得着.</p>
+</blockquote>
+<h2 id="极限定义">极限定义</h2>
+<p><strong>数列极限</strong>: <span
+class="math inline">\(\{a_n\}\)</span> 为一数列, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists N&gt;0,
+\forall n&gt;N, |a_n-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{n\to \infty}a_n=A\)</span>.</p>
+<p><strong>函数定义1</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\(U(x_0)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta&gt;0,
+\forall x\in U^o(x_0, \delta), |f(x)-A|&lt;\varepsilon\)</span>, 则
+<span class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
+<p><strong>函数定义2</strong>: <span class="math inline">\(f(x)\)</span>
+在 <span class="math inline">\([H, +\infty)\)</span> 有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt; 0, \exists H &gt; 0,
+\forall x &gt; H, |f(x)-A|&lt;\varepsilon\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to +\infty}=A\)</span>.</p>
+<p>上面三个定义, 如果要写成 <span class="math inline">\(\lim
+f=+\infty\)</span> 或 <span class="math inline">\(\lim
+f=-\infty\)</span> 的形式, 则要把 <span
+class="math inline">\(\varepsilon\)</span>
+的限制改为上/下界限制(即任意一个上/下界, <span
+class="math inline">\(f\)</span> 均可超出); 如果 <span
+class="math inline">\(\lim f=\infty\)</span> 则把 <span
+class="math inline">\(f\)</span> 套上个绝对值,转化为上界. (换句话说,
+<span class="math inline">\(\lim f=\infty\)</span> 等价于 <span
+class="math inline">\(\lim |f|=+\infty\)</span>)</p>
+<blockquote>
+<p>一些找 <span class="math inline">\(N,\delta\)</span> 的方法.</p>
+<ol type="1">
+<li><p>直接法, 如 <span class="math inline">\(1/n, q^n,
+\sqrt[n]a\)</span>.</p></li>
+<li><p>二项式定理法, 如 <span class="math inline">\(\sqrt[n]n,
+\frac{poly(n)}{a^n}\)</span>.</p></li>
+<li><p>放缩法. 如 <span class="math inline">\(\sin x &lt; x(x &gt;
+0)\)</span></p></li>
+<li><p>有理化.</p></li>
+</ol>
+<p>善用取整符, 善用限制范围(特别是函数的极限)的方法.</p>
+</blockquote>
+<p><strong>单侧极限</strong>: 极限存在等价于左右极限存在且相等.</p>
+<h2 id="极限的性质">极限的性质</h2>
+<ol type="1">
+<li><p>数列有限项不影响敛散性.</p></li>
+<li><p>极限存在则唯一.</p>
+<blockquote>
+<p>证明: 假设不唯一, 则取两数之差的一半作为 <span
+class="math inline">\(\varepsilon\)</span>.)</p>
+</blockquote></li>
+<li><p>收敛数列有界, 收敛函数局部有界.</p>
+<blockquote>
+<p>证明: 由 <span class="math inline">\(\max\{A+\varepsilon,
+A-\varepsilon\}\)</span> 限制.</p>
+</blockquote></li>
+<li><p>极限的保序性: 若 <span class="math inline">\(f\to A, g\to
+B\)</span>, 且 <span class="math inline">\(f\ge g\)</span>, 则 <span
+class="math inline">\(A\ge B\)</span>; 反之,若 <span
+class="math inline">\(A&gt;B\)</span>, 则在去心邻域内 <span
+class="math inline">\(f&gt;g\)</span>.</p>
+<blockquote>
+<p>证明: 后者可取 <span class="math inline">\((A-B)/2\)</span> 作为
+<span class="math inline">\(\varepsilon\)</span>, 前者可以用反证.</p>
+</blockquote></li>
+<li><p>极限的四则运算. (注意: 需保证得到的两部分极限均存在!)</p></li>
+</ol>
+<details>
+<summary>
+<b>证明方法</b>
+</summary>
+<p><img src="lim_fourop1.png" /> <img src="lim_fourop2.png" /></p>
+</details>
+<ol start="6" type="1">
+<li><p>极限的复合运算: 若 <span class="math inline">\(\lim\limits_{x\to
+x_0}\varphi(x)=b, \lim\limits_{t\to b}g(t)=A\)</span>, 且在 <span
+class="math inline">\(U^o(x_0)\)</span> 内 <span
+class="math inline">\(\varphi(x)\ne b\)</span>, 则 <span
+class="math inline">\(\lim\limits_{x\to
+x_0}g(\varphi(x))=A\)</span>.</p></li>
+<li><p>海涅定理: <span class="math inline">\(\lim\limits_{x\to
+x_0}=A\)</span> 等价于 <span class="math inline">\(\forall\{x_n\},
+x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
+class="math inline">\(\lim\limits_{n\to \infty}f(x_n)=A\)</span>.</p>
+<blockquote>
+<p>常常用它的逆否证明一个函数没有极限</p>
+</blockquote></li>
+</ol>
+<details>
+<summary>
+<b>海涅定理的证明(只证右到左)</b>
+</summary>
+<p><img src="heineproof.png" /></p>
+</details>
+<ol start="8" type="1">
+<li>夹逼定理: 存在 <span class="math inline">\(U^o(x_0,
+\delta)\)</span>, <span class="math inline">\(f(x)\le g(x)\le
+h(x)\)</span> 且 <span class="math inline">\(x\to x_0\)</span> 时 <span
+class="math inline">\(f(x)\to A, h(x)\to A\)</span>, 则 <span
+class="math inline">\(g(x)\to A\)</span>.</li>
+</ol>
+<h2 id="两个重要极限">两个重要极限</h2>
+<p><span class="math inline">\(\lim\limits_{x\to 0}\dfrac{\sin
+x}{x}=1\)</span>, 使用不等式 <span class="math inline">\(\sin x &lt; x
+&lt; \tan x\)</span> 夹逼证得.</p>
+<p><span class="math inline">\(\lim\limits_{x\to
++\infty}(1+\dfrac{1}{x})^x=e\)</span>, 使用 <span
+class="math inline">\((1+\dfrac{1}{n})^n\)</span> 递增证得数列极限, 再与
+<span class="math inline">\((1+\dfrac{1}{n})^{n+1}\)</span>
+夹逼证得函数极限.</p>
+<details>
+<summary>
+<b>数列单调的证明</b>
+</summary>
+<p><img src="e_lim_proof.png" /></p>
+<blockquote>
+<p>这里还有另一种证明:</p>
+<p><span class="math display">\[\begin{aligned}
+a_n&amp;=(1+\dfrac{1}{n})^n
+\\
+&amp;=1+C_n^1\dfrac{1}{n}+C_n^2\dfrac{1}{n^2}+\cdots+C_n^k\dfrac{1}{n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+\\
+&amp;=1+1+\cdots+\dfrac{n(n-1)\cdots(n-k+1)}{k!n^k}+\cdots+C_n^n\dfrac{1}{n^n}
+\\
+&amp;=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n})\cdots(1-\frac{k-1}{n})}{k!}+\cdots+C_n^n\dfrac{1}{n^n}
+\end{aligned}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+a_{n+1}=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n+1})\cdots(1-\frac{k-1}{n+1})}{k!}+\cdots+C_{n+1}^{n+1}\dfrac{1}{(n+1)^{n+1}}
+\]</span></p>
+<p>我们发现 <span class="math inline">\(a_{n+1}\)</span> 项数多,
+且每项都大, 故 <span class="math inline">\(a_{n+1}&gt;a_n\)</span>.</p>
+<p>又</p>
+<p><span class="math display">\[
+\begin{aligned}
+a_n&amp;&lt;1+1+\cdots+\dfrac{1}{k!}+\cdots+\dfrac{1}{n!}
+\\
+&amp;=\sum_{i=1}^n\dfrac{1}{i!}
+\\
+&amp;&lt;1+\sum_{i=1}^n\dfrac{1}{2^{i-1}}
+\\
+&amp;=3-\dfrac{1}{2^{n-1}}
+\end{aligned}
+\]</span></p>
+<p>故单调有界.</p>
+</blockquote>
+</details>
+<details>
+<summary>
+<b>推论: 调和级数的估计</b>
+</summary>
+<p><img src="e_lim_concl1.png" /> <img src="e_lim_concl2.png" /></p>
+</details>
+<h2 id="连续性">连续性</h2>
+<p>定义(函数在某点连续): 若 <span
+class="math inline">\(\lim\limits_{x\to x_0}f(x)=f(x_0)\)</span> 则
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(x_0\)</span> 连续.</p>
+<p>条件: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(U(x_0)\)</span> 有定义, 在 <span
+class="math inline">\(x\to x_0\)</span> 有极限, 极限值等于函数值.</p>
+<p>或者使用增量: <span class="math inline">\(\lim\limits_{\Delta x\to
+0}(f(x_0+\Delta x)-f(x_0))=0\)</span>.</p>
+<p>同时, 有相应的 <span
+class="math inline">\(\varepsilon-\delta\)</span> 语言, 海涅定理等.</p>
+<p>若不满足, 则称为不连续; 若在 <span class="math inline">\(x_0\)</span>
+处不连续, 但左极限、右极限中至少有一个存在, 那我们可以说它间断, <span
+class="math inline">\(x_0\)</span> 即为间断点.</p>
+<details>
+<summary>
+<b>间断点的分类</b>
+</summary>
+<p><img src="discontinuity_point.png" /></p>
+</details>
+<p>连续等价于左连续且右连续.</p>
+<p>初等函数在其定义域中都是连续的.</p>
+<h2 id="连续的性质">连续的性质</h2>
+<ol type="1">
+<li><p>局部有界性</p>
+<blockquote>
+<p>极限的性质</p>
+</blockquote></li>
+<li><p>局部保号性</p>
+<blockquote>
+<p>极限的性质. 往往推广使用, 比如 <span
+class="math inline">\(f(x_0)&gt;0\)</span>, 推出邻域内 <span
+class="math inline">\(f(x)&gt;f(x_0)/2\)</span>.</p>
+</blockquote></li>
+<li><p>四则运算与复合连续</p></li>
+<li><p>严格单调的函数有反函数, 严格单调的连续函数反函数连续.</p></li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<p><img src="inv_p1.png" /> <img src="inv_p2.png" /> <img
+src="inv_p3.png" /></p>
+</details>
+<ol start="5" type="1">
+<li>闭区间连续函数满足有界性定理, 最值定理, 零点定理, 介值定理,
+康托尔定理.</li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><strong>有界性定理</strong></p>
+<ol type="1">
+<li><p>使用有限覆盖定理, 若干个局部有界可以得到一组覆盖,
+取出一有限覆盖可证得.</p></li>
+<li><p>假设无界, 可取出一有界数列 <span
+class="math inline">\(\{x_n\}\)</span> 使得 <span
+class="math inline">\(f(x_n)\to +\infty\)</span>,
+由于有界数列必有收敛子列, 设 <span class="math inline">\(x_{n_k}\to
+x_0\)</span>, 则 <span class="math inline">\(x_0\in [a, b]\)</span>, 则
+<span class="math inline">\(\lim\limits_{k\to
+\infty}f(x_{n_k})=f(x_0)=+\infty\)</span>, 矛盾.</p></li>
+</ol>
+<p><strong>最值定理</strong></p>
+<p>(下证最大值)</p>
+<ol type="1">
+<li><p>可知 <span class="math inline">\(f(x)\)</span> 值域有上确界 <span
+class="math inline">\(A=\sup\limits_{x\in [a, b]}f(x)\)</span>.
+则可取出一有界数列 <span class="math inline">\(\{x_n\}\)</span> 使得
+<span class="math inline">\(A-\frac{1}{n}&lt;f(x_n)\le A\)</span>.
+取其收敛子列 <span class="math inline">\(\{x_{n_k}\}\to x_0\)</span>, 则
+<span class="math inline">\(A-\frac{1}{n_k}&lt;f(x_{n_k})\le A\)</span>,
+又 <span class="math inline">\(\lim\limits_{k\to
+\infty}\left(A-\frac{1}{n_k}\right)=A\)</span>, 则由夹逼定理得 <span
+class="math inline">\(\lim_{k\to \infty}f(x_{n_k})=f(x_0)=A\)</span>. 故
+<span class="math inline">\(A\)</span> 为最大值.</p></li>
+<li><p>假设 <span class="math inline">\(\forall x\in[a, b],
+f(x)&lt;A\)</span>. 由 <span class="math inline">\(x\)</span> 的任意性,
+可得一组覆盖 <span class="math inline">\(\{U(x)\}, x\in[a, b]\)</span>,
+在 <span class="math inline">\(U(x)\)</span> 内, <span
+class="math inline">\(f(x)&lt;A-\varepsilon_x\)</span>. 由有限覆盖定理,
+<span class="math inline">\(f(x)&lt;A-\min_{U(x)\in
+\Sigma&#39;}\varepsilon_x\)</span>, 故 <span
+class="math inline">\(A\)</span> 不为上确界, 矛盾.</p></li>
+</ol>
+<p><strong>零点定理/介值定理</strong></p>
+<p>二分法+闭区间套.</p>
+<p><strong>康托尔定理</strong></p>
+<ol type="1">
+<li><p>引理: 函数的柯西收敛准则: <span
+class="math inline">\(\lim\limits_{x\to x_0}f(x)\)</span> 存在等价于
+<span class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta
+&gt; 0, \forall x_1, x_2\in U^o(x_0, \delta),
+|f(x_1)-f(x_2)|&lt;\delta\)</span>. (使用海涅定理可以证明)</p>
+<p>使用有限覆盖定理即可. 这里需要做点处理, 以避免交叉. 例如,
+可以取海涅定理中的 <span class="math inline">\(\delta\)</span> 为 <span
+class="math inline">\(\delta_x\)</span>, 但以 <span
+class="math inline">\(U(x, \delta_x/2)\)</span> 进行区间套, 最后取得
+<span class="math inline">\(\delta=\min_{U(x,
+\delta_x/2)\in\Sigma&#39;}(\delta_x/2)\)</span>,
+从而避免取到相邻区间没有结论.</p></li>
+<li><p>用反证法, 即 <span class="math inline">\(\exists
+\varepsilon&gt;0, \forall \delta&gt;0, \exists x_1, x_2\in I,
+|x_1-x_2|&lt;\delta, |f(x_1)-f(x_2)|\ge \varepsilon\)</span>. 取 <span
+class="math inline">\(\delta = 1/n\)</span>, 有 <span
+class="math inline">\(\{x&#39;_n\}\)</span> 和 <span
+class="math inline">\(\{x&#39;&#39;_n\}\)</span> 满足 <span
+class="math inline">\(|x&#39;_n-x&#39;&#39;_n|&lt;1/n\)</span> 且 <span
+class="math inline">\(|f(x_1)-f(x_2)|\ge \varepsilon_n\)</span>.
+取有界数列 <span class="math inline">\(\{x&#39;_n\}\)</span>
+的一个收敛子列 <span class="math inline">\(\{x&#39;_{n_k}\}\to
+c\)</span>, 则 <span class="math inline">\(\lim\limits_{k\to
+\infty}x&#39;&#39;_{n_k}=\lim\limits_{k\to\infty}(x&#39;&#39;_{n_k}-x&#39;_{n_k})+\lim\limits_{k\to
+\infty}x&#39;_{n_k}=c\)</span>. 故 <span
+class="math inline">\(\lim\limits_{k\to
+\infty}|f(x&#39;_{n_k})-f(x&#39;&#39;_{n_k})|=|f(c)-f(c)|=0\)</span>,
+矛盾.</p></li>
+</ol>
+</blockquote>
+</details>
+<h2 id="一致连续">一致连续</h2>
+<p>定义: <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上有定义, 若 <span
+class="math inline">\(\forall \varepsilon &gt;0, \exists \delta &gt; 0,
+\forall x_1, x_2\in I, |x_1-x_2|&lt;\delta\)</span>, 有 <span
+class="math inline">\(|f(x_1)-f(x_2)|&lt;\varepsilon\)</span>, 则称
+<span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上一致连续.</p>
+<p><strong>康托尔定理</strong>: 闭区间上的连续函数一致连续.
+证明见上.</p>
+<h2 id="无穷小">无穷小</h2>
+<p>无穷小: 以 <span class="math inline">\(0\)</span> 为极限的变量.</p>
+<p>无穷大: 分为三种, <span class="math inline">\(+\infty\)</span>, <span
+class="math inline">\(-\infty\)</span>, 两者统称为 <span
+class="math inline">\(\infty\)</span>.</p>
+<p><strong>无穷小的性质</strong></p>
+<ol type="1">
+<li><p>若 <span class="math inline">\(\lim f=A\)</span>, 则 <span
+class="math inline">\(f=A+\alpha\)</span>, 其中 <span
+class="math inline">\(\alpha\)</span> 为无穷小.</p></li>
+<li><p>有界性.(数列整体有界, 函数局部有界)</p></li>
+<li><p>无穷小的线性组合是无穷小.</p></li>
+<li><p>无穷小乘有界函数是无穷小.</p></li>
+<li><p>无穷小的乘积是无穷小.</p></li>
+<li><p>无穷小(非零)的倒数是无穷大.</p></li>
+</ol>
+<p><strong>无穷小的比较</strong></p>
+<p>根据 <span class="math inline">\(\lim\limits_{x\to
+x_0}\dfrac{\alpha(x)}{\beta(x)}\)</span> 的值,
+把无穷小直接的关系分为高阶、低阶、等阶, 若值为 <span
+class="math inline">\(1\)</span>, 称为等价. <span
+class="math inline">\(x(x\to 0)\)</span> 称为基准无穷小, 等阶于 <span
+class="math inline">\(x^s(x\to 0)\)</span> 的称为 <span
+class="math inline">\(s\)</span> 阶无穷小. 等价无穷小可替换.</p>
+<p>常见的等价无穷小替换:</p>
+<p><span class="math inline">\(\sin x\sim \tan x \sim \ln(1+x)\sim e^x-1
+\sim \arcsin x\sim \arctan x \sim x\)</span>.</p>
+<p><span class="math inline">\(1-\cos x \sim
+\dfrac{1}{2}x^2\)</span>.</p>
+<p><span class="math inline">\((1+x)^k-1\sim kx\)</span>.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>证明: <span class="math inline">\(\sin x\sim \tan x\sim \arcsin x\sim
+\arctan x\sim x\)</span> 以及 <span class="math inline">\(1-\cos x\sim
+\dfrac{1}{2}x^2\)</span> 根据第一个重要极限可得.</p>
+<p>而</p>
+<p><span class="math display">\[
+\lim_{x\to 0}\dfrac{\ln(1+x)}{x} = \lim_{x\to
+0}\ln{(1+x)^{1/x}}=\ln{\lim_{x\to 0}(1+x)^{1/x}}=\ln e=1.
+\]</span></p>
+<p>对于 <span class="math inline">\(\dfrac{e^x-1}{x}\)</span>, 令 <span
+class="math inline">\(y=e^x-1\)</span>, <span
+class="math inline">\(x=\ln(1+y)\)</span>, 由上可得.</p>
+<p>对于 <span class="math inline">\(\dfrac{(1+x)^k-1}{x}\)</span>, 令
+<span class="math inline">\(y=(1+x)^k-1\)</span>, 则 <span
+class="math inline">\(\ln(1+y)=k\ln(1+x)\)</span>, 则</p>
+<p><span class="math display">\[
+\lim_{x\to 0}\dfrac{(1+x)^k-1}{x}=\lim_{y\to 0}\dfrac{y}{\ln(1+y)}\cdot
+k\cdot\lim_{x\to 0} \dfrac{\ln(1+x)}{x}=k.
+\]</span></p>
+</blockquote>
+</details>
+<h1 id="典题赏析">典题赏析</h1>
+<ol type="1">
+<li>若 <span class="math inline">\(X, Y\)</span> 为 <span
+class="math inline">\(\mathbb R_+\cup\{0\}\)</span> 的子集, 证明 <span
+class="math inline">\(\inf_{x\in X, y\in Y}\{xy\}=\inf_{x\in
+X}\{x\}+\inf_{y\in Y}\{y\}\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>首先, <span class="math inline">\(0\)</span> 是 <span
+class="math inline">\(X, Y\)</span> 的下界, 故 <span
+class="math inline">\(A=\inf_{x\in X}\{x\}\)</span> 和 <span
+class="math inline">\(B=\inf_{y\in Y}\{y\}\)</span> 均存在且 <span
+class="math inline">\(A\ge 0, B\ge 0\)</span>. <span
+class="math inline">\(\forall x\in X, y\in Y, x\ge A, y\ge B\)</span>,
+故 <span class="math inline">\(xy\ge AB\)</span>, <span
+class="math inline">\(AB\)</span> 下界存在, 故 <span
+class="math inline">\(C=\inf_{x\in X, y\in Y}\{xy\}\)</span> 存在, 下证
+<span class="math inline">\(C=AB\)</span>. 由 <span
+class="math inline">\(A, B\)</span> 分别是 <span
+class="math inline">\(X, Y\)</span> 的下确界知, <span
+class="math inline">\(\forall \varepsilon&#39;&gt;0\)</span>, 存在 <span
+class="math inline">\(x_0\in X, A\le x_0&lt;A+\varepsilon&#39;\)</span>,
+存在 <span class="math inline">\(y_0\in Y, B\le
+y_0&lt;B+\varepsilon&#39;\)</span>, 故 <span class="math display">\[
+AB\le
+x_0y_0&lt;(A+\varepsilon&#39;)(B+\varepsilon&#39;)=AB+\varepsilon&#39;(A+B)+\varepsilon&#39;^2.
+\]</span> 于是 <span class="math inline">\(\forall
+\varepsilon&gt;0\)</span>, 取 <span
+class="math inline">\(\varepsilon&#39;\)</span> 满足 <span
+class="math inline">\(\varepsilon&#39;&gt;0\)</span> 且 <span
+class="math inline">\(\varepsilon&#39;(A+B)+\varepsilon&#39;^2=\varepsilon\)</span>,
+故 <span class="math inline">\(x_0y_0&lt;AB+\varepsilon\)</span>, 即证
+<span class="math inline">\(AB\)</span> 为下确界, 即原命题成立.</p>
+</blockquote>
+</details>
+<ol start="2" type="1">
+<li>证明 <span
+class="math inline">\(\lim\limits_{n\to+\infty}\sqrt[n]a=1\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<p><img src="pro2_sol.png" /></p>
+</details>
+<ol start="3" type="1">
+<li>证明 <span
+class="math inline">\(\lim\limits_{n\to+\infty}\sqrt[n]n=1\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<p><img src="pro3_sol.png" /></p>
+</details>
+<ol start="4" type="1">
+<li>证明: 设 <span class="math inline">\(n\to \infty\)</span> 时, <span
+class="math inline">\(a_n\to A, b_n\to B\)</span>, 则(1) <span
+class="math inline">\(\dfrac{\sum_{i=1}^na_i}{n}\to A\)</span>; (2)
+<span class="math inline">\(\dfrac{\sum_{i=1}^na_ib_{n-i+1}}{n}\to
+AB\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>前者即证 <span
+class="math inline">\(\dfrac{\sum_{i=1}^n(a_i-A)}{n}\to 0\)</span>. 对前
+<span class="math inline">\(N\)</span> 项显然为 <span
+class="math inline">\(0\)</span>, <span class="math inline">\(N\)</span>
+之后的项利用 <span class="math inline">\(\epsilon\)</span> 放缩即可.</p>
+<p>后者类似, 分成前、中、后三部分证明.</p>
+</blockquote>
+</details>
+<ol start="5" type="1">
+<li>证明: <span
+class="math inline">\(\lim\limits_{n\to\infty}\dfrac{n}{a^n}=0(a&gt;1)\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>设 <span class="math inline">\(b=a-1\)</span>, 则</p>
+<p><span class="math display">\[
+0\le
+\dfrac{n}{a^n}=\dfrac{n}{(1+b)^n}&lt;\dfrac{n}{\frac{n(n-1)}{2}b^2}=\dfrac{2}{b^2(n-1)}
+\]</span></p>
+<p>夹逼得极限为 <span class="math inline">\(0\)</span>.</p>
+</blockquote>
+</details>
+<ol start="6" type="1">
+<li>证明: 无界数列 <span class="math inline">\(\{x_n\}\)</span>
+必存在子数列 <span class="math inline">\(\{x_{n_k}\}\)</span> 使得 <span
+class="math inline">\(\lim\limits_{k\to
+\infty}x_{n_k}=\infty\)</span></li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>因为无界, 故 <span class="math inline">\(\forall M&gt;0, \exists n,
+|x_n|&gt;M\)</span>.</p>
+<p>依次取 <span class="math inline">\(M=k\)</span>, 故 <span
+class="math inline">\(\exists n_k, |x_{n_k}|&gt;k\)</span>. 可以省略前
+<span class="math inline">\(n_{k-1}\)</span> 项来取, 这样能够保证 <span
+class="math inline">\(n_k\)</span> 递增. 故 <span
+class="math inline">\(\{x_{n_k}\}\)</span> 是趋于无穷大的数列.</p>
+</blockquote>
+</details>
+<ol start="7" type="1">
+<li>证明: <span class="math inline">\(\lim\limits_{x\to +\infty}\arctan
+x=\dfrac{\pi}{2}, \lim\limits_{x\to -\infty}\arctan
+x=-\dfrac{\pi}{2}\)</span></li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>只证前者.</p>
+<p><span class="math display">\[
+|\arctan x - \dfrac{\pi}{2}|=\dfrac{\pi}{2}-\arctan
+x=\operatorname{arccot} x
+\]</span></p>
+<p>欲让上式小于 <span class="math inline">\(\varepsilon\)</span>, 只需
+<span class="math inline">\(x&gt;\cot \varepsilon\)</span> 即可.</p>
+</blockquote>
+</details>
+<ol start="8" type="1">
+<li>设 <span class="math display">\[
+     f(x)=\begin{cases}
+         x, x\, \textnormal{是有理数};
+         \\
+         -x, x\, \textnormal{是无理数}.
+     \end{cases}
+\]</span> 求证 (1) 当 <span class="math inline">\(a\ne 0\)</span> 时,
+<span class="math inline">\(\lim\limits_{x\to a}f(x)\)</span> 不存在;
+(2) 当 <span class="math inline">\(a=0\)</span> 时, <span
+class="math inline">\(\lim\limits_{x\to a}f(x)=0\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<ol type="1">
+<li><p>取有理数列 <span class="math inline">\(\{a_n\}\to a\)</span>, 则
+<span class="math inline">\(\{f(a_n)\}=\{a_n\}\to a\)</span>. 取无理数列
+<span class="math inline">\(\{a_n\}\to a\)</span>, 则 <span
+class="math inline">\(\{f(a_n)\}=\{-a_n\}\to -a\)</span>.</p></li>
+<li><p>对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 取
+<span class="math inline">\(\delta=\varepsilon\)</span>, 当 <span
+class="math inline">\(0&lt;|x-0|&lt;\delta\)</span>, 有 <span
+class="math inline">\(|f(x)-0|=|x|&lt;\varepsilon\)</span>, 故极限为
+<span class="math inline">\(0\)</span>.</p></li>
+</ol>
+</blockquote>
+</details>
+<ol start="9" type="1">
+<li>证明: <span class="math inline">\(\lim\limits_{x\to
++\infty}f(x)=+\infty \Leftrightarrow \forall x_n:
+x_n\to+\infty(n\to\infty)\)</span> 有 <span class="math display">\[
+    \lim\limits_{n\to\infty}f(x_n)=+\infty.
+\]</span></li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>非常类似于海涅定理的证明. 左推右显然, 右推左反证, 即反设 <span
+class="math inline">\(\exists H&gt;0, \forall G&gt;0, \exists x &gt; G,
+f(x)\le H\)</span>. 取 <span class="math inline">\(G=n\)</span>, 则存在
+<span class="math inline">\(x_n&gt;n, f(x_n)\le H\)</span>. 故我们找到
+<span class="math inline">\(\{x_n\}\to +\infty\)</span> 但是 <span
+class="math inline">\(f(x_n)\)</span> 不趋于 <span
+class="math inline">\(+\infty\)</span>.</p>
+</blockquote>
+</details>
+<ol start="10" type="1">
+<li>函数 <span class="math inline">\(f\)</span> 定义在 <span
+class="math inline">\((0, 1)\)</span> 内为 <span class="math display">\[
+    f(x)=\begin{cases}
+   0,\quad x\,\textnormal{为无理数},
+   \\
+   \dfrac{1}{q}, x=\dfrac{p}{q}, p,q,\in \mathbb Z, \dfrac{p}{q}
+\textnormal{是最简分数}.
+    \end{cases}
+   \]</span> 证明: 若 <span class="math inline">\(a\in(0, 1)\)</span>,
+则 <span class="math inline">\(\lim\limits_{x\to a}f(x)=0\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 要让
+<span class="math inline">\(|f(x)|&lt;\varepsilon\)</span>, 有两种情况.
+若 <span class="math inline">\(x\)</span> 是无理数, 显然成立; 若 <span
+class="math inline">\(x\)</span> 是有理数且为 <span
+class="math inline">\(\dfrac{p}{q}\)</span>, 则有 <span
+class="math inline">\(\dfrac{1}{q}&lt;\varepsilon\)</span>, 即 <span
+class="math inline">\(q&gt;\dfrac{1}{\varepsilon}\)</span>. 也就是说,
+<span class="math inline">\(x\)</span> 不可取到形如 <span
+class="math inline">\(\dfrac{p}{q}\)</span> 且 <span
+class="math inline">\(q\le \dfrac{1}{\varepsilon}\)</span> 的有理数.
+这样的有理数(除去 <span class="math inline">\(a\)</span> 点)在 <span
+class="math inline">\((0, 1)\)</span> 内仅有有限个, 设为 <span
+class="math inline">\(x_1, x_2, \cdots, x_m\)</span>, 取 <span
+class="math inline">\(\delta=\min_{1\le i\le m}|a-x_i|\)</span>,
+就可以避开这些有理数, 故可满足条件.</p>
+</blockquote>
+</details>
+<ol start="11" type="1">
+<li>证明 <span
+class="math inline">\(\lim\limits_{n\to+\infty}x_n=A\Leftrightarrow
+\{x_n\}\)</span> 的任意子数列都以 <span class="math inline">\(A\)</span>
+为极限.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>左推右显然, 右推左可以用反证, 非常类似海涅定理的证明. 设 <span
+class="math inline">\(\exists \varepsilon, \forall N&gt;0, \exists
+n&gt;N, |x_n-A|\ge \varepsilon\)</span>. 取 <span
+class="math inline">\(N=k\)</span>, 则 <span
+class="math inline">\(\exists n_k&gt;k\)</span>, <span
+class="math inline">\(|x_{n_k}-A|\ge\varepsilon\)</span>.
+这里还是得认真考虑一下 <span class="math inline">\(n_k\)</span>
+递增的问题, 即去除前 <span class="math inline">\(n_{k-1}\)</span>
+项后再考虑. 后面的证明就显然了.</p>
+</blockquote>
+</details>
+<ol start="12" type="1">
+<li>求 <span class="math inline">\(\lim\limits_{n\to
+\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n}\)</span>, 其中 <span
+class="math inline">\(k\)</span> 确定, <span
+class="math inline">\(a_i\ge 0\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>设 <span class="math inline">\(M = \max_{1\le i\le k}a_i\)</span>,
+故有:</p>
+<p><span class="math display">\[
+\sqrt[n]{M^n}\le \sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n} \le \sqrt[n]{nM^n}
+\]</span> 夹逼得原极限等于 <span class="math inline">\(M\)</span>.</p>
+</blockquote>
+</details>
+<ol start="13" type="1">
+<li><p>求 <span class="math inline">\(n\to+\infty\)</span> 时,
+下列各式的极限: (1) <span class="math inline">\(na^n(|a|&lt;1)\)</span>;
+(2) <span class="math inline">\(\dfrac{a^n}{n!}\)</span> (<span
+class="math inline">\(a\)</span> 是常数); (3) <span
+class="math inline">\(\dfrac{n^\mu}{a^n}\)</span> (<span
+class="math inline">\(a&gt;1,\mu&gt;0\)</span> 是常数).</p></li>
+<li><p>设 <span class="math inline">\(a&gt;1\)</span>, 求证: (1) <span
+class="math inline">\(\lim\limits_{x\to +\infty}\dfrac{x^\mu}{a^x}=0(\mu
+&gt; 0)\)</span>; (2) <span class="math inline">\(\lim\limits_{x\to
++\infty}\dfrac{\log_ax}{x^\mu}=0(\mu&gt;0)\)</span>; (3) <span
+class="math inline">\(\lim\limits_{x\to 0+}x^\beta\log_ax=0(\beta &gt;
+0)\)</span></p></li>
+<li><p>设 <span class="math inline">\(\sup\limits_{x\in
+X}\{x\}=\beta\)</span>, 试证从 <span class="math inline">\(X\)</span>
+中可选取数列 <span class="math inline">\(\{x_n\}\)</span>, 使 <span
+class="math inline">\(\lim\limits_{n\to\infty}x_n=\beta\)</span>. (<span
+class="math inline">\(\beta\)</span> 换成 <span
+class="math inline">\(+\infty\)</span> 也成立)</p></li>
+<li><p>证明 <span class="math display">\[
+    \left(\dfrac{n}{e}\right)^n&lt;n!&lt;e\left(\dfrac{n}{2}\right)^n
+\]</span></p></li>
+<li><p>证明: 若 <span class="math inline">\(f(x)\in C(\mathbb
+R)\)</span> 且函数值均为有理数, 求证其为常数函数.</p></li>
+<li><p>设 <span class="math inline">\(x_1, a&gt;0\)</span>, <span
+class="math inline">\(x_{n+1}=\dfrac{1}{2}\left(x_n+\dfrac{a}{x_n}\right)\)</span>,
+求 <span class="math inline">\(\lim\limits_{n\to
+\infty}x_n\)</span>.</p></li>
+<li><p>设 <span class="math inline">\(x_1=1,
+x_{n+1}=\dfrac{1}{1+x_n}\)</span>, 求 <span
+class="math inline">\(\lim\limits_{n\to\infty}x_n\)</span>.</p></li>
+<li><p>设 <span
+class="math inline">\(\lim\limits_{x\to\infty}\left(\dfrac{x^2}{x+1}-ax-b\right)=0\)</span>,
+求 <span class="math inline">\(a, b\)</span>.</p></li>
+<li><p>设 <span class="math inline">\(f(x)\)</span> 在区间 <span
+class="math inline">\([0, 1]\)</span> 上连续, <span
+class="math inline">\(f(0)=0, f(1)=1\)</span>, 求证: 存在 <span
+class="math inline">\(\xi\in(0, 1)\)</span>, 使得 <span
+class="math display">\[
+    f\left(\xi-\dfrac{1}{3}\right)=f(\xi)-\dfrac{1}{3}.
+\]</span></p></li>
+</ol>
+<h1 id="方法总结">方法总结</h1>
+<h2 id="比值判别法">比值判别法</h2>
+<details>
+<summary>
+<b>展开</b>
+</summary>
+<p><img src="quat_judge_method.png" /></p>
+</details>
+]]></content>
+      <categories>
+        <category>课程笔记</category>
+        <category>微积分</category>
+      </categories>
+      <tags>
+        <tag>微积分</tag>
+        <tag>课程笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021 CCPC Harbin 解题报告</title>
     <url>/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/</url>
     <content><![CDATA[<p>比赛链接：<a href="https://codeforces.com/gym/103447">link</a></p>
@@ -166,10 +981,32 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
-    <title>2023-01-13 日记</title>
-    <url>/2023/01/13/2023-01-13-%E6%97%A5%E8%AE%B0/</url>
+    <title>2023-01-16 日记</title>
+    <url>/2023/01/16/2023-01-16-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="b17cf0a2fb0abfa08692f9e3212a4d357da4e896266f8f6dad4d29c2446c3fe5">ebfac267c39067e061265010f63356e64680d85664516099e48037fcf686813774ab9f27e1f8d8cfdf434d3025c923651d1615c4123937e26247442178aa79445fb8e67077f0df8f9fa383fdb299940d6288146a59debecf41cd4e8eab71074ee7a1514ca1bdc56545f7a1ef7dab8ee724f2b8a2450bac551dc40b9a5f01bcf7d2664c72b2cdccaabfca4f824fd2ed480a5bebc9711008de3dee7626818addaf5780dc7d7ba5320474a05cad55ef9e6e88cf4505946b1d7163797d175e9caf7f333318c62823ae0f40209ace82fb01efba5ce997838e5657dd2323ba3abe0d3bc0d71d7cd4b2717b335ae0ad582ec9adb3ad1f938afc5e8d7f37bb01b252060a1bbd29479fb0b634ffa1e64cf90a3192f364d3cee81939133713323cc812de0918e43b79358ea817a5597d7e12740fc91edc10839f4208c82826cbafe18be20cfbfbe3fe9c0651ac6b6eaff90c3dcc34f2dbe9994e08952024c1d03db7ce677d38bc6d3657833eba3092f642c5a9abc6b8a82ad7d5d60ea7d4f3dc0579ebc40a2109b1084e7551a033d7b1121ab7700e3765cd095079bdf9d2fdb45f09cc692738e6fdb47d6aea804ecaea0349231a2875e33042917f9e43ac018657a6c58e515cbdca5be598166eaea99f1414bb8ac74c1984a10620ac71ca2a3717d01b405bf348124d2b73056f544ff7825ea9480330604030c668cfac4dd1c8b69a4da512</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="850d7c477ae43a74db499504cca83926223e6c850af7980d365379b017307987">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c58980fa322d814a468ffa522441e3818c8845aff97cf6658c699e1c21eedca79aeaa28b489aa3c8771360028e605653ea88de573536581f42aaf1d1edc245fe519b56f8103ffee1768ce627683e23d582a67bb8b8886fbe37f11646e265e778c82fccd0470af66e770c89f30be58b3fb59d47a2d238bd8f2a831fae42988aab563815a7230a0db283d79604764c4e51f993f8e5c72ffd918a7d47ea7f6f9e07deec8116c5b573ab8e7b459a48989a11ec19806127d81dd374569e23373bdf26f3aad3d086495677092a423c32cef4b921dcf9cb17fe0c6d44f348b0193ef3ea1b80e1da1276079038f233053e56a1bb5f4cad177de7eab64d0dbb07eafd67a5422e63ecfd26742d1a65dd4245e0691955df727a2dd26290d560a9c8fd9c8a8b7656773cfb2df1267e8b4945815ad26536b940ca6d27424c64f1c967e25904e4993cc94c30d24ff7ab0c210ef885e8f1a271167f75c0ebed24f4287c36c5bf74d61b6dc00b66b7a5255b36a2928f2ce1fd42a9aa29d3fbbd087d10fabe4cf85de49b5d716183396ba0778adb717fa52c63ceaa213c3ff73b4b20f95615f32b853530c30961198449b8402103e767641685e5e78c1148b8325e46a382b6ca8438f0e691e24549e1b65060858b4e5d9a7ccf1c3ca8ad4f34f768239d227f7c29eac747383b2756f41452a64a9496fcb58429cf2c13ba9305a47f597f603716333688489b70286b0ecef75e4fba448cedd966d5fb010c973ed793177b3d90c984031d0c80f429d84e431dcf9cb1ff93678a04081444fc0145c5e85f793ff4257c45d27bfaf6298b15cf0fbcf7f718144749c05</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Please input the password.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023-01-15 日记</title>
+    <url>/2023/01/15/2023-01-15-%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="254c9e7d626520c2fece1c3676161d590baf2970d72f453a87475f6bfce9d7e6">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c5858fd3734ddbd0f7caf5b0ad0c765827dacf6db4dda92b1f666e8d9461c97d7455e157302127df49917db0d108fa5769242a94c9441fffdbbaccf6a8238848180155a565048f9a20253873fa866fa568b07145b213e9e061ac635b70c14811e6fe51148e5f90c29af43578ced3e95349b6a7daa826f4e33f751dbf32a74a7e3666d27ccb2b08fc900a509a48acb6973dbf2676760be1fab29dafc597ffd0908a4a96cd7e1d4a73237869beceb1771a58d4c3063ad31f4701092de973a668916eb8c780e57cbf5b31d11c3c7157685d90fef5dc0cc4ec12faa7291155b051c6aafb62d2d3df49baf9897b61798ee83b993ee8a1a239015f6782c5cf14b245c5eb66656c572fee6a866e448d6aeabc5bd58a8f4fca7de3e611a7e1d94afc77edf1731d7f7c323007626c15ae5b62fbe7c21aa151d6c0ec4893cb186611c0feadb1dfeff0e40286016df996f70140620b4ad89c4af2cf088dcb334d92cd1a31cff20183ff3e5a3b6b24f97af04f7e86c85f78b52a67e76bbb79fcb0f565ede153d71dcc35007983bb964d2df7d463d327bd96f5186b19e8d66e413d8d9a53d658dcabe84f6333da5fb0f678b3305e938837f953ac95df1835cef05e45799b89b3fb4ef5949782db04f0d503cf91e35160e6c57d1b4aa63e72f0e57cdb6cc8cef69a42cdffbc12c7d6551bb0d59c3d911e431fe7981f9eba56ae8ff6369c8fc5829266a04c78666b95405dbb19d608137811650af50495b28007630552a50608cff467999fdb969b39513ad851266e01d6aa7fe2a358b85a63809ca2421f5fb023633b0ad216aa5ddb2e22ea29cefe4be3090ac28dcc5253f6eda57c0a8449908ee67beeecc5066de8aea6c521ae4d96d922662ca30481ca7c562d3dddf541c687990d8dd3999ebf51e98c30ce2ac281580a0ce8696ce7276234d9ddcfa3a3ca8fd6506a7c0a554fa71e95d7923dc6815c96d16872cf4d9bdc66473173bbce01b72ae6cbf5c0c2d5a3a53646fd5c4faef98f15ea695353df4f3a9b58496e003663a8f9d5dda980b38c71bc1a9ae1eabc9bfff698c63798c7f9b6c041e7c1e63fb03e9df9d9473ed0c896f247728209023705dca5a5139b244900bedae89761301fa14338aad4c4cc6563826c2794b38838e5180bb179b33d1617334b992f905908f8c140991fd71a0e5c74e597226a21c1a315f5d4db312792e5e522ef0ab8246bdb36dfb46b443978894b960456605d80c4aa2e5caffb23c5f1d71324acba9205a76</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -210,631 +1047,10 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
-    <title>博客简介</title>
-    <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>微积分（一）总结 PART I</title>
-    <url>/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
-    <content><![CDATA[<p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
-<span id="more"></span>
-<h1 id="分析基础">分析基础</h1>
-<h2 id="界-确界">界, 确界</h2>
-<p>(上, 下)界, 有界.</p>
-<p><strong>确界</strong>: 若 <span class="math inline">\(\alpha\)</span>
-是 <span class="math inline">\(A\)</span> 的上确界(即 <span
-class="math inline">\(\alpha = \sup A\)</span>), 那么:</p>
-<ol type="1">
-<li><p>一方面, <span class="math inline">\(\alpha\)</span> 是上界, 即
-<span class="math inline">\(\forall x\in A, x \le
-\alpha\)</span>.</p></li>
-<li><p>另一方面, <span class="math inline">\(\forall \varepsilon&gt;0,
-\exists x_0\in A\)</span> 使得 <span
-class="math inline">\(\alpha-\varepsilon&lt;x_0\)</span>.
-(不可再小)</p></li>
-</ol>
-<blockquote>
-<p>证明与上下确界有关的不等式需要根据定义, 如证明 <span
-class="math inline">\(\sup\limits_{x\in X, y\in
-Y}\{x+y\}=\sup\limits_{x\in X}\{x\}+\sup\limits_{y\in Y}\{y\}\)</span>
-等式子.</p>
-</blockquote>
-<h2 id="几大互相等价的定理">几大互相等价的定理</h2>
-<p><strong>1. 实数的连续性原理</strong></p>
-<p>若 <span class="math inline">\(A, B\)</span> 为非空实数集, 且 <span
-class="math inline">\(\forall x\in A, \forall y\in B, x\le y\)</span>,
-则 <span class="math inline">\(\exists c\in \mathbb R\)</span> 使得
-<span class="math inline">\(\forall x\in A, \forall y\in B, x\le c\le
-y\)</span>.</p>
-<p><strong>2. 确界存在定理</strong></p>
-<p>若 <span class="math inline">\(A\)</span> 非空有上(下)界, 则 <span
-class="math inline">\(A\)</span> 必有上(下)确界.</p>
-<p><strong>3. 单调有界定理</strong></p>
-<p>若 <span class="math inline">\(\{a_n\}\)</span>
-单调递增/减且有上/下界, 则 <span class="math inline">\(\{a_n\}\)</span>
-收敛(为 <span class="math inline">\(\sup a_n\)</span> / <span
-class="math inline">\(\inf a_n\)</span>)</p>
-<p><strong>4. 闭区间套定理</strong></p>
-<p>若 <span class="math inline">\(\{[a_n, b_n]\}\)</span> 是一列闭区间,
-且满足 <span class="math inline">\([a_1, b_1]\supset [a_2,
-b_2]\supset\cdots \supset [a_n, b_n]\supset \cdots\)</span>, 及 <span
-class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span>.
-则存在唯一 <span class="math inline">\(c\in [a_n, b_n]\)</span>, 使得
-<span class="math inline">\(\lim\limits_{n\to
-\infty}a_n=\lim\limits_{n\to\infty}b_n=c\)</span>.</p>
-<p><strong>5. 收敛子列定理</strong></p>
-<p>有限数列必存在收敛子列.(但是收敛的值不唯一)</p>
-<p><strong>6. 柯西收敛准则</strong></p>
-<p><span class="math inline">\(\{a_n\}\)</span> 收敛等价于 <span
-class="math inline">\(\forall \varepsilon &gt; 0, \exists N &gt; 0,
-\forall m, n&gt;N, |a_m-a_n|&lt;\varepsilon\)</span>.</p>
-<p><strong>7. 有限覆盖定理</strong></p>
-<p>闭区间的一个覆盖必存在有限子覆盖.</p>
-<details>
-<summary>
-<b>一些互相证明</b>
-</summary>
-<p>下面是上课讲的:</p>
-<p><strong>1 推 2</strong> 非空数集与它的上界组成的集合之间,
-由实数的连续性原理, 夹着一个 <span class="math inline">\(c\)</span>,
-一方面 <span class="math inline">\(\forall x\in X, x\le c\)</span>, 故
-<span class="math inline">\(c\)</span> 为上界; 反设 <span
-class="math inline">\(c\)</span> 不是上确界, 那么存在 <span
-class="math inline">\(\varepsilon &gt; 0, \forall x\in X, x\le
-c-\varepsilon\)</span>, 故 <span
-class="math inline">\(c-\varepsilon\)</span> 也是上界, 故 <span
-class="math inline">\(c\le c-\varepsilon\)</span>, 矛盾.</p>
-<p><strong>2 推 3</strong> (证递增上界的情况)数列有上界则有上确界 <span
-class="math inline">\(A\)</span>, 则对任意 <span
-class="math inline">\(\varepsilon&gt;0\)</span> 存在 <span
-class="math inline">\(N\)</span>, 使得 <span
-class="math inline">\(A-\varepsilon&lt; a_N\le A\)</span>, 故当 <span
-class="math inline">\(n&gt;N\)</span> 时 <span
-class="math inline">\(A-\varepsilon&lt;a_N\le a_n\le
-A&lt;A+\varepsilon\)</span>, 故极限存在为 <span
-class="math inline">\(A\)</span>.</p>
-<p><strong>3 推 4</strong> <span class="math inline">\(\{a_n\}\)</span>
-递增且上界存在为 <span class="math inline">\(b_1\)</span>, <span
-class="math inline">\(\{b_n\}\)</span> 递减且下界存在为 <span
-class="math inline">\(a_1\)</span>, 分别设两数列极限为 <span
-class="math inline">\(A, B\)</span>. 由 <span
-class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span> 可得
-<span class="math inline">\(A=B=c\)</span>, 且 <span
-class="math inline">\(\forall n, a_n\le c\le b_n\)</span>. 设另有 <span
-class="math inline">\(c&#39;\)</span> 使得 <span
-class="math inline">\(a_n\le c&#39;\le b_n\)</span>, 则 <span
-class="math inline">\(|c-c&#39;|\le b_n-a_n\)</span>, 由极限保号性得
-<span class="math inline">\(|c-c&#39;|\le 0\)</span>, 故 <span
-class="math inline">\(c=c&#39;\)</span>.</p>
-<p><strong>4 推 5</strong> 设数列为 <span
-class="math inline">\(\{x_n\}\)</span>, 从 <span
-class="math inline">\([-M, M]\)</span>
-开始使用二分法(即套用闭区间套定理), 构造得到区间套 <span
-class="math inline">\([l_n, r_n]\)</span>,
-因为左右区间至少有一个是无穷多项, 选择无穷多项的一边一直下去,
-最后收敛到一个点 <span class="math inline">\(c\)</span>. 因为每个 <span
-class="math inline">\([l_n, r_n]\)</span> 中都有无穷多项,
-所以我们如下构造 <span class="math inline">\(a_{n_k}\)</span>: 在 <span
-class="math inline">\([l_k, r_k]\)</span> 的范围内挑选一个 <span
-class="math inline">\(a_{n_k}\)</span>, 满足 <span
-class="math inline">\(n_k&gt;n_{k-1}\)</span>. 这是显然可以做到的, 因为
-<span class="math inline">\(n_{k-1}\)</span> 前只有有限项. 于是我们得到
-<span class="math inline">\(l_k\le a_{n_k}\le r_k\)</span>, 取极限得
-<span class="math inline">\(a_{n_k}\to c\)</span>.</p>
-<p><strong>5 推 6</strong> 证明柯西收敛准则: 一方面, 左推右,
-由绝对值不等式显然. 另一方面, 右推左. 取 <span
-class="math inline">\(\varepsilon_0=1\)</span>, 则存在 <span
-class="math inline">\(N_0&gt;0, \forall n&gt;N_0,
-|a_n-a_{N_0+1}|&lt;1\)</span>, 故可得 <span
-class="math inline">\(\{a_n\}\)</span> 有界, 故有收敛子列 <span
-class="math inline">\(\{a_{n_k}\}\to A\)</span>. 于是对任意 <span
-class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
-class="math inline">\(N&gt;0\)</span>, 因 <span
-class="math inline">\(a_{n_k}\)</span> 无穷多项, 故存在 <span
-class="math inline">\(n_{k_0}&gt;N\)</span>, 满足 <span
-class="math inline">\(\forall n&gt;N\)</span>, <span
-class="math inline">\(|a_n-a_{n_{k_0}}|&lt;\varepsilon/2\)</span>.
-然后由绝对值不等式易得.</p>
-<p><strong>4 推 7</strong> 反证 <span class="math inline">\([a,
-b]\)</span> 不能够有限覆盖, 二分, 则左右区间至少有一个不能够有限覆盖.
-得到一系列 <span class="math inline">\([l_n,
-r_n]\)</span>(闭区间套)均不能被有限覆盖, 由闭区间套定理可得 <span
-class="math inline">\(l_n, r_n\)</span> 收敛于 <span
-class="math inline">\(c\)</span>. 取覆盖 <span
-class="math inline">\(c\)</span> 的覆盖 <span
-class="math inline">\((c-\alpha, c+\beta)\)</span>, 取 <span
-class="math inline">\(\varepsilon=\min(\alpha, \beta)\)</span>, 那么存在
-<span class="math inline">\(N&gt;0\)</span>, 当 <span
-class="math inline">\(n&gt;N\)</span>, <span class="math inline">\([l_n,
-r_n]\subsetneqq (c-\varepsilon, c+\varepsilon)\subseteq (c-\alpha,
-c+\beta)\)</span>, 故可以被有限覆盖(1 个), 矛盾.</p>
-<p><a href="六大定理互证.pdf">拓展: 六大定理互相证明!</a></p>
-</details>
-<h2 id="常用的等式不等式">常用的等式、不等式</h2>
-<details>
-<summary>
-<b>展开</b>
-</summary>
-<p><img src="equal_nequal1.png" /> <img src="equal_nequal2.png" /> <img
-src="equal_nequal3.png" /></p>
-</details>
-<blockquote>
-<p>这些不等式在后面都用得着.</p>
-</blockquote>
-<h2 id="极限定义">极限定义</h2>
-<p><strong>数列极限</strong>: <span
-class="math inline">\(\{a_n\}\)</span> 为一数列, 若 <span
-class="math inline">\(\forall \varepsilon &gt; 0, \exists N&gt;0,
-\forall n&gt;N, |a_n-A|&lt;\varepsilon\)</span>, 则 <span
-class="math inline">\(\lim\limits_{n\to \infty}a_n=A\)</span>.</p>
-<p><strong>函数定义1</strong>: <span class="math inline">\(f(x)\)</span>
-在 <span class="math inline">\(U(x_0)\)</span> 有定义, 若 <span
-class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta&gt;0,
-\forall x\in U^o(x_0, \delta), |f(x)-A|&lt;\varepsilon\)</span>, 则
-<span class="math inline">\(\lim\limits_{x\to x_0}=A\)</span>.</p>
-<p><strong>函数定义2</strong>: <span class="math inline">\(f(x)\)</span>
-在 <span class="math inline">\([H, +\infty)\)</span> 有定义, 若 <span
-class="math inline">\(\forall \varepsilon &gt; 0, \exists H &gt; 0,
-\forall x &gt; H, |f(x)-A|&lt;\varepsilon\)</span>, 则 <span
-class="math inline">\(\lim\limits_{x\to +\infty}=A\)</span>.</p>
-<p>上面三个定义, 如果要写成 <span class="math inline">\(\lim
-f=+\infty\)</span> 或 <span class="math inline">\(\lim
-f=-\infty\)</span> 的形式, 则要把 <span
-class="math inline">\(\varepsilon\)</span>
-的限制改为上/下界限制(即任意一个上/下界, <span
-class="math inline">\(f\)</span> 均可超出); 如果 <span
-class="math inline">\(\lim f=\infty\)</span> 则把 <span
-class="math inline">\(f\)</span> 套上个绝对值,转化为上界. (换句话说,
-<span class="math inline">\(\lim f=\infty\)</span> 等价于 <span
-class="math inline">\(\lim |f|=+\infty\)</span>)</p>
-<blockquote>
-<p>一些找 <span class="math inline">\(N,\delta\)</span> 的方法.</p>
-<ol type="1">
-<li><p>直接法, 如 <span class="math inline">\(1/n, q^n,
-\sqrt[n]a\)</span>.</p></li>
-<li><p>二项式定理法, 如 <span class="math inline">\(\sqrt[n]n,
-\frac{poly(n)}{a^n}\)</span>.</p></li>
-<li><p>放缩法. 如 <span class="math inline">\(\sin x &lt; x(x &gt;
-0)\)</span></p></li>
-<li><p>有理化.</p></li>
-</ol>
-<p>善用取整符, 善用限制范围(特别是函数的极限)的方法.</p>
-</blockquote>
-<p><strong>单侧极限</strong>: 极限存在等价于左右极限存在且相等.</p>
-<h2 id="极限的性质">极限的性质</h2>
-<ol type="1">
-<li><p>数列有限项不影响敛散性.</p></li>
-<li><p>极限存在则唯一.</p>
-<blockquote>
-<p>证明: 假设不唯一, 则取两数之差的一半作为 <span
-class="math inline">\(\varepsilon\)</span>.)</p>
-</blockquote></li>
-<li><p>收敛数列有界, 收敛函数局部有界.</p>
-<blockquote>
-<p>证明: 由 <span class="math inline">\(\max\{A+\varepsilon,
-A-\varepsilon\}\)</span> 限制.</p>
-</blockquote></li>
-<li><p>极限的保序性: 若 <span class="math inline">\(f\to A, g\to
-B\)</span>, 且 <span class="math inline">\(f\ge g\)</span>, 则 <span
-class="math inline">\(A\ge B\)</span>; 反之,若 <span
-class="math inline">\(A&gt;B\)</span>, 则在去心邻域内 <span
-class="math inline">\(f&gt;g\)</span>.</p>
-<blockquote>
-<p>证明: 后者可取 <span class="math inline">\((A-B)/2\)</span> 作为
-<span class="math inline">\(\varepsilon\)</span>, 前者可以用反证.</p>
-</blockquote></li>
-<li><p>极限的四则运算. (注意: 需保证得到的两部分极限均存在!)</p></li>
-</ol>
-<details>
-<summary>
-<b>证明方法</b>
-</summary>
-<p><img src="lim_fourop1.png" /> <img src="lim_fourop2.png" /></p>
-</details>
-<ol start="6" type="1">
-<li><p>极限的复合运算: 若 <span class="math inline">\(\lim\limits_{x\to
-x_0}\varphi(x)=b, \lim\limits_{t\to b}g(t)=A\)</span>, 且在 <span
-class="math inline">\(U^o(x_0)\)</span> 内 <span
-class="math inline">\(\varphi(x)\ne b\)</span>, 则 <span
-class="math inline">\(\lim\limits_{x\to
-x_0}g(\varphi(x))=A\)</span>.</p></li>
-<li><p>海涅定理: <span class="math inline">\(\lim\limits_{x\to
-x_0}=A\)</span> 等价于 <span class="math inline">\(\forall\{x_n\},
-x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
-class="math inline">\(\lim\limits_{n\to \infty}f(x_n)=A\)</span>.</p>
-<blockquote>
-<p>常常用它的逆否证明一个函数没有极限</p>
-</blockquote></li>
-</ol>
-<details>
-<summary>
-<b>海涅定理的证明(只证右到左)</b>
-</summary>
-<p><img src="heineproof.png" /></p>
-</details>
-<ol start="8" type="1">
-<li>夹逼定理: 存在 <span class="math inline">\(U^o(x_0,
-\delta)\)</span>, <span class="math inline">\(f(x)\le g(x)\le
-h(x)\)</span> 且 <span class="math inline">\(x\to x_0\)</span> 时 <span
-class="math inline">\(f(x)\to A, h(x)\to A\)</span>, 则 <span
-class="math inline">\(g(x)\to A\)</span>.</li>
-</ol>
-<h2 id="两个重要极限">两个重要极限</h2>
-<p><span class="math inline">\(\lim\limits_{x\to 0}\dfrac{\sin
-x}{x}=1\)</span>, 使用不等式 <span class="math inline">\(\sin x &lt; x
-&lt; \tan x\)</span> 夹逼证得.</p>
-<p><span class="math inline">\(\lim\limits_{x\to
-+\infty}(1+\dfrac{1}{x})^x=e\)</span>, 使用 <span
-class="math inline">\((1+\dfrac{1}{n})^n\)</span> 递增证得数列极限, 再与
-<span class="math inline">\((1+\dfrac{1}{n})^{n+1}\)</span>
-夹逼证得函数极限.</p>
-<details>
-<summary>
-<b>数列单调的证明</b>
-</summary>
-<p><img src="e_lim_proof.png" /></p>
-<p>这里还有另一种证明:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    a_n&amp;=(1+\dfrac{1}{n})^n
-    \\
-    &amp;=1+C_n^1\dfrac{1}{n}+C_n^2\dfrac{1}{n^2}+\cdots+C_n^k\dfrac{1}{n^k}+\cdots+C_n^n\dfrac{1}{n^n}
-    \\
-    &amp;=1+1+\cdots+\dfrac{n(n-1)\cdots(n-k+1)}{k!n^k}+\cdots+C_n^n\dfrac{1}{n^n}
-    \\
-    &amp;=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n})\cdots(1-\frac{k-1}{n})}{k!}+\cdots+C_n^n\dfrac{1}{n^n}
-\end{aligned}
-\]</span></p>
-<p>则</p>
-<p><span class="math display">\[
-a_{n+1}=1+1+\cdots+\dfrac{1\cdot(1-\frac{1}{n+1})\cdots(1-\frac{k-1}{n+1})}{k!}+\cdots+C_{n+1}^{n+1}\dfrac{1}{(n+1)^{n+1}}
-\]</span></p>
-<p>我们发现 <span class="math inline">\(a_{n+1}\)</span> 项数多,
-且每项都大, 故 <span class="math inline">\(a_{n+1}&gt;a_n\)</span>.</p>
-<p>又</p>
-<p><span class="math display">\[
-\begin{aligned}
-    a_n&amp;&lt;1+1+\cdots+\dfrac{1}{k!}+\cdots+\dfrac{1}{n!}
-    \\
-    &amp;=\sum_{i=1}^n\dfrac{1}{i!}
-    \\
-    &amp;&lt;1+\sum_{i=1}^n\dfrac{1}{2^{i-1}}
-    \\
-    &amp;=3-\dfrac{1}{2^{n-1}}
-\end{aligned}
-\]</span></p>
-<p>故单调有界.</p>
-</details>
-<details>
-<summary>
-<b>推论: 调和级数的估计</b>
-</summary>
-<p><img src="e_lim_concl1.png" /> <img src="e_lim_concl2.png" /></p>
-</details>
-<h2 id="连续性">连续性</h2>
-<p>定义(函数在某点连续): 若 <span
-class="math inline">\(\lim\limits_{x\to x_0}f(x)=f(x_0)\)</span> 则
-<span class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(x_0\)</span> 连续.</p>
-<p>条件: <span class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(U(x_0)\)</span> 有定义, 在 <span
-class="math inline">\(x\to x_0\)</span> 有极限, 极限值等于函数值.</p>
-<p>或者使用增量: <span class="math inline">\(\lim\limits_{\Delta x\to
-0}(f(x_0+\Delta x)-f(x_0))=0\)</span>.</p>
-<p>同时, 有相应的 <span
-class="math inline">\(\varepsilon-\delta\)</span> 语言, 海涅定理等.</p>
-<p>若不满足, 则称为不连续; 若在 <span class="math inline">\(x_0\)</span>
-处不连续, 但左极限、右极限中至少有一个存在, 那我们可以说它间断, <span
-class="math inline">\(x_0\)</span> 即为间断点.</p>
-<details>
-<summary>
-<b>间断点的分类</b>
-</summary>
-<p><img src="discontinuity_point.png" /></p>
-</details>
-<p>连续等价于左连续且右连续.</p>
-<p>初等函数在其定义域中都是连续的.</p>
-<h2 id="连续的性质">连续的性质</h2>
-<ol type="1">
-<li><p>局部有界性</p>
-<blockquote>
-<p>极限的性质</p>
-</blockquote></li>
-<li><p>局部保号性</p>
-<blockquote>
-<p>极限的性质. 往往推广使用, 比如 <span
-class="math inline">\(f(x_0)&gt;0\)</span>, 推出邻域内 <span
-class="math inline">\(f(x)&gt;f(x_0)/2\)</span>.</p>
-</blockquote></li>
-<li><p>四则运算与复合连续</p></li>
-<li><p>严格单调的函数有反函数, 严格单调的连续函数反函数连续.</p></li>
-</ol>
-<details>
-<summary>
-<b>证明</b>
-</summary>
-<p><img src="inv_p1.png" /> <img src="inv_p2.png" /> <img
-src="inv_p3.png" /></p>
-</details>
-<ol start="5" type="1">
-<li>闭区间连续函数满足有界性定理, 最值定理, 零点定理, 介值定理,
-康托尔定理.</li>
-</ol>
-<details>
-<summary>
-<b>证明</b>
-</summary>
-<p><strong>有界性定理</strong></p>
-<ol type="1">
-<li><p>使用有限覆盖定理, 若干个局部有界可以得到一组覆盖,
-取出一有限覆盖可证得.</p></li>
-<li><p>假设无界, 可取出一有界数列 <span
-class="math inline">\(\{x_n\}\)</span> 使得 <span
-class="math inline">\(f(x_n)\to +\infty\)</span>,
-由于有界数列必有收敛子列, 设 <span class="math inline">\(x_{n_k}\to
-x_0\)</span>, 则 <span class="math inline">\(x_0\in [a, b]\)</span>, 则
-<span class="math inline">\(\lim\limits_{k\to
-\infty}f(x_{n_k})=f(x_0)=+\infty\)</span>, 矛盾.</p></li>
-</ol>
-<p><strong>最值定理</strong></p>
-<p>(下证最大值)</p>
-<ol type="1">
-<li><p>可知 <span class="math inline">\(f(x)\)</span> 值域有上确界 <span
-class="math inline">\(A=\sup\limits_{x\in [a, b]}f(x)\)</span>.
-则可取出一有界数列 <span class="math inline">\(\{x_n\}\)</span> 使得
-<span class="math inline">\(A-\frac{1}{n}&lt;f(x_n)\le A\)</span>.
-取其收敛子列 <span class="math inline">\(\{x_{n_k}\}\to x_0\)</span>, 则
-<span class="math inline">\(A-\frac{1}{n_k}&lt;f(x_{n_k})\le A\)</span>,
-又 <span class="math inline">\(\lim\limits_{k\to
-\infty}\left(A-\frac{1}{n_k}\right)=A\)</span>, 则由夹逼定理得 <span
-class="math inline">\(\lim_{k\to \infty}f(x_{n_k})=f(x_0)=A\)</span>. 故
-<span class="math inline">\(A\)</span> 为最大值.</p></li>
-<li><p>假设 <span class="math inline">\(\forall x\in[a, b],
-f(x)&lt;A\)</span>. 由 <span class="math inline">\(x\)</span> 的任意性,
-可得一组覆盖 <span class="math inline">\(\{U(x)\}, x\in[a, b]\)</span>,
-在 <span class="math inline">\(U(x)\)</span> 内, <span
-class="math inline">\(f(x)&lt;A-\varepsilon_x\)</span>. 由有限覆盖定理,
-<span class="math inline">\(f(x)&lt;A-\min_{U(x)\in
-\Sigma&#39;}\varepsilon_x\)</span>, 故 <span
-class="math inline">\(A\)</span> 不为上确界, 矛盾.</p></li>
-</ol>
-<p><strong>零点定理/介值定理</strong></p>
-<p>二分法+闭区间套.</p>
-<p><strong>康托尔定理</strong></p>
-<ol type="1">
-<li><p>引理: 函数的柯西收敛准则: <span
-class="math inline">\(\lim\limits_{x\to x_0}f(x)\)</span> 存在等价于
-<span class="math inline">\(\forall \varepsilon &gt; 0, \exists \delta
-&gt; 0, \forall x_1, x_2\in U^o(x_0, \delta),
-|f(x_1)-f(x_2)|&lt;\delta\)</span>. (使用海涅定理可以证明)</p>
-<p>使用有限覆盖定理即可. 这里需要做点处理, 以避免交叉. 例如,
-可以取海涅定理中的 <span class="math inline">\(\delta\)</span> 为 <span
-class="math inline">\(\delta_x\)</span>, 但以 <span
-class="math inline">\(U(x, \delta_x/2)\)</span> 进行区间套, 最后取得
-<span class="math inline">\(\delta=\min_{U(x,
-\delta_x/2)\in\Sigma&#39;}(\delta_x/2)\)</span>,
-从而避免取到相邻区间没有结论.</p></li>
-<li><p>用反证法, 即 <span class="math inline">\(\exists
-\varepsilon&gt;0, \forall \delta&gt;0, \exists x_1, x_2\in I,
-|x_1-x_2|&lt;\delta, |f(x_1)-f(x_2)|\ge \varepsilon\)</span>. 取 <span
-class="math inline">\(\delta = 1/n\)</span>, 有 <span
-class="math inline">\(\{x&#39;_n\}\)</span> 和 <span
-class="math inline">\(\{x&#39;&#39;_n\}\)</span> 满足 <span
-class="math inline">\(|x&#39;_n-x&#39;&#39;_n|&lt;1/n\)</span> 且 <span
-class="math inline">\(|f(x_1)-f(x_2)|\ge \varepsilon_n\)</span>.
-取有界数列 <span class="math inline">\(\{x&#39;_n\}\)</span>
-的一个收敛子列 <span class="math inline">\(\{x&#39;_{n_k}\}\to
-c\)</span>, 则 <span class="math inline">\(\lim\limits_{k\to
-\infty}x&#39;&#39;_{n_k}=\lim\limits_{k\to\infty}(x&#39;&#39;_{n_k}-x&#39;_{n_k})+\lim\limits_{k\to
-\infty}x&#39;_{n_k}=c\)</span>. 故 <span
-class="math inline">\(\lim\limits_{k\to
-\infty}|f(x&#39;_{n_k})-f(x&#39;&#39;_{n_k})|=|f(c)-f(c)|=0\)</span>,
-矛盾.</p></li>
-</ol>
-</details>
-<h2 id="一致连续">一致连续</h2>
-<p>定义: <span class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(I\)</span> 上有定义, 若 <span
-class="math inline">\(\forall \varepsilon &gt;0, \exists \delta &gt; 0,
-\forall x_1, x_2\in I, |x_1-x_2|&lt;\delta\)</span>, 有 <span
-class="math inline">\(|f(x_1)-f(x_2)|&lt;\varepsilon\)</span>, 则称
-<span class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(I\)</span> 上一致连续.</p>
-<p><strong>康托尔定理</strong>: 闭区间上的连续函数一致连续.
-证明见上.</p>
-<h2 id="无穷小">无穷小</h2>
-<p>无穷小: 以 <span class="math inline">\(0\)</span> 为极限的变量.</p>
-<p>无穷大: 分为三种, <span class="math inline">\(+\infty\)</span>, <span
-class="math inline">\(-\infty\)</span>, 两者统称为 <span
-class="math inline">\(\infty\)</span>.</p>
-<p><strong>无穷小的性质</strong></p>
-<ol type="1">
-<li><p>若 <span class="math inline">\(\lim f=A\)</span>, 则 <span
-class="math inline">\(f=A+\alpha\)</span>, 其中 <span
-class="math inline">\(\alpha\)</span> 为无穷小.</p></li>
-<li><p>有界性.(数列整体有界, 函数局部有界)</p></li>
-<li><p>无穷小的线性组合是无穷小.</p></li>
-<li><p>无穷小乘有界函数是无穷小.</p></li>
-<li><p>无穷小的乘积是无穷小.</p></li>
-<li><p>无穷小(非零)的倒数是无穷大.</p></li>
-</ol>
-<p><strong>无穷小的比较</strong></p>
-<p>根据 <span class="math inline">\(\lim\limits_{x\to
-x_0}\dfrac{\alpha(x)}{\beta(x)}\)</span> 的值,
-把无穷小直接的关系分为高阶、低阶、等阶, 若值为 <span
-class="math inline">\(1\)</span>, 称为等价. <span
-class="math inline">\(x(x\to 0)\)</span> 称为基准无穷小, 等阶于 <span
-class="math inline">\(x^s(x\to 0)\)</span> 的称为 <span
-class="math inline">\(s\)</span> 阶无穷小. 等价无穷小可替换.</p>
-<p>常见的等价无穷小替换:</p>
-<p><span class="math inline">\(\sin x\sim \tan x \sim \ln(1+x)\sim e^x-1
-\sim \arcsin x\sim \arctan x \sim x\)</span>.</p>
-<p><span class="math inline">\(1-\cos x \sim
-\dfrac{1}{2}x^2\)</span>.</p>
-<p><span class="math inline">\((1+x)^k-1\sim kx\)</span>.</p>
-<details>
-<summary>
-<b>证明</b>
-</summary>
-<p>证明: <span class="math inline">\(\sin x\sim \tan x\sim \arcsin x\sim
-\arctan x\sim x\)</span> 以及 <span class="math inline">\(1-\cos x\sim
-\dfrac{1}{2}x^2\)</span> 根据第一个重要极限可得.</p>
-<p>而</p>
-<p><span class="math display">\[
-    \lim_{x\to 0}\dfrac{\ln(1+x)}{x} = \lim_{x\to
-0}\ln{(1+x)^{1/x}}=\ln{\lim_{x\to 0}(1+x)^{1/x}}=\ln e=1.
-\]</span></p>
-<p>对于 <span class="math inline">\(\dfrac{e^x-1}{x}\)</span>, 令 <span
-class="math inline">\(y=e^x-1\)</span>, <span
-class="math inline">\(x=\ln(1+y)\)</span>, 由上可得.</p>
-<p>对于 <span class="math inline">\(\dfrac{(1+x)^k-1}{x}\)</span>, 令
-<span class="math inline">\(y=(1+x)^k-1\)</span>, 则 <span
-class="math inline">\(\ln(1+y)=k\ln(1+x)\)</span>, 则</p>
-<p><span class="math display">\[
-    \lim_{x\to 0}\dfrac{(1+x)^k-1}{x}=\lim_{y\to
-0}\dfrac{y}{\ln(1+y)}\cdot k\cdot\lim_{x\to 0} \dfrac{\ln(1+x)}{x}=k.
-\]</span></p>
-</details>
-<h1 id="典题赏析">典题赏析</h1>
-<ol type="1">
-<li><p>若 <span class="math inline">\(X, Y\)</span> 为 <span
-class="math inline">\(\mathbb R_+\cup\{0\}\)</span> 的子集, 证明 <span
-class="math inline">\(\inf_{x\in X, y\in Y}\{xy\}=\inf_{x\in
-X}\{x\}+\inf_{y\in Y}\{y\}\)</span>.</p></li>
-<li><p>证明 <span
-class="math inline">\(\lim\limits_{n\to+\infty}\sqrt[n]a=1\)</span>.</p></li>
-</ol>
-<details>
-<summary>
-<b>解答</b>
-</summary>
-<p><img src="pro2_sol.png" /></p>
-</details>
-<ol start="3" type="1">
-<li>证明 <span
-class="math inline">\(\lim\limits_{n\to+\infty}\sqrt[n]n=1\)</span>.</li>
-</ol>
-<details>
-<summary>
-<b>解答</b>
-</summary>
-<p><img src="pro3_sol.png" /></p>
-</details>
-<ol start="4" type="1">
-<li><p>证明: 设 <span class="math inline">\(n\to \infty\)</span> 时,
-<span class="math inline">\(a_n\to A, b_n\to B\)</span>, 则(1) <span
-class="math inline">\(\dfrac{\sum_{i=1}^na_i}{n}\to A\)</span>; (2)
-<span class="math inline">\(\dfrac{\sum_{i=1}^na_ib_{n-i+1}}{n}\to
-AB\)</span>.</p></li>
-<li><p>证明: <span
-class="math inline">\(\lim\limits_{n\to\infty}\dfrac{n}{a^n}=0(a&gt;1)\)</span>.</p></li>
-<li><p>证明: 无界数列 <span class="math inline">\(\{x_n\}\)</span>
-必存在子数列 <span class="math inline">\(\{x_{n_k}\}\)</span> 使得 <span
-class="math inline">\(\lim\limits_{k\to
-\infty}x_{n_k}=\infty\)</span></p></li>
-<li><p>证明: <span class="math inline">\(\lim\limits_{x\to
-+\infty}\arctan x=\dfrac{\pi}{2}, \lim\limits_{x\to -\infty}\arctan
-x=-\dfrac{\pi}{2}\)</span></p></li>
-<li><p>设 <span class="math display">\[
-     f(x)=\begin{cases}
-         x, x\, \textnormal{是有理数};
-         \\
-         -x, x\, \textnormal{是无理数}.
-     \end{cases}
-\]</span> 求证 (1) 当 <span class="math inline">\(a\ne 0\)</span> 时,
-<span class="math inline">\(\lim\limits_{x\to a}f(x)\)</span> 不存在;
-(2) 当 <span class="math inline">\(a=0\)</span> 时, <span
-class="math inline">\(\lim\limits_{x\to a}f(x)=0\)</span>.</p></li>
-<li><p>证明: <span class="math inline">\(\lim\limits_{x\to
-+\infty}=+\infty \Leftrightarrow \forall x_n:
-x_n\to+\infty(n\to\infty)\)</span> 有 <span class="math display">\[
-     \lim\limits_{n\to\infty}f(x_n)=+\infty.
-\]</span></p></li>
-<li><p>函数 <span class="math inline">\(f\)</span> 定义在 <span
-class="math inline">\((0, 1)\)</span> 内为 <span class="math display">\[
-f(x)=\begin{cases}
-    0,\quad x\,\textnormal{为无理数},
-    \\
-    \dfrac{1}{q}, x=\dfrac{p}{q}, p,q,\in \mathbb Z, \dfrac{p}{q}
-\textnormal{是最简分数}.
-\end{cases}
-   \]</span> 证明: 若 <span class="math inline">\(a\in(0, 1)\)</span>,
-则 <span class="math inline">\(\lim\limits_{x\to
-a}f(x)=0\)</span>.</p></li>
-<li><p>证明 <span
-class="math inline">\(\lim_{n\to+\infty}x_n=A\Leftrightarrow
-\{x_n\}\)</span> 的任意子数列都以 <span class="math inline">\(A\)</span>
-为极限.</p></li>
-<li><p>求 <span class="math inline">\(\lim\limits_{n\to
-\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n}\)</span>, 其中 <span
-class="math inline">\(k\)</span> 确定, <span
-class="math inline">\(a_i\ge 0\)</span>.</p></li>
-<li><p>求 <span class="math inline">\(n\to+\infty\)</span> 时,
-下列各式的极限: (1) <span class="math inline">\(na^n(|a|&lt;1)\)</span>;
-(2) <span class="math inline">\(\dfrac{a^n}{n!}\)</span> (<span
-class="math inline">\(a\)</span> 是常数); (3) <span
-class="math inline">\(\dfrac{n^\mu}{a^n}\)</span> (<span
-class="math inline">\(a&gt;1,\mu&gt;0\)</span> 是常数).</p></li>
-<li><p>设 <span class="math inline">\(a&gt;1\)</span>, 求证: (1) <span
-class="math inline">\(\lim\limits_{x\to +\infty}\dfrac{x^\mu}{a^x}=0(\mu
-&gt; 0)\)</span>; (2) <span class="math inline">\(\lim\limits_{x\to
-+\infty}\dfrac{\log_ax}{x^\mu}=0(\mu&gt;0)\)</span>; (3) <span
-class="math inline">\(\lim\limits_{x\to 0+}x^\beta\log_ax=0(\beta &gt;
-0)\)</span></p></li>
-<li><p>设 <span class="math inline">\(\sup\limits_{x\in
-X}\{x\}=\beta\)</span>, 试证从 <span class="math inline">\(X\)</span>
-中可选取数列 <span class="math inline">\(\{x_n\}\)</span>, 使 <span
-class="math inline">\(\lim\limits_{n\to\infty}x_n=\beta\)</span>. (<span
-class="math inline">\(\beta\)</span> 换成 <span
-class="math inline">\(+\infty\)</span> 也成立)</p></li>
-<li><p>证明 <span class="math display">\[
-    \left(\dfrac{n}{e}\right)^n&lt;n!&lt;e\left(\dfrac{n}{2}\right)^n
-\]</span></p></li>
-<li><p>证明: 若 <span class="math inline">\(f(x)\in C(\mathbb
-R)\)</span> 且函数值均为有理数, 求证其为常数函数.</p></li>
-<li><p>设 <span class="math inline">\(x_1, a&gt;0\)</span>, <span
-class="math inline">\(x_{n+1}=\dfrac{1}{2}\left(x_n+\dfrac{a}{x_n}\right)\)</span>,
-求 <span class="math inline">\(\lim\limits_{n\to
-\infty}x_n\)</span>.</p></li>
-<li><p>设 <span class="math inline">\(x_1=1,
-x_{n+1}=\dfrac{1}{1+x_n}\)</span>, 求 <span
-class="math inline">\(\lim\limits_{n\to\infty}x_n\)</span>.</p></li>
-<li><p>设 <span
-class="math inline">\(\lim\limits_{x\to\infty}\left(\dfrac{x^2}{x+1}-ax-b\right)=0\)</span>,
-求 <span class="math inline">\(a, b\)</span>.</p></li>
-<li><p>设 <span class="math inline">\(f(x)\)</span> 在区间 <span
-class="math inline">\([0, 1]\)</span> 上连续, <span
-class="math inline">\(f(0)=0, f(1)=1\)</span>, 求证: 存在 <span
-class="math inline">\(\xi\in(0, 1)\)</span>, 使得 <span
-class="math display">\[
-    f\left(\xi-\dfrac{1}{3}\right)=f(\xi)-\dfrac{1}{3}.
-\]</span></p></li>
-</ol>
-<h1 id="方法总结">方法总结</h1>
-<h2 id="比值判别法">比值判别法</h2>
-<details>
-<summary>
-<b>展开</b>
-</summary>
-<p><img src="quat_judge_method.png" /></p>
-</details>
-]]></content>
-      <categories>
-        <category>课程笔记</category>
-        <category>微积分</category>
-      </categories>
-      <tags>
-        <tag>微积分</tag>
-        <tag>课程笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2023-01-15 日记</title>
-    <url>/2023/01/15/2023-01-15-%E6%97%A5%E8%AE%B0/</url>
+    <title>2023-01-13 日记</title>
+    <url>/2023/01/13/2023-01-13-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="9e747ac225f7797ae487a44de68a2ba4281f21e1f7b9508cd1d134540126b944">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c5858fd3734ddbd0f7caf5b0ad0c765827dacf6db4dda92b1f666e8d9461c97d7455e157302127df49917db0d108fa5769242a94c9441fffdbbaccf6a8238848180155a565048f9a20253873fa866fa568b07145b213e9e061ac635b70c14811e6fe51148e5f90c29af43578ced3e95349b93977c4975aaaa5bed4f025534698e46a0efb7f89c9996ce301c81e1809f2117ff816baad75335359e69d75382817b592a6acbbc0b6082c058f6d7e169228a40f861c3d98a65d659cc2f3d409ff7167e22c7045bdad7f1763e5c3fb5f1dcc20fcab8f0340297a9e2458c30645a195bcf8d2fa0544a65c5a5ebbfa10925ebac76998278a0210e0ee81ed0da319119d7ad19a74253a54b176b6d9d05042083c1f4a5859ff022964f8ef2e2386260a2f355cc5fb461dfcd4f85e12c8c7c9ddec897e957324a3a99213ea9afd686510bb364a46b305d19982af26a846066b1a22a185999c96c8b5462070fafa3c701e2cd0f18e93af79ac0ec36f19f2fe733727c873e6c1b9cc792d3d2d8912657511eee1f14a00f79181b996552567673c7916923a30243a461a2693c966592a7132281ba4cb14694cec7a52b119ba41e8df0dbd97b0aee4d3a4ee167a0e3f54e96b2c64649ffb018899f27f8024a81034c2f503079a966eb41a292dc70ac1053e35555c2846131be396930c4e92cc31df32b833dfab7dedc38cb3b03245ced6ad46fccf433092ae4a8008e57440b0b7f9c113e0e4e452e5483f4d953e607dfcfc57156621ad404a2e1444e5a00c197a5b457a33dec39d92ff5c90c2fb749719f4560ab7c259e124386c7e7ffc71d46cfb72c28a41a8251d8a8b6e08a3dd43654eeec8c4ec2579f47c7545aee6491bc8179a6bfa2594bf32b0e56bcd94c32139a1dbed6b9f082b5f90f890981a53c6d1290fc4dbd6583b5ba34dd7ce9ad42865b958f98d52c1dec1a3a6d6ee730c9c46941a1e8a3</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b17cf0a2fb0abfa08692f9e3212a4d357da4e896266f8f6dad4d29c2446c3fe5">ebfac267c39067e061265010f63356e64680d85664516099e48037fcf686813774ab9f27e1f8d8cfdf434d3025c923651d1615c4123937e26247442178aa79445fb8e67077f0df8f9fa383fdb299940d6288146a59debecf41cd4e8eab71074ee7a1514ca1bdc56545f7a1ef7dab8ee724f2b8a2450bac551dc40b9a5f01bcf7d2664c72b2cdccaabfca4f824fd2ed480a5bebc9711008de3dee7626818addaf5780dc7d7ba5320474a05cad55ef9e6e88cf4505946b1d7163797d175e9caf7f333318c62823ae0f40209ace82fb01efba5ce997838e5657dd2323ba3abe0d3bc0d71d7cd4b2717b335ae0ad582ec9adb3ad1f938afc5e8d7f37bb01b252060a1bbd29479fb0b634ffa1e64cf90a3192f364d3cee81939133713323cc812de0918e43b79358ea817a5597d7e12740fc91edc10839f4208c82826cbafe18be20cfbfbe3fe9c0651ac6b6eaff90c3dcc34f2dbe9994e08952024c1d03db7ce677d38bc6d3657833eba3092f642c5a9abc6b8a82ad7d5d60ea7d4f3dc0579ebc40a2109b1084e7551a033d7b1121ab7700e3765cd095079bdf9d2fdb45f09cc692738e6fdb47d6aea804ecaea0349231a2875e33042917f9e43ac018657a6c58e515cbdca5be598166eaea99f1414bb8ac74c1984a10620ac71ca2a3717d01b405bf348124d2b73056f544ff7825ea9480330604030c668cfac4dd1c8b69a4da512</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">

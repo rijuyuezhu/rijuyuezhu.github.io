@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="课程计划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问题求解（一）总结 PART I">
+<meta property="og:url" content="http://example.com/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/index.html">
+<meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
+<meta property="og:description" content="课程计划">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-17T00:39:22.000Z">
+<meta property="article:modified_time" content="2023-01-17T06:40:36.481Z">
+<meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="问题求解">
+<meta property="article:tag" content="计算机科学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/","path":"2023/01/17/问题求解（一）总结-PART-I/","title":"问题求解（一）总结 PART I"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>问题求解（一）总结 PART I | Rijuyuezhu's Blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rijuyuezhu's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Record every drop in my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#week-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%83%BD%E8%A7%A3%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">Week 1 为什么计算机能解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dh-chapter-1-introduction-and-historical-review"><span class="nav-number">2.1.1.</span> <span class="nav-text">DH Chapter 1:
+Introduction and Historical Review</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ud-chapter-1-the-how-when-and-why-of-mathematics."><span class="nav-number">2.1.2.</span> <span class="nav-text">UD Chapter 1:
+The How, When and Why of Mathematics.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#week-2-%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8E%A8%E7%90%86%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">Week 2 什么样的推理是正确的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#concepts-1"><span class="nav-number">3.1.</span> <span class="nav-text">Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ud-chapter-2-logically-speaking"><span class="nav-number">3.1.1.</span> <span class="nav-text">UD Chapter 2: Logically
+Speaking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ud-chapter-3-introducing-the-contrapositive-and-converse"><span class="nav-number">3.1.2.</span> <span class="nav-text">UD
+Chapter 3: Introducing the Contrapositive and Converse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ud-chapter-4-set-notation-and-quantifiers"><span class="nav-number">3.1.3.</span> <span class="nav-text">UD Chapter 4: Set
+Notation and Quantifiers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extended-content"><span class="nav-number">3.2.</span> <span class="nav-text">Extended content</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rijuyuezhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Rijuyuezhu</p>
+  <div class="site-description" itemprop="description">Knowledge and Practice!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="问题求解（一）总结 PART I | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          问题求解（一）总结 PART I
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-17 08:39:22 / 修改时间：14:40:36" itemprop="dateCreated datePublished" datetime="2023-01-17T08:39:22+08:00">2023-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">问题求解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a
+target="_blank" rel="noopener" href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
+<span id="more"></span>
+<h1 id="preface">Preface</h1>
+<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
+little part of <strong>ES</strong>.</p>
+<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
+Chapter 8, 11-15 out of class.</p>
+<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
+class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
+<p>If possible, I decide to learn the left chapters on my own and I will
+also mark my notes down here.</p>
+<h1 id="week-1-为什么计算机能解题">Week 1 为什么计算机能解题</h1>
+<h2 id="concepts">Concepts</h2>
+<h3 id="dh-chapter-1-introduction-and-historical-review">DH Chapter 1:
+Introduction and Historical Review</h3>
+<ul>
+<li><p>Computers have many "switchs" or <strong>bits</strong>, flipped
+by itself. Computers can directly execute only a small number of
+extremely trivial operations. Process(algorithms) transform trivial
+operations on bits into the great abilities the computers have.</p></li>
+<li><p>Input, Output, and Algorithm. Software and Hardware. Programs are
+well-written algorithms. Softwares are programs written in a special
+programming language.</p></li>
+<li><p>Histories of computers. You might better learn them from <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EW411u7th/">this
+video</a>.</p></li>
+<li><p>Some limitations(differences between human and computerized
+intelligence).</p></li>
+<li><p>Levels of detail: how precise an algorithm's <strong>elementary
+instructions</strong> need to be. Elementary instructions must be clear
+and precise.</p></li>
+<li><p>Abstraction, different levels of abstraction. At a higher level,
+information about lower level isn't needed to be considered.</p></li>
+<li><p>The length of algorithms are not necessarily changed for
+different scale of the problem.</p></li>
+</ul>
+<blockquote>
+<p>Notes below are chapters not metioned in classes.</p>
+<ul>
+<li><p>An algorithm must be suit for infinite number of inputs. Inputs
+have to be legal(i.e. satisfying some specifications of the
+algorithms)</p></li>
+<li><p>Algorithms are solutions to <strong>computational/algorithmic
+problems</strong>. These problem can be seen as "black box"(a function
+from (any legal) inputs to outputs), and apropriate algorithms are
+specific suitable content of the black box.</p></li>
+<li><p>Algorithmic problems keep illegal inputs away, and algorithms
+deal with legal inputs only.</p></li>
+<li><p>Basic actions must be precise and unambiguous, and take bounded
+amounts of time and resources.</p></li>
+<li><p>An algorithmic problem = input set characterization + output
+specification(or to say, the function from input to output).</p></li>
+</ul>
+</blockquote>
+<h3 id="ud-chapter-1-the-how-when-and-why-of-mathematics.">UD Chapter 1:
+The How, When and Why of Mathematics.</h3>
+<ul>
+<li>How to solve mathematical problems? Polya's method:
+<strong>Understanding the problem</strong>, <strong>Divising a
+plan</strong>, <strong>Carrying out the plan</strong>, <strong>Looking
+back</strong>.</li>
+</ul>
+<h1 id="week-2-什么样的推理是正确的">Week 2 什么样的推理是正确的</h1>
+<h2 id="concepts-1">Concepts</h2>
+<h3 id="ud-chapter-2-logically-speaking">UD Chapter 2: Logically
+Speaking</h3>
+<ul>
+<li><p>Statements are sentences that are true or false, but not both.
+Symbolic statements are called statement forms.</p></li>
+<li><p>The negation of <span class="math inline">\(P\)</span>, denoted
+by <span class="math inline">\(\neg P\)</span>.</p></li>
+<li><p>The disjunction of <span class="math inline">\(P\)</span> and
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\vee Q\)</span>.</p></li>
+<li><p>The conjunction of <span class="math inline">\(P\)</span> and
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\wedge Q\)</span>.</p></li>
+<li><p>The implication, <span class="math inline">\(P\)</span> implies
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\to Q\)</span>. <span
+class="math inline">\(P\)</span> is called antecedent and <span
+class="math inline">\(Q\)</span> is called conclusion. <span
+class="math inline">\(P\to Q\)</span> is equivalent to <span
+class="math inline">\(\neg P\vee Q\)</span>.</p></li>
+<li><p>The equivalence, <span class="math inline">\(P\leftrightarrow
+Q\)</span>, and it is equivalent to <span
+class="math inline">\((P\rightarrow Q)\wedge (Q\rightarrow
+P)\)</span>.</p></li>
+<li><p>Things above are called connectives.</p></li>
+<li><p>Tautology, contradiction and contingency. <span
+class="math inline">\(P\leftrightarrow Q\)</span> is a tautology means
+<span class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span> are quivalent.</p></li>
+<li><p>Use truth table to judge when a statement form is true, and to
+prove a statement form is a tautology...</p></li>
+<li><p>Here are some tautologies. <span class="math display">\[
+\begin{aligned}
+  &amp;\textbf{DeMorgan&#39;s Laws}&amp;\neg(P\vee Q)\leftrightarrow
+(\neg P\wedge \neg Q)
+  \\
+  &amp; &amp;\neg(P\wedge Q)\leftrightarrow (\neg P\vee \neg Q)
+  \\
+  \\
+  &amp;\textbf{Implication and} &amp;(P\rightarrow Q)\leftrightarrow
+(\neg P\vee Q)
+  \\
+  &amp;\textbf{its negation} &amp;\neg(P\rightarrow Q)\leftrightarrow
+(P\wedge \neg Q)
+  \\
+  \\
+  &amp;\textbf{Double negation} &amp;\neg(\neg P)\leftrightarrow P
+\end{aligned}
+\]</span></p></li>
+</ul>
+<h3 id="ud-chapter-3-introducing-the-contrapositive-and-converse">UD
+Chapter 3: Introducing the Contrapositive and Converse</h3>
+<ul>
+<li><p>Paraphrase statements - use tautologies.</p></li>
+<li><p>Some tautologies: <span class="math display">\[
+  \begin{aligned}
+      &amp;\textbf{Distributive property}
+      &amp;(P\wedge(Q\vee R))\leftrightarrow
+      ((P\wedge Q)\vee (P\wedge R))
+      \\
+      &amp;&amp;(P\vee (Q\wedge R))\leftrightarrow ((P\vee
+Q)\wedge(P\vee R))
+      \\
+      \\
+      &amp;\textbf{Associative property}
+      &amp;(P\wedge(Q\wedge R))\leftrightarrow ((P\wedge Q)\wedge R)
+      \\
+      &amp;&amp;(P\vee(Q\vee R))\leftrightarrow ((P\vee Q)\vee R)
+      \\
+      \\
+      &amp;\textbf{Commutative property}
+      &amp;(P\wedge Q)\leftrightarrow(Q\wedge P)
+      \\
+      &amp;&amp; (P\vee Q)\leftrightarrow (Q\vee P)
+  \end{aligned}
+  \]</span></p></li>
+<li><p>Contrapositive of an implication. They are equivalent.</p></li>
+<li><p>Converse of an implication.</p></li>
+<li><p>Inverse of an implication.</p></li>
+</ul>
+<h3 id="ud-chapter-4-set-notation-and-quantifiers">UD Chapter 4: Set
+Notation and Quantifiers</h3>
+<ul>
+<li><p>Define a set: axiomatic statements(ZFC system).</p></li>
+<li><p>Basic set notations.</p></li>
+<li><p>In statements: <span class="math inline">\(x\)</span> means
+variables; "for all" or <span class="math inline">\(\forall\)</span>,
+"there exists" or <span class="math inline">\(\exists\)</span> are
+called (universal/existential) quantifier.</p></li>
+<li><p><span class="math inline">\(\forall x, p(x)\)</span> is true iff
+for all <span class="math inline">\(x\)</span> we find <span
+class="math inline">\(p(x)\)</span> is true. To bound the range of <span
+class="math inline">\(x\)</span>, we use <span
+class="math inline">\(\forall x, (x\in A\rightarrow p(x))\)</span>. Here
+we use the characteristic of implication. If we consider <span
+class="math inline">\(x\)</span> out of the range, the implication will
+always be true.</p></li>
+<li><p><span class="math inline">\(\exists x, p(x)\)</span> is true iff
+there exists an <span class="math inline">\(x\)</span> such that <span
+class="math inline">\(p(x)\)</span> is true. To bound the range of <span
+class="math inline">\(x\)</span>, we use <span
+class="math inline">\(\exists x, (x\in A\wedge p(x))\)</span>. If we
+consider <span class="math inline">\(x\)</span> out of the range, the
+conjunction will always be false.</p></li>
+<li><p>For negation of quantifiers: <span class="math inline">\(\neg
+(\forall x, p(x))=\exists x, \neg p(x)\)</span>; <span
+class="math inline">\(\neg(\exists x, p(x))=\forall x, \neg
+p(x)\)</span>.</p></li>
+<li><p>Sometimes we can omit <strong>universal
+quantifiers</strong>.</p></li>
+<li><p>With quantifiers, the method to find a implication's
+contrapositive, converse and inverse doesn't change.</p></li>
+</ul>
+<h2 id="extended-content">Extended content</h2>
+<ul>
+<li><p>Logical reasoning (Week 2 slides P24). There are <span
+class="math inline">\(k\)</span> antecedents <span
+class="math inline">\(A_1, A_2, \cdots, A_k\)</span> and one conclusion
+<span class="math inline">\(B\)</span>. To assure that our reasoning is
+correct, we need to prove <span class="math inline">\((A_1\wedge
+A_2\wedge\cdots\wedge A_k)\to B\)</span> is a tautology and vice
+versa.</p></li>
+<li><p>Modus Ponens. (Week 2 slides P25) <span class="math inline">\(p,
+p\rightarrow q \Rightarrow q\)</span>.</p></li>
+<li><p>Some tautologies. (Week 2 slides P27)</p></li>
+<li><p>(Week 2 slides P28) US, UG, ES, EG(universal/existential
+specify/generalize).</p></li>
+<li><p>(Week 2 discussion P16) use one kind of connective to represent
+all kinds of connectives.</p>
+<p>Let <span class="math inline">\(A\circ B=\neg(A\vee B)\)</span>, then
+<span class="math display">\[
+  \begin{aligned}
+      \neg A &amp;=A\circ A
+      \\
+      A\wedge B &amp;= (A\circ A)\circ (B\circ B)
+      \\
+      A\vee B &amp;= (A\circ B)\circ (A\circ B)
+  \end{aligned}
+  \]</span></p></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag"># 课程笔记</a>
+              <a href="/tags/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/" rel="tag"># 问题求解</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag"># 计算机科学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/17/2023-01-17-%E6%97%A5%E8%AE%B0/" rel="prev" title="2023-01-17 日记">
+                  <i class="fa fa-chevron-left"></i> 2023-01-17 日记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rijuyuezhu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

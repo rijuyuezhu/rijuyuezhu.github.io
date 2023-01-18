@@ -410,11 +410,15 @@ class="math inline">\(j\)</span> 两种字符出现次数分别是 <span
 class="math inline">\(c_i\)</span> 和 <span
 class="math inline">\(c_j\)</span>, 则选 <span
 class="math inline">\(i\)</span> 不选 <span
-class="math inline">\(j\)</span> 的代价是 $c_j+, c_i-n/s $, 选 <span
-class="math inline">\(j\)</span> 不选 <span
-class="math inline">\(i\)</span> 的代价是 $c_i+, c_j-n/s $. 则选 <span
-class="math inline">\(i\)</span> 的理由是 $c_j+, c_i-n/s c_i+, c_j-n/s
-$, 简单化简一下可知 <span class="math inline">\(c_i\ge c_j\)</span>.</p>
+class="math inline">\(j\)</span> 的代价是 <span
+class="math inline">\(c_j+\max\lbrace 0, c_i-n/s\rbrace\)</span>, 选
+<span class="math inline">\(j\)</span> 不选 <span
+class="math inline">\(i\)</span> 的代价是 <span
+class="math inline">\(c_i+\max\lbrace 0, c_j-n/s\rbrace\)</span>. 则选
+<span class="math inline">\(i\)</span> 的理由是 <span
+class="math inline">\(c_j+\max\lbrace 0, c_i-n/s\rbrace \le
+c_i+\max\lbrace 0, c_j-n/s\rbrace\)</span>, 简单化简一下可知 <span
+class="math inline">\(c_i\ge c_j\)</span>.</p>
 <p>于是排个序后, 把需要减少的字符(对于前 <span
 class="math inline">\(s\)</span> 种要保留的字符, 则它比 <span
 class="math inline">\(n/s\)</span> 多的次数; 对于后 <span
@@ -433,7 +437,8 @@ class="math inline">\(26\)</span>.</p>
 <p>给 <span class="math inline">\(n\)</span> 个互不相同的数 <span
 class="math inline">\(a_i\)</span>, 对于所有的 <span
 class="math inline">\(x\)</span> 满足 <span class="math inline">\(0\le
-x\le 10^{18}\)</span>, 求序列 $ a_i+x $ 中完全平方数的个数的最大值.</p>
+x\le 10^{18}\)</span>, 求序列 <span class="math inline">\(\lbrace
+a_i+x\rbrace\)</span> 中完全平方数的个数的最大值.</p>
 <p>数据范围: <span class="math inline">\(1\le n\le 50, 1\le
 a_1&lt;a_2&lt;\cdots &lt; a_n\le 10^9\)</span>.</p>
 <details>
@@ -517,8 +522,10 @@ class="math inline">\(\alpha-\varepsilon&lt;x_0\)</span>.
 (不可再小)</p></li>
 </ol>
 <blockquote>
-<p>证明与上下确界有关的不等式需要根据定义, 如证明 $<em>{xX, yY} x+y
-=</em>{xX} x +_{yY} y $ 等式子.</p>
+<p>证明与上下确界有关的不等式需要根据定义, 如证明 <span
+class="math inline">\(\sup\limits_{x\in X, y\in Y}\lbrace x+y\rbrace
+=\sup\limits_{x\in X}\lbrace x\rbrace +\sup\limits_{y\in Y}\lbrace
+y\rbrace\)</span> 等式子.</p>
 </blockquote>
 <h2 id="几大互相等价的定理">几大互相等价的定理</h2>
 <p><strong>1. 实数的连续性原理</strong></p>
@@ -531,22 +538,24 @@ y\)</span>.</p>
 <p>若 <span class="math inline">\(A\)</span> 非空有上(下)界, 则 <span
 class="math inline">\(A\)</span> 必有上(下)确界.</p>
 <p><strong>3. 单调有界定理</strong></p>
-<p>若 $ a_n $ 单调递增/减且有上/下界, 则 $ a_n $ 收敛(为 <span
-class="math inline">\(\sup a_n\)</span> / <span
-class="math inline">\(\inf a_n\)</span>)</p>
+<p>若 <span class="math inline">\(\lbrace a_n\rbrace\)</span>
+单调递增/减且有上/下界, 则 <span class="math inline">\(\lbrace
+a_n\rbrace\)</span> 收敛(为 <span class="math inline">\(\sup
+a_n\)</span> / <span class="math inline">\(\inf a_n\)</span>)</p>
 <p><strong>4. 闭区间套定理</strong></p>
-<p>若 $ $ 是一列闭区间, 且满足 <span class="math inline">\([a_1,
-b_1]\supset [a_2, b_2]\supset\cdots \supset [a_n, b_n]\supset
-\cdots\)</span>, 及 <span class="math inline">\(\lim\limits_{n\to
-\infty}(b_n-a_n)=0\)</span>. 则存在唯一 <span class="math inline">\(c\in
-[a_n, b_n]\)</span>, 使得 <span class="math inline">\(\lim\limits_{n\to
+<p>若 <span class="math inline">\(\lbrace [a_n, b_n]\rbrace\)</span>
+是一列闭区间, 且满足 <span class="math inline">\([a_1, b_1]\supset [a_2,
+b_2]\supset\cdots \supset [a_n, b_n]\supset \cdots\)</span>, 及 <span
+class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span>.
+则存在唯一 <span class="math inline">\(c\in [a_n, b_n]\)</span>, 使得
+<span class="math inline">\(\lim\limits_{n\to
 \infty}a_n=\lim\limits_{n\to\infty}b_n=c\)</span>.</p>
 <p><strong>5. 收敛子列定理</strong></p>
 <p>有限数列必存在收敛子列.(但是收敛的值不唯一)</p>
 <p><strong>6. 柯西收敛准则</strong></p>
-<p>$ a_n $ 收敛等价于 <span class="math inline">\(\forall \varepsilon
-&gt; 0, \exists N &gt; 0, \forall m, n&gt;N,
-|a_m-a_n|&lt;\varepsilon\)</span>.</p>
+<p><span class="math inline">\(\lbrace a_n\rbrace\)</span> 收敛等价于
+<span class="math inline">\(\forall \varepsilon &gt; 0, \exists N &gt;
+0, \forall m, n&gt;N, |a_m-a_n|&lt;\varepsilon\)</span>.</p>
 <p><strong>7. 有限覆盖定理</strong></p>
 <p>闭区间的一个覆盖必存在有限子覆盖.</p>
 <details>
@@ -573,8 +582,10 @@ class="math inline">\(n&gt;N\)</span> 时 <span
 class="math inline">\(A-\varepsilon&lt;a_N\le a_n\le
 A&lt;A+\varepsilon\)</span>, 故极限存在为 <span
 class="math inline">\(A\)</span>.</p>
-<p><strong>3 推 4</strong> $ a_n $ 递增且上界存在为 <span
-class="math inline">\(b_1\)</span>, $ b_n $ 递减且下界存在为 <span
+<p><strong>3 推 4</strong> <span class="math inline">\(\lbrace
+a_n\rbrace\)</span> 递增且上界存在为 <span
+class="math inline">\(b_1\)</span>, <span class="math inline">\(\lbrace
+b_n\rbrace\)</span> 递减且下界存在为 <span
 class="math inline">\(a_1\)</span>, 分别设两数列极限为 <span
 class="math inline">\(A, B\)</span>. 由 <span
 class="math inline">\(\lim\limits_{n\to \infty}(b_n-a_n)=0\)</span> 可得
@@ -585,8 +596,8 @@ class="math inline">\(a_n\le c&#39;\le b_n\)</span>, 则 <span
 class="math inline">\(|c-c&#39;|\le b_n-a_n\)</span>, 由极限保号性得
 <span class="math inline">\(|c-c&#39;|\le 0\)</span>, 故 <span
 class="math inline">\(c=c&#39;\)</span>.</p>
-<p><strong>4 推 5</strong> 设数列为 $ x_n $, 从 <span
-class="math inline">\([-M, M]\)</span>
+<p><strong>4 推 5</strong> 设数列为 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span>, 从 <span class="math inline">\([-M, M]\)</span>
 开始使用二分法(即套用闭区间套定理), 构造得到区间套 <span
 class="math inline">\([l_n, r_n]\)</span>,
 因为左右区间至少有一个是无穷多项, 选择无穷多项的一边一直下去,
@@ -603,10 +614,11 @@ class="math inline">\(n_k&gt;n_{k-1}\)</span>. 这是显然可以做到的, 因�
 由绝对值不等式显然. 另一方面, 右推左. 取 <span
 class="math inline">\(\varepsilon_0=1\)</span>, 则存在 <span
 class="math inline">\(N_0&gt;0, \forall n&gt;N_0,
-|a_n-a_{N_0+1}|&lt;1\)</span>, 故可得 $ a_n $ 有界, 故有收敛子列 $
-a_{n_k} A$. 于是对任意 <span
-class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
-class="math inline">\(N&gt;0\)</span>, 因 <span
+|a_n-a_{N_0+1}|&lt;1\)</span>, 故可得 <span
+class="math inline">\(\lbrace a_n\rbrace\)</span> 有界, 故有收敛子列
+<span class="math inline">\(\lbrace a_{n_k}\rbrace \to A\)</span>.
+于是对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 存在
+<span class="math inline">\(N&gt;0\)</span>, 因 <span
 class="math inline">\(a_{n_k}\)</span> 无穷多项, 故存在 <span
 class="math inline">\(n_{k_0}&gt;N\)</span>, 满足 <span
 class="math inline">\(\forall n&gt;N\)</span>, <span
@@ -640,9 +652,10 @@ src="equal_nequal3.png" /></p>
 <p>这些不等式在后面都用得着.</p>
 </blockquote>
 <h2 id="极限定义">极限定义</h2>
-<p><strong>数列极限</strong>: $ a_n $ 为一数列, 若 <span
-class="math inline">\(\forall \varepsilon &gt; 0, \exists N&gt;0,
-\forall n&gt;N, |a_n-A|&lt;\varepsilon\)</span>, 则 <span
+<p><strong>数列极限</strong>: <span class="math inline">\(\lbrace
+a_n\rbrace\)</span> 为一数列, 若 <span class="math inline">\(\forall
+\varepsilon &gt; 0, \exists N&gt;0, \forall n&gt;N,
+|a_n-A|&lt;\varepsilon\)</span>, 则 <span
 class="math inline">\(\lim\limits_{n\to \infty}a_n=A\)</span>.</p>
 <p><strong>函数定义1</strong>: <span class="math inline">\(f(x)\)</span>
 在 <span class="math inline">\(U(x_0)\)</span> 有定义, 若 <span
@@ -688,7 +701,8 @@ class="math inline">\(\varepsilon\)</span>.)</p>
 </blockquote></li>
 <li><p>收敛数列有界, 收敛函数局部有界.</p>
 <blockquote>
-<p>证明: 由 $A+, A-$ 限制.</p>
+<p>证明: 由 <span class="math inline">\(\max\lbrace A+\varepsilon,
+A-\varepsilon\rbrace\)</span> 限制.</p>
 </blockquote></li>
 <li><p>极限的保序性: 若 <span class="math inline">\(f\to A, g\to
 B\)</span>, 且 <span class="math inline">\(f\ge g\)</span>, 则 <span
@@ -715,8 +729,8 @@ class="math inline">\(\varphi(x)\ne b\)</span>, 则 <span
 class="math inline">\(\lim\limits_{x\to
 x_0}g(\varphi(x))=A\)</span>.</p></li>
 <li><p>海涅定理: <span class="math inline">\(\lim\limits_{x\to
-x_0}=A\)</span> 等价于 <span class="math inline">\(\forall \lbrace x_n
-\rbrace , x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
+x_0}=A\)</span> 等价于 <span class="math inline">\(\forall\lbrace
+x_n\rbrace , x_n\to x_0, x_n\ne x_0\)</span> 都有 <span
 class="math inline">\(\lim\limits_{n\to \infty}f(x_n)=A\)</span>.</p>
 <blockquote>
 <p>常常用它的逆否证明一个函数没有极限</p>
@@ -846,11 +860,12 @@ src="inv_p3.png" /></p>
 <ol type="1">
 <li><p>使用有限覆盖定理, 若干个局部有界可以得到一组覆盖,
 取出一有限覆盖可证得.</p></li>
-<li><p>假设无界, 可取出一有界数列 $ x_n $ 使得 <span
-class="math inline">\(f(x_n)\to +\infty\)</span>,
-由于有界数列必有收敛子列, 设 <span class="math inline">\(x_{n_k}\to
-x_0\)</span>, 则 <span class="math inline">\(x_0\in [a, b]\)</span>, 则
-<span class="math inline">\(\lim\limits_{k\to
+<li><p>假设无界, 可取出一有界数列 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span> 使得 <span class="math inline">\(f(x_n)\to
++\infty\)</span>, 由于有界数列必有收敛子列, 设 <span
+class="math inline">\(x_{n_k}\to x_0\)</span>, 则 <span
+class="math inline">\(x_0\in [a, b]\)</span>, 则 <span
+class="math inline">\(\lim\limits_{k\to
 \infty}f(x_{n_k})=f(x_0)=+\infty\)</span>, 矛盾.</p></li>
 </ol>
 <p><strong>最值定理</strong></p>
@@ -858,9 +873,11 @@ x_0\)</span>, 则 <span class="math inline">\(x_0\in [a, b]\)</span>, 则
 <ol type="1">
 <li><p>可知 <span class="math inline">\(f(x)\)</span> 值域有上确界 <span
 class="math inline">\(A=\sup\limits_{x\in [a, b]}f(x)\)</span>.
-则可取出一有界数列 $ x_n $ 使得 <span
+则可取出一有界数列 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span> 使得 <span
 class="math inline">\(A-\frac{1}{n}&lt;f(x_n)\le A\)</span>.
-取其收敛子列 $ x_{n_k} x_0$, 则 <span
+取其收敛子列 <span class="math inline">\(\lbrace x_{n_k}\rbrace \to
+x_0\)</span>, 则 <span
 class="math inline">\(A-\frac{1}{n_k}&lt;f(x_{n_k})\le A\)</span>, 又
 <span class="math inline">\(\lim\limits_{k\to
 \infty}\left(A-\frac{1}{n_k}\right)=A\)</span>, 则由夹逼定理得 <span
@@ -868,9 +885,10 @@ class="math inline">\(\lim_{k\to \infty}f(x_{n_k})=f(x_0)=A\)</span>. 故
 <span class="math inline">\(A\)</span> 为最大值.</p></li>
 <li><p>假设 <span class="math inline">\(\forall x\in[a, b],
 f(x)&lt;A\)</span>. 由 <span class="math inline">\(x\)</span> 的任意性,
-可得一组覆盖 $ U(x) , x$, 在 <span class="math inline">\(U(x)\)</span>
-内, <span class="math inline">\(f(x)&lt;A-\varepsilon_x\)</span>.
-由有限覆盖定理, <span class="math inline">\(f(x)&lt;A-\min_{U(x)\in
+可得一组覆盖 <span class="math inline">\(\lbrace U(x)\rbrace , x\in[a,
+b]\)</span>, 在 <span class="math inline">\(U(x)\)</span> 内, <span
+class="math inline">\(f(x)&lt;A-\varepsilon_x\)</span>. 由有限覆盖定理,
+<span class="math inline">\(f(x)&lt;A-\min_{U(x)\in
 \Sigma&#39;}\varepsilon_x\)</span>, 故 <span
 class="math inline">\(A\)</span> 不为上确界, 矛盾.</p></li>
 </ol>
@@ -893,12 +911,14 @@ class="math inline">\(U(x, \delta_x/2)\)</span> 进行区间套, 最后取得
 <li><p>用反证法, 即 <span class="math inline">\(\exists
 \varepsilon&gt;0, \forall \delta&gt;0, \exists x_1, x_2\in I,
 |x_1-x_2|&lt;\delta, |f(x_1)-f(x_2)|\ge \varepsilon\)</span>. 取 <span
-class="math inline">\(\delta = 1/n\)</span>, 有 $ x'_n $ 和 $ x''_n $
-满足 <span
+class="math inline">\(\delta = 1/n\)</span>, 有 <span
+class="math inline">\(\lbrace x&#39;_n\rbrace\)</span> 和 <span
+class="math inline">\(\lbrace x&#39;&#39;_n\rbrace\)</span> 满足 <span
 class="math inline">\(|x&#39;_n-x&#39;&#39;_n|&lt;1/n\)</span> 且 <span
 class="math inline">\(|f(x_1)-f(x_2)|\ge \varepsilon_n\)</span>.
-取有界数列 $ x'<em>n $ 的一个收敛子列 $ x'</em>{n_k} c$, 则 <span
-class="math inline">\(\lim\limits_{k\to
+取有界数列 <span class="math inline">\(\lbrace x&#39;_n\rbrace\)</span>
+的一个收敛子列 <span class="math inline">\(\lbrace x&#39;_{n_k}\rbrace
+\to c\)</span>, 则 <span class="math inline">\(\lim\limits_{k\to
 \infty}x&#39;&#39;_{n_k}=\lim\limits_{k\to\infty}(x&#39;&#39;_{n_k}-x&#39;_{n_k})+\lim\limits_{k\to
 \infty}x&#39;_{n_k}=c\)</span>. 故 <span
 class="math inline">\(\lim\limits_{k\to
@@ -974,8 +994,11 @@ k\cdot\lim_{x\to 0} \dfrac{\ln(1+x)}{x}=k.
 </details>
 <h1 id="典题赏析">典题赏析</h1>
 <ol type="1">
-<li>若 <span class="math inline">\(X, Y\)</span> 为 $R_+ $ 的子集, 证明
-$<em>{xX, yY} xy =</em>{xX} x +_{yY} y $.</li>
+<li>若 <span class="math inline">\(X, Y\)</span> 为 <span
+class="math inline">\(\mathbb R_+\cup\lbrace 0\rbrace\)</span> 的子集,
+证明 <span class="math inline">\(\inf_{x\in X, y\in Y}\lbrace xy\rbrace
+=\inf_{x\in X}\lbrace x\rbrace +\inf_{y\in Y}\lbrace
+y\rbrace\)</span>.</li>
 </ol>
 <details>
 <summary>
@@ -983,12 +1006,15 @@ $<em>{xX, yY} xy =</em>{xX} x +_{yY} y $.</li>
 </summary>
 <blockquote>
 <p>首先, <span class="math inline">\(0\)</span> 是 <span
-class="math inline">\(X, Y\)</span> 的下界, 故 $A=<em>{xX} x $ 和
-$B=</em>{yY} y $ 均存在且 <span class="math inline">\(A\ge 0, B\ge
-0\)</span>. <span class="math inline">\(\forall x\in X, y\in Y, x\ge A,
-y\ge B\)</span>, 故 <span class="math inline">\(xy\ge AB\)</span>, <span
-class="math inline">\(AB\)</span> 下界存在, 故 $C=_{xX, yY} xy $ 存在,
-下证 <span class="math inline">\(C=AB\)</span>. 由 <span
+class="math inline">\(X, Y\)</span> 的下界, 故 <span
+class="math inline">\(A=\inf_{x\in X}\lbrace x\rbrace\)</span> 和 <span
+class="math inline">\(B=\inf_{y\in Y}\lbrace y\rbrace\)</span> 均存在且
+<span class="math inline">\(A\ge 0, B\ge 0\)</span>. <span
+class="math inline">\(\forall x\in X, y\in Y, x\ge A, y\ge B\)</span>,
+故 <span class="math inline">\(xy\ge AB\)</span>, <span
+class="math inline">\(AB\)</span> 下界存在, 故 <span
+class="math inline">\(C=\inf_{x\in X, y\in Y}\lbrace xy\rbrace\)</span>
+存在, 下证 <span class="math inline">\(C=AB\)</span>. 由 <span
 class="math inline">\(A, B\)</span> 分别是 <span
 class="math inline">\(X, Y\)</span> 的下确界知, <span
 class="math inline">\(\forall \varepsilon&#39;&gt;0\)</span>, 存在 <span
@@ -1064,7 +1090,9 @@ class="math inline">\(\lim\limits_{n\to\infty}\dfrac{n}{a^n}=0(a&gt;1)\)</span>.
 </blockquote>
 </details>
 <ol start="6" type="1">
-<li>证明: 无界数列 $ x_n $ 必存在子数列 $ x_{n_k} $ 使得 <span
+<li>证明: 无界数列 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span> 必存在子数列 <span class="math inline">\(\lbrace
+x_{n_k}\rbrace\)</span> 使得 <span
 class="math inline">\(\lim\limits_{k\to
 \infty}x_{n_k}=\infty\)</span></li>
 </ol>
@@ -1078,7 +1106,8 @@ class="math inline">\(\lim\limits_{k\to
 <p>依次取 <span class="math inline">\(M=k\)</span>, 故 <span
 class="math inline">\(\exists n_k, |x_{n_k}|&gt;k\)</span>. 可以省略前
 <span class="math inline">\(n_{k-1}\)</span> 项来取, 这样能够保证 <span
-class="math inline">\(n_k\)</span> 递增. 故 $ x_{n_k} $
+class="math inline">\(n_k\)</span> 递增. 故 <span
+class="math inline">\(\lbrace x_{n_k}\rbrace\)</span>
 是趋于无穷大的数列.</p>
 </blockquote>
 </details>
@@ -1119,8 +1148,12 @@ class="math inline">\(\lim\limits_{x\to a}f(x)=0\)</span>.</li>
 </summary>
 <blockquote>
 <ol type="1">
-<li><p>取有理数列 $ a_n a$, 则 $ f(a_n) = a_n a$. 取无理数列 $ a_n a$,
-则 $ f(a_n) = -a_n -a$.</p></li>
+<li><p>取有理数列 <span class="math inline">\(\lbrace a_n\rbrace \to
+a\)</span>, 则 <span class="math inline">\(\lbrace f(a_n)\rbrace
+=\lbrace a_n\rbrace \to a\)</span>. 取无理数列 <span
+class="math inline">\(\lbrace a_n\rbrace \to a\)</span>, 则 <span
+class="math inline">\(\lbrace f(a_n)\rbrace =\lbrace -a_n\rbrace \to
+-a\)</span>.</p></li>
 <li><p>对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 取
 <span class="math inline">\(\delta=\varepsilon\)</span>, 当 <span
 class="math inline">\(0&lt;|x-0|&lt;\delta\)</span>, 有 <span
@@ -1144,8 +1177,9 @@ x_n\to+\infty(n\to\infty)\)</span> 有 <span class="math display">\[
 <p>非常类似于海涅定理的证明. 左推右显然, 右推左反证, 即反设 <span
 class="math inline">\(\exists H&gt;0, \forall G&gt;0, \exists x &gt; G,
 f(x)\le H\)</span>. 取 <span class="math inline">\(G=n\)</span>, 则存在
-<span class="math inline">\(x_n&gt;n, f(x_n)\le H\)</span>. 故我们找到 $
-x_n +$ 但是 <span class="math inline">\(f(x_n)\)</span> 不趋于 <span
+<span class="math inline">\(x_n&gt;n, f(x_n)\le H\)</span>. 故我们找到
+<span class="math inline">\(\lbrace x_n\rbrace \to +\infty\)</span> 但是
+<span class="math inline">\(f(x_n)\)</span> 不趋于 <span
 class="math inline">\(+\infty\)</span>.</p>
 </blockquote>
 </details>
@@ -1184,7 +1218,9 @@ class="math inline">\(\delta=\min_{1\le i\le m}|a-x_i|\)</span>,
 </blockquote>
 </details>
 <ol start="11" type="1">
-<li>证明 $_{n+}x_n=Ax_n $ 的任意子数列都以 <span
+<li>证明 <span
+class="math inline">\(\lim\limits_{n\to+\infty}x_n=A\Leftrightarrow
+\lbrace x_n\rbrace\)</span> 的任意子数列都以 <span
 class="math inline">\(A\)</span> 为极限.</li>
 </ol>
 <details>
@@ -1295,11 +1331,11 @@ class="math inline">\(\lim\limits_{x\to
 </blockquote>
 </details>
 <ol start="15" type="1">
-<li>设 <span class="math inline">\(\sup\limits_{x\in X} \lbrace x
-\rbrace =\beta\)</span>, 试证从 <span class="math inline">\(X\)</span>
-中可选取数列 $ x_n $, 使 <span
-class="math inline">\(\lim\limits_{n\to\infty}x_n=\beta\)</span>. (<span
-class="math inline">\(\beta\)</span> 换成 <span
+<li>设 <span class="math inline">\(\sup\limits_{x\in X}\lbrace x\rbrace
+=\beta\)</span>, 试证从 <span class="math inline">\(X\)</span>
+中可选取数列 <span class="math inline">\(\lbrace x_n\rbrace\)</span>, 使
+<span class="math inline">\(\lim\limits_{n\to\infty}x_n=\beta\)</span>.
+(<span class="math inline">\(\beta\)</span> 换成 <span
 class="math inline">\(+\infty\)</span> 也成立)</li>
 </ol>
 <details>
@@ -1311,8 +1347,8 @@ class="math inline">\(+\infty\)</span> 也成立)</li>
 \varepsilon&gt;0, \exists x\in X, \beta-\varepsilon&lt;x\le
 \beta\)</span>.</p>
 <p>取 <span class="math inline">\(\varepsilon=1/n\)</span>, 则可取得数列
-$ x_n $ 满足 <span class="math inline">\(\beta -
-1/n&lt;x_n&lt;\beta\)</span>, 从而 <span
+<span class="math inline">\(\lbrace x_n\rbrace\)</span> 满足 <span
+class="math inline">\(\beta - 1/n&lt;x_n&lt;\beta\)</span>, 从而 <span
 class="math inline">\(|x_n-\beta|&lt;1/n\to 0\)</span>, 夹逼准则知,
 该数列极限为 <span class="math inline">\(\beta\)</span>.</p>
 </blockquote>
@@ -1380,12 +1416,14 @@ class="math inline">\(x_{n+1}=\dfrac{1}{2}\left(x_n+\dfrac{a}{x_n}\right)\)</spa
 <p>显然 <span class="math inline">\(x_n&gt;0\)</span>. 当 <span
 class="math inline">\(n\ge 2\)</span>, 可知 <span
 class="math inline">\(x_{n+1}=\dfrac{1}{2}\left(x_n+\dfrac{a}{x_n}\right)\ge
-\sqrt a\)</span>. 故 $ x_n $ 有下界 <span
-class="math inline">\(0\)</span>. 并且 <span
+\sqrt a\)</span>. 故 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span> 有下界 <span class="math inline">\(0\)</span>. 并且
+<span
 class="math inline">\(\dfrac{x_{n+1}}{x_n}=\dfrac{1}{2}\left(1+\dfrac{a}{x_n^2}\right)\le
-1(n\ge 2)\)</span>, 故 $ x_n $ 从第二项开始单调递减.
-因为数列的敛散性和有限项无关, 故 $ x_n $ 极限存在, 记为 <span
-class="math inline">\(A\)</span>, 在 <span
+1(n\ge 2)\)</span>, 故 <span class="math inline">\(\lbrace
+x_n\rbrace\)</span> 从第二项开始单调递减. 因为数列的敛散性和有限项无关,
+故 <span class="math inline">\(\lbrace x_n\rbrace\)</span> 极限存在,
+记为 <span class="math inline">\(A\)</span>, 在 <span
 class="math inline">\(x_{n+1}=\dfrac{1}{2}\left(x_n+\dfrac{a}{x_n}\right)\)</span>
 两边同时取极限, 可得 <span
 class="math inline">\(A=\dfrac{1}{2}\left(A+\dfrac{a}{A}\right)\)</span>,
@@ -1528,8 +1566,8 @@ class="math inline">\(q\)</span>
 中相同种类、个数的数字，并保持分数值不变。求最小表示（使得 <span
 class="math inline">\(p\)</span> 尽量小）。</p>
 <p>例如，<span class="math inline">\(\dfrac{163}{326}\)</span> 同时划去
-$ ,6 $ 可以得到 <span class="math inline">\(\dfrac{1}{2}\)</span>
-为最简。</p>
+<span class="math inline">\(\lbrace 3,6\rbrace\)</span> 可以得到 <span
+class="math inline">\(\dfrac{1}{2}\)</span> 为最简。</p>
 <p>数据范围：<span
 class="math inline">\(0&lt;p,q&lt;2^{63}\)</span>。</p>
 <details>
@@ -1554,7 +1592,7 @@ p))\)</span>.</p>
 class="math inline">\(n\)</span> 的数列 <span
 class="math inline">\(A_i\)</span>，问是否存在唯一的 <span
 class="math inline">\(M\ge 1\)</span> 满足 <span
-class="math inline">\(\forall i\in \lbrace 1, 2, \cdots, n \rbrace ,
+class="math inline">\(\forall i\in\lbrace 1, 2, \cdots, n\rbrace ,
 A_i=2^{i-1}\bmod M\)</span>。</p>
 <p>数据范围：<span class="math inline">\(1\le n\le 10^5\)</span>，<span
 class="math inline">\(0\le A_i\le 10^9\)</span>。</p>

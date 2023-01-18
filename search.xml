@@ -7,6 +7,117 @@
 ]]></content>
   </entry>
   <entry>
+    <title>问题求解（一）总结 PART II</title>
+    <url>/2023/01/18/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/</url>
+    <content><![CDATA[<p><a
+href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
+<span id="more"></span>
+<h1 id="preface">Preface</h1>
+<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
+little part of <strong>ES</strong>.</p>
+<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
+Chapter 8, 11-15 out of class.</p>
+<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
+class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
+<p>If possible, I decide to learn the left chapters on my own and I will
+also mark my notes down here.</p>
+<h1 id="week-3-常用的证明方法">Week 3 常用的证明方法</h1>
+<h2 id="concepts">Concepts</h2>
+<h3 id="ud-chapter-5-proof-techniques">UD Chapter 5: Proof
+Techniques</h3>
+<ul>
+<li>Direct Poorf.</li>
+<li>Proof by Contradiction.</li>
+<li>Proof in Cases.</li>
+<li>Conjecture(out of intuition, generalization of observations).
+<ul>
+<li>Have proof, then a conjecture turns into a theorem.</li>
+</ul></li>
+<li>Prove that something is not true.
+<ul>
+<li>Find an example of something that satisfies the hypotheses of the
+conjecture, but not the conclusion.(a counterexample)</li>
+</ul></li>
+<li>The method to prove a statement with "iff".(break it into two
+parts)</li>
+<li>Definition of <strong>divide</strong>.</li>
+</ul>
+<h3 id="ud-chapter-18-mathematical-induction">UD Chapter 18:
+Mathematical Induction</h3>
+<ul>
+<li>Definition of <strong>mathematical induction</strong>, and the
+difference with conventional induction.(Can they be both used to prove a
+conjecture?)</li>
+<li><strong>Principle of mathematical induction</strong> and its
+proof(the consequence of <strong>well-ordering principle of</strong>
+<span class="math inline">\(\mathrm N\)</span>, use a proof by
+contradiction).</li>
+<li>Usage of mathematical induction: Two steps: the base, and the
+induction.</li>
+<li>Notions of <span class="math inline">\(\sum\)</span> and <span
+class="math inline">\(\prod\)</span>.</li>
+<li>Use induction to define functions(recursively). Importantly:
+<strong>Recursion theorem</strong> to assure the existence and
+well-defined quantity of the function and learn the proof of the
+theorem. You'd better learn Chapter 10 first to understand the proof.
+<ul>
+<li>In short, two steps(existence and uniqueness), construct the
+<strong>smallest</strong> relation to satisfy its uniqueness(Take the
+intersection).</li>
+<li>First, prove that there is a set <span class="math inline">\(\mathrm
+N\times X\)</span> satisfies, we can take their intersection as <span
+class="math inline">\(g\)</span>.</li>
+<li>Second, prove that <span class="math inline">\(g\)</span> is a
+function and we need to prove two conditions for a function. To prove
+condition I, we use mathematical induction. To prove condition II, we
+use mathematical induction too(here, in the base step and the induction
+step, we both need to use the proof of contradiction, according that
+<span class="math inline">\(g\)</span> is the smallest).</li>
+<li>Third, we need to prove the uniqueness of <span
+class="math inline">\(g\)</span>, we can use mathematical induction,
+too. Or, accroding to the book, we can also use the well-ordering
+principle of <span class="math inline">\(\mathrm N\)</span>.(In fact,
+these two are equivalent)</li>
+</ul></li>
+<li>Definition of <strong>factorial</strong>.</li>
+</ul>
+<h3 id="es-section-24-the-pigeonhole-principle">ES Section 24: The
+Pigeonhole Principle</h3>
+<ul>
+<li>Content: if <span class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span> are finite functions and <span
+class="math inline">\(|A|&gt; |B|\)</span>, then there can be no
+one-to-one function <span class="math inline">\(f:A\to B\)</span>.</li>
+<li>if <span class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span> are finite functions and <span
+class="math inline">\(|A|&lt;|B|\)</span>, then there can be no onto
+function <span class="math inline">\(f:A\to B\)</span>.</li>
+<li><strong>Cantor's Theorem</strong> <span class="math inline">\(f:A\to
+\mathcal P(A)\)</span> is not onto.</li>
+<li>The smallest infite sets have the same size as <span
+class="math inline">\(\mathrm N\)</span>, or the size is <span
+class="math inline">\(\aleph_0\)</span>.</li>
+</ul>
+<h2 id="extended-content">Extended content</h2>
+<ul>
+<li>Week 3 slides, the logical bases of the proof techniques.</li>
+<li>Week 3 slides, four rules(UG, US, EG, ES).</li>
+<li>Week 3 slides, some tautologies with quantifiers.</li>
+<li>Week 3 slides, paradigms. (To learn this, you can use the book
+<em>discrete mathematics and its applications(KR)</em>)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程笔记</category>
+        <category>问题求解</category>
+      </categories>
+      <tags>
+        <tag>课程笔记</tag>
+        <tag>问题求解</tag>
+        <tag>计算机科学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>问题求解（一）总结 PART I</title>
     <url>/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
     <content><![CDATA[<p><a
@@ -1086,10 +1197,32 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
+    <title>2023-01-18 日记</title>
+    <url>/2023/01/18/2023-01-18-%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="66ef8f2c600be65d1dfaa1ee18cf270df2146886e674157e5cb94baa50e98568">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c58980fa322d814a468ffa522441e3818c8db97a6a8f4345cdb842ba2d6ff56fbe848ce99f9e01ec40515f38f3173d0af8308a6f6fa2bfd37ae91ee80605cc27c91369eaa390d97b1fa1b31bb1b10181112066bfa29b576e1fc8e61bd105a538d565d4523475355c07fe04a5fab802fc1a388137cd09a39cefd3c5437ec7ff988b26121e4085a456ca179228a02d83b8e68231474f1f5cb2e0291b04033f3ed3f43304f1f6872ff0be6ea3d2202f4584dc607eea875de7d7de11e2d64600648373cb1b8748d36ba2c080926999a17d79f747ac1911d6528e1ccd09fe452d730a45069f7753695878bc2cd06e8ca00288c5b6f8a4d1ae7c6f6f94650f8e1ff4736ff1b2f1f58cd6122043802be6501eed7d889274ea4a63d3f391b7a9c5126e9fc27c6745cf5fd59959866f5c1fefcb84566e4533d0f110797478f6d5d10985932d825382f672d0d73cf4065ce6dd26805182784fae047e5958b618d0d3edf968e98a26c67a274f198d5b37d3d56882045f65477f372fbdf62f75644ac964dea7cfe9453faab36296bc5e848a983289e0ed8b8843ea1bce2d5038caf4630f61d0180edf2f442447b968c1b574ff641da84b7e4e101f5a9a5285c288df3d5d4985382b1c4a3c161dd72cb8f8a6d8165a27f8ea4b0e8b9473dfe1012a9d616adc8fe83730e23f6b6acc820a7835b40820a6cbe96919149770b4028fe0e2f3899070d7001e4a5632031c083f3bb74994e32a46a3b18d1fc3fc881bb5ad3982fd69b14fc53f2821786c80bccf7944d7f4961fc8718fd7c169bc64cec4b68593ac70a66b283535a78563bc6e03e7c84f5305234f49be0928b62c73e292b77540c53d6fdc376c6959dc6b154be42671d24d20326a07a46a1de7b1e87220268e127948549bb2ae56a0f3b57c56d1ffbf71fc1d41ceedc0e01aa317cf17961f7b4e556b90349f042aef38ce2877a470ceb391e00ff141de46920d68852ad32558bf2ad9e8446acc3525a5685dbf8d5400fd4e2eedc89e61fbab4a5c328f19b9e7813bcc4c01e9e9892dc1a173656efc9c635402b9b7e3bbf540c8a53717bd0cc6db56206fa5d</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2023-01-17 日记</title>
     <url>/2023/01/17/2023-01-17-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="04c29af073ecae6919be092d7ba186e76d817d65adb50f5f6fdc2154e50135d6">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c5858fd3734ddbd0f7caf5b0ad0c765827dacf6db4dda92b1f666e8d9461c97d7453c140dd43c7183e9338cb41657a622ae96afc60ca3a6a18f68839bcbe12697306e010268da03b1fe9b35785ad019c92afe5aef08bbf39668b23aced3cc0174cefbc69be91f5e79779663573407eba76d22c941ffa017c1925aacc9be1f457555afb16393ff72913ccae06c3dd72f7b68b949d3c59ab6898f8674e5a0955a26eeb586a5f1db427325aeabbe76f37ef937eb457200f906cdb86b2ef47bab58e977a7052efec86542c6ff5c4c736ba536c3e50ee5a0328942ff0e0c0924de97506e8b4493eed71348ffd225556659a0cb8712136666f6b1362bddd223525d658a38b465d5736144a4dd7b7f26ef72503e0e07244ce85c6aff56ea86fd6bc4ed3c8e1da7ed9b53c1c3091e4e1134bf13fff877e0cca3af32d31c995a63653aa04df9280ce55402ffb11b3ae59d8775a904981499fab1ae9d9792120eafffed55daa39c71d001e2199a625e5a8f2a695cf1df42472b023a56ac570f9bd94bdf08d029e64a6561fec5fcb7ae6efea227657db8d329c7a2ee0cd6fca07384e3dcbb77b5025bbf2da082f939279f8129e241f7e9a3dc1285e95b1f16e0761c805e711eb741740742b088da80ded0b2b3bc9967f55b46c991d1a4933bc56eb00ca2a937bf9ae193e3ad0961cb59ea3c51336690600be737d08407338f4e7cb179b1bd80dc330d385df5d787bcd0e44e1ce8742be9ac9d6059e843a6dd1f675d3c0d7508ec643d52e14d4c1b784f282cda320bc666f5930254ad2eca468f4aa852966f3a275816a2eabdbd985f5412145c662bb1640c7d2e38e66542118a15547071bbbeb93e72a00a36429e2158e003a24bf2b5fb93724c502080d5b23a11899717d3afa5a0d08d6eb529b2020e0af2554ee8b2a1b6b0aa1e5bd9479837e4f9341043b2ea0ba473d975056e7d5aa0b4aa1844d834365dec0680a99d9146dec2fa1dd8e9be40139cb3cff89519beea3fb900a122b61a8ee9a05dfacc9d71ab95efa0b60f4ce60e9369a6bfbfd72ba255917fac8145e277ed1ca4931f8b68c124e7728fb264b969946c00425d5f53aa12ed36f9602a2f676b67f45ff222aa72d3b373ebfe72d1abc4537a6c0f84af40a9abe80619b049ccb13e11f969edb85714710e1cf259d511d7bbc7420855c453f3c573906354adb19d5495281e3759a32405455b0ad3de01ef69926c96c7b81eb1cc1f9315f3a4b735481bf37b87fd146ae57f521e4f7f4d4d1f388da2dd55b9338a4e65800dec88bed19bf01cb5fb044ccd7b407b332bb12c6e85143f9b847ab3f0fba94123f0ce0b4c8285c6d3260f0cddb743531aea46c0679859aa1792aa67290b04235720a422e0d6017153fb4fa8bc7d0189bca4a73094da2f6c572d19890bd38eabdd77ffe4da7e6d2700894d0bd0e0fa526aff14d0fdf9b4613221db4bc072247d5114ac952041b5365b92c09a9dd5929d21a60d98d2fafb36eb8d5a27b041cca878</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="37d8a1d95cd4de3e8413812301e9ad2f742a86fe2c232346e96f03416f9321dd">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c5858fd3734ddbd0f7caf5b0ad0c765827dacf6db4dda92b1f666e8d9461c97d7453c140dd43c7183e9338cb41657a622ae96afc60ca3a6a18f68839bcbe12697306e010268da03b1fe9b35785ad019c92afe5aef08bbf39668b23aced3cc0174cefbc69be91f5e79779663573407eba76d22c941ffa017c1925aacc9be1f457555afb16393ff72913ccae06c3dd72f7b68b949d3c59ab6898f8674e5a0955a26eeb586a5f1db427325aeabbe76f37ef937eb457200f906cdb86b2ef47bab58e977a7052efec86542c6ff5c4c736ba536c3e50ee5a0328942ff0e0c0924de97506e8b4493eed71348ffd225556659a0cb8712136666f6b1362bddd223525d658a38b465d5736144a4dd7b7f26ef72503e0e07244ce85c6aff56ea86fd6bc4ed3c8e1da7ed9b53c1c3091e4e1134bf13fff877e0cca3af32d31c995a63653aa04df9280ce55402ffb11b3ae59d8775a904981499fab1ae9d9792120eafffed55daa39c71d001e2199a625e5a8f2a695cf1df42472b023a56ac570f9bd94bdf08d029e64a6561fec5fcb7ae6efea227657db8d329c7a2ee0cd6fca07384e3dcbb77b5025bbf2da082f939279f8129e241f7e9069e11a1a1b5129a8e3c01b42cc65f2d7cbb7d32217738ba2c753c119541190c59e331763eddcd8b1e014db0119bbb1ac48cc538c00cf7be68343d0702390a112f025339a9ff46727b0d4e87a2cbc7f5275b31c08db95c4d5bc72bcf86ade72b7ad08954b05d544ee1b989abe45b3abc2d4f9ca64a68068070c9890c7a48f82da707b18bfa56edd28df267cce28755592742cedcb4c694ee3b9a05402361f45af397b26932caf371acfab5fe5784987cba3dcf97fc5d090afc95ff3625f3665db33de169a7d3310c42b6126d74f8f0199fa2b3dc83f02ead95436c5ce00ffce5250815b4d4e9ed64d0009077f6320437f80d67e20eef06776b94301014ba5b71f072dd01e57d8c452eb32fc5aba779d97449014d75b1df8241ea39b236df925459f463ccd5b0700a5e5d77b23103eff0d4a3cd2fc4b165e43e55470d097e511e1aae97952b277ce620c6b7c75afb030475f2bdb291a359eb77540c66df319bbaf807bd6e62858caa95a3aa32f2df7491f0bd0b5eff43fc1f9dd92f1f0ad3d316200b94eba3a599141f7e8819b9a631e17f7a60251fa6ee0d6e460f921e091080041e2bd046c14f3d5811c3a8f20bde017bd59d4fdeff32578e9feb6190f2176e4e9c3aef95f7c8b0eae1a73455498b7b572798313e1c86278fb9bb2ea4cf0071247cbcf8a013118486897737ae439f56bb089e8f6f4c6267a1e9ad667668ecdd86d19bce4be12d283b83c878536ee5745f3ef79e4cfde6274a89e9a1433406690fd64c7b535601920473b28b310ea14112d9ca36ffc514ada844e9051ec8bb85f9e404f40833021a403ee562f5fde85d06d23feef64724ed9cca1301f70699ae8e03f00bb5a55e70696a11e1079b40652277d18a5c1bcf27e862368bbbd3205dd2a558acf5692333f34c3280948d2eef4a30167ec1adf9975c20392238e5603d08f308d08f40fcf05b712ad07c99ccb3a78ab7df32687e91caa2d5c6975ac6297efa5a8a480abf7a52027107de5a4afa79c6790d9755b89f00eaa2f1322f8ede0bf08e5528374b1f66b15c8052e0bf5c5d384eb6d035d910aea1e25c0628320177b48379e67a7dd4db8bb4cb9f06b9475d1f666fe9dfcf5cce7f75e935a893494225b1d18c828bb661568513a0d27605bbe93357be6dbf61f6b1b77f60763415f66bfb072fb874a78d2d0aa684978c9ab23d7b414f33224a764a40885e968e1e86b6c7476ac3ea53b5b45ed154fca1452f81b2dd76f7b25267c10fccb21e4cf38ab0517a721f48b69a0026a236ac72ebf153bc7be4621aa2e08ba675d826260141ef932cddc2746d2471ce6c5acd95279b83dea2e51fd213b1ea40165b173d6e276a10977229ec2134e3e63119ae58e2df863d7a0d91264e69f3646727159331d08b889f2c4e64804b0e1655bded217296dfcdb7869565e8f8c7bdd9549091af</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">

@@ -106,6 +106,58 @@ class="math inline">\(\aleph_0\)</span>.</li>
 <li>Week 3 slides, paradigms. (To learn this, you can use the book
 <em>discrete mathematics and its applications(KR)</em>)</li>
 </ul>
+<h1 id="week-4-基本的算法结构">Week 4 基本的算法结构</h1>
+<h2 id="concepts-1">Concepts</h2>
+<h3 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
+Data</h3>
+<p><strong>PART I</strong></p>
+<ul>
+<li>An algorithm is excuted by a processor. It does things according to
+the basic actions of the algorithm.</li>
+<li>Control(-flow) Structures.
+<ul>
+<li>Direct sequencing (do A, and then do B).</li>
+<li>Conditional branching (if A do B, (otherwise do C)).</li>
+<li>Iterations(looping constructs), let an algorithm of fixed length
+describe processes that can grow very long.
+<ul>
+<li>Bounded iteration: Do A exactly N times.</li>
+<li>Conditional iteration(Unbounded iteration): while Q do A.</li>
+</ul></li>
+</ul></li>
+<li>Combining Control Structures: Sequencing, branching and iteration
+can be interleaved and nested within each other.
+<ul>
+<li>Nested loops(outer loop, inner loop).</li>
+</ul></li>
+<li>Sorting. Bubble Sort.</li>
+<li>Goto Statement.</li>
+<li>Diagrams for Algorithms.
+<ul>
+<li>Flowcharts. Advantages and disadvantages.</li>
+</ul></li>
+</ul>
+<p><strong>PART II</strong></p>
+<ul>
+<li>Subroutine/Procedure with parameters to be invoked/called.
+<ul>
+<li>Economy.</li>
+<li>Abstraction ability. Make black boxes(reduce the details we need to
+consider). We can devise high-level algorithm first and fill in the
+subroutines later("top-down design").</li>
+</ul></li>
+<li>Recursion.
+<ul>
+<li>The Towers of Hanoi.</li>
+<li>Depth of recursion.</li>
+</ul></li>
+<li>Minimal sets of control structs.(For example, sequencing,
+conditional branching and unbounded loop)</li>
+</ul>
+<h2 id="extended-content-1">Extended content</h2>
+<ul>
+<li>Week 4 slides: iteration invariants.</li>
+</ul>
 ]]></content>
       <categories>
         <category>课程笔记</category>
@@ -1686,10 +1738,32 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
       </tags>
   </entry>
   <entry>
+    <title>2023-01-19 日记</title>
+    <url>/2023/01/19/2023-01-19-%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="54d272ec3046f7104da9077dbbe855f3af90fee80feac076014623fe674049bf">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b27e74234b33f6a901b0a8d2881ed8b0fa4add9a182a90f45a6b34c313a313cd70dc731048dd3fd6e55be5cc5e9ad4a5677a880a2110b7466d39613b2dab6f261beb9160fd488c3542450ca26f46fc8a4ca3ad8b2541fd11f08ef1fe519a8b7db57a52e8b764de462363cdad062d4ebdece52b4f14f1a02937fd0286d91c027a41e66b3588d36b4a7e19a59962cbb18bbb796b24acb9541c77bd8e107b9f4c4a3143108a2b1a7b46d7c3160a74222dec17a73ada3960c91ac5ad40f7c6f341d17d7c6ec3618d40ae02390c623768f36fdfbe1cf53b24033ad97ab2461b0ef5a9e14e86b031e1c6928a7ebf212bf469e71abeca6b668891ace9e8fe7fc45389260518d7530c1f45120a20390b0a2f5d18fc66e35e9576ccedf5f7968496d90d645ff4d9521d8cab7195edaff032ae31f30f0311160f37b90a082efb48e3f7811450ade9767e48647348ea9d359be537018a4ea95e724ac92144800050032416643d4538d66b19c1194328d0c51587a2fda0382ecadc831948753ef2c87eab9c01ceced076768fbee92023e03a16a6a1ef0dfae24eefde01a420f2002f3badf2ea7eae758dc02b3d9117f06777d9b781af4a5bde7d9f12545a7e31e3a72b6e049f167f400eb4701a03ab88e0fd02309884e8167da92de80fd1b7ad7fe31470f4e6da8195115afb618ad32831356280b4d23040e6aadac5ec84a07181cb6b9a96978d67edd7dc1749fcc92a05310b2d8df859b24efb81672ee43dd6af9945871d5db84d7581ee653ff0d796b7fc98c06311217658e1adf8708774001bec48f832cf6c784959727a414d53881b988c5f4797ab11e6341a7628860aa70eefd203b4e87cbb156aaf5423d583640258082c7ecd1fb7f3030076da3aa08daf50a24c14027d7d0540dbd5647e98591f54fd3d0062315cf38474dc7153863cfa2e78a7c54e7401780080a3c2e99b0cf5f36b33f510937d8d93c01885b1819846b0a12006b65b6197b8944ea3dd3ec32f6b8ce5fb5dd7f172e96156f21034c73f3f4872d114a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2023-01-18 日记</title>
     <url>/2023/01/18/2023-01-18-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="66ef8f2c600be65d1dfaa1ee18cf270df2146886e674157e5cb94baa50e98568">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c58980fa322d814a468ffa522441e3818c8db97a6a8f4345cdb842ba2d6ff56fbe848ce99f9e01ec40515f38f3173d0af8308a6f6fa2bfd37ae91ee80605cc27c91369eaa390d97b1fa1b31bb1b10181112066bfa29b576e1fc8e61bd105a538d565d4523475355c07fe04a5fab802fc1a388137cd09a39cefd3c5437ec7ff988b26121e4085a456ca179228a02d83b8e68231474f1f5cb2e0291b04033f3ed3f43304f1f6872ff0be6ea3d2202f4584dc607eea875de7d7de11e2d64600648373cb1b8748d36ba2c080926999a17d79f747ac1911d6528e1ccd09fe452d730a45069f7753695878bc2cd06e8ca00288c5b6f8a4d1ae7c6f6f94650f8e1ff4736ff1b2f1f58cd6122043802be6501eed7d889274ea4a63d3f391b7a9c5126e9fc27c6745cf5fd59959866f5c1fefcb84566e4533d0f110797478f6d5d10985932d825382f672d0d73cf4065ce6dd26805182784fae047e5958b618d0d3edf968e98a26c67a274f198d5b37d3d56882045f65477f372fbdf62f75644ac964dea7cfe9453faab36296bc5e848a983289e0ed8b8843ea1bce2d5038caf4630f61d0180edf2f442447b968c1b574ff641da84b7e4e101f5a9a5285c288df3d5d4985382b1c4a3c161dd72cb8f8a6d8165a27f8ea4b0e8b9473dfe1012a9d616adc8fe83730e23f6b6acc820a7835b40820a6cbe96919149770b4028fe0e2f3899070d7001e4a5632031c083f3bb74994e32a46a3b18d1fc3fc881bb5ad3982fd69b14fc53f2821786c80bccf7944d7f4961fc8718fd7c169bc64cec4b68593ac70a66b283535a78563bc6e03e7c84f5305234f49be0928b62c73e292b77540c53d6fdc376c6959dc6b154be42671d24d20326a07a46a1de7b1e87220268e127948549bb2ae56a0f3b57c56d1ffbf71fc1d41ceedc0e01aa317cf17961f7b4e556b90349f042aef38ce2877a470ceb391e00ff141de46920d68852ad32558bf2ad9e8446acc3525a5685dbf8d5400fd4e2eedc89e61fbab4a5c328f19b9e7813bcc4c01e9e9892dc1a173656efc9c635402b9b7e3bbf540c8a53717bd0cc6db56206fa5d</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b5054bce2664743d9f663d83903683cce704b70dafc8c28ce2cb293e6a1e1a0a">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c58980fa322d814a468ffa522441e3818c8db97a6a8f4345cdb842ba2d6ff56fbe848ce99f9e01ec40515f38f3173d0af8308a6f6fa2bfd37ae91ee80605cc27c91369eaa390d97b1fa1b31bb1b10181112066bfa29b576e1fc8e61bd105a538d565d4523475355c07fe04a5fab802fc1a388137cd09a39cefd3c5437ec7ff988b26121e4085a456ca179228a02d83b8e68231474f1f5cb2e0291b04033f3ed3f43304f1f6872ff0be6ea3d2202f4584dc607eea875de7d7de11e2d64600648373cc2b3512efce52f985d5c5bfbcc0d6d0c2465a2b2077eb7e34efc4a92e83baae972ecc194aacc0d9d8a4955a1ae1c25796eacca3d9676c5dc8a1de8bcb05e3dc46ac18eebd5f123fb5efabe7a9311332c270b5bc06cba482e8e191a8badf68ee6c8f7277a8802aeb4818db5877d5ed9471ffc7c4de2370e2fd097bcfe40478f4c0b833def1de9f05270a5e271f3bd74160350bf91e731709c2598631c843db1c69b1e6dbe913892d8e7f3cd9d95f9190ff7fc6037ec5e49d73e1d0e6fd1ce9987396d354de3f2273c338385a8483e2d71b2f0397c64a5da3596ee605a37cf12c070a8a4a7fa993583c0c8dc24b8a96b2e7dccd7cf1df2b010141adcef3e34162abfb96ea13b4c51fecfd820084387f2616c3d0c8acc75b3a581823ae83b6b890a35452fa8cb870a7f0c5a28b464bbe052818fa91eaaf082de82108d6347e161a9581a3c79cbafda380445a24e58da810ae8dc295eb31b61be50565b7121c12a3e18183c6a7d9f8a48a790942384f0f241740c79f79582887a65f49e97abf2d612aa7aa1fa6f1be11766f56a16fa4addb1797f1d357327e6e298d155c93b086528e4132213370be5839b78b75e6bbcd883d24bbe668ef624f7eacb10c6c78416e021c3e77a63170a997de28d2e35d008bd35d3b0f5aaaa3ec42baf17d25112c5af20a36db62749ae2b5993485ba448ace8f86e7d0b4d6a7d7ad80537cb6d311995b86b2c15e721a193cb4efafc8033e70a77cbf46c8f1b0321a37379f0342d20b84bf964f66be871ba1672d8660570196bcf25dae02daa10bc8bff859da9404b61e290fd7fdca8d8eb432c67056dd38227b99727997bc3d0444f82a520e0e432b34d3f2fc1588485be6eb741a9fbb44e8bb1507f26e86ca5a014afd2a3085ac6aac2b362eefbf04a1a2a85e0ee86f08f1a885fd2b38868ece10a5d7bed80cd166e9b18a8bbd99699d2a1b4f470b03279cafef43f91e641a81a750a5164d2cc35e91c16da877ca1e845fd64d40e6143294cc45508037a93e905589a9bf8a7c5b3ee434968792ac094ac9d1a1875fcd73c564c91ce9e534ed01fe5e4d8b51993074178edb9a32f287b846b746dde818c23f6d9463d8cd3adfcdefac33edee95aa144c421297b9facbd39fca02636b4d1cb8ff0b65c16a5de44e9822d6e9e09b30c3e12ac8d1ecacdbb40540e9541fbbf61afe7ddae1d097aa55dfd171c94d6e20d9544d563ca2ffcff5b66410a934d8e72d53c57117e27b4553ea33cf90620b68dd966052a9434a6f93c1489f665352ca6886fdbcc230c0633c2808e4e9ef64efd039e84255136b4ad86fb49bece5da91d1a6ac6a101248a227ec834aaf2888121dcdb627d6782e1d03fd357131208226be24f6dcc00229f2f2cf4d4e3b82647ddf7489ad94480ab5a8762994d4730f6c8b3</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">

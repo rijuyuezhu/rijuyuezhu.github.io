@@ -7,155 +7,162 @@
 ]]></content>
   </entry>
   <entry>
+    <title>2021 ICPC Asia Shenyang RC 题解</title>
+    <url>/2023/01/20/2021-ICPC-Asia-Shenyang-RC-%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<p><a href="https://codeforces.com/gym/103427">比赛链接</a></p>
+<span id="more"></span>
+
+<h1 id="D-Cross-the-Maze"><a href="#D-Cross-the-Maze" class="headerlink" title="D Cross the Maze"></a>D Cross the Maze</h1><p><strong>题意</strong>: 有一个 $a\times b$ 个单元格组成的矩形迷宫, 最外围有墙. 里面有 $n$ 个人, 初始位置分别在 $(s_{xi}, s_{yi})$; 他们要离开的话, 只能从 $n$ 条绳索离开, 分别在 $(e_{xi}, e_{yi})$. 每个时刻, 每个人可以向四个方向走, 或留在原地. 每个绳索只能使用一次; 在<strong>任何时刻</strong>, 一个单元格不能停留两个人. 问让所有人离开的最短时间. 保证初始情况不能所有人全部立刻出去.</p>
+<p><strong>数据范围</strong>: $1\le n\le 100$, $1\le a\times b\le 100$.</p>
+<details>
+<summary><b>展开题解</b></summary>
+
+<p>看到各种各样的奇怪的限制, 可以想到网络流.</p>
+<p>首先, 对于最终答案, 可以进行二分. 可知最终答案 $y$ 满足 $1\le t\le ab$. (这个上界构造: 把迷宫蛇形展开成一行, 一起往一个方向走即可保证). 二分后改判断.</p>
+<p>要判断 $t$ 时间可否完成, 我们网络流建图. 首先, 对于格子, 按照时间建 $t+1$ 层, 每层还拆成入点和出点. 记 $(t, x, y)$ 表示 $t$ 时刻的 $(x, y)$ 点的入点, $[t, x, y]$ 为出点. 另外, 对于每根绳子, 我们也拆成入点和出点. 记 $\langle i \rangle$ 为入点, $\lbrace i\rbrace$ 为出点. 我们如下建图:</p>
+<p>$S\to (0, s_{xi}, s_{yi})$, 容量为 $1$. 这意为一开始这里有个冒险者.(流量表示冒险者)</p>
+<p>$(t, x, y)\to [t, x, y]$, 容量为 $1$. 保证任意时刻每个格子只能有一个人在上面走.</p>
+<p>$[t, x, y] \to (t+1, u, v)$, 容量为 $1$, 其中 $(u, v)$ 可由 $(x, y)$ 一步抵达. </p>
+<p>$[t, e_{xi}, e_{yi}] \to \langle i \rangle$, 容量为 $1$, 意为这里有绳索.</p>
+<p>$\langle i\rangle\to \lbrace i \rbrace$, 容量为 $1$, 保证每个绳索只能用一次.</p>
+<p>$\lbrace i\rbrace\to T$, 容量为 $1$ 逃出升天.</p>
+<p>然后跑最大流即可, 若最大流为 $n$ 则可行.</p>
+<p>构造方案直接沿着流的路径即可.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXN = <span class="number">105</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXNODE = <span class="number">30005</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXEDGE = <span class="number">150005</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> dx[<span class="number">5</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> dy[<span class="number">5</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">const</span> string dir = <span class="string">&quot;SRLDU&quot;</span>;</span><br><span class="line"><span class="type">int</span> N, S, T;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="type">int</span> v, nxt, w;</span><br><span class="line">&#125;e[MAXEDGE];</span><br><span class="line"><span class="type">int</span> cur[MAXNODE], head[MAXNODE], cnt = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> v, <span class="type">int</span> w)</span> </span>&#123;</span><br><span class="line">    e[++cnt] = &#123;v, head[u], w&#125;; head[u] = cnt;</span><br><span class="line">    e[++cnt] = &#123;u, head[v], <span class="number">0</span>&#125;; head[v] = cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dep[MAXNODE], que[MAXNODE], hd, tl, max_flow, ans, outnumber;</span><br><span class="line">string way;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        dep[i] = <span class="number">0</span>;</span><br><span class="line">        cur[i] = head[i];</span><br><span class="line">    &#125;</span><br><span class="line">    hd = <span class="number">1</span>; tl = <span class="number">0</span>;</span><br><span class="line">    que[++tl] = S;</span><br><span class="line">    dep[S] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(hd &lt;= tl) &#123;</span><br><span class="line">        <span class="type">int</span> u = que[hd++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = head[u]; i; i = e[i].nxt) &#123;</span><br><span class="line">            <span class="type">int</span> v = e[i].v;</span><br><span class="line">            <span class="keyword">if</span>(e[i].w &amp;&amp; !dep[v]) &#123;</span><br><span class="line">                dep[v] = dep[u] + <span class="number">1</span>;</span><br><span class="line">                que[++tl] = v;</span><br><span class="line">                <span class="keyword">if</span>(v == T) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> flow)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(u == T) <span class="keyword">return</span> flow;</span><br><span class="line">    <span class="type">int</span> rest = flow;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> &amp;i = cur[u]; i &amp;&amp; rest; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="type">int</span> v = e[i].v;</span><br><span class="line">        <span class="keyword">if</span>(e[i].w &amp;&amp; dep[v] == dep[u] + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="type">int</span> k = <span class="built_in">dfs</span>(v, <span class="built_in">min</span>(rest, e[i].w));</span><br><span class="line">            <span class="keyword">if</span>(!k) dep[v] = <span class="number">0</span>;</span><br><span class="line">            e[i].w -= k;</span><br><span class="line">            rest -= k;</span><br><span class="line">            e[i^<span class="number">1</span>].w += k;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flow - rest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dinic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> flow;</span><br><span class="line">    max_flow = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">bfs</span>()) &#123;</span><br><span class="line">        <span class="keyword">while</span>(flow = <span class="built_in">dfs</span>(S, INF))</span><br><span class="line">            max_flow += flow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, a, b, sx[MAXN], sy[MAXN], ex[MAXN], ey[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get_num</span><span class="params">(<span class="type">int</span> t, <span class="type">int</span> i, <span class="type">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t * a * b + i * b + j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">legal</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;= <span class="number">0</span> &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; x &lt; a &amp;&amp; y &lt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> t)</span> </span>&#123;</span><br><span class="line">    N = <span class="number">2</span> * (t+<span class="number">1</span>) * a * b + <span class="number">2</span> * n + <span class="number">2</span>;</span><br><span class="line">    S = N<span class="number">-2</span>;</span><br><span class="line">    T = N<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">        head[i] = <span class="number">0</span>;</span><br><span class="line">    cnt = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">addedge</span>(S, <span class="built_in">get_num</span>(<span class="number">0</span>, sx[i], sy[i]), <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; (t+<span class="number">1</span>) * a * b; i++)</span><br><span class="line">        <span class="built_in">addedge</span>(i, i + (t+<span class="number">1</span>) * a * b, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt;= t; k++)</span><br><span class="line">            <span class="built_in">addedge</span>((t+<span class="number">1</span>) * a * b + <span class="built_in">get_num</span>(k, ex[i], ey[i]), <span class="number">2</span> * (t+<span class="number">1</span>) * a * b + i<span class="number">-1</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">addedge</span>(<span class="number">2</span> * (t+<span class="number">1</span>) * a * b + i<span class="number">-1</span>, <span class="number">2</span> * (t+<span class="number">1</span>) * a * b + n + i<span class="number">-1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">addedge</span>(<span class="number">2</span> * (t+<span class="number">1</span>) * a * b + n + i<span class="number">-1</span>, T, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; t; k++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> x = <span class="number">0</span>; x &lt; a; x++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> y = <span class="number">0</span>; y &lt; b; y++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> d = <span class="number">0</span>; d &lt; <span class="number">5</span>; d++) &#123;</span><br><span class="line">                    <span class="type">int</span> nx = x + dx[d], ny = y + dy[d];</span><br><span class="line">                    <span class="keyword">if</span>(!<span class="built_in">legal</span>(nx, ny))</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="built_in">addedge</span>((t+<span class="number">1</span>) * a * b + <span class="built_in">get_num</span>(k, x, y), <span class="built_in">get_num</span>(k+<span class="number">1</span>, nx, ny), <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">    <span class="built_in">dinic</span>();</span><br><span class="line">    <span class="keyword">return</span> max_flow == n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getway</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    way.<span class="built_in">clear</span>();</span><br><span class="line">    outnumber = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="type">int</span> pos = <span class="built_in">get_num</span>(t, x, y) + (ans+<span class="number">1</span>) * a * b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = head[pos]; i; i = e[i].nxt)</span><br><span class="line">            <span class="keyword">if</span>(e[i^<span class="number">1</span>].w == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="type">int</span> v = e[i].v;</span><br><span class="line">                <span class="keyword">if</span>(v &lt; (ans+<span class="number">1</span>) * a * b) &#123;</span><br><span class="line">                    <span class="comment">//case 1, next layer</span></span><br><span class="line">                    <span class="type">int</span> vx = v % (a * b) / b, vy = v % (a * b) % b;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">5</span>; k++)</span><br><span class="line">                        <span class="keyword">if</span>(vx == x + dx[k] &amp;&amp; vy == y + dy[k]) &#123;</span><br><span class="line">                            way += dir[k];</span><br><span class="line">                            x = vx;</span><br><span class="line">                            y = vy;</span><br><span class="line">                            t++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//case 2, outside</span></span><br><span class="line">                    outnumber = v - <span class="number">2</span> * (ans+<span class="number">1</span>) * a * b + <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">return</span> ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; sx[i] &gt;&gt; sy[i];</span><br><span class="line">        sx[i]--; sy[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; ex[i] &gt;&gt; ey[i];</span><br><span class="line">        ex[i]--; ey[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> L = <span class="number">1</span>, R = a * b;</span><br><span class="line">    ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(L &lt;= R) &#123;</span><br><span class="line">        <span class="type">int</span> M = (L + R) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>(M)) &#123;</span><br><span class="line">            ans = M;</span><br><span class="line">            R = M - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            L = M + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">check</span>(ans);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">getway</span>(sx[i], sy[i]);<span class="comment">//retrun way, outnumber</span></span><br><span class="line">        cout &lt;&lt; sx[i]+<span class="number">1</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; sy[i]+<span class="number">1</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; ex[outnumber]+<span class="number">1</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; ey[outnumber]+<span class="number">1</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; way;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = way.<span class="built_in">length</span>(); i &lt; ans; i++)</span><br><span class="line">            cout &lt;&lt; <span class="string">&#x27;P&#x27;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h1 id="I-Linear-Fractional-Transformation"><a href="#I-Linear-Fractional-Transformation" class="headerlink" title="I Linear Fractional Transformation"></a>I Linear Fractional Transformation</h1><p><strong>题意</strong>: 给复数域上的函数 $f(z)&#x3D;\dfrac{az+b}{cz+d}(a,b,c,d\in\mathbb C, ad-bc\ne 0)$, 其中 $a,b,c,d$ 未知. 给 $z_1, z_2, z_3, w_1, w_2, w_3$ 满足 $f(z_i)&#x3D;w_i$, 并给 $z_0$, 求 $f(z_0)$. 保证解存在且唯一.</p>
+<details>
+<summary><b>展开题解</b></summary>
+
+<p>我们发现这是个分数结构, 故可约去个比例. 分两种情况讨论:</p>
+<ol>
+<li>若 $c&#x3D;0$, 则 $f(z)&#x3D;\dfrac{az+b}{d}&#x3D;a’z+b’$, 是个线性函数. 由 $f(z_1)&#x3D;w_1, f(z_2)&#x3D;w_2$ 可求得 $a’, b’$, 再验证 $f(z_3)&#x3D;w_3$, 若满足, 则答案就是 $f(z_0)&#x3D;a’z_0+b’$.</li>
+<li>若 $c\ne 0$, 则上下约去 $c$ 得 $f(z)&#x3D;\dfrac{a’z+b’}{z+d’}&#x3D;w$, 故 $z_ia’+b’-w_id’&#x3D;z_iw_i(i&#x3D;1, 2, 3)$, 高斯消元即可求得 $a’, b’, d’$, 代入 $f(z_0)$ 即可.</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> db = <span class="type">double</span>;</span><br><span class="line"><span class="keyword">constexpr</span> db eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">cp</span> &#123;</span><br><span class="line">    db x, y;</span><br><span class="line">    <span class="function">db <span class="title">Mo2</span><span class="params">()</span><span class="type">const</span> </span>&#123;<span class="keyword">return</span> x * x + y * y;&#125;</span><br><span class="line">    cp <span class="keyword">operator</span> + (<span class="type">const</span> cp &amp;B)<span class="type">const</span> &#123;<span class="keyword">return</span> &#123;x + B.x, y + B.y&#125;;&#125;</span><br><span class="line">    cp <span class="keyword">operator</span> - (<span class="type">const</span> cp &amp;B)<span class="type">const</span> &#123;<span class="keyword">return</span> &#123;x - B.x, y - B.y&#125;;&#125;</span><br><span class="line">    cp <span class="keyword">operator</span> * (<span class="type">const</span> cp &amp;B)<span class="type">const</span> &#123;<span class="keyword">return</span> &#123;x * B.x - y * B.y, x * B.y + y * B.x&#125;;&#125;</span><br><span class="line">    cp <span class="keyword">operator</span> / (<span class="type">const</span> cp &amp;B)<span class="type">const</span> &#123;<span class="keyword">return</span> &#123;(x * B.x + y * B.y) / B.<span class="built_in">Mo2</span>(), (y * B.x - x * B.y) / B.<span class="built_in">Mo2</span>()&#125;;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">istream&amp; <span class="keyword">operator</span> &gt;&gt; (istream &amp;in, cp &amp;B) &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    in &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    B.x = a;</span><br><span class="line">    B.y = b;</span><br><span class="line">    <span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br><span class="line">ostream&amp; <span class="keyword">operator</span> &lt;&lt; (ostream &amp;out, <span class="type">const</span> cp&amp; B) &#123;</span><br><span class="line">    out &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">8</span>) &lt;&lt; B.x &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; B.y;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line">cp z[<span class="number">4</span>], w[<span class="number">4</span>], a[<span class="number">4</span>][<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cp k = (w[<span class="number">1</span>] - w[<span class="number">2</span>]) / (z[<span class="number">1</span>] - z[<span class="number">2</span>]);</span><br><span class="line">    cp b = w[<span class="number">1</span>] - k * z[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span>((k * z[<span class="number">3</span>] + b - w[<span class="number">3</span>]).<span class="built_in">Mo2</span>() &lt; eps) &#123;</span><br><span class="line">        cout &lt;&lt; k * z[<span class="number">0</span>] + b &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Guass</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> r = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> c = <span class="number">1</span>; c &lt;= n; c++) &#123;</span><br><span class="line">        <span class="type">int</span> num = r;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = r+<span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">if</span>(a[i][c].<span class="built_in">Mo2</span>() &gt; a[num][c].<span class="built_in">Mo2</span>())</span><br><span class="line">                num = i;</span><br><span class="line">        <span class="keyword">if</span>(num != r)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = c; i &lt;= n+<span class="number">1</span>; i++)</span><br><span class="line">                <span class="built_in">swap</span>(a[r][i], a[num][i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = r+<span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            cp k = a[i][c] / a[r][c];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = c; j &lt;= n+<span class="number">1</span>; j++)</span><br><span class="line">                a[i][j] = a[i][j] - k * a[r][j];</span><br><span class="line">        &#125;</span><br><span class="line">        r++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = i+<span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            a[i][n+<span class="number">1</span>] = a[i][n+<span class="number">1</span>] - a[j][n+<span class="number">1</span>] * a[i][j];</span><br><span class="line">        a[i][n+<span class="number">1</span>] = a[i][n+<span class="number">1</span>] / a[i][i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++)</span><br><span class="line">        cin &gt;&gt; z[i] &gt;&gt; w[i];</span><br><span class="line">    cin &gt;&gt; z[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">check1</span>())</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++) &#123;</span><br><span class="line">        a[i][<span class="number">1</span>] = z[i];</span><br><span class="line">        a[i][<span class="number">2</span>] = &#123;<span class="number">1.0</span>, <span class="number">0.0</span>&#125;;</span><br><span class="line">        a[i][<span class="number">3</span>] = &#123;-w[i].x, -w[i].y&#125;;</span><br><span class="line">        a[i][<span class="number">4</span>] = w[i] * z[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Guass</span>(<span class="number">3</span>);</span><br><span class="line">    cp A = a[<span class="number">1</span>][<span class="number">4</span>], B = a[<span class="number">2</span>][<span class="number">4</span>], D = a[<span class="number">3</span>][<span class="number">4</span>];</span><br><span class="line">    cout &lt;&lt; (A * z[<span class="number">0</span>] + B) / (z[<span class="number">0</span>] + D) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">        <span class="built_in">work</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h1 id="J-Luggage-Lock"><a href="#J-Luggage-Lock" class="headerlink" title="J Luggage Lock"></a>J Luggage Lock</h1><p><strong>题意</strong>: 行李箱上的密码 $a_0a_1a_2a_3$ 转换为 $b_0b_1b_2b_3$ 至少要几下? 允许的操作是使连续一段同时上移或下移.</p>
+<details>
+<summary><b>愚蠢的原思路(不保证正确)</b></summary>
+
+<p>有个猜想(后面证明不完全正确): 我们可以算出每一位向上移和向下移的次数 $up_i$ 和 $down_i$. $2^4$ 枚举每一位是会往上移还是向下移. 显然我们的操作不会横跨 $up$ 和 $down$ 的区间. 于是用和<a href="https://www.luogu.com.cn/problem/P5019">这题</a>类似的做法即可完成.</p>
+<p>但是, 这样做是错误的. 一个反例如下:</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">0000 6405</span><br></pre></td></tr></table></figure>
+
+<p>以我们上面的算法得到的是 $11$, 但正确答案应该是 $10$.</p>
+<p>过程如下:</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">0000</span><br><span class="line">9990</span><br><span class="line">8880</span><br><span class="line">7770</span><br><span class="line">6660</span><br><span class="line">6550</span><br><span class="line">6449</span><br><span class="line">6438</span><br><span class="line">6427</span><br><span class="line">6416</span><br><span class="line">6405</span><br></pre></td></tr></table></figure>
+
+<p>我们发现第三位 $0$ 绕了一圈! 所以我补上了个补丁, 也就是在上面枚举 $2^4$ 外, 再 $2^4$ 地枚举每次是调 $up_i&#x2F;down_i$ 还是 $up_i&#x2F;down_i+10$.</p>
+<p>未证明正确性!</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> MAXN = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="type">int</span> up[MAXN], down[MAXN];</span><br><span class="line">string a, b;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        up[i] = (<span class="built_in">int</span>(b[i]) - <span class="built_in">int</span>(a[i]) + <span class="number">10</span>) % <span class="number">10</span>;</span><br><span class="line">        down[i] = (<span class="built_in">int</span>(a[i]) - <span class="built_in">int</span>(b[i]) + <span class="number">10</span>) % <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> U = <span class="number">1</span> &lt;&lt; <span class="number">4</span>;</span><br><span class="line">    <span class="type">int</span> ans = INF;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> s = <span class="number">0</span>; s &lt; U; s++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> t = <span class="number">0</span>; t &lt; U; t++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">                <span class="keyword">if</span>((t &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">                    up[i] += <span class="number">10</span>, down[i] += <span class="number">10</span>;</span><br><span class="line">            <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>((s &gt;&gt; i) &amp; <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(i == <span class="number">0</span> || (~(s &gt;&gt; (i<span class="number">-1</span>)) &amp; <span class="number">1</span>))</span><br><span class="line">                        ret += up[i];</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        ret += <span class="built_in">max</span>(<span class="number">0</span>, up[i] - up[i<span class="number">-1</span>]);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span>(i == <span class="number">0</span> || ((s &gt;&gt; (i<span class="number">-1</span>)) &amp; <span class="number">1</span>))</span><br><span class="line">                        ret += down[i];</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        ret += <span class="built_in">max</span>(<span class="number">0</span>, down[i] - down[i<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">                <span class="keyword">if</span>((t &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">                    up[i] -= <span class="number">10</span>, down[i] -= <span class="number">10</span>;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, ret);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">        <span class="built_in">work</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<!-- todo -->]]></content>
+      <categories>
+        <category>XCPC</category>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>XCPC</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>问题求解（一）总结 PART II</title>
     <url>/2023/01/18/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/</url>
-    <content><![CDATA[<p><a
-href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
+    <content><![CDATA[<p><a href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
 <span id="more"></span>
-<h1 id="preface">Preface</h1>
-<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
-little part of <strong>ES</strong>.</p>
-<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
-Chapter 8, 11-15 out of class.</p>
-<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
-class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
-<p>If possible, I decide to learn the left chapters on my own and I will
-also mark my notes down here.</p>
-<h1 id="week-3-常用的证明方法">Week 3 常用的证明方法</h1>
-<h2 id="concepts">Concepts</h2>
-<h3 id="ud-chapter-5-proof-techniques">UD Chapter 5: Proof
-Techniques</h3>
-<ul>
+
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a little part of <strong>ES</strong>. </p>
+<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left Chapter 8, 11-15 out of class.</p>
+<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
+<p>If possible, I decide to learn the left chapters on my own and I will also mark my notes down here.</p>
+<h1 id="Week-3-常用的证明方法"><a href="#Week-3-常用的证明方法" class="headerlink" title="Week 3 常用的证明方法"></a>Week 3 常用的证明方法</h1><h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><h3 id="UD-Chapter-5-Proof-Techniques"><a href="#UD-Chapter-5-Proof-Techniques" class="headerlink" title="UD Chapter 5: Proof Techniques"></a>UD Chapter 5: Proof Techniques</h3><ul>
 <li>Direct Poorf.</li>
 <li>Proof by Contradiction.</li>
 <li>Proof in Cases.</li>
-<li>Conjecture(out of intuition, generalization of observations).
-<ul>
+<li>Conjecture(out of intuition, generalization of observations).<ul>
 <li>Have proof, then a conjecture turns into a theorem.</li>
-</ul></li>
-<li>Prove that something is not true.
-<ul>
-<li>Find an example of something that satisfies the hypotheses of the
-conjecture, but not the conclusion.(a counterexample)</li>
-</ul></li>
-<li>The method to prove a statement with "iff".(break it into two
-parts)</li>
+</ul>
+</li>
+<li>Prove that something is not true.<ul>
+<li>Find an example of something that satisfies the hypotheses of the conjecture, but not the conclusion.(a counterexample)</li>
+</ul>
+</li>
+<li>The method to prove a statement with “iff”.(break it into two parts)</li>
 <li>Definition of <strong>divide</strong>.</li>
 </ul>
-<h3 id="ud-chapter-18-mathematical-induction">UD Chapter 18:
-Mathematical Induction</h3>
-<ul>
-<li>Definition of <strong>mathematical induction</strong>, and the
-difference with conventional induction.(Can they be both used to prove a
-conjecture?)</li>
-<li><strong>Principle of mathematical induction</strong> and its
-proof(the consequence of <strong>well-ordering principle of</strong>
-<span class="math inline">\(\mathrm N\)</span>, use a proof by
-contradiction).</li>
-<li>Usage of mathematical induction: Two steps: the base, and the
-induction.</li>
-<li>Notions of <span class="math inline">\(\sum\)</span> and <span
-class="math inline">\(\prod\)</span>.</li>
-<li>Use induction to define functions(recursively). Importantly:
-<strong>Recursion theorem</strong> to assure the existence and
-well-defined quantity of the function and learn the proof of the
-theorem. You'd better learn Chapter 10 first to understand the proof.
-<ul>
-<li>In short, two steps(existence and uniqueness), construct the
-<strong>smallest</strong> relation to satisfy its uniqueness(Take the
-intersection).</li>
-<li>First, prove that there is a set <span class="math inline">\(\mathrm
-N\times X\)</span> satisfies, we can take their intersection as <span
-class="math inline">\(g\)</span>.</li>
-<li>Second, prove that <span class="math inline">\(g\)</span> is a
-function and we need to prove two conditions for a function. To prove
-condition I, we use mathematical induction. To prove condition II, we
-use mathematical induction too(here, in the base step and the induction
-step, we both need to use the proof of contradiction, according that
-<span class="math inline">\(g\)</span> is the smallest).</li>
-<li>Third, we need to prove the uniqueness of <span
-class="math inline">\(g\)</span>, we can use mathematical induction,
-too. Or, accroding to the book, we can also use the well-ordering
-principle of <span class="math inline">\(\mathrm N\)</span>.(In fact,
-these two are equivalent)</li>
-</ul></li>
+<h3 id="UD-Chapter-18-Mathematical-Induction"><a href="#UD-Chapter-18-Mathematical-Induction" class="headerlink" title="UD Chapter 18: Mathematical Induction"></a>UD Chapter 18: Mathematical Induction</h3><ul>
+<li>Definition of <strong>mathematical induction</strong>, and the difference with conventional induction.(Can they be both used to prove a conjecture?)</li>
+<li><strong>Principle of mathematical induction</strong> and its proof(the consequence of <strong>well-ordering principle of</strong> $\mathbb N$, use a proof by contradiction).</li>
+<li>Usage of mathematical induction: Two steps: the base, and the induction.</li>
+<li>Notions of $\sum$ and $\prod$.</li>
+<li>Use induction to define functions(recursively). Importantly: <strong>Recursion theorem</strong> to assure the existence and well-defined quantity of the function and learn the proof of the theorem. You’d better learn Chapter 10 first to understand the proof.<ul>
+<li>In short, two steps(existence and uniqueness), construct the <strong>smallest</strong> relation to satisfy its uniqueness(Take the intersection).</li>
+<li>First, prove that there is a set $\mathbb N\times X$ satisfies, we can take their intersection as $g$.</li>
+<li>Second, prove that $g$ is a function and we need to prove two conditions for a function. To prove condition I, we use mathematical induction. To prove condition II, we use mathematical induction too(here, in the base step and the induction step, we both need to use the proof of contradiction, according that $g$ is the smallest).</li>
+<li>Third, we need to prove the uniqueness of $g$, we can use mathematical induction, too. Or, accroding to the book, we can also use the well-ordering principle of $\mathbb N$.(In fact, these two are equivalent)</li>
+</ul>
+</li>
 <li>Definition of <strong>factorial</strong>.</li>
 </ul>
-<h3 id="es-section-24-the-pigeonhole-principle">ES Section 24: The
-Pigeonhole Principle</h3>
-<ul>
-<li>Content: if <span class="math inline">\(A\)</span> and <span
-class="math inline">\(B\)</span> are finite functions and <span
-class="math inline">\(|A|&gt; |B|\)</span>, then there can be no
-one-to-one function <span class="math inline">\(f:A\to B\)</span>.</li>
-<li>if <span class="math inline">\(A\)</span> and <span
-class="math inline">\(B\)</span> are finite functions and <span
-class="math inline">\(|A|&lt;|B|\)</span>, then there can be no onto
-function <span class="math inline">\(f:A\to B\)</span>.</li>
-<li><strong>Cantor's Theorem</strong> <span class="math inline">\(f:A\to
-\mathcal P(A)\)</span> is not onto.</li>
-<li>The smallest infite sets have the same size as <span
-class="math inline">\(\mathrm N\)</span>, or the size is <span
-class="math inline">\(\aleph_0\)</span>.</li>
+<h3 id="ES-Section-24-The-Pigeonhole-Principle"><a href="#ES-Section-24-The-Pigeonhole-Principle" class="headerlink" title="ES Section 24: The Pigeonhole Principle"></a>ES Section 24: The Pigeonhole Principle</h3><ul>
+<li>Content: if $A$ and $B$ are finite functions and $|A|&gt; |B|$, then there can be no one-to-one function $f:A\to B$.</li>
+<li>if $A$ and $B$ are finite functions and $|A|&lt;|B|$, then there can be no onto function $f:A\to B$.</li>
+<li><strong>Cantor’s Theorem</strong> $f:A\to \mathcal P(A)$ is not onto. </li>
+<li>The smallest infite sets have the same size as $\mathbb N$, or the size is $\aleph_0$.</li>
 </ul>
-<h2 id="extended-content">Extended content</h2>
-<ul>
+<h2 id="Extended-content"><a href="#Extended-content" class="headerlink" title="Extended content"></a>Extended content</h2><ul>
 <li>Week 3 slides, the logical bases of the proof techniques.</li>
 <li>Week 3 slides, four rules(UG, US, EG, ES).</li>
 <li>Week 3 slides, some tautologies with quantifiers.</li>
-<li>Week 3 slides, paradigms. (To learn this, you can use the book
-<em>discrete mathematics and its applications(KR)</em>)</li>
+<li>Week 3 slides, paradigms. (To learn this, you can use the book <em>discrete mathematics and its applications(KR)</em>)</li>
 </ul>
-<h1 id="week-4-基本的算法结构">Week 4 基本的算法结构</h1>
-<h2 id="concepts-1">Concepts</h2>
-<h3 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
-Data</h3>
-<p><strong>PART I</strong></p>
+<h1 id="Week-4-基本的算法结构"><a href="#Week-4-基本的算法结构" class="headerlink" title="Week 4 基本的算法结构"></a>Week 4 基本的算法结构</h1><h2 id="Concepts-1"><a href="#Concepts-1" class="headerlink" title="Concepts"></a>Concepts</h2><h3 id="DH-Chapter-2-Algorithms-and-Data"><a href="#DH-Chapter-2-Algorithms-and-Data" class="headerlink" title="DH Chapter 2: Algorithms and Data"></a>DH Chapter 2: Algorithms and Data</h3><p><strong>PART I</strong></p>
 <ul>
-<li>An algorithm is excuted by a processor. It does things according to
-the basic actions of the algorithm.</li>
-<li>Control(-flow) Structures.
-<ul>
+<li>An algorithm is excuted by a processor. It does things according to the basic actions of the algorithm.</li>
+<li>Control(-flow) Structures.<ul>
 <li>Direct sequencing (do A, and then do B).</li>
 <li>Conditional branching (if A do B, (otherwise do C)).</li>
-<li>Iterations(looping constructs), let an algorithm of fixed length
-describe processes that can grow very long.
-<ul>
+<li>Iterations(looping constructs), let an algorithm of fixed length describe processes that can grow very long.<ul>
 <li>Bounded iteration: Do A exactly N times.</li>
 <li>Conditional iteration(Unbounded iteration): while Q do A.</li>
-</ul></li>
-</ul></li>
-<li>Combining Control Structures: Sequencing, branching and iteration
-can be interleaved and nested within each other.
-<ul>
+</ul>
+</li>
+</ul>
+</li>
+<li>Combining Control Structures: Sequencing, branching and iteration can be interleaved and nested within each other.<ul>
 <li>Nested loops(outer loop, inner loop).</li>
-</ul></li>
+</ul>
+</li>
 <li>Sorting. Bubble Sort.</li>
 <li>Goto Statement.</li>
-<li>Diagrams for Algorithms.
-<ul>
+<li>Diagrams for Algorithms.<ul>
 <li>Flowcharts. Advantages and disadvantages.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p><strong>PART II</strong></p>
 <ul>
-<li>Subroutine/Procedure with parameters to be invoked/called.
-<ul>
-<li>Economy.</li>
-<li>Abstraction ability. Make black boxes(reduce the details we need to
-consider). We can devise high-level algorithm first and fill in the
-subroutines later("top-down design").</li>
-</ul></li>
-<li>Recursion.
-<ul>
+<li>Subroutine&#x2F;Procedure with parameters to be invoked&#x2F;called.<ul>
+<li>Economy. </li>
+<li>Abstraction ability. Make black boxes(reduce the details we need to consider). We can devise high-level algorithm first and fill in the subroutines later(“top-down design”).</li>
+</ul>
+</li>
+<li>Recursion.<ul>
 <li>The Towers of Hanoi.</li>
 <li>Depth of recursion.</li>
-</ul></li>
-<li>Minimal sets of control structs.(For example, sequencing,
-conditional branching and unbounded loop)</li>
 </ul>
-<h2 id="extended-content-1">Extended content</h2>
-<ul>
+</li>
+<li>Minimal sets of control structs.(For example, sequencing, conditional branching and unbounded loop)</li>
+</ul>
+<h2 id="Extended-content-1"><a href="#Extended-content-1" class="headerlink" title="Extended content"></a>Extended content</h2><ul>
 <li>Week 4 slides: iteration invariants.</li>
 </ul>
 ]]></content>
@@ -164,7 +171,6 @@ conditional branching and unbounded loop)</li>
         <category>问题求解</category>
       </categories>
       <tags>
-        <tag>课程笔记</tag>
         <tag>问题求解</tag>
         <tag>计算机科学</tag>
       </tags>
@@ -383,7 +389,6 @@ all kinds of connectives.</p>
         <category>问题求解</category>
       </categories>
       <tags>
-        <tag>课程笔记</tag>
         <tag>问题求解</tag>
         <tag>计算机科学</tag>
       </tags>
@@ -544,13 +549,12 @@ href="https://www.luogu.com.cn/problem/P1463">这道题</a></p>
 </details>
 ]]></content>
       <categories>
-        <category>程序设计</category>
+        <category>XCPC</category>
         <category>题解</category>
       </categories>
       <tags>
         <tag>XCPC</tag>
-        <tag>集训</tag>
-        <tag>程序设计</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -1568,8 +1572,8 @@ class="math inline">\(F\left(\dfrac{2}{3}\right)\)</span> 异号.
         <category>微积分</category>
       </categories>
       <tags>
-        <tag>课程笔记</tag>
         <tag>微积分</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1728,20 +1732,41 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
 </details>
 ]]></content>
       <categories>
-        <category>程序设计</category>
+        <category>XCPC</category>
         <category>题解</category>
       </categories>
       <tags>
         <tag>XCPC</tag>
-        <tag>集训</tag>
-        <tag>程序设计</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023-01-20 日记</title>
+    <url>/2023/01/20/2023-01-20-%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="da99f3708af97d8f21c2e410a27e5236bd20884d937a8fb8512f6f68317695c3">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b27e74234b33f6a901b0a8d2881ed8b0fa4add9a182a90f45a6b34c313a313cd70dc731048dd3fd6e55be5cc5e9ad4a563d0c67ccb25726ede37c44ba084a899883e435676a44cbe8502dd43712408d205362bce781405a5e848120edcf70cdeff3a94ba96b67f399f1feb96445ab01e3ddb68db669438c1dbf9f6ade5a7eff1cc41fcda14bb52e9644b4fa33328ef401d6d6d19ebb6ce89fb16f162b437d4e1a45f38dd7f20750d7acd724acabbcf8823a7fa0a2c307c8a02c59cb0fa94221ca7a002e0ecd59c0c8f1079f2bbe69d8455e5873b970ec296f603d3db16c7ff7d9f7adff0a34abbc79676c602603132ad08da5426d5b79c33630156337ff2917335d3c00a82a425f337a86742e17c7934919d7c09f1783891a5ca284ce178c122e8c779eed2ed17699f8ef7362b2bfee7af2639564920d3fd3a9bb95040bc7d3d4f17072a133f334dbc56d172ecb4810565d6819911a59787c8be8b4c8c9d35a3dccdc172395b06689ead8f76a01d8186cbd182387fec487a58daded2080419c0c0d68cfcfc8497aa0c1b98626629d3d92d8bb75e9cc9ed7bcfd17c1498701dd8c23bf7b37329603d850e1ef53f2c1b43ae53c74deef4670682c9e570d0e4eb3b56e21f6e0212a38f67a39629d647e45d81dd5084cb72ccdf41f1100e9ab52a1351877e789da5d1b1c8315100f5215015fef4e858cb6ae8aa58421a1be5c17663754a195cb226ca32210c98af364588e9cd4b803cc0576019ae1a5419d82ac2b472417591cc4c8b8aa3321c834406041b7211ded52881994d1fe334c29260bd5b9d3a6c218fc5ed4cc396a0d90b020bdb161cb9cdeb6cf125a05c777764784469d47b3cc1869ea31582d77f79f6d6d559e4e17c12e474cda02dbfe7a028ac0ec955ab392a5dc1318f7f42b368dc837338bc4fb3d016857316cf0e196fd83a3411395a2138d59ecd64691ce6f1be71978cb27fedf3b3988c2f2913ccfa4b89c841da17a194a4e8629ae09442fda22fb3931f2cec49b208948e5b11fe1f345f5471b0d278583c6b1c4493d59003a2e959e0eaab8c1d756d259a5cf7179df83c771f2</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
     <title>2023-01-19 日记</title>
     <url>/2023/01/19/2023-01-19-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="54d272ec3046f7104da9077dbbe855f3af90fee80feac076014623fe674049bf">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b27e74234b33f6a901b0a8d2881ed8b0fa4add9a182a90f45a6b34c313a313cd70dc731048dd3fd6e55be5cc5e9ad4a5677a880a2110b7466d39613b2dab6f261beb9160fd488c3542450ca26f46fc8a4ca3ad8b2541fd11f08ef1fe519a8b7db57a52e8b764de462363cdad062d4ebdece52b4f14f1a02937fd0286d91c027a41e66b3588d36b4a7e19a59962cbb18bbb796b24acb9541c77bd8e107b9f4c4a3143108a2b1a7b46d7c3160a74222dec17a73ada3960c91ac5ad40f7c6f341d17d7c6ec3618d40ae02390c623768f36fdfbe1cf53b24033ad97ab2461b0ef5a9e14e86b031e1c6928a7ebf212bf469e71abeca6b668891ace9e8fe7fc45389260518d7530c1f45120a20390b0a2f5d18fc66e35e9576ccedf5f7968496d90d645ff4d9521d8cab7195edaff032ae31f30f0311160f37b90a082efb48e3f7811450ade9767e48647348ea9d359be537018a4ea95e724ac92144800050032416643d4538d66b19c1194328d0c51587a2fda0382ecadc831948753ef2c87eab9c01ceced076768fbee92023e03a16a6a1ef0dfae24eefde01a420f2002f3badf2ea7eae758dc02b3d9117f06777d9b781af4a5bde7d9f12545a7e31e3a72b6e049f167f400eb4701a03ab88e0fd02309884e8167da92de80fd1b7ad7fe31470f4e6da8195115afb618ad32831356280b4d23040e6aadac5ec84a07181cb6b9a96978d67edd7dc1749fcc92a05310b2d8df859b24efb81672ee43dd6af9945871d5db84d7581ee653ff0d796b7fc98c06311217658e1adf8708774001bec48f832cf6c784959727a414d53881b988c5f4797ab11e6341a7628860aa70eefd203b4e87cbb156aaf5423d583640258082c7ecd1fb7f3030076da3aa08daf50a24c14027d7d0540dbd5647e98591f54fd3d0062315cf38474dc7153863cfa2e78a7c54e7401780080a3c2e99b0cf5f36b33f510937d8d93c01885b1819846b0a12006b65b6197b8944ea3dd3ec32f6b8ce5fb5dd7f172e96156f21034c73f3f4872d114a</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b97836597460fb9c37a73883fed341e14bae49888262eb502c133dc7a2ed6811">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b04218083c38b22631199c12e1f4cb5816aca546763f47a7f5d462c416ab5c1ea2e9ba2536c9b2de3423bb4eb19c267f28b004a7ede82e224ffed647ea8fec19cf8ec9016bf56172bb8b350745cddbab85cde5951ac36909bf9e2d7fff5fca4d22fee5bf7eaa94baa7791b9449d1885db722cc3b5e21a096c768b67d4a3b41484405d4727e7c8902f32c458a2fea60a148ba906ea09b96181079ce228f321e5023c6c8088698696aade759d312e3f8962f90a14ca21f5def609508869c7baf4b9bfababb5a8b59d79205d5a228fc5eb87a2103ebbb4348928c475f0fff7960d2d8cf0a5fe92dab69b101369b2f21f53a555a2dafe4ebcea283c48b1c827803b1a1fda9d66f001a22a8589bb26f9d0e7d485a0bb4de3983d9308c5b249869b9955b73ddd64e65edd4547612d2a7221fdb1b3f68b21e2fcde077a20208fbbfdd1efae74ff2550863d46929249f31af6d27fb1db7a9b292347ee64b808cbd961e02e3d44e53093c45a9023b9cdcfb1c6ef415f2cce156512cd26ac20b3ae66528f2afeeabf2f2b26ec3df3e9af2ba9a89e7fc29ce7071d48af426afaba4098bf4604967a7cedf744df8671ba864b6756112869dbe7021cb13e0ce6074a49d045562cd3411369b65a5c76a9c5b75498fca67cfcc80e3b004c6b0e7695d012c8b6ae64076d392d0daa4e701607f946d094550f96b8064c6053377538e6b8316f67c482c8c73c060669a32db8192559f960d45cc2a4c378cfc2d5e53971a8cde3ec1c4f0d5398667f78b3c3dfd78f34db8fef2b56e86d9aedd14dc413a6ab83d2d829a0b565936f826ea77f838ab24a6f9df340dab272a20b879068a1a2dc84a1878f081e06bc469dd44786afa4cb60538c886fa4cff2a095679b9d1c80f6dad28862d3e3111538efe0654b1f38f5385ccab688ec498158e6f5b9b906d15151c83301d16534c49e443f5801f02b207c2a3cfff3d5bb65b9589f2c09a8394a1ec52f20e4684309cde2685180508c5ce5c64d6c9e99f6c2826bf5ce32c276f9e7331777d2364ae383b022ed15717e371db105e299413a251757f7729045be0e5089f39662628fc71bc4bb3ea1df4eeeddc26cd5121155f5ece202ee88dd1d378604327dd59c2c5d30a57d90b3e436a31078c26aec8ddd1cb7219f8fe6280bbf4a0a1b9e399dcb8d86f74f16d570af045a8e6b0bf5d3870d68388c0589da60066de8b5bc33fe51d2738390538ea7407ed046cdb6f1ea14537c8a86cbcdfde548730900624e95d139de0bf4a1c0f22f92dd8b9dd69a6ee05fd7c1a65aba97fe07308f953a86894891e521d0964ca8e87c233b9c9f396b6e0</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -1763,7 +1788,7 @@ class="math inline">\(M=2A_i-A_{i+1}\)</span>。
     <title>2023-01-18 日记</title>
     <url>/2023/01/18/2023-01-18-%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码错误，请重试。" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="b5054bce2664743d9f663d83903683cce704b70dafc8c28ce2cb293e6a1e1a0a">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b042182649db7624803d336020cc5b14ccb53336bd90efa6c8c12fa130d84088b400e2319235d00636823ead21021be5a3479b61b51c86839bd328e4d879d3232b37de19454789d5511d27cab492d93d920c58980fa322d814a468ffa522441e3818c8db97a6a8f4345cdb842ba2d6ff56fbe848ce99f9e01ec40515f38f3173d0af8308a6f6fa2bfd37ae91ee80605cc27c91369eaa390d97b1fa1b31bb1b10181112066bfa29b576e1fc8e61bd105a538d565d4523475355c07fe04a5fab802fc1a388137cd09a39cefd3c5437ec7ff988b26121e4085a456ca179228a02d83b8e68231474f1f5cb2e0291b04033f3ed3f43304f1f6872ff0be6ea3d2202f4584dc607eea875de7d7de11e2d64600648373cc2b3512efce52f985d5c5bfbcc0d6d0c2465a2b2077eb7e34efc4a92e83baae972ecc194aacc0d9d8a4955a1ae1c25796eacca3d9676c5dc8a1de8bcb05e3dc46ac18eebd5f123fb5efabe7a9311332c270b5bc06cba482e8e191a8badf68ee6c8f7277a8802aeb4818db5877d5ed9471ffc7c4de2370e2fd097bcfe40478f4c0b833def1de9f05270a5e271f3bd74160350bf91e731709c2598631c843db1c69b1e6dbe913892d8e7f3cd9d95f9190ff7fc6037ec5e49d73e1d0e6fd1ce9987396d354de3f2273c338385a8483e2d71b2f0397c64a5da3596ee605a37cf12c070a8a4a7fa993583c0c8dc24b8a96b2e7dccd7cf1df2b010141adcef3e34162abfb96ea13b4c51fecfd820084387f2616c3d0c8acc75b3a581823ae83b6b890a35452fa8cb870a7f0c5a28b464bbe052818fa91eaaf082de82108d6347e161a9581a3c79cbafda380445a24e58da810ae8dc295eb31b61be50565b7121c12a3e18183c6a7d9f8a48a790942384f0f241740c79f79582887a65f49e97abf2d612aa7aa1fa6f1be11766f56a16fa4addb1797f1d357327e6e298d155c93b086528e4132213370be5839b78b75e6bbcd883d24bbe668ef624f7eacb10c6c78416e021c3e77a63170a997de28d2e35d008bd35d3b0f5aaaa3ec42baf17d25112c5af20a36db62749ae2b5993485ba448ace8f86e7d0b4d6a7d7ad80537cb6d311995b86b2c15e721a193cb4efafc8033e70a77cbf46c8f1b0321a37379f0342d20b84bf964f66be871ba1672d8660570196bcf25dae02daa10bc8bff859da9404b61e290fd7fdca8d8eb432c67056dd38227b99727997bc3d0444f82a520e0e432b34d3f2fc1588485be6eb741a9fbb44e8bb1507f26e86ca5a014afd2a3085ac6aac2b362eefbf04a1a2a85e0ee86f08f1a885fd2b38868ece10a5d7bed80cd166e9b18a8bbd99699d2a1b4f470b03279cafef43f91e641a81a750a5164d2cc35e91c16da877ca1e845fd64d40e6143294cc45508037a93e905589a9bf8a7c5b3ee434968792ac094ac9d1a1875fcd73c564c91ce9e534ed01fe5e4d8b51993074178edb9a32f287b846b746dde818c23f6d9463d8cd3adfcdefac33edee95aa144c421297b9facbd39fca02636b4d1cb8ff0b65c16a5de44e9822d6e9e09b30c3e12ac8d1ecacdbb40540e9541fbbf61afe7ddae1d097aa55dfd171c94d6e20d9544d563ca2ffcff5b66410a934d8e72d53c57117e27b4553ea33cf90620b68dd966052a9434a6f93c1489f665352ca6886fdbcc230c0633c2808e4e9ef64efd039e84255136b4ad86fb49bece5da91d1a6ac6a101248a227ec834aaf2888121dcdb627d6782e1d03fd357131208226be24f6dcc00229f2f2cf4d4e3b82647ddf7489ad94480ab5a8762994d4730f6c8b3</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="a9dd82692222107c9f6791e694180c9acf594356c8c147c9258ef065798427ed">ebfac267c39067e061265010f63356e6b76bfeea80b2bf20ee87537439b04218083c38b22631199c12e1f4cb5816aca546763f47a7f5d462c416ab5c1ea2e9ba2536c9b2de3423bb4eb19c267f28b004a7ede82e224ffed647ea8fec19cf8ec9016bf56172bb8b350745cddbab85cde5951ac36909bf9e2d7fff5fca4d22fee5319b8f9d2b30cf130f8cbc793e5310cd36a4f0145825362c6a3baf54a404cc1565642aae48ce4dc8925a0f6d35ca6f5041929d6945bb52bdf328d9a02f4ee26236e305284271104d416c7b26b445610b08b5853fd065ed938494a45e366f7d342ee6452c65764e1ec0823abec8ab26ecd01abbdab63dcf73eadb1ca3bdb2cde945ce49cfbf92aa2024450a273e44123fa4183ec7e521eb4aef53c9a399a7dcacb15f9bc6f4caf6bb3921a85ec9029628d7ddd16b9143a4df442e1a52126e5e561d09b14686cefc29015a0e6d91a50a35aa482371153672c2411142df03c9790102283d18ec9651ed51d4243cba02673078c7ac3b362ee79e7d4c843b6de31790d6f19c428ea49acf0166b924f184563a7934a17ccbe62d1900e7df56760de84900ac35cfe06645ee9c16923b40dc67142d5a99d246a70a071ad947f2634300a7c4933c91e5abb8722c0a6c27667eaa315eea4e93629caa3ad7e36091578c88d0c3859b89e6ef3c7b2d537d097a1385f922fb5a55328b2d20feb98bf16f766b9a4bd4780dc504b98fe199e1626aa4b66285c81c81ddfde720a5bf243657e3b7b89058831f8627758742bf19b18e56341e94b25f1e44326934930dab701ace5c019e9d6cc186cf9808f1a9296212b402349c7f14252e8ed71d73d69ccd4d5fbaad87ac05ba8911ae352d2b64daf7c5e77bbdafd90e4f3f7ac69b7fcb16ddf463d7652b181b93a95d7140e9b691f45f6c972833aa00ba31361eb006b9ea948525859de8c732ccba3f2b5d01f76693b57acc05c67de2ac42db29d1ff694727a780034e985d2c78cf54808519053a07c54db027b765612f468b014b230bb1e7ae3c786b1cfff2b6ffe1e31d99e277fa61dca65ae70e8e860cf0b3292f93b243521760b961557c6fdab12f1dad9ed9dd36f8794c25c06a05b2eaf2523fd14d5726a75785c658d3a7fb4edae81e352df681f8a5877d37eb9bff0a8a75ff0ab4730682929174b3cc04957ef26565758d5436b634abe441d7978cf5122c4bca74d64abc0e05036953992b88116e8e0ca6383cc2723867e3c89b50541bdc8c48e7884f9b1ef90a1972b4637812f321f91d51fb35182f2cce8f2d5ebf613201848eec7e0ecc59708e5f657852a4eab8c5ec9cb017695d8854fc38964617de274017973da2a2794fb662dafd021ace299b138a56fe32c0cfdb0cf9a12368a28ce0d70b068b01558d291b97302491d06840f1ca20a24ad879d47e02a062db925a83ac4329507afbea25e31ac827856ea5d0e66e29c16ea5a92a7c5324108dd144815fec40e89e40717cabd61321d5cafbf1ed429e94d59f664eee0fa5616e25f8f14a5cbdc076b0b653c75079665df1831d31ce8564f888da271d62075aef5d64ff54391d6b3806d6f7a6301e81523d9f542fa99f1abbd89a9fa6e1c0149b371239f0ade51dceb368e80f7a6b453760a822e179468a13e51248ae0cb5e30df9d53bc409803dfc071b44340b31c22a64c05d9b93af0fd997bc606a0dbf94642929f5c4b1a0debb2417eac9b1de53f0fd0b991b4b0da059e0c95eb0eb566a76760e32a693b5c8ad3b93ecd10be7b8e41a2877224865761edba6effc413bec12c5e8382e533003230ce44fc187fe52a17fe893d273c5720b6e36f89762c0ab9d82dcdd2142eefa40e02e50ff870d58986716962a3229edfd1f898e990026406c53ddbc29e6ca1f751e9722af4fd3929423907308e1381fd21d101b87079742015dfe6be3b6b9fc02c8f0e62ebe15e9009445146039670614d754d563921c5e9aab9510f6124103debe6230bccc419c7882b1c4706b71a9cd838c8d95b51b144d5c5a374ddc8ad740e162ae59b6cfd535802c39fea170f0dac27207d1701493e59bdc3c28724ef072339324e69e3c2880c5cc98cd78ab8107f7ff3df7c2804ba5a64d774d0a4cf9ddbe0985685a65bcf8de5f9a52103c57bff89f881cc5087d3971ed91038f7b7bb45d4a7c4c9c528feb9a0a24be87be3fd5b1bbb225e46f287be332e159fa51a8881feb434317ff8427ac2d3896ef44689a84fa85a9962d625c2fc4a4bcc3b7651fd16024f53041951b6b0749adbfb6f5e4ae4687a2bdc486177d859fd1f4e2d7dc2c46f7f429d82fd6e069456a3a6b42e5d2de0db4b13db8b70fc209acfe78a8e479d008feb39e4fcbebfda5f03e0eff46ecd89a8aa0f17cb6d2fee874cac99797</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">

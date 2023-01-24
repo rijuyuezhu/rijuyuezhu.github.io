@@ -7,6 +7,95 @@
 ]]></content>
   </entry>
   <entry>
+    <title>问题求解（一）总结 PART III</title>
+    <url>/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/</url>
+    <content><![CDATA[<p><a
+href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
+<span id="more"></span>
+<h1 id="preface">Preface</h1>
+<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
+little part of <strong>ES</strong>.</p>
+<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
+Chapter 8, 11-15 out of class.</p>
+<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
+class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
+<p>If possible, I decide to learn the left chapters on my own and I will
+also mark my notes down here.</p>
+<h1 id="week-5-数据与数据结构">Week 5 数据与数据结构</h1>
+<h2 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
+Data</h2>
+<h3 id="concepts">Concepts</h3>
+<p><strong>Data Structure</strong></p>
+<ul>
+<li><strong>Data</strong>. Objects manipulated by an algorithm: lists,
+words, texts, "noted numbers", "pointers"..., constitute inputs, outputs
+and intermediate accessories.</li>
+<li><strong>Data Type</strong>. Numbers, words, ... It's good to keey
+types separate, because each date type admits its own <strong>special
+set of allowed operations/actions</strong>.</li>
+<li>Data structures, and the operations upon them, organize the data
+items in ways that enable it to do whatever it should do when the
+processor gets there.</li>
+</ul>
+<p><strong>Variables</strong></p>
+<ul>
+<li>Can contain different values at different times.</li>
+<li>As memory/storage in the algorithm.</li>
+</ul>
+<p><strong>Vectors/Lists/One-dimesional arrays</strong></p>
+<ul>
+<li>Refer to many elements in a uniform way.</li>
+<li>A data structure closely related to a loop as a control
+structure.</li>
+</ul>
+<p><strong>Tables/Matrixs/Two-dimesional arrays</strong></p>
+<ul>
+<li>Nested loop.</li>
+<li>Arranged in a precise rectangular format. Or use a vector whose
+elements themselves point to vectors of varying length.</li>
+</ul>
+<p><strong>Queues and stacks</strong></p>
+<ul>
+<li>Sometimes we do not need the full power provided by indices. It is
+beneficial for algorithmic clarity. We hide the details. (Also a kind of
+abstraction)</li>
+<li>Queue. FIFO list.</li>
+<li>Stack. LIFO list.</li>
+</ul>
+<p><strong>Trees/Hierachies</strong></p>
+<ul>
+<li>Structure and some terminologies.</li>
+<li>Treesort.</li>
+<li>Trees correspond to recursive routines.</li>
+<li>Treesort - self-adjustment idea.</li>
+</ul>
+<p><strong>Databases</strong></p>
+<ul>
+<li>A very large "pool" of data. Contain many differet kinds of
+data.</li>
+<li>Querying a database - a difficult task. So we need a good
+organization of database for clarity and efficiency.</li>
+<li>Some models:
+<ul>
+<li>The relational model.</li>
+<li>The hierachical model.</li>
+<li>The object-oriented databases.</li>
+</ul></li>
+<li>Data mining.</li>
+<li>Data warehouse.</li>
+<li>Knowledge base.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>课程笔记</category>
+        <category>计算机科学</category>
+      </categories>
+      <tags>
+        <tag>问题求解</tag>
+        <tag>计算机科学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tarjan 相关算法 学习笔记</title>
     <url>/2023/01/23/Tarjan-%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>简要汇总了 Tarjan 相关的图论算法的资料, 并有所思考.</p>

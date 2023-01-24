@@ -19,25 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Knowledge and Practice!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rijuyuezhu&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/tarjan/index.html">
+    <meta name="description" content="课程计划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问题求解（一）总结 PART III">
+<meta property="og:url" content="http://example.com/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/index.html">
 <meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
-<meta property="og:description" content="Knowledge and Practice!">
+<meta property="og:description" content="课程计划">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-24T00:13:28.000Z">
+<meta property="article:modified_time" content="2023-01-24T01:58:59.727Z">
 <meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="问题求解">
+<meta property="article:tag" content="计算机科学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/tarjan/">
+<link rel="canonical" href="http://example.com/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/tarjan/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/","path":"2023/01/24/问题求解（一）总结-PART-III/","title":"问题求解（一）总结 PART III"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: tarjan | Rijuyuezhu's Blog</title>
+<title>问题求解（一）总结 PART III | Rijuyuezhu's Blog</title>
   
 
 
@@ -126,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -139,6 +143,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#week-5-%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">Week 5 数据与数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dh-chapter-2-algorithms-and-data"><span class="nav-number">2.1.</span> <span class="nav-text">DH Chapter 2: Algorithms and
+Data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concepts"><span class="nav-number">2.1.1.</span> <span class="nav-text">Concepts</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -180,50 +186,181 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">tarjan
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="问题求解（一）总结 PART III | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          问题求解（一）总结 PART III
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-01-24 08:13:28 / 修改时间：09:58:59" itemprop="dateCreated datePublished" datetime="2023-01-24T08:13:28+08:00">2023-01-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a
+target="_blank" rel="noopener" href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
+<span id="more"></span>
+<h1 id="preface">Preface</h1>
+<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
+little part of <strong>ES</strong>.</p>
+<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
+Chapter 8, 11-15 out of class.</p>
+<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
+class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
+<p>If possible, I decide to learn the left chapters on my own and I will
+also mark my notes down here.</p>
+<h1 id="week-5-数据与数据结构">Week 5 数据与数据结构</h1>
+<h2 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
+Data</h2>
+<h3 id="concepts">Concepts</h3>
+<p><strong>Data Structure</strong></p>
+<ul>
+<li><strong>Data</strong>. Objects manipulated by an algorithm: lists,
+words, texts, "noted numbers", "pointers"..., constitute inputs, outputs
+and intermediate accessories.</li>
+<li><strong>Data Type</strong>. Numbers, words, ... It's good to keey
+types separate, because each date type admits its own <strong>special
+set of allowed operations/actions</strong>.</li>
+<li>Data structures, and the operations upon them, organize the data
+items in ways that enable it to do whatever it should do when the
+processor gets there.</li>
+</ul>
+<p><strong>Variables</strong></p>
+<ul>
+<li>Can contain different values at different times.</li>
+<li>As memory/storage in the algorithm.</li>
+</ul>
+<p><strong>Vectors/Lists/One-dimesional arrays</strong></p>
+<ul>
+<li>Refer to many elements in a uniform way.</li>
+<li>A data structure closely related to a loop as a control
+structure.</li>
+</ul>
+<p><strong>Tables/Matrixs/Two-dimesional arrays</strong></p>
+<ul>
+<li>Nested loop.</li>
+<li>Arranged in a precise rectangular format. Or use a vector whose
+elements themselves point to vectors of varying length.</li>
+</ul>
+<p><strong>Queues and stacks</strong></p>
+<ul>
+<li>Sometimes we do not need the full power provided by indices. It is
+beneficial for algorithmic clarity. We hide the details. (Also a kind of
+abstraction)</li>
+<li>Queue. FIFO list.</li>
+<li>Stack. LIFO list.</li>
+</ul>
+<p><strong>Trees/Hierachies</strong></p>
+<ul>
+<li>Structure and some terminologies.</li>
+<li>Treesort.</li>
+<li>Trees correspond to recursive routines.</li>
+<li>Treesort - self-adjustment idea.</li>
+</ul>
+<p><strong>Databases</strong></p>
+<ul>
+<li>A very large "pool" of data. Contain many differet kinds of
+data.</li>
+<li>Querying a database - a difficult task. So we need a good
+organization of database for clarity and efficiency.</li>
+<li>Some models:
+<ul>
+<li>The relational model.</li>
+<li>The hierachical model.</li>
+<li>The object-oriented databases.</li>
+</ul></li>
+<li>Data mining.</li>
+<li>Data warehouse.</li>
+<li>Knowledge base.</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-01-23T14:15:09+08:00"
-              content="2023-01-23">
-          01-23
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/23/Tarjan-%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Tarjan 相关算法 学习笔记</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/" rel="tag"># 问题求解</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag"># 计算机科学</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/23/Tarjan-%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="Tarjan 相关算法 学习笔记">
+                  <i class="fa fa-chevron-left"></i> Tarjan 相关算法 学习笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>

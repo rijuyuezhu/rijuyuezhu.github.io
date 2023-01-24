@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分（一）总结 PART II">
+<meta property="og:url" content="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/index.html">
+<meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
+<meta property="og:description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/derivative_table1.png">
+<meta property="og:image" content="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/derivative_table2.png">
+<meta property="article:published_time" content="2023-01-24T02:00:17.000Z">
+<meta property="article:modified_time" content="2023-01-24T15:22:40.401Z">
+<meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="微积分">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/derivative_table1.png">
+
+
+<link rel="canonical" href="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/","path":"2023/01/24/微积分（一）总结-PART-II/","title":"微积分（一）总结 PART II"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微积分（一）总结 PART II | Rijuyuezhu's Blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rijuyuezhu's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Record every drop in my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">一元函数的微分学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%8F%AF%E5%AF%BC%E4%B8%8E%E5%8F%AF%E5%BE%AE%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">(一元微分)可导与可微的等价性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.4.</span> <span class="nav-text">导数与微分的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%AF%BC%E6%95%B0%E5%92%8C%E9%AB%98%E9%98%B6%E5%BE%AE%E5%88%86"><span class="nav-number">1.5.</span> <span class="nav-text">高阶导数和高阶微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">1.6.</span> <span class="nav-text">微分中值定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99"><span class="nav-number">1.7.</span> <span class="nav-text">洛必达法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">1.8.</span> <span class="nav-text">泰勒公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%A2%9E%E5%87%8F%E6%80%A7"><span class="nav-number">1.9.</span> <span class="nav-text">导数与增减性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E4%B8%8E%E6%9E%81%E5%80%BC%E6%9C%80%E5%80%BC"><span class="nav-number">1.10.</span> <span class="nav-text">导数与极值、最值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%87%B9%E5%87%B8%E6%80%A7"><span class="nav-number">1.11.</span> <span class="nav-text">导数与凹凸性</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rijuyuezhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Rijuyuezhu</p>
+  <div class="site-description" itemprop="description">Knowledge and Practice!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="微积分（一）总结 PART II | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微积分（一）总结 PART II
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-24 10:00:17 / 修改时间：23:22:40" itemprop="dateCreated datePublished" datetime="2023-01-24T10:00:17+08:00">2023-01-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="一元函数的微分学">一元函数的微分学</h1>
+<h2 id="导数">导数</h2>
+<ul>
+<li><strong>导数的定义</strong>: 函数 <span
+class="math inline">\(y=f(x)\)</span> 在 <span
+class="math inline">\(x_0\)</span> 处的导数记号为</li>
+</ul>
+<p><span class="math display">\[
+f&#39;(x_0)=y&#39;(x_0)=f&#39;(x)\bigg|_{x=x_0}=\dfrac{\mathrm
+df}{\mathrm dx}\bigg|_{x=x_0}=\dfrac{\mathrm dy}{\mathrm
+dx}\bigg|_{x=x_0}.
+\]</span></p>
+<p>值为</p>
+<p><span class="math display">\[
+f&#39;(x_0)=\lim_{x\to x_0}\dfrac{f(x)-f(x_0)}{x-x_0}=\lim_{\Delta x\to
+0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.
+\]</span></p>
+<p>几何意义为函数图像在 <span class="math inline">\((x_0,
+f(x_0))\)</span> 处的切线的斜率.</p>
+<p>函数在 <span class="math inline">\(x_0\)</span>
+处可导的充要条件是左右导数存在且相等.</p>
+<ul>
+<li><strong>导函数</strong>: 若 <span class="math inline">\(f\)</span>
+在开区间 <span class="math inline">\(I\)</span> 处处可导, 则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上可导, 存在导函数, 记号为</li>
+</ul>
+<p><span class="math display">\[
+f&#39;, \dfrac{\mathrm df}{\mathrm dx}, y&#39;, \dfrac{\mathrm
+dy}{\mathrm dx}.
+\]</span></p>
+<p>值为</p>
+<p><span class="math display">\[
+f&#39;(x)=\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}, x\in I.
+\]</span></p>
+<p>若 <span class="math inline">\(I\)</span> 改为闭区间,
+则要求在闭区间端点处单侧导数存在.</p>
+<ul>
+<li><p><strong>连续可导</strong>: <span class="math inline">\(f\)</span>
+在 <span class="math inline">\(I\)</span> 存在导函数且导函数连续, 记作
+<span class="math inline">\(f\in C^1(I)\)</span>.</p></li>
+<li><p><strong>增量公式</strong>: 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x\)</span> 可导, 则 <span
+class="math inline">\(f(x+\Delta x)=f(x)+f&#39;(x)\Delta x+o(\Delta
+x)\)</span>.</p></li>
+<li><p><strong>可导与连续的关系</strong>: 在 <span
+class="math inline">\(x_0\)</span> 处可导一定在 <span
+class="math inline">\(x_0\)</span> 连续, 反之未然.</p></li>
+</ul>
+<h2 id="微分">微分</h2>
+<ul>
+<li><strong>微分的定义</strong>: 若在 <span
+class="math inline">\(a\)</span> 附近, 函数 <span
+class="math inline">\(y=f(x)\)</span> 有</li>
+</ul>
+<p><span class="math display">\[
+\Delta y = A\Delta x+o(\Delta x).
+\]</span></p>
+<p>其中 <span class="math inline">\(A\)</span> 与 <span
+class="math inline">\(\Delta x\)</span> 无关, 则称 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 可微, 微分为 <span
+class="math inline">\(A\Delta x\)</span>, 记作</p>
+<p><span class="math display">\[
+\mathrm d f(a) = \mathrm d y\bigg|_{x=a}=A\Delta x=A\mathrm dx.
+\]</span></p>
+<p><span class="math inline">\(\mathrm dy\)</span> 是 <span
+class="math inline">\(\Delta y\)</span> 的线性主部.</p>
+<p>(约定 <span class="math inline">\(\mathrm dx\)</span> 为 <span
+class="math inline">\(\Delta x\)</span>)</p>
+<h2 id="一元微分可导与可微的等价性">(一元微分)可导与可微的等价性</h2>
+<p>函数 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 可微的的充要条件是函数在 <span
+class="math inline">\(a\)</span> 可导, 且 <span
+class="math inline">\(\mathrm dy=f&#39;(x)\mathrm dx\)</span>.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<ol type="1">
+<li>必要性. 由 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 可微, 有 <span
+class="math inline">\(\Delta y=A\Delta x+o(\Delta x)\)</span>, 则 <span
+class="math inline">\(\dfrac{\Delta y}{\Delta x}=A+\dfrac{o(\Delta
+x)}{\Delta x}\)</span>. 取 <span class="math inline">\(\Delta x\to
+0\)</span>, 有 <span class="math inline">\(f&#39;(a)=\lim\limits_{\Delta
+x\to 0}\dfrac{\Delta y}{\Delta x}=A\)</span>.</li>
+<li>充分性. 由 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 可导, 由增量公式有 <span
+class="math inline">\(\Delta y=f&#39;(a)\Delta x+o(\Delta x)\)</span>,
+这就是微分的定义, 故 <span class="math inline">\(\mathrm
+dy\bigg|_{x=a}=f&#39;(a)\mathrm dx\)</span>.</li>
+</ol>
+</blockquote>
+</details>
+<p>由等价性知, <span class="math inline">\(\mathrm dy=f&#39;(x)\mathrm
+dx\)</span>. 从而我们明白了使用 <span
+class="math inline">\(\dfrac{\mathrm dy}{\mathrm dx}\)</span>
+表示导数记号的合理性. 从而导数又叫微商.</p>
+<h2 id="导数与微分的计算">导数与微分的计算</h2>
+<p>以下不再区分可导和可微.</p>
+<ul>
+<li><strong>四则运算</strong>:</li>
+</ul>
+<ol type="1">
+<li><span class="math inline">\((u\pm v)&#39;=u&#39;\pm v&#39;\)</span>,
+或者写成 <span class="math inline">\(\mathrm d(u\pm v)=\mathrm du\pm
+\mathrm dv\)</span>.</li>
+<li><span class="math inline">\((uv)&#39;=u&#39;v+uv&#39;\)</span>,
+或者写成 <span class="math inline">\(\mathrm d(uv)=v\mathrm du+u\mathrm
+dv\)</span>.</li>
+<li><span class="math inline">\((v\ne 0)\)</span>, <span
+class="math inline">\(\left(\dfrac{u}{v}\right)&#39;=\dfrac{u&#39;v-uv&#39;}{v^2}\)</span>,
+或者写成 <span class="math inline">\(\mathrm
+d\left(\dfrac{u}{v}\right)=\dfrac{v\mathrm du-u\mathrm
+dv}{v^2}\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<ol type="1">
+<li>由导数定义 <span class="math display">\[
+\begin{aligned}
+&amp;(u+v)&#39;
+\\
+=&amp;\lim_{h\to 0}\dfrac{[u(x+h)+v(x+h)]-[u(x)+v(x)]}{h}
+\\
+=&amp;\lim_{h\to 0}\dfrac{u(x+h)-u(x)}{h}+\lim_{h\to
+0}\dfrac{v(x+h)-v(x)}{h}
+\\
+=&amp;u&#39;+v&#39;.
+\end{aligned}
+\]</span> 减法同理.</li>
+<li>同样地, <span class="math display">\[
+\begin{aligned}
+&amp;(uv)&#39;
+\\
+=&amp;\lim_{h\to 0}\dfrac{u(x+h)v(x+h)-u(x)v(x)}{h}
+\\
+=&amp;\lim_{h\to 0} \dfrac{v(x+h)[u(x+h)-u(x)]}{h}+\lim_{h\to
+0}\dfrac{u(x)[v(x+h)-v(x)]}{h}
+\\
+=&amp;u&#39;v+uv&#39;.
+\end{aligned}
+\]</span></li>
+<li>同样地, <span class="math display">\[
+\begin{aligned}
+&amp;\left(\dfrac{u}{v}\right)&#39;
+\\
+=&amp;\lim_{h\to
+0}\dfrac{1}{h}\left[\dfrac{u(x+h)}{v(x+h)}-\dfrac{u(x)}{v(x)}\right]
+\\
+=&amp;\lim_{h\to 0}\dfrac{u(x+h)v(x)-u(x)v(x+h)}{h\cdot v(x+h)v(x)}
+\\
+=&amp;\dfrac{1}{v^2}\lim_{h\to
+0}\dfrac{v(x)[u(x+h)-u(x)]}{h}-\dfrac{1}{v^2}\lim_{h\to
+0}\dfrac{u(x)[v(x+h)-v(x)]}{h}
+\\
+=&amp;\dfrac{u&#39;v-uv&#39;}{v^2}.
+\end{aligned}
+\]</span></li>
+</ol>
+</blockquote>
+</details>
+<ul>
+<li><strong>复合运算</strong></li>
+</ul>
+<p>若 <span class="math inline">\(y=f(u), u=u(x)\)</span>, 则复合函数
+<span class="math inline">\(y=(f\circ u)(x)=f(u(x))\)</span>
+的导数记作</p>
+<p><span class="math display">\[
+f&#39;_x(u(x))=[f(u(x))]&#39;=\dfrac{\mathrm df(u(x))}{\mathrm
+dx}=\dfrac{\mathrm dy}{\mathrm dx}.
+\]</span></p>
+<p>值为</p>
+<p><span class="math display">\[
+[f(u(x))]&#39;=f&#39;(u(x))\cdot u&#39;(x)=\dfrac{\mathrm dy}{\mathrm
+du}\cdot \dfrac{du}{dx}.
+\]</span></p>
+<blockquote>
+<p>注意记号! 不加下标的话, <span
+class="math inline">\(f&#39;(u(x))\)</span> 可以看成是把 <span
+class="math inline">\(u(x)\)</span> 的值代入 <span
+class="math inline">\(f\)</span> 的导函数中(即对 <span
+class="math inline">\(u(x)\)</span> 求导). 而 <span
+class="math inline">\([f(u(x))]&#39;\)</span>
+可以看成是把中括号里面展开成 <span class="math inline">\(x\)</span>
+的函数再求导(即对 <span class="math inline">\(x\)</span> 求导).</p>
+</blockquote>
+<p>上面的法则写成微分形式为</p>
+<p><span class="math display">\[
+\mathrm d f(u(x))=f&#39;(u(x))u&#39;(x)\mathrm dx.
+\]</span></p>
+<p>继续用微分的定义, 还发现</p>
+<p><span class="math display">\[
+\mathrm df(u)=f&#39;(u)\mathrm du.
+\]</span></p>
+<p>这就是一阶微分的形式不变性.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>该法则证明如下: <span class="math display">\[
+\begin{aligned}
+&amp;[f(u(x))]&#39;
+\\
+=&amp;\lim_{h\to 0}\dfrac{f(u(x+h))-f(u(x))}{h}
+\\
+=&amp;\lim_{\Delta u\to 0}\dfrac{f(u(x+h))-f(u(x))}{u(x+h)-u(x)}\cdot
+\lim_{h\to 0}\dfrac{u(x+h)-u(x)}{h}
+\\
+=&amp;f&#39;(u(x))\cdot u&#39;(x).
+\end{aligned}
+\]</span></p>
+</blockquote>
+</details>
+<ul>
+<li><strong>反函数</strong></li>
+</ul>
+<p>对于 <span class="math inline">\(y=f(x), x=\varphi(y)\)</span>,
+我们对 <span class="math inline">\(y\)</span> 经由 <span
+class="math inline">\(\varphi\)</span> 求导有</p>
+<p><span class="math display">\[
+f&#39;(x)=\dfrac{1}{\varphi&#39;(y)}=\dfrac{1}{\varphi&#39;(f(x))}.
+\]</span></p>
+<p>写成微分形式有</p>
+<p><span class="math display">\[
+\mathrm dy=\dfrac{1}{\mathrm dx/\mathrm dy}\mathrm dx.
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>证明如下: <span class="math display">\[
+\begin{aligned}
+&amp;f&#39;(x)
+\\
+=&amp;\lim_{\Delta x\to 0}\dfrac{f(x+\Delta x)-f(x)}{(x+\Delta x) - x}
+\\
+=&amp;\lim_{\Delta y\to 0}\dfrac{(y+\Delta y)-y}{\varphi(y+\Delta
+y)-\varphi(y)}
+\\
+=&amp;\dfrac{1}{\varphi&#39;(y)}=\dfrac{1}{\varphi&#39;(f(x))}
+\end{aligned}
+\]</span></p>
+</blockquote>
+</details>
+<ul>
+<li><strong>基本公式表</strong></li>
+</ul>
+<details>
+<summary>
+<b>展开表格</b>
+</summary>
+<p><img src="derivative_table1.png" /></p>
+<p><img src="derivative_table2.png" /></p>
+</details>
+<details>
+<summary>
+<b>展开前 12 项证明</b>
+</summary>
+<blockquote>
+<ol type="1">
+<li><p><span class="math inline">\(f(x)=c\)</span>, 则 <span
+class="math inline">\(f&#39;(x)=\lim\limits_{h\to
+0}\dfrac{0-0}{h}=0\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x)=x^\mu\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\lim_{h\to 0}\dfrac{(x+h)^\mu-x^\mu}{h}
+\\
+&amp;=x^\mu\lim_{h\to 0}\dfrac{(1+\frac{h}{x})^\mu-1}{h}
+\\
+&amp;=x^\mu \cdot \dfrac{\mu}{x}=\mu x^{\mu-1}.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(f(x)=e^x\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\lim_{h\to 0}\dfrac{e^{x+h}-e^x}{h}
+\\
+&amp;=e^x\cdot \lim_{h\to 0}\dfrac{e^h-1}{h}=e^x.
+\end{aligned}
+\]</span> <span class="math inline">\(f(x)=a^x\)</span> 可以 写成 <span
+class="math inline">\(f(x)=e^{x\ln a}\)</span> 再用复合函数求导.</p>
+<p>进一步我们可以得到, <span class="math inline">\((\ln
+|x|)&#39;=\dfrac{1}{x}\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x)=\ln x\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\lim_{h\to 0}\dfrac{\ln(x+h)-\ln x}{h}
+\\
+&amp;=\lim_{h\to 0}\dfrac{\ln (1+\dfrac{h}{x})}{h}
+\\
+&amp;=\dfrac{1}{x}.
+\end{aligned}
+\]</span> <span class="math inline">\(f(x)=\log_a x\)</span>, 可以写成
+<span class="math inline">\(f(x)=\dfrac{\ln x}{\ln a}\)</span>
+再求导.</p></li>
+<li><p><span class="math inline">\(f(x)=\sin x\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\lim_{h\to 0}\dfrac{\sin(x+h)-\sin(x)}{h}
+\\
+&amp;=\lim_{h\to 0}\dfrac{2\cos(x+h/2)\sin(h/2)}{h}
+\\
+&amp;=\cos x.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(f(x)=\cos
+x=\sin(x+\dfrac{\pi}{2})\)</span>, 则 <span
+class="math inline">\(f&#39;(x)=\cos(x+\dfrac{\pi}{2})=-\sin
+x\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x)=\tan x\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\left(\dfrac{\sin x}{\cos x}\right)&#39;
+\\
+&amp;=\dfrac{\cos^2 x+\sin^2 x}{\cos^2 x}
+\\
+&amp;=\dfrac{1}{\cos^2x}=\sec^2 x.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(f(x)=\cot
+x=\tan(\dfrac{\pi}{2}-x)\)</span>, 则 <span
+class="math inline">\(f&#39;(x)=-\sec^2(\dfrac{\pi}{2}-x)=-\csc^2
+x\)</span>.</p></li>
+<li><p><span class="math inline">\(y=f(x)=\arcsin x, x=\varphi(y)=\sin
+y, y\in\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{1}{\varphi&#39;(y)}
+\\
+&amp;=\dfrac{1}{\cos y}
+\\
+&amp;=\dfrac{1}{\sqrt{1-\sin^2y}}
+\\
+&amp;=\dfrac{1}{\sqrt{1-x^2}}.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(f(x)=\arccos x=\dfrac{\pi}{2}-\arcsin
+x\)</span>, 则 <span
+class="math inline">\(f&#39;(x)=-\dfrac{1}{\sqrt{1-x^2}}\)</span>.</p></li>
+<li><p><span class="math inline">\(y=f(x)=\arctan x, x=\varphi(y)=\tan
+y\)</span>, 则 <span class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{1}{\varphi&#39;(y)}
+\\
+&amp;=\dfrac{1}{\sec^2y}
+\\
+&amp;=\dfrac{1}{\tan^2y+1}
+\\
+&amp;=\dfrac{1}{1+x^2}.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(f(x)=\operatorname{arccot}
+x=\dfrac{\pi}{2}-\arctan x\)</span>, 则 <span
+class="math inline">\(f&#39;(x)=-\dfrac{1}{1+x^2}\)</span>.</p></li>
+</ol>
+</blockquote>
+</details>
+<details>
+<summary>
+<b>双曲函数扩展及后 6 项证明</b>
+</summary>
+<blockquote>
+<p>关于更详细的内容, 你可以看<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20042215">这篇知乎专栏</a>,
+也可以看看同济的高等数学课本.</p>
+<ul>
+<li><p>双曲函数的定义 <span class="math display">\[
+\begin{aligned}
+\operatorname{sh} x&amp;=\dfrac{e^x-e^{-x}}{2},
+\\
+\operatorname{ch} x&amp;=\dfrac{e^x+e^{-x}}{2},
+\\
+\operatorname{th} x&amp;=\dfrac{\operatorname{sh} x}{\operatorname{ch}
+x}=\dfrac{e^x-e^{-x}}{e^x+e^{-x}},
+\\
+\operatorname{arsh} x&amp;=\ln(x+\sqrt {x^2+1}),
+\\
+\operatorname{arch} x&amp;=\ln(x+\sqrt {x^2-1}),
+\\
+\operatorname{acth} x&amp;=\dfrac{1}{2}\ln\dfrac{1+x}{1-x}.
+\end{aligned}
+\]</span></p></li>
+<li><p>重要的性质 <span class="math display">\[
+\begin{aligned}
+\operatorname{sh} (x+y)&amp;=\operatorname{sh} x\operatorname{ch}
+y+\operatorname{ch} x\operatorname{sh} y,
+\\
+\operatorname{sh} (x-y)&amp;=\operatorname{sh} x\operatorname{ch}
+y-\operatorname{ch} x\operatorname{sh} y,
+\\
+\operatorname{ch} (x+y)&amp;=\operatorname{ch} x\operatorname{ch}
+y+\operatorname{sh} x\operatorname{sh} y,
+\\
+\operatorname{ch} (x-y)&amp;=\operatorname{ch} x\operatorname{ch} y-
+\operatorname{sh} x\operatorname{sh} y.
+\end{aligned}
+\]</span> 从上面可得一些性质, 需要记住的是 <span
+class="math inline">\(\operatorname{ch}^2 x-\operatorname{sh}^2
+x=1\)</span>.</p></li>
+<li><p>证明导数公式</p></li>
+</ul>
+<ol start="13" type="1">
+<li><span class="math inline">\(f(x)=\operatorname{sh}
+x=\dfrac{e^x-e^{-x}}{2}\)</span>, 则 <span
+class="math inline">\(f&#39;(x)= \dfrac{e^x+e^{-x}}{2}=\operatorname{ch}
+x\)</span>.</li>
+<li>类似于 13. 可得, <span class="math inline">\(f(x)=\operatorname{ch}
+x\)</span>, 则 <span class="math inline">\(f&#39;(x)=\operatorname{sh}
+x\)</span>.</li>
+<li><span class="math inline">\(f(x)=\operatorname{th}
+x=\dfrac{\operatorname{sh} x}{\operatorname{ch} x}\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{\operatorname{ch}^2 x-\operatorname{sh}^2
+x}{\operatorname{ch}^2 x}=\dfrac{1}{\operatorname{ch}^2 x}
+\end{aligned}
+\]</span></li>
+<li><span class="math inline">\(y= f(x)=\operatorname{arsh} x,
+x=\varphi(y)=\operatorname{sh} y\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{1}{\varphi&#39;(y)}
+\\
+&amp;=\dfrac{1}{\operatorname{ch}(y)}
+\\
+&amp;=\dfrac{1}{\sqrt{\operatorname{sh}^2 y+1}}
+\\
+&amp;=\dfrac{1}{\sqrt{x^2+1}}
+\end{aligned}
+\]</span></li>
+<li><span class="math inline">\(y= f(x)=\operatorname{arch}x,
+x=\varphi(y)=\operatorname{ch} y\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{1}{\varphi&#39;(y)}
+\\
+&amp;=\dfrac{1}{\operatorname{sh} y}
+\\
+&amp;=\dfrac{1}{\sqrt{\operatorname{ch}^2y - 1}}
+\\
+&amp;=\dfrac{1}{\sqrt {x^2-1}}
+\end{aligned}
+\]</span></li>
+<li><span class="math inline">\(y=f(x)=\operatorname{arth} x,
+x=\varphi(y)=\operatorname{th}y\)</span>, 则 <span
+class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\dfrac{1}{\varphi&#39;(y)}
+\\
+&amp;=\operatorname{ch}^2 y
+\\
+&amp;=\dfrac{\operatorname{ch}^2y}{\operatorname{ch}^2y-\operatorname{sh}^2y}
+\\
+&amp;=\dfrac{1}{1-\operatorname{th}^2y}
+\\
+&amp;=\dfrac{1}{1-x^2}
+\end{aligned}
+\]</span></li>
+</ol>
+</blockquote>
+</details>
+<h2 id="高阶导数和高阶微分">高阶导数和高阶微分</h2>
+<ul>
+<li><span class="math inline">\(n\)</span> 阶导数的定义: <span
+class="math inline">\(y^{(n)}=(y^{(n-1)})&#39;\)</span></li>
+</ul>
+<p><span class="math inline">\(n\)</span> 阶导数记作</p>
+<p><span class="math display">\[
+    f^{(n)}, \dfrac{\mathrm d^nf}{\mathrm d x^n}, y^{(n)},
+\dfrac{\mathrm d^ny}{\mathrm d x^n}
+\]</span></p>
+<p>若 <span class="math inline">\(n\le 3\)</span>, 也可以用若干撇 <span
+class="math inline">\((&#39;)\)</span> 代替.</p>
+<ul>
+<li><span class="math inline">\(n\)</span> 阶连续可导: <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上 <span
+class="math inline">\(n\)</span> 阶导函数连续, 记作 <span
+class="math inline">\(f\in C^n(I)\)</span>.</li>
+</ul>
+<details>
+<summary>
+<b>常用的高阶导数</b>
+</summary>
+<blockquote>
+<p><span class="math inline">\(f(x)=c\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=0, n\ge 1\)</span>.</p>
+<p><span class="math inline">\(f(x)=a^x\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=a^x(\ln a)^n\)</span>.</p>
+<p><span class="math inline">\(f(x)=\ln x\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=\dfrac{(-1)^{n-1}(n-1)!}{x^n}, n\ge
+1\)</span>.</p>
+<p><span class="math inline">\(f(x)=\sin (ax+b)\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=a^{n}\sin
+(ax+b+\dfrac{n\pi}{2})\)</span>. <span class="math inline">\(f(x)=\cos
+(ax+b)\)</span> 类似.</p>
+<p><span class="math inline">\(f(x)=\dfrac{1}{x+a}\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=\dfrac{(-1)^n\cdot
+n!}{(x+a)^{n+1}}\)</span>.</p>
+<p><span class="math inline">\(f(x)=x^\mu\)</span>, 则 <span
+class="math inline">\(f^{(n)}(x)=\mu^{\underline{n}}x^{\mu-n}\)</span>,
+其中 <span class="math inline">\(\mu^{\underline{n}}=\mu(\mu-1)\cdots
+(\mu-n+1)\)</span>.</p>
+</blockquote>
+</details>
+<ul>
+<li>高阶导数运算法则</li>
+</ul>
+<ol type="1">
+<li><span class="math inline">\((u\pm v)^{(n)}=u^{(n)}\pm
+v^{(n)}\)</span></li>
+<li><span class="math inline">\((cu)^{(n)}=cu^{(n)}\)</span>.</li>
+<li>莱布尼兹公式: <span
+class="math inline">\((uv)^{(n)}=\sum\limits_{i=0}^nC_n^iu^{(n-i)}v^{(i)}\)</span></li>
+</ol>
+<details>
+<summary>
+<b>莱布尼斯公式证明</b>
+</summary>
+<blockquote>
+<p>用归纳法, 当 <span class="math inline">\(n=0\)</span> 时成立.</p>
+<p>设当 <span class="math inline">\(n=k-1(k\ge 1)\)</span> 时成立, 即
+<span
+class="math inline">\((uv)^{(k-1)}=\sum\limits_{i=0}^{k-1}C_{k-1}^iu^{(k-1-i)}v^{i}\)</span>.</p>
+<p>则当 <span class="math inline">\(n=k\)</span> 时, 有 <span
+class="math display">\[
+\begin{aligned}
+(uv)^{(k)}&amp;=[(uv)&#39;]^{(k-1)}
+\\
+&amp;=(u&#39;v)^{(k-1)}+(uv&#39;)^{k-1}
+\\
+&amp;=\sum_{i=0}^{k-1}C_{k-1}^iu^{(k-i)}v^{(i)}+\sum_{i=0}^{k-1}C_{k-1}^iu^{(k-1-i)}v^{(i+1)}
+\\
+&amp;=C_{k-1}^0u^{(k)}v^{(0)}+C_{k-1}^{k-1}u^{(0)}v^{(k)}+\sum_{i=1}^{k-1}(C_{k-1}^i+C_{k-1}^{i-1})u^{(k-i)}v^{(i)}
+\\
+&amp;=\sum_{i=0}^kC_k^iu^{(k-1)}v^{(i)}.
+\end{aligned}
+\]</span> 由数学归纳法, 得证.</p>
+</blockquote>
+</details>
+<ul>
+<li>高阶微分的定义: <span class="math inline">\(\mathrm d^ny=\mathrm
+d(\mathrm dy)\)</span>.</li>
+</ul>
+<p>如果 <span class="math inline">\(x\)</span> 是自变量, 那么:</p>
+<p>由于 <span class="math inline">\(\mathrm d^2 y=\mathrm
+d(y&#39;\mathrm dx)=y&#39;&#39;\mathrm dx\cdot \mathrm dx+y&#39;\mathrm
+d(\mathrm dx)\)</span>, 而 <span class="math inline">\(\mathrm d(\mathrm
+dx)=0\)</span>, 记 <span class="math inline">\((\mathrm dx)^2\)</span>
+为 <span class="math inline">\(\mathrm dx^2\)</span>, 故写为 <span
+class="math inline">\(\mathrm d^2y=y&#39;&#39;\mathrm dx^2\)</span>.</p>
+<p>同理, <span class="math inline">\(\mathrm d^ny=f^{(n)}(x)\mathrm
+dx^n\)</span>. 从而我们可以理解高阶导数记号的合理性.</p>
+<p>这样的高阶微分同样具有高阶导数的三条运算法则.</p>
+<details>
+<summary>
+<b>但是高阶导数不具有形式不变性!</b>
+</summary>
+<blockquote>
+<p>比如 <span class="math inline">\(y=f(x), x=x(t)\)</span>,
+则在上面的式子中 <span class="math inline">\(\mathrm
+d^2y=y&#39;&#39;\mathrm dx^2+y&#39;\mathrm d^2x\)</span>, 其中 <span
+class="math inline">\(\mathrm d^2x\)</span> 是 <span
+class="math inline">\(x(t)\)</span> 的二阶微分, 一般情况下不为 <span
+class="math inline">\(0\)</span>.故此时不具有 <span
+class="math inline">\(\mathrm d^2y=y&#39;&#39;\mathrm dx^2\)</span>
+的性质. 对更高阶的微分更是如此.</p>
+</blockquote>
+</details>
+<h2 id="微分中值定理">微分中值定理</h2>
+<ul>
+<li>极值: <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上有定义, 若在 <span
+class="math inline">\(a\in I\)</span> 的一个邻域 <span
+class="math inline">\(U(a)\)</span> 内, 有 <span
+class="math inline">\(\forall x\in U(a)\)</span>, <span
+class="math inline">\(f(x)\le(\ge)f(a)\)</span>, 则称 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 处取到极大(小)值, <span
+class="math inline">\(a\)</span> 为极大(小)值点.<br />
+</li>
+<li>费马定理: 可导的极值点一定是驻点(导数为零的点).
+(可以用左、右极限的保号性证明必须为零)</li>
+</ul>
+<p>注意: 反之未必然.</p>
+<ul>
+<li>罗尔定理: 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 连续, 在 <span
+class="math inline">\((a, b)\)</span> 可导, 且 <span
+class="math inline">\(f(a)=f(b)\)</span>, 则 <span
+class="math inline">\(\exists \xi\in (a, b),
+f&#39;(\xi)=0\)</span>.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>设在 <span class="math inline">\([a, b]\)</span> 上 <span
+class="math inline">\(f\)</span> 有最大值 <span
+class="math inline">\(M\)</span>, 最小值 <span
+class="math inline">\(m\)</span>.</p>
+<ol type="1">
+<li>若 <span class="math inline">\(M=m\)</span>, 则 <span
+class="math inline">\(f(x)\equiv c, x\in [a, b]\)</span>, 故 <span
+class="math inline">\(f&#39;(x)=0, \forall x\in(a, b)\)</span>,
+得证.</li>
+<li>若 <span class="math inline">\(m&lt;M\)</span>, 则 <span
+class="math inline">\(m\)</span> 和 <span
+class="math inline">\(M\)</span> 取到处至少有一不为端点值(否则应该相等),
+不妨是最大值 <span class="math inline">\(M\)</span>. 记为 <span
+class="math inline">\(f(c)=M\)</span>, 则 <span
+class="math inline">\(f(c)=M\)</span> 同时也是极大值. 则由费马定理, 有
+<span class="math inline">\(f&#39;(c)=0\)</span>. 证毕.</li>
+</ol>
+</blockquote>
+</details>
+<ul>
+<li>拉格朗日中值定理: 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 连续, 在 <span
+class="math inline">\((a, b)\)</span> 可导, 则 <span
+class="math inline">\(\exists \xi\in (a, b)\)</span>, 使得</li>
+</ul>
+<p><span class="math display">\[
+    f&#39;(\xi)=\dfrac{f(b)-f(a)}{b-a}.
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><strong>证法1</strong>: 直线 <span class="math inline">\(AB\)</span>
+的方程为 <span
+class="math inline">\(y=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)\)</span>, 让
+<span class="math inline">\(f(x)\)</span> 减去它, 构造辅助函数: <span
+class="math display">\[
+F(x) = f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}(x-a).
+\]</span> 则 <span class="math inline">\(F(b)=F(a)=0\)</span>,
+由罗尔定理, 存在 <span class="math inline">\(\xi\in(a, b)\)</span>, 使得
+<span class="math inline">\(F&#39;(\xi)=0\)</span>, 即 <span
+class="math display">\[
+f&#39;(\xi)=\dfrac{f(b)-f(a)}{b-a}.
+\]</span> <strong>证法2</strong>: 即 <span
+class="math inline">\(f&#39;(x)-\dfrac{f(b)-f(a)}{b-a}=0\)</span> 有根,
+令 <span
+class="math inline">\(F(x)=f(x)-\dfrac{f(b)-f(a)}{b-a}x\)</span>, 则
+<span class="math inline">\(F(a)=F(b)=\dfrac{bf(a)-af(b)}{b-a}\)</span>,
+由罗尔定理, 存在 <span class="math inline">\(\xi\in(a, b)\)</span>, 使得
+<span class="math inline">\(F&#39;(\xi)=0\)</span>, 得证.</p>
+</blockquote>
+</details>
+<blockquote>
+<p><strong>推论 1</strong>: (有限增量公式) <span
+class="math inline">\(f(x+\Delta x)=f(x)+f&#39;(x+\theta \Delta x)\Delta
+x, \theta\in(0, 1)\)</span>.(在 <span class="math inline">\(x\)</span>
+和 <span class="math inline">\(x+\Delta x\)</span>
+之间使用拉格朗日中值定理)</p>
+<p><strong>推论 2</strong>: 设 <span class="math inline">\(f\)</span> 在
+<span class="math inline">\((a, b)\)</span> 上可导, 则 <span
+class="math inline">\((a, b)\)</span> 上 <span
+class="math inline">\(f(x)\)</span> 是常数的充要条件是 <span
+class="math inline">\(f&#39;(x)=0\)</span>.(必要性显然,
+充分性在任意两点间用拉格朗日中值定理)</p>
+<p><strong>推论 3</strong>: 设 <span class="math inline">\(f\)</span> 和
+<span class="math inline">\(g\)</span> 在 <span
+class="math inline">\(I\)</span> 可导, 且 <span
+class="math inline">\(f&#39;(x)=g&#39;(x)\)</span>, 则在 <span
+class="math inline">\(I\)</span> 内有 <span
+class="math inline">\(f(x)=g(x)+C\)</span>, <span
+class="math inline">\(C\)</span> 为常数.(由推论 2 可得)</p>
+</blockquote>
+<ul>
+<li>柯西中值定理: 设 <span class="math inline">\(f, g\)</span> 均在
+<span class="math inline">\([a, b]\)</span> 连续, 在 <span
+class="math inline">\((a, b)\)</span> 可导, 且在 <span
+class="math inline">\((a, b)\)</span> 上 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span>, 则 <span
+class="math inline">\(\exists \xi\in(a, b)\)</span>, 使得 <span
+class="math display">\[
+  \dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f&#39;(\xi)}{g&#39;(\xi)}.
+\]</span></li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>即证 <span
+class="math inline">\([g(b)-g(a)]f&#39;(x)-[f(b)-f(a)]g&#39;(x)=0\)</span>
+有根. 构造 <span
+class="math inline">\(F(x)=[g(b)-g(a)]f(x)-[f(b)-f(a)]g(x)\)</span>, 则
+<span class="math inline">\(F(a)=F(b)=f(a)g(b)-f(b)g(a)\)</span>,
+由罗尔定律可知存在 <span class="math inline">\(\xi\in(a, b)\)</span>,
+使得 <span class="math inline">\(F&#39;(\xi)=0\)</span>, 变形后立得.</p>
+</blockquote>
+</details>
+<h2 id="洛必达法则">洛必达法则</h2>
+<p>用于解决求不定型极限的问题(主要是 <span
+class="math inline">\(\dfrac{0}{0}, \dfrac{\infty}{\infty}\)</span>,
+其它可以转化为这两个)</p>
+<p>求 <span class="math inline">\(\dfrac{0}{0}\)</span>
+型的法则(有穷点): 若在 <span class="math inline">\(U^o(a)\)</span> 中,
+<span class="math inline">\(f&#39;(x), g&#39;(x)\)</span> 存在且 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span>, <span
+class="math inline">\(x\to a\)</span> 时 <span
+class="math inline">\(f(x), g(x)\to 0\)</span>, 且 <span
+class="math inline">\(\lim\limits_{x\to
+a}\dfrac{f&#39;(x)}{g&#39;(x)}=A\)</span>(或无穷), 则有</p>
+<p><span class="math display">\[
+    \lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to
+a}\dfrac{f&#39;(x)}{g&#39;(x)}.
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>不妨填充可去间断点 <span class="math inline">\(f(a)=g(a)=0\)</span>.
+对右邻域内的任一点 <span class="math inline">\(x\)</span>, 在 <span
+class="math inline">\((a, x)\)</span> 之间使用拉格朗日中值定理, 可得
+<span class="math display">\[
+\dfrac{f(x)}{g(x)}=\dfrac{f(x)-f(a)}{g(x)-g(a)}=\dfrac{f&#39;_+(\xi)}{g&#39;_+(\xi)}.
+\]</span></p>
+<p>其中 <span class="math inline">\(\xi\in(a, x)\)</span>. 当 <span
+class="math inline">\(x\to a+\)</span> 时, <span
+class="math inline">\(\xi\to a+\)</span>. 故取极限可得</p>
+<p><span class="math display">\[
+\lim_{x\to a+}\dfrac{f(x)}{g(x)}=\lim_{x\to
+a+}\dfrac{f&#39;(x)}{g&#39;(x)}.
+\]</span></p>
+<p>对左侧同理.</p>
+</blockquote>
+</details>
+<details>
+<summary>
+<b>其它几个类似的法则</b>
+</summary>
+<blockquote>
+<p>求 <span class="math inline">\(\dfrac{0}{0}\)</span>
+型的法则(无穷点): 若在 <span class="math inline">\(|x|&gt;N\)</span> 时,
+<span class="math inline">\(f&#39;(x), g&#39;(x)\)</span> 存在且 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span>, <span
+class="math inline">\(x\to \infty\)</span> 时 <span
+class="math inline">\(f(x), g(x)\to 0\)</span>, 且 <span
+class="math inline">\(\lim\limits_{x\to
+\infty}\dfrac{f&#39;(x)}{g&#39;(x)}=A\)</span>(或无穷), 则有</p>
+<p><span class="math display">\[
+\lim_{x\to \infty}\dfrac{f(x)}{g(x)}=\lim_{x\to
+\infty}\dfrac{f&#39;(x)}{g&#39;(x)}.
+\]</span></p>
+<p>证明方法: 作代换 <span class="math inline">\(t=\dfrac{1}{x}\to
+0\)</span>, 用第一个法则.</p>
+<p>求 <span class="math inline">\(\dfrac{\infty}{\infty}\)</span>
+型的法则(有穷点): 若在 <span class="math inline">\(U^o(a)\)</span> 中,
+<span class="math inline">\(f&#39;(x), g&#39;(x)\)</span> 存在且 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span>, <span
+class="math inline">\(x\to a\)</span> 时 <span
+class="math inline">\(f(x), g(x)\to \infty\)</span>, 且 <span
+class="math inline">\(\lim\limits_{x\to
+a}\dfrac{f&#39;(x)}{g&#39;(x)}=A\)</span>(或无穷), 则有</p>
+<p><span class="math display">\[
+\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to
+a}\dfrac{f&#39;(x)}{g&#39;(x)}.
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>只证右侧, 左侧同理. 分情况讨论.</p>
+<p><strong>情况 1</strong>: <span class="math inline">\(A=0\)</span>. 则
+<span class="math inline">\(\lim\limits_{x\to
+a+}\dfrac{f&#39;(x)}{g&#39;(x)}=0\)</span>, 故 <span
+class="math inline">\(\forall\varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta &gt;0\)</span>, 当 <span
+class="math inline">\(a&lt;x&lt;a+\delta\)</span> 时, 有 <span
+class="math inline">\(\left|\dfrac{f&#39;(x)}{g&#39;(x)}\right|&lt;\dfrac{\varepsilon}{2}\)</span>.</p>
+<p>由柯西中值定理, 存在 <span class="math inline">\(\xi\in(x,
+a+\delta)\)</span>, 使得 <span class="math display">\[
+\dfrac{f(x)-f(a+\delta)}{g(x)-g(a+\delta)}=\dfrac{f&#39;(\xi)}{g&#39;(\xi)}.
+\]</span> 即 <span class="math display">\[
+\dfrac{f(x)}{g(x)}=\dfrac{f(a+\delta)}{g(x)}+\dfrac{f&#39;(\xi)}{g&#39;(\xi)}\left[1-\dfrac{g(a+\delta)}{g(x)}\right]
+\]</span> 则容易证明得到(因为 <span class="math inline">\(g(x)\to
+\infty\)</span>), 存在 <span
+class="math inline">\(\eta&lt;\delta\)</span>, 使得 <span
+class="math inline">\(a&lt;x&lt;a+\eta\)</span> 时, 有 <span
+class="math display">\[
+\left|\dfrac{f(x)}{g(x)}\right|&lt;\varepsilon
+\]</span> 故 <span class="math inline">\(\lim\limits_{x\to
+a+}\dfrac{f(x)}{g(x)}=0\)</span></p>
+<p><strong>情况 2</strong>: <span class="math inline">\(A\)</span>
+为常数, 则令 <span
+class="math inline">\(f&#39;=f-Ag\)</span>(注意到上面的证明过程只用到了
+<span class="math inline">\(g(x)\to \infty\)</span>, 故其实 <span
+class="math inline">\(f(x)\to\infty\)</span> 不是本质的条件),
+即可证明.</p>
+<p><strong>情况 3</strong>: <span class="math inline">\(A\)</span>
+为无穷, 把情况 1 中 <span class="math inline">\(\varepsilon\)</span>
+限制改为 <span class="math inline">\(G\)</span> 限制即可.</p>
+<p>证毕.</p>
+</blockquote>
+</details>
+<p>求 <span class="math inline">\(\dfrac{\infty}{\infty}\)</span>
+型的法则(无穷点): 若在 <span class="math inline">\(|x|&gt;N\)</span> 时,
+<span class="math inline">\(f&#39;(x), g&#39;(x)\)</span> 存在且 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span>, <span
+class="math inline">\(x\to \infty\)</span> 时 <span
+class="math inline">\(f(x), g(x)\to \infty\)</span>, 且 <span
+class="math inline">\(\lim\limits_{x\to
+\infty}\dfrac{f&#39;(x)}{g&#39;(x)}=A\)</span>(或无穷), 则有</p>
+<p><span class="math display">\[
+\lim_{x\to \infty}\dfrac{f(x)}{g(x)}=\lim_{x\to
+\infty}\dfrac{f&#39;(x)}{g&#39;(x)}.
+\]</span></p>
+<p>证明方法: 作代换 <span class="math inline">\(t=\dfrac{1}{x}\to
+0\)</span>, 用上一个法则.</p>
+</blockquote>
+</details>
+<h2 id="泰勒公式">泰勒公式</h2>
+<ul>
+<li>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 处有直到 <span
+class="math inline">\(n\)</span> 阶的导数, 则 <span
+class="math inline">\(n\)</span> 阶泰勒多项式为</li>
+</ul>
+<p><span class="math display">\[
+    P_n(x)=\sum_{k=0}^n\dfrac{f^{(k)}(x_0)}{k!}(x-a)^k
+\]</span></p>
+<p>则 <span class="math inline">\(f(x)=P_n(x)+r_n(x)\)</span>, <span
+class="math inline">\(r_n(x)\)</span> 称为余项.</p>
+<p>可知:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P^{(k)}(a)&amp;=f^{(k)}(a), &amp;(0\le k\le n)
+    \\
+    P^{(k)}(a)&amp;=0, &amp;(k\ge n+1)
+    \\
+    r_n^{(k)}(a)&amp;=0, &amp;(0\le k\le n)
+    \\
+    r_n^{(k)}(a)&amp;=f^{(k)}(a), &amp;(k \ge n+1, \textnormal{若存在})
+\end{aligned}
+\]</span></p>
+<ul>
+<li>皮亚诺余项: <span
+class="math inline">\(r_n(x)=o((x-a)^n)\)</span>.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>因为 <span class="math inline">\(f\)</span> 有直到 <span
+class="math inline">\(n\)</span> 阶的导数, 故在 <span
+class="math inline">\(a\)</span> 的邻域内有直到 <span
+class="math inline">\(n-1\)</span> 阶的导数. <span
+class="math display">\[
+\begin{aligned}
+\lim_{x\to a}\dfrac{r_n(x)}{(x-a)^n}&amp;=\lim_{x\to
+a}\dfrac{f(x)-P_n(x)}{(x-a)^n}
+\\
+&amp;=\lim_{x\to a}\dfrac{f&#39;(x)-P_n&#39;(x)}{n(x-a)^{n-1}}
+\\
+&amp;=\cdots
+\\
+&amp;=\lim_{x\to a}\dfrac{f^{(n-1)}(x)-P_n^{(n-1)}(x)}{n!(x-a)}
+\\
+&amp;=\dfrac{1}{n!}\lim_{x\to
+a}\left[\dfrac{f^{(n-1)}(x)-f^{(n-1)}(a)}{x-a}-\dfrac{P^{(n-1)}(x)-P^{(n-1)}(a)}{x-a}\right]
+\\
+&amp;=\dfrac{1}{n!}[f^{(n)}(x)-P^{(n)}(x)] = 0.
+\end{aligned}
+\]</span> 故 <span class="math inline">\(r_n(x)=o((x-a)^n)\)</span>.</p>
+</blockquote>
+</details>
+<ul>
+<li>拉格朗日余项. 使用它需要附加条件: 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 的<strong>邻域内</strong>有直到 <span
+class="math inline">\(n+1\)</span> 阶导数, 则 <span
+class="math display">\[
+  r_n(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}=\dfrac{f^{(n+1)}(a+\theta(x-a))}{(n+1)!}(x-a)^{n+1}.
+\]</span> 其中, <span class="math inline">\(\xi\)</span> 在 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(x\)</span> 之间(不含), <span
+class="math inline">\(0&lt;\theta&lt;1\)</span>.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><span class="math inline">\(n+1\)</span> 次使用柯西中值定理: <span
+class="math display">\[
+\begin{aligned}
+\dfrac{r_n(x)}{(x-a)^{n+1}}&amp;=\dfrac{r_n(x)-r_n(a)}{(x-a)^{n+1}-(a-a)^{n+1}}
+\\
+&amp;=\dfrac{r_n&#39;(\xi_1)}{(n+1)(\xi_1-a)^n}
+\\
+&amp;=\dfrac{r_n&#39;(\xi_1)-r_n&#39;(a)}{(n+1)[(\xi_1-a)^n-(a-a)^n]}
+\\
+&amp;=\dfrac{r_n&#39;&#39;(\xi_2)}{(n+1)n(\xi_2-a)^{n-1}}
+\\
+&amp;=\cdots
+\\
+&amp;=\dfrac{r^{(n)}(\xi_n)}{(n+1)!(\xi_n-a)}
+\\
+&amp;=\dfrac{r^{(n)}(\xi_n)-r^{(n)}(a)}{(n+1)!(\xi_n-a)}
+\\
+&amp;=\dfrac{r^{(n+1)}(\xi)}{(n+1)!}=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}
+\end{aligned}
+\]</span> 其中 <span class="math inline">\(\xi_1\)</span> 位于 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(x\)</span> 之间, <span
+class="math inline">\(\xi_i\)</span> 位于 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(\xi_{i-1}\)</span> 之间 <span
+class="math inline">\((2\le i\le n)\)</span>, <span
+class="math inline">\(\xi\)</span> 位于 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(\xi_n\)</span> 之间, 也就位于 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(x\)</span> 之间.</p>
+<p>其增量形式显然.</p>
+</blockquote>
+</details>
+<ul>
+<li>麦克劳林公式: 在 <span class="math inline">\(0\)</span>
+处展开的泰勒公式.</li>
+</ul>
+<p>可以使用麦克劳林公式求无穷小主部, 从而求解极限.</p>
+<details>
+<summary>
+<b>常用的麦克劳林公式</b>
+</summary>
+<blockquote>
+<p>如下: <span class="math display">\[
+\begin{aligned}
+e^x&amp;=1+x+\dfrac{x^2}{2!}+\cdots+\dfrac{x^n}{n!}+o(x^n),
+\\
+\ln(1+x)&amp;=x-\dfrac{x^2}{2}+\cdots+\dfrac{(-1)^{n-1}x^n}{n}+o(x^n),
+\\
+\sin
+x&amp;=x-\dfrac{x^3}{3!}+\cdots+\dfrac{(-1)^{m-1}x^{2m-1}}{(2m-1)!}+o(x^{2m}),
+\\
+\cos x&amp;=1-\dfrac{x^2}{2!}+\cdots
++\dfrac{(-1)^{m-1}x^{2m}}{(2m)!}+o(x^{2m+1}),
+\\
+(1+x)^\mu&amp;=1+\mu
+x+\dfrac{\mu(\mu-1)x^2}{2!}+\cdots+\dfrac{\mu^{\underline{n}}x^n}{n!}+o(x^n),
+\\
+\dfrac{1}{1+x}&amp;=1-x+x^2-\cdots+(-1)^nx^n+o(x^{n}),
+\\
+\dfrac{1}{1-x}&amp;=1+x+x^2+\cdots+x^n+o(x^n),
+\\
+\arctan
+x&amp;=x-\dfrac{x^3}{3}+\cdots+\dfrac{(-1)^{m-1}x^{2m-1}}{2m-1}+o(x^{2m}),
+\\
+\tan x&amp;=x+\dfrac{x^3}{3}+\dfrac{2x^5}{15}+o(x^6),
+\\
+\operatorname{sh}
+x&amp;=x+\dfrac{x^3}{3!}+\cdots+\dfrac{x^{2m-1}}{(2m-1)!}+o(x^{2m}),
+\\
+\operatorname{ch}
+x&amp;=1+\dfrac{x^2}{2!}+\cdots+\dfrac{x^{2m}}{(2m)!}+o(x^{2m+1}).
+\end{aligned}
+\]</span></p>
+</blockquote>
+</details>
+<h2 id="导数与增减性">导数与增减性</h2>
+<ul>
+<li><strong>定理 1</strong>(严格单调的充分条件) 若 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 连续, 在 <span class="math inline">\((a, b)\)</span> 可导,
+则若 <span class="math inline">\(f&#39;(x)&gt;0(&lt;0), \forall x\in (a,
+b)\)</span>, 则 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 严格递增(减).
+(可以使用拉格朗日中值定理证明)</li>
+</ul>
+<p>反之, 则可能区间内有孤立的若干点满足非严格不等式.(或者说,
+满足非严格不等式的点不构成区间, 证明可以用反证法)</p>
+<ul>
+<li><strong>定理 2</strong>(严格单调的必要条件) 若 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\((a,
+b)\)</span> 可导, 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\((a, b)\)</span> 严格递增(减), 则 <span
+class="math inline">\(f&#39;(x)\ge 0(\le 0)\)</span>.
+(可以用极限的保号性证明)</li>
+<li><strong>定理 3</strong>(广义单调的充要条件) 若 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 连续, 在 <span class="math inline">\((a, b)\)</span> 可导,
+则在 <span class="math inline">\([a, b]\)</span>
+上广义递增(减)的充要条件是 <span class="math inline">\(f&#39;(x)\ge
+0(\le 0), \forall x\in(a, b)\)</span></li>
+</ul>
+<h2 id="导数与极值最值">导数与极值、最值</h2>
+<ul>
+<li>极值可疑点是驻点和不可导点.</li>
+<li><strong>极值判法 1</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(U(a)\)</span> 连续, 在 <span
+class="math inline">\(U^o(a)\)</span> 可导, 则若左右邻域上导数变号, 则
+<span class="math inline">\(a\)</span> 为极值点. 左正右负为极大,
+左负右正为极小. (可以用极限保号性证明)</li>
+<li><strong>极值判法 2 &amp; 3</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(a\)</span> 处 <span
+class="math inline">\(n\)</span> 阶可导, 且 <span
+class="math inline">\(f^{(k)}(a)=0(1\le k\le n-1)\)</span>, 但 <span
+class="math inline">\(f^{(n)}(a)\ne 0\)</span>. 则若 <span
+class="math inline">\(n\)</span> 为奇数, 则不是极值; 若 <span
+class="math inline">\(n\)</span> 为偶数, 则 <span
+class="math inline">\(f^{(n)}(a)\)</span> 正为极小, 负为极大.</li>
+<li><strong>最值判法</strong> 若 <span class="math inline">\(f\)</span>
+在 <span class="math inline">\([a, b]\)</span> 连续,
+其最值只需比较各极值可疑点和区间端点的函数值.</li>
+<li>对连续函数, 极大值和极小值相间排列,
+不在端点处的最值点一定也是极值点. 在区间 <span
+class="math inline">\(I\)</span> 上,
+若函数存在最值但仅有一个极值(极大极小分开考虑), 则极值就是最值.</li>
+</ul>
+<h2 id="导数与凹凸性">导数与凹凸性</h2>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/" rel="prev" title="问题求解（一）总结 PART III">
+                  <i class="fa fa-chevron-left"></i> 问题求解（一）总结 PART III
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rijuyuezhu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

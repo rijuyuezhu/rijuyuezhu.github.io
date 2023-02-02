@@ -1519,95 +1519,6 @@ class="math display">\[
       </tags>
   </entry>
   <entry>
-    <title>问题求解（一）总结 PART III</title>
-    <url>/2023/01/24/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/</url>
-    <content><![CDATA[<p><a
-href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
-<span id="more"></span>
-<h1 id="preface">Preface</h1>
-<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
-little part of <strong>ES</strong>.</p>
-<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
-Chapter 8, 11-15 out of class.</p>
-<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
-class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
-<p>If possible, I decide to learn the left chapters on my own and I will
-also mark my notes down here.</p>
-<h1 id="week-5-数据与数据结构">Week 5 数据与数据结构</h1>
-<h2 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
-Data</h2>
-<h3 id="concepts">Concepts</h3>
-<p><strong>Data Structure</strong></p>
-<ul>
-<li><strong>Data</strong>. Objects manipulated by an algorithm: lists,
-words, texts, "noted numbers", "pointers"..., constitute inputs, outputs
-and intermediate accessories.</li>
-<li><strong>Data Type</strong>. Numbers, words, ... It's good to keey
-types separate, because each date type admits its own <strong>special
-set of allowed operations/actions</strong>.</li>
-<li>Data structures, and the operations upon them, organize the data
-items in ways that enable it to do whatever it should do when the
-processor gets there.</li>
-</ul>
-<p><strong>Variables</strong></p>
-<ul>
-<li>Can contain different values at different times.</li>
-<li>As memory/storage in the algorithm.</li>
-</ul>
-<p><strong>Vectors/Lists/One-dimesional arrays</strong></p>
-<ul>
-<li>Refer to many elements in a uniform way.</li>
-<li>A data structure closely related to a loop as a control
-structure.</li>
-</ul>
-<p><strong>Tables/Matrixs/Two-dimesional arrays</strong></p>
-<ul>
-<li>Nested loop.</li>
-<li>Arranged in a precise rectangular format. Or use a vector whose
-elements themselves point to vectors of varying length.</li>
-</ul>
-<p><strong>Queues and stacks</strong></p>
-<ul>
-<li>Sometimes we do not need the full power provided by indices. It is
-beneficial for algorithmic clarity. We hide the details. (Also a kind of
-abstraction)</li>
-<li>Queue. FIFO list.</li>
-<li>Stack. LIFO list.</li>
-</ul>
-<p><strong>Trees/Hierachies</strong></p>
-<ul>
-<li>Structure and some terminologies.</li>
-<li>Treesort.</li>
-<li>Trees correspond to recursive routines.</li>
-<li>Treesort - self-adjustment idea.</li>
-</ul>
-<p><strong>Databases</strong></p>
-<ul>
-<li>A very large "pool" of data. Contain many differet kinds of
-data.</li>
-<li>Querying a database - a difficult task. So we need a good
-organization of database for clarity and efficiency.</li>
-<li>Some models:
-<ul>
-<li>The relational model.</li>
-<li>The hierachical model.</li>
-<li>The object-oriented databases.</li>
-</ul></li>
-<li>Data mining.</li>
-<li>Data warehouse.</li>
-<li>Knowledge base.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>课程笔记</category>
-        <category>问题求解</category>
-      </categories>
-      <tags>
-        <tag>问题求解</tag>
-        <tag>计算机科学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tarjan 相关算法 学习笔记</title>
     <url>/2023/01/23/Tarjan-%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>简要汇总了 Tarjan 相关的图论算法的资料, 并有所思考.</p>
@@ -1992,12 +1903,11 @@ class="math inline">\(O(1)\)</span> 处理询问即可.</p>
       </tags>
   </entry>
   <entry>
-    <title>问题求解（一）总结 PART II</title>
-    <url>/2023/01/18/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/</url>
+    <title>问题求解（一）总结 PART I</title>
+    <url>/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
     <content><![CDATA[<p><a
 href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
 <span id="more"></span>
-<h1 id="preface">Preface</h1>
 <p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
 little part of <strong>ES</strong>.</p>
 <p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
@@ -2006,8 +1916,209 @@ Chapter 8, 11-15 out of class.</p>
 class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
 <p>If possible, I decide to learn the left chapters on my own and I will
 also mark my notes down here.</p>
-<h1 id="week-3-常用的证明方法">Week 3 常用的证明方法</h1>
+<h1 id="week-1-为什么计算机能解题">Week 1 为什么计算机能解题</h1>
 <h2 id="concepts">Concepts</h2>
+<h3 id="dh-chapter-1-introduction-and-historical-review">DH Chapter 1:
+Introduction and Historical Review</h3>
+<ul>
+<li><p>Computers have many "switchs" or <strong>bits</strong>, flipped
+by itself. Computers can directly execute only a small number of
+extremely trivial operations. Process(algorithms) transform trivial
+operations on bits into the great abilities the computers have.</p></li>
+<li><p>Input, Output, and Algorithm. Software and Hardware. Programs are
+well-written algorithms. Softwares are programs written in a special
+programming language.</p></li>
+<li><p>Histories of computers. You might better learn them from <a
+href="https://www.bilibili.com/video/BV1EW411u7th/">this
+video</a>.</p></li>
+<li><p>Some limitations(differences between human and computerized
+intelligence).</p></li>
+<li><p>Levels of detail: how precise an algorithm's <strong>elementary
+instructions</strong> need to be. Elementary instructions must be clear
+and precise.</p></li>
+<li><p>Abstraction, different levels of abstraction. At a higher level,
+information about lower level isn't needed to be considered.</p></li>
+<li><p>The length of algorithms are not necessarily changed for
+different scale of the problem.</p></li>
+</ul>
+<blockquote>
+<p>Notes below are chapters not metioned in classes.</p>
+<ul>
+<li><p>An algorithm must be suitable for infinite number of inputs.
+Inputs have to be legal(i.e. satisfying some specifications of the
+algorithms)</p></li>
+<li><p>Algorithms are solutions to <strong>computational/algorithmic
+problems</strong>. These problem can be seen as "black box"(a function
+from (any legal) inputs to outputs), and apropriate algorithms are
+specific suitable content of the black box.</p></li>
+<li><p>Algorithmic problems keep illegal inputs away, and algorithms
+deal with legal inputs only.</p></li>
+<li><p>Basic actions must be precise and unambiguous, and take bounded
+amounts of time and resources.</p></li>
+<li><p>An algorithmic problem = input set characterization + output
+specification(or to say, the function from input to output).</p></li>
+</ul>
+</blockquote>
+<h3 id="ud-chapter-1-the-how-when-and-why-of-mathematics.">UD Chapter 1:
+The How, When and Why of Mathematics.</h3>
+<ul>
+<li>How to solve mathematical problems? Polya's method:
+<strong>Understanding the problem</strong>, <strong>Divising a
+plan</strong>, <strong>Carrying out the plan</strong>, <strong>Looking
+back</strong>.</li>
+</ul>
+<h1 id="week-2-什么样的推理是正确的">Week 2 什么样的推理是正确的</h1>
+<h2 id="concepts-1">Concepts</h2>
+<h3 id="ud-chapter-2-logically-speaking">UD Chapter 2: Logically
+Speaking</h3>
+<ul>
+<li><p>Statements are sentences that are true or false, but not both.
+Symbolic statements are called statement forms.</p></li>
+<li><p>The negation of <span class="math inline">\(P\)</span>, denoted
+by <span class="math inline">\(\neg P\)</span>.</p></li>
+<li><p>The disjunction of <span class="math inline">\(P\)</span> and
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\vee Q\)</span>.</p></li>
+<li><p>The conjunction of <span class="math inline">\(P\)</span> and
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\wedge Q\)</span>.</p></li>
+<li><p>The implication, <span class="math inline">\(P\)</span> implies
+<span class="math inline">\(Q\)</span>, denoted by <span
+class="math inline">\(P\to Q\)</span>. <span
+class="math inline">\(P\)</span> is called antecedent and <span
+class="math inline">\(Q\)</span> is called conclusion. <span
+class="math inline">\(P\to Q\)</span> is equivalent to <span
+class="math inline">\(\neg P\vee Q\)</span>.</p></li>
+<li><p>The equivalence, <span class="math inline">\(P\leftrightarrow
+Q\)</span>, and it is equivalent to <span
+class="math inline">\((P\rightarrow Q)\wedge (Q\rightarrow
+P)\)</span>.</p></li>
+<li><p>Things above are called connectives.</p></li>
+<li><p>Tautology, contradiction and contingency. <span
+class="math inline">\(P\leftrightarrow Q\)</span> is a tautology means
+<span class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span> are equivalent.</p></li>
+<li><p>Use truth table to judge when a statement form is true, and to
+prove a statement form is a tautology...</p></li>
+<li><p>Here are some tautologies. <span class="math display">\[
+\begin{aligned}
+  &amp;\textit{DeMorgan&#39;s Laws}&amp;\neg(P\vee Q)\leftrightarrow
+(\neg P\wedge \neg Q)
+  \\
+  &amp; &amp;\neg(P\wedge Q)\leftrightarrow (\neg P\vee \neg Q)
+  \\
+  \\
+  &amp;\textit{Implication and} &amp;(P\rightarrow Q)\leftrightarrow
+(\neg P\vee Q)
+  \\
+  &amp;\textit{its negation} &amp;\neg(P\rightarrow Q)\leftrightarrow
+(P\wedge \neg Q)
+  \\
+  \\
+  &amp;\textit{Double negation} &amp;\neg(\neg P)\leftrightarrow P
+\end{aligned}
+\]</span></p></li>
+</ul>
+<h3 id="ud-chapter-3-introducing-the-contrapositive-and-converse">UD
+Chapter 3: Introducing the Contrapositive and Converse</h3>
+<ul>
+<li><p>Paraphrase statements - use tautologies.</p></li>
+<li><p>Some tautologies: <span class="math display">\[
+  \begin{aligned}
+      &amp;\textit{Distributive property}
+      &amp;(P\wedge(Q\vee R))\leftrightarrow
+      ((P\wedge Q)\vee (P\wedge R))
+      \\
+      &amp;&amp;(P\vee (Q\wedge R))\leftrightarrow ((P\vee
+Q)\wedge(P\vee R))
+      \\
+      \\
+      &amp;\textit{Associative property}
+      &amp;(P\wedge(Q\wedge R))\leftrightarrow ((P\wedge Q)\wedge R)
+      \\
+      &amp;&amp;(P\vee(Q\vee R))\leftrightarrow ((P\vee Q)\vee R)
+      \\
+      \\
+      &amp;\textit{Commutative property}
+      &amp;(P\wedge Q)\leftrightarrow(Q\wedge P)
+      \\
+      &amp;&amp; (P\vee Q)\leftrightarrow (Q\vee P)
+  \end{aligned}
+  \]</span></p></li>
+<li><p>Contrapositive of an implication. They are equivalent.</p></li>
+<li><p>Converse of an implication.</p></li>
+<li><p>Inverse of an implication.</p></li>
+</ul>
+<h3 id="ud-chapter-4-set-notation-and-quantifiers">UD Chapter 4: Set
+Notation and Quantifiers</h3>
+<ul>
+<li><p>Define a set: axiomatic statements(ZFC system).</p></li>
+<li><p>Basic set notations.</p></li>
+<li><p>In statements: <span class="math inline">\(x\)</span> means
+variables; "for all" or <span class="math inline">\(\forall\)</span>,
+"there exists" or <span class="math inline">\(\exists\)</span> are
+called (universal/existential) quantifier.</p></li>
+<li><p><span class="math inline">\(\forall x, p(x)\)</span> is true iff
+for all <span class="math inline">\(x\)</span> we find <span
+class="math inline">\(p(x)\)</span> is true. To bound the range of <span
+class="math inline">\(x\)</span>, we use <span
+class="math inline">\(\forall x, (x\in A\rightarrow p(x))\)</span>. Here
+we use the characteristic of implication. If we consider <span
+class="math inline">\(x\)</span> out of the range, the implication will
+always be true.</p></li>
+<li><p><span class="math inline">\(\exists x, p(x)\)</span> is true iff
+there exists an <span class="math inline">\(x\)</span> such that <span
+class="math inline">\(p(x)\)</span> is true. To bound the range of <span
+class="math inline">\(x\)</span>, we use <span
+class="math inline">\(\exists x, (x\in A\wedge p(x))\)</span>. If we
+consider <span class="math inline">\(x\)</span> out of the range, the
+conjunction will always be false.</p></li>
+<li><p>For negation of quantifiers: <span class="math inline">\(\neg
+(\forall x, p(x))=\exists x, \neg p(x)\)</span>; <span
+class="math inline">\(\neg(\exists x, p(x))=\forall x, \neg
+p(x)\)</span>.</p></li>
+<li><p>Sometimes we can omit <strong>universal
+quantifiers</strong>.</p></li>
+<li><p>With quantifiers, the method to find a implication's
+contrapositive, converse and inverse doesn't change.</p></li>
+</ul>
+<h2 id="extended-content">Extended content</h2>
+<ul>
+<li><p>Logical reasoning (Week 2 slides P24). There are <span
+class="math inline">\(k\)</span> antecedents <span
+class="math inline">\(A_1, A_2, \cdots, A_k\)</span> and one conclusion
+<span class="math inline">\(B\)</span>. To assure that our reasoning is
+correct, we need to prove <span class="math inline">\((A_1\wedge
+A_2\wedge\cdots\wedge A_k)\to B\)</span> is a tautology and vice
+versa.</p></li>
+<li><p>Modus Ponens. (Week 2 slides P25) <span class="math inline">\(p,
+p\rightarrow q \Rightarrow q\)</span>.</p></li>
+<li><p>Some tautologies. (Week 2 slides P27)</p></li>
+</ul>
+<details>
+<summary>
+<b>View the picture</b>
+</summary>
+<p><img src="week2slide-tautologies.png" /></p>
+</details>
+<ul>
+<li><p>(Week 2 slides P28) US, UG, ES, EG(universal/existential
+specify/generalize).</p></li>
+<li><p>(Week 2 discussion P16) use one kind of connective to represent
+all kinds of connectives.</p>
+<p>Let <span class="math inline">\(A\circ B=\neg(A\vee B)\)</span>, then
+<span class="math display">\[
+  \begin{aligned}
+      \neg A &amp;=A\circ A
+      \\
+      A\wedge B &amp;= (A\circ A)\circ (B\circ B)
+      \\
+      A\vee B &amp;= (A\circ B)\circ (A\circ B)
+  \end{aligned}
+  \]</span></p></li>
+</ul>
+<h1 id="week-3-常用的证明方法">Week 3 常用的证明方法</h1>
+<h2 id="concepts-2">Concepts</h2>
 <h3 id="ud-chapter-5-proof-techniques">UD Chapter 5: Proof
 Techniques</h3>
 <ul>
@@ -2077,13 +2188,13 @@ one-to-one function <span class="math inline">\(f:A\to B\)</span>.</li>
 class="math inline">\(B\)</span> are finite functions and <span
 class="math inline">\(|A|&lt;|B|\)</span>, then there can be no onto
 function <span class="math inline">\(f:A\to B\)</span>.</li>
-<li><strong>Cantor's Theorem</strong> <span class="math inline">\(f:A\to
-\mathcal P(A)\)</span> is not onto.</li>
+<li><strong>Cantor's Theorem</strong>: <span
+class="math inline">\(f:A\to \mathcal P(A)\)</span> is not onto.</li>
 <li>The smallest infite sets have the same size as <span
 class="math inline">\(\mathbb N\)</span>, or the size is <span
 class="math inline">\(\aleph_0\)</span>.</li>
 </ul>
-<h2 id="extended-content">Extended content</h2>
+<h2 id="extended-content-1">Extended content</h2>
 <ul>
 <li>Week 3 slides, the logical bases of the proof techniques.</li>
 <li>Week 3 slides, four rules(UG, US, EG, ES).</li>
@@ -2092,10 +2203,9 @@ class="math inline">\(\aleph_0\)</span>.</li>
 <em>discrete mathematics and its applications(KR)</em>)</li>
 </ul>
 <h1 id="week-4-基本的算法结构">Week 4 基本的算法结构</h1>
-<h2 id="concepts-1">Concepts</h2>
-<h3 id="dh-chapter-2-algorithms-and-data">DH Chapter 2: Algorithms and
-Data</h3>
-<p><strong>PART I</strong></p>
+<h2 id="concepts-3">Concepts</h2>
+<h3 id="dh-chapter-2-algorithms-and-data---part-i-ii">DH Chapter 2:
+Algorithms and Data - PART I &amp; II</h3>
 <ul>
 <li>An algorithm is excuted by a processor. It does things according to
 the basic actions of the algorithm.</li>
@@ -2121,9 +2231,6 @@ can be interleaved and nested within each other.
 <ul>
 <li>Flowcharts. Advantages and disadvantages.</li>
 </ul></li>
-</ul>
-<p><strong>PART II</strong></p>
-<ul>
 <li>Subroutine/Procedure with parameters to be invoked/called.
 <ul>
 <li>Economy.</li>
@@ -2139,227 +2246,97 @@ subroutines later("top-down design").</li>
 <li>Minimal sets of control structs.(For example, sequencing,
 conditional branching and unbounded loop)</li>
 </ul>
-<h2 id="extended-content-1">Extended content</h2>
+<h2 id="extended-content-2">Extended content</h2>
 <ul>
 <li>Week 4 slides: iteration invariants.</li>
 </ul>
-]]></content>
-      <categories>
-        <category>课程笔记</category>
-        <category>问题求解</category>
-      </categories>
-      <tags>
-        <tag>问题求解</tag>
-        <tag>计算机科学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>问题求解（一）总结 PART I</title>
-    <url>/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
-    <content><![CDATA[<p><a
-href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
-<span id="more"></span>
-<h1 id="preface">Preface</h1>
-<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
-little part of <strong>ES</strong>.</p>
-<p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
-Chapter 8, 11-15 out of class.</p>
-<p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in
-class and left Chapter 12-13, 19-20, 25-26, 29 out of class.</p>
-<p>If possible, I decide to learn the left chapters on my own and I will
-also mark my notes down here.</p>
-<h1 id="week-1-为什么计算机能解题">Week 1 为什么计算机能解题</h1>
-<h2 id="concepts">Concepts</h2>
-<h3 id="dh-chapter-1-introduction-and-historical-review">DH Chapter 1:
-Introduction and Historical Review</h3>
+<h1 id="week-5-数据与数据结构">Week 5 数据与数据结构</h1>
+<h2 id="concepts-4">Concepts</h2>
+<h3 id="dh-chapter-2-algorithms-and-data---part-iii-iv">DH Chapter 2:
+Algorithms and Data - PART III &amp; IV</h3>
+<p><strong>Data Structure</strong></p>
 <ul>
-<li><p>Computers have many "switchs" or <strong>bits</strong>, flipped
-by itself. Computers can directly execute only a small number of
-extremely trivial operations. Process(algorithms) transform trivial
-operations on bits into the great abilities the computers have.</p></li>
-<li><p>Input, Output, and Algorithm. Software and Hardware. Programs are
-well-written algorithms. Softwares are programs written in a special
-programming language.</p></li>
-<li><p>Histories of computers. You might better learn them from <a
-href="https://www.bilibili.com/video/BV1EW411u7th/">this
-video</a>.</p></li>
-<li><p>Some limitations(differences between human and computerized
-intelligence).</p></li>
-<li><p>Levels of detail: how precise an algorithm's <strong>elementary
-instructions</strong> need to be. Elementary instructions must be clear
-and precise.</p></li>
-<li><p>Abstraction, different levels of abstraction. At a higher level,
-information about lower level isn't needed to be considered.</p></li>
-<li><p>The length of algorithms are not necessarily changed for
-different scale of the problem.</p></li>
+<li><strong>Data</strong>. Objects manipulated by an algorithm: lists,
+words, texts, "noted numbers", "pointers"..., constitute inputs, outputs
+and intermediate accessories.</li>
+<li><strong>Data Type</strong>. Numbers, words, ... It's good to keep
+types separate, because each date type admits its own <strong>special
+set of allowed operations/actions</strong>.</li>
+<li>Data structures, and the operations upon them, organize the data
+items in ways that enable it to do whatever it should do when the
+processor gets there.</li>
 </ul>
-<blockquote>
-<p>Notes below are chapters not metioned in classes.</p>
+<p><strong>Variables</strong></p>
 <ul>
-<li><p>An algorithm must be suit for infinite number of inputs. Inputs
-have to be legal(i.e. satisfying some specifications of the
-algorithms)</p></li>
-<li><p>Algorithms are solutions to <strong>computational/algorithmic
-problems</strong>. These problem can be seen as "black box"(a function
-from (any legal) inputs to outputs), and apropriate algorithms are
-specific suitable content of the black box.</p></li>
-<li><p>Algorithmic problems keep illegal inputs away, and algorithms
-deal with legal inputs only.</p></li>
-<li><p>Basic actions must be precise and unambiguous, and take bounded
-amounts of time and resources.</p></li>
-<li><p>An algorithmic problem = input set characterization + output
-specification(or to say, the function from input to output).</p></li>
+<li>Can contain different values at different times.</li>
+<li>As memory/storage in the algorithm.</li>
 </ul>
-</blockquote>
-<h3 id="ud-chapter-1-the-how-when-and-why-of-mathematics.">UD Chapter 1:
-The How, When and Why of Mathematics.</h3>
+<p><strong>Vectors/Lists/One-dimesional arrays</strong></p>
 <ul>
-<li>How to solve mathematical problems? Polya's method:
-<strong>Understanding the problem</strong>, <strong>Divising a
-plan</strong>, <strong>Carrying out the plan</strong>, <strong>Looking
-back</strong>.</li>
+<li>Refer to many elements in a uniform way.</li>
+<li>A data structure closely related to a loop as a control
+structure.</li>
 </ul>
-<h1 id="week-2-什么样的推理是正确的">Week 2 什么样的推理是正确的</h1>
-<h2 id="concepts-1">Concepts</h2>
-<h3 id="ud-chapter-2-logically-speaking">UD Chapter 2: Logically
-Speaking</h3>
+<p><strong>Tables/Matrixs/Two-dimesional arrays</strong></p>
 <ul>
-<li><p>Statements are sentences that are true or false, but not both.
-Symbolic statements are called statement forms.</p></li>
-<li><p>The negation of <span class="math inline">\(P\)</span>, denoted
-by <span class="math inline">\(\neg P\)</span>.</p></li>
-<li><p>The disjunction of <span class="math inline">\(P\)</span> and
-<span class="math inline">\(Q\)</span>, denoted by <span
-class="math inline">\(P\vee Q\)</span>.</p></li>
-<li><p>The conjunction of <span class="math inline">\(P\)</span> and
-<span class="math inline">\(Q\)</span>, denoted by <span
-class="math inline">\(P\wedge Q\)</span>.</p></li>
-<li><p>The implication, <span class="math inline">\(P\)</span> implies
-<span class="math inline">\(Q\)</span>, denoted by <span
-class="math inline">\(P\to Q\)</span>. <span
-class="math inline">\(P\)</span> is called antecedent and <span
-class="math inline">\(Q\)</span> is called conclusion. <span
-class="math inline">\(P\to Q\)</span> is equivalent to <span
-class="math inline">\(\neg P\vee Q\)</span>.</p></li>
-<li><p>The equivalence, <span class="math inline">\(P\leftrightarrow
-Q\)</span>, and it is equivalent to <span
-class="math inline">\((P\rightarrow Q)\wedge (Q\rightarrow
-P)\)</span>.</p></li>
-<li><p>Things above are called connectives.</p></li>
-<li><p>Tautology, contradiction and contingency. <span
-class="math inline">\(P\leftrightarrow Q\)</span> is a tautology means
-<span class="math inline">\(P\)</span> and <span
-class="math inline">\(Q\)</span> are quivalent.</p></li>
-<li><p>Use truth table to judge when a statement form is true, and to
-prove a statement form is a tautology...</p></li>
-<li><p>Here are some tautologies. <span class="math display">\[
-\begin{aligned}
-  &amp;\textbf{DeMorgan&#39;s Laws}&amp;\neg(P\vee Q)\leftrightarrow
-(\neg P\wedge \neg Q)
-  \\
-  &amp; &amp;\neg(P\wedge Q)\leftrightarrow (\neg P\vee \neg Q)
-  \\
-  \\
-  &amp;\textbf{Implication and} &amp;(P\rightarrow Q)\leftrightarrow
-(\neg P\vee Q)
-  \\
-  &amp;\textbf{its negation} &amp;\neg(P\rightarrow Q)\leftrightarrow
-(P\wedge \neg Q)
-  \\
-  \\
-  &amp;\textbf{Double negation} &amp;\neg(\neg P)\leftrightarrow P
-\end{aligned}
-\]</span></p></li>
+<li>Nested loop.</li>
+<li>Arranged in a precise rectangular format. Or use a vector whose
+elements themselves point to vectors of varying length.</li>
 </ul>
-<h3 id="ud-chapter-3-introducing-the-contrapositive-and-converse">UD
-Chapter 3: Introducing the Contrapositive and Converse</h3>
+<p><strong>Queues and stacks</strong></p>
 <ul>
-<li><p>Paraphrase statements - use tautologies.</p></li>
-<li><p>Some tautologies: <span class="math display">\[
-  \begin{aligned}
-      &amp;\textbf{Distributive property}
-      &amp;(P\wedge(Q\vee R))\leftrightarrow
-      ((P\wedge Q)\vee (P\wedge R))
-      \\
-      &amp;&amp;(P\vee (Q\wedge R))\leftrightarrow ((P\vee
-Q)\wedge(P\vee R))
-      \\
-      \\
-      &amp;\textbf{Associative property}
-      &amp;(P\wedge(Q\wedge R))\leftrightarrow ((P\wedge Q)\wedge R)
-      \\
-      &amp;&amp;(P\vee(Q\vee R))\leftrightarrow ((P\vee Q)\vee R)
-      \\
-      \\
-      &amp;\textbf{Commutative property}
-      &amp;(P\wedge Q)\leftrightarrow(Q\wedge P)
-      \\
-      &amp;&amp; (P\vee Q)\leftrightarrow (Q\vee P)
-  \end{aligned}
-  \]</span></p></li>
-<li><p>Contrapositive of an implication. They are equivalent.</p></li>
-<li><p>Converse of an implication.</p></li>
-<li><p>Inverse of an implication.</p></li>
+<li>Sometimes we do not need the full power provided by indices. It is
+beneficial for algorithmic clarity. We hide the details. (Also a kind of
+abstraction)</li>
+<li>Queue. FIFO list.</li>
+<li>Stack. LIFO list.</li>
 </ul>
-<h3 id="ud-chapter-4-set-notation-and-quantifiers">UD Chapter 4: Set
-Notation and Quantifiers</h3>
+<p><strong>Trees/Hierachies</strong></p>
 <ul>
-<li><p>Define a set: axiomatic statements(ZFC system).</p></li>
-<li><p>Basic set notations.</p></li>
-<li><p>In statements: <span class="math inline">\(x\)</span> means
-variables; "for all" or <span class="math inline">\(\forall\)</span>,
-"there exists" or <span class="math inline">\(\exists\)</span> are
-called (universal/existential) quantifier.</p></li>
-<li><p><span class="math inline">\(\forall x, p(x)\)</span> is true iff
-for all <span class="math inline">\(x\)</span> we find <span
-class="math inline">\(p(x)\)</span> is true. To bound the range of <span
-class="math inline">\(x\)</span>, we use <span
-class="math inline">\(\forall x, (x\in A\rightarrow p(x))\)</span>. Here
-we use the characteristic of implication. If we consider <span
-class="math inline">\(x\)</span> out of the range, the implication will
-always be true.</p></li>
-<li><p><span class="math inline">\(\exists x, p(x)\)</span> is true iff
-there exists an <span class="math inline">\(x\)</span> such that <span
-class="math inline">\(p(x)\)</span> is true. To bound the range of <span
-class="math inline">\(x\)</span>, we use <span
-class="math inline">\(\exists x, (x\in A\wedge p(x))\)</span>. If we
-consider <span class="math inline">\(x\)</span> out of the range, the
-conjunction will always be false.</p></li>
-<li><p>For negation of quantifiers: <span class="math inline">\(\neg
-(\forall x, p(x))=\exists x, \neg p(x)\)</span>; <span
-class="math inline">\(\neg(\exists x, p(x))=\forall x, \neg
-p(x)\)</span>.</p></li>
-<li><p>Sometimes we can omit <strong>universal
-quantifiers</strong>.</p></li>
-<li><p>With quantifiers, the method to find a implication's
-contrapositive, converse and inverse doesn't change.</p></li>
+<li>Structure and some terminologies.</li>
+<li>Treesort.</li>
+<li>Trees correspond to recursive routines.</li>
+<li>Treesort - self-adjustment idea.</li>
 </ul>
-<h2 id="extended-content">Extended content</h2>
+<p><strong>Databases</strong></p>
 <ul>
-<li><p>Logical reasoning (Week 2 slides P24). There are <span
-class="math inline">\(k\)</span> antecedents <span
-class="math inline">\(A_1, A_2, \cdots, A_k\)</span> and one conclusion
-<span class="math inline">\(B\)</span>. To assure that our reasoning is
-correct, we need to prove <span class="math inline">\((A_1\wedge
-A_2\wedge\cdots\wedge A_k)\to B\)</span> is a tautology and vice
-versa.</p></li>
-<li><p>Modus Ponens. (Week 2 slides P25) <span class="math inline">\(p,
-p\rightarrow q \Rightarrow q\)</span>.</p></li>
-<li><p>Some tautologies. (Week 2 slides P27)</p></li>
-<li><p>(Week 2 slides P28) US, UG, ES, EG(universal/existential
-specify/generalize).</p></li>
-<li><p>(Week 2 discussion P16) use one kind of connective to represent
-all kinds of connectives.</p>
-<p>Let <span class="math inline">\(A\circ B=\neg(A\vee B)\)</span>, then
-<span class="math display">\[
-  \begin{aligned}
-      \neg A &amp;=A\circ A
-      \\
-      A\wedge B &amp;= (A\circ A)\circ (B\circ B)
-      \\
-      A\vee B &amp;= (A\circ B)\circ (A\circ B)
-  \end{aligned}
-  \]</span></p></li>
+<li>A very large "pool" of data. Contain many differet kinds of
+data.</li>
+<li>Querying a database - a difficult task. So we need a good
+organization of database for clarity and efficiency.</li>
+<li>Some models:
+<ul>
+<li>The relational model.</li>
+<li>The hierachical model.</li>
+<li>The object-oriented databases.</li>
+</ul></li>
+<li>Data mining.</li>
+<li>Data warehouse.</li>
+<li>Knowledge base.</li>
+</ul>
+<h1 id="week-6-算法的描述">Week 6 算法的描述</h1>
+<h2 id="concepts-5">Concepts</h2>
+<h3 id="dh-chapter-3-programming-languages-and-paradigms---part-i">DH
+Chapter 3: Programming Languages and Paradigms - PART I</h3>
+<ul>
+<li>Algorithms must be written in an unambiguous and formal fashion. So
+we use a programming language, in which we write programs.</li>
+<li>Machine languages. High-level programming languages indeed come from
+many levels of abstraction.</li>
+<li>Rigid syntax.
+<ul>
+<li>Syntax definition: use BNF.</li>
+</ul></li>
+<li>Precise Semantics.
+<ul>
+<li>Usually hard to find semantic problems.</li>
+</ul></li>
+</ul>
+<h2 id="extended-content-3">Extended content</h2>
+<ul>
+<li>Week 6 slides: von Neumann structure.</li>
+<li>Week 6 slides: Regular expression, BNF, DFA, NFA, phrase-structure
+grammar, regular grammar, context-free grammar...</li>
 </ul>
 ]]></content>
       <categories>

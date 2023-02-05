@@ -1267,9 +1267,9 @@ class="math inline">\(\mathrm d^2 y\)</span>.</p></li>
 </summary>
 <blockquote>
 <p>(1) <span class="math inline">\(\mathrm d^3 y=(\sqrt x)^{(3)}\mathrm
-d x=\dfrac{1}{2}\cdot (-\dfrac{1}{2})\cdot
-(-\dfrac{3}{2})x^{-5/2}\mathrm d x=\dfrac{3}{8}x^{-5/2}\mathrm
-dx\)</span>.</p>
+d x^3=\dfrac{1}{2}\cdot (-\dfrac{1}{2})\cdot
+(-\dfrac{3}{2})x^{-5/2}\mathrm d x^3=\dfrac{3}{8}x^{-5/2}\mathrm
+dx^3\)</span>.</p>
 <p>(2) <span class="math inline">\(\mathrm dy=\dfrac{v\mathrm
 du-u\mathrm dv}{v^2}\)</span>;</p>
 <p><span class="math inline">\(\mathrm d^2y=\mathrm d(\mathrm
@@ -1297,20 +1297,51 @@ F&#39;(x_0)=0\)</span>, 即证.</p>
 </blockquote>
 </details>
 <ol start="6" type="1">
-<li><p>设 <span class="math inline">\(f\)</span> 在 <span
+<li>设 <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\([a, b]\)</span> 连续, 在 <span
 class="math inline">\((a, b)\)</span> 可导, 且 <span
 class="math inline">\(\lim\limits_{x\to a+}f&#39;(x)\)</span> 存在,
 证明: <span class="math inline">\(f&#39;_+(a)\)</span> 存在且 <span
 class="math inline">\(f&#39;_+(a)=\lim\limits_{x\to
-a+}f&#39;(x)\)</span>.</p></li>
-<li><p>设函数 <span class="math inline">\(f\)</span> 在 <span
+a+}f&#39;(x)\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>对于 <span class="math inline">\((a, x), a&lt;x&lt;b\)</span>,
+使用拉格朗日中值定理, 则存在 <span class="math inline">\(\xi\in (a,
+x)\)</span>, 使得 <span class="math display">\[
+f&#39;(\xi)=\dfrac{f(x)-f(a)}{x-a}.
+\]</span> 当 <span class="math inline">\(x\to a+\)</span> 时, 有 <span
+class="math inline">\(\xi\to a+\)</span>, 上式取极限得 <span
+class="math display">\[
+f&#39;_+(a)=\lim_{x\to a+}\dfrac{f(x)-f(a)}{x-a}=\lim_{\xi\to
+a+}f&#39;(\xi)=\lim_{x\to a+}f&#39;(x).
+\]</span></p>
+</blockquote>
+</details>
+<ol start="7" type="1">
+<li>设函数 <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\([0, a]\)</span> 上连续, 在 <span
 class="math inline">\((0, a)\)</span> 上可导, 且 <span
 class="math inline">\(f(a)=0\)</span>, 试证存在 <span
 class="math inline">\(\xi\in (0, a)\)</span>, 使得 <span
-class="math inline">\(nf(\xi)+\xi f&#39;(\xi)=0(n\in
-N)\)</span>.</p></li>
+class="math inline">\(nf(\xi)+\xi f&#39;(\xi)=0(n\in N)\)</span>.</li>
+</ol>
+<details>
+<summary>
+<b>解答</b>
+</summary>
+<blockquote>
+<p>令 <span class="math inline">\(F(x)=f(x)\cdot x^n\)</span>, 则 <span
+class="math inline">\(F(0)=F(a)=0\)</span>, 由罗尔定理有 <span
+class="math inline">\(\exists \xi\in(0, a)\)</span>, <span
+class="math inline">\(F&#39;(\xi)=0\)</span>, 即证.</p>
+</blockquote>
+</details>
+<ol start="8" type="1">
 <li><p>求下列极限:</p>
 <p>(1) <span class="math inline">\(\lim\limits_{x\to 0}\dfrac{e^x\sin
 x-x(1+x)}{x^3}\)</span>. (2) <span
@@ -1324,6 +1355,67 @@ class="math inline">\(\lim\limits_{x\to
 \infty}\left[x-x^2\ln\left(1+\dfrac{1}{x}\right)\right]\)</span>. (6)
 <span class="math inline">\(\lim\limits_{n\to
 \infty}n^2(\sqrt[n]{a}-\sqrt[n+1]{a})\)</span>.</p></li>
+</ol>
+<!-- <details>
+<summary><b>解答</b></summary> -->
+<blockquote>
+<p>(1) 当 <span class="math inline">\(x\to 0\)</span> 时, <span
+class="math display">\[
+e^x\sin
+x=(1+x+\dfrac{1}{2}x^2+o(x^2))(x-\dfrac{1}{6}x^3+o(x^3))=x+x^2+\dfrac{1}{3}x^3+o(x^3).
+\]</span> 故 <span class="math display">\[
+\lim_{x\to 0}\dfrac{e^x\sin x-x(1+x)}{x^3}=\lim_{x\to
+0}\dfrac{x+x^2+\frac{1}{3}x^3+o(x^3)-x(1+x)}{x^3}=\dfrac{1}{3}.
+\]</span> (2) 当 <span class="math inline">\(x\to 0\)</span>, <span
+class="math display">\[
+\begin{aligned}
+\operatorname{sh} x&amp;=x+\dfrac{x^3}{6}+o(x^3),
+\\
+\sin x&amp;=x-\dfrac{x^3}{6}+o(x^3),
+\\
+\operatorname{sh}^n x&amp;=x^n+\dfrac{nx^{n+2}}{6}+o(x^{n+2}),
+\\
+\sin^n x&amp;=x^n-\dfrac{nx^{n+2}}{6}+o(x^{n+2}).
+\end{aligned}
+\]</span> 故 <span class="math display">\[
+\lim_{x\to 0}\dfrac{\operatorname{sh}^nx-x^n}{\sin^nx-x^n}=\lim_{x\to
+0}\dfrac{\frac{n}{6}x^{n+2}+o(x^{n+2})}{-\frac{n}{6}x^{n+2}+o(x^{n+2})}=-1.
+\]</span> (3) 当 <span class="math inline">\(x\to +\infty\)</span>,
+<span class="math display">\[
+\begin{aligned}
+\sqrt[3]{x^3+2x^2+1}&amp;=x\sqrt[3]{1+\dfrac{2}{x}+\dfrac{1}{x^3}}
+\\
+&amp;=x\left(1+\dfrac{1}{3}(\dfrac{2}{x}+\dfrac{1}{x^3})+o\left(\dfrac{1}{x}\right)\right)
+\\
+xe^{\frac{1}{x}}&amp;=x\left(1+\dfrac{1}{x}+o\left(\dfrac{1}{x}\right)\right)
+\end{aligned}
+\]</span> 故 <span class="math display">\[
+\lim_{x\to +\infty}(\sqrt[3]{x^3+2x^2+1}-xe^{\frac{1}{x}})=\lim_{x\to
++\infty}\left(-\dfrac{1}{3}+o(1)\right)=-\dfrac{1}{3}.
+\]</span> (4) 当 <span class="math inline">\(x\to 0\)</span>, <span
+class="math display">\[
+\begin{aligned}
+\ln(1+x)&amp;=x-\dfrac{1}{2}x^2+\dfrac{1}{3}x^3+o(x^3),
+\\
+\ln(1-x)&amp;=-x-\dfrac{1}{2}x^2-\dfrac{1}{3}x^3+o(x^3),
+\\
+\ln(1+x)\ln(1-x)&amp;=-x^2-\dfrac{5}{12}x^4+o(x^4).
+\\
+\ln(1-x^2)&amp;=-x^2-\dfrac{1}{2}x^4+o(x^4).
+\end{aligned}
+\]</span> 故 <span class="math display">\[
+\lim_{x\to 0}\dfrac{\ln(1+x)\ln(1-x)-\ln(1-x^2)}{x^4}=\lim_{x\to
+0}\dfrac{\frac{1}{12}x^4+o(x^4)}{x^4}=\dfrac{1}{12}
+\]</span> (5) 当 <span class="math inline">\(x\to \infty\)</span>, <span
+class="math display">\[
+\ln\left(1+\dfrac{1}{x}\right)=\dfrac{1}{x}-\dfrac{1}{2x^2}+o\left(\dfrac{1}{x^2}\right).
+\]</span> 从而 <span class="math display">\[
+\lim_{x\to
+\infty}\left[x-x^2\ln\left(1+\dfrac{1}{x}\right)\right]=\lim_{x\to\infty}\left(\dfrac{1}{2}+o(1)\right)=\dfrac{1}{2}.
+\]</span></p>
+</blockquote>
+<!-- </details> -->
+<ol start="9" type="1">
 <li><p>写出下列函数关于 <span class="math inline">\(x\)</span> 的 <span
 class="math inline">\(n\)</span> 阶有限展开式.</p>
 <p>(1) <span class="math inline">\(\sqrt {1-x}\)</span>. (2) <span
@@ -3386,7 +3478,7 @@ class="math inline">\(a_i\ge 0\)</span>.</li>
 <p>设 <span class="math inline">\(M = \max_{1\le i\le k}a_i\)</span>,
 故有:</p>
 <p><span class="math display">\[
-\sqrt[n]{M^n}\le \sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n} \le \sqrt[n]{nM^n}
+\sqrt[n]{M^n}\le \sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n} \le \sqrt[n]{kM^n}
 \]</span> 夹逼得原极限等于 <span class="math inline">\(M\)</span>.</p>
 </blockquote>
 </details>

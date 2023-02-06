@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分（一）总结 PART III">
+<meta property="og:url" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/index.html">
+<meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
+<meta property="og:description" content="本文简要梳理了微积分（一）的一些内容, 并记录一些套路.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/fg_canint.png">
+<meta property="og:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/integ_table1.png">
+<meta property="og:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/integ_table2.png">
+<meta property="og:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/integ_table3.png">
+<meta property="og:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/integ_table4.png">
+<meta property="article:published_time" content="2023-02-05T09:09:35.000Z">
+<meta property="article:modified_time" content="2023-02-06T07:15:12.389Z">
+<meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="微积分">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/fg_canint.png">
+
+
+<link rel="canonical" href="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/","path":"2023/02/05/微积分（一）总结-PART-III/","title":"微积分（一）总结 PART III"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微积分（一）总结 PART III | Rijuyuezhu's Blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rijuyuezhu's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Record every drop in my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">一元函数的积分学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定积分的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">定积分的存在性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8F%AF%E7%A7%AF%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">常见的可积函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text">定积分的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%87%BD%E6%95%B0%E5%8F%98%E4%B8%8A%E9%99%90%E7%A7%AF%E5%88%86%E4%B8%8E%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="nav-number">1.5.</span> <span class="nav-text">原函数、变上限积分与不定积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF-%E8%8E%B1%E5%B8%83%E5%B0%BC%E5%85%B9%E5%85%AC%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">牛顿-莱布尼兹公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E5%85%83%E7%A7%AF%E5%88%86%E6%B3%95"><span class="nav-number">1.7.</span> <span class="nav-text">换元积分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%E6%B3%95"><span class="nav-number">1.8.</span> <span class="nav-text">分部积分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%A7%AF%E5%88%86%E8%A1%A8"><span class="nav-number">1.9.</span> <span class="nav-text">基本积分表</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rijuyuezhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Rijuyuezhu</p>
+  <div class="site-description" itemprop="description">Knowledge and Practice!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rijuyuezhu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rijuyuezhu's Blog">
+      <meta itemprop="description" content="Knowledge and Practice!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="微积分（一）总结 PART III | Rijuyuezhu's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微积分（一）总结 PART III
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-05 17:09:35" itemprop="dateCreated datePublished" datetime="2023-02-05T17:09:35+08:00">2023-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-06 15:15:12" itemprop="dateModified" datetime="2023-02-06T15:15:12+08:00">2023-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="一元函数的积分学">一元函数的积分学</h1>
+<h2 id="定积分的定义">定积分的定义</h2>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上有定义, 在 <span
+class="math inline">\([a, b]\)</span> 间插入分点</p>
+<p><span class="math display">\[
+    a=x_0&lt;x_1&lt;\cdots&lt;x_{i-1}&lt;x_i&lt;\cdots
+&lt;x_{n-1}&lt;x_n=b.
+\]</span></p>
+<p>称 <span class="math inline">\(\pi=\lbrace x_0, x_1, \cdots,
+x_n\rbrace\)</span> 为 <span class="math inline">\([a, b]\)</span>
+的一个分划. 记 <span class="math inline">\(\Delta x_i=x_i-x_{i-1}, 1\le
+i\le n\)</span>, 记 <span class="math inline">\(\lambda=\max_{1\le i\le
+n} \Delta x_i\)</span> 为分割 <span class="math inline">\(\pi\)</span>
+的模, 任取 <span class="math inline">\(\xi_i\in [x_{i-1}, x_i]\)</span>,
+称</p>
+<p><span class="math display">\[
+    \sigma=\sum_{i=1}^nf(\xi_i)\Delta x_i
+\]</span></p>
+<p>为 <span class="math inline">\(f\)</span> 在分割 <span
+class="math inline">\(\pi\)</span> 下的黎曼和.</p>
+<p>若</p>
+<p><span class="math display">\[
+    I=\lim_{\lambda\to 0}\sum_{i=1}^nf(\xi_i)\Delta x_i
+\]</span></p>
+<p>存在, 则称 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上黎曼可积, <span
+class="math inline">\(I\)</span> 为 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 上的定积分, 记作</p>
+<p><span class="math display">\[
+    \int_a^bf(x)\mathrm dx=I.
+\]</span></p>
+<p>若 <span class="math inline">\(a\ge b\)</span>, 规定</p>
+<p><span class="math display">\[
+    \int_a^bf(x)\mathrm dx=-\int_b^af(x)\mathrm dx.
+\]</span></p>
+<p>用极限的语言, 上述定义可写为:</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta &gt;0\)</span>, 使得对任意的分割
+<span class="math inline">\(\pi\)</span>, 对任意选取的分点 <span
+class="math inline">\(\xi_i\in[x_{i-1}, x_i]\)</span>, 只要 <span
+class="math inline">\(\lambda(\pi)&lt;\delta\)</span>, 都有 <span
+class="math display">\[
+    |\sigma(D)-I|&lt;\varepsilon.
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\int_a^bf(x)\mathrm dx=I.
+\]</span></p>
+<h2 id="定积分的存在性">定积分的存在性</h2>
+<p><strong>可积的必要条件</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 上可积, 则 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上有界.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>用反证法: 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 无界, <span
+class="math inline">\(\forall M&gt;0\)</span>, 适当选取分割 <span
+class="math inline">\(\pi\)</span> 和分点 <span
+class="math inline">\(\xi_i, 1\le i\le n\)</span>, 并且 <span
+class="math inline">\(\xi_k\)</span> 满足 <span class="math display">\[
+|f(\xi_k)|\ge \dfrac{1}{\Delta x_k}\left[M+\sum_{i=1, i\ne
+k}^nf(\xi_i)\Delta x_i\right].
+\]</span> 故 <span class="math display">\[
+\begin{aligned}
+|\sigma (\pi)|&amp;=\left|\sum_{i=1}^nf(\xi_i)\Delta x_i\right|
+\\
+&amp;\ge |f(\xi_k)\Delta x_k|-\left|\sum_{i=1, i\ne k}^nf(\xi_i)\Delta
+x_i\right|
+\\
+&amp;\ge M.
+\end{aligned}
+\]</span> 故由 <span class="math inline">\(G\)</span> 的任意性可知,
+<span class="math inline">\(\sigma (\pi)\)</span> 无极限, 故不可积.</p>
+</blockquote>
+</details>
+<p><strong>达布和的定义</strong> 对一个分割 <span
+class="math inline">\(\pi=\lbrace x_0, x_1,\cdots, x_n\rbrace\)</span>,
+设 <span class="math inline">\(m_i\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([x_{i-1}, x_i]\)</span> 的下确界, <span
+class="math inline">\(M_i\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([x_{i-1}, x_i]\)</span> 的上确界, 称 <span
+class="math inline">\(w_i=M_i-m_i\)</span> 为 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([x_{i-1}, x_i]\)</span> 上的振幅. 称</p>
+<p><span class="math display">\[
+    s=\sum_{i=1}^nm_i\Delta x_i\ \textnormal{与}\
+S=\sum_{i=1}^nM_i\Delta x_i
+\]</span></p>
+<p>分别为达布下和与达布上和. 容易发现对任意分点得到的 <span
+class="math inline">\(\sigma\)</span>, 都有 <span
+class="math inline">\(s\le \sigma\le S\)</span>.</p>
+<p><strong>达布和的性质</strong></p>
+<ul>
+<li><strong>性质 1</strong> 对于一个确定的分割, 有 <span
+class="math display">\[
+  \begin{aligned}
+  S&amp;=\sup\left\lbrace\sum_{i=1}^nf(\xi_i)\Delta x_i:
+\xi_i\in[x_{i-1}, x_i], 1\le i\le n\right\rbrace,
+  \\
+  s&amp;=\inf\left\lbrace\sum_{i=1}^nf(\xi_i)\Delta x_i:
+\xi_i\in[x_{i-1}, x_i], 1\le i\le n\right\rbrace.
+  \end{aligned}
+\]</span></li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>由于 <span class="math inline">\(\forall \sigma, \sigma \le
+S\)</span>, 故 <span class="math inline">\(S\)</span> 为上界.</p>
+<p>由于 <span class="math inline">\(M_i\)</span> 为 <span
+class="math inline">\(f(\xi_i), \xi_i\in[x_{i-1}, x_i]\)</span>
+的上确界, 故 <span class="math inline">\(\forall
+\varepsilon&gt;0\)</span>, <span class="math inline">\(\exists
+\xi_i\in[x_{i-1}, x_i]\)</span>, 满足 <span
+class="math inline">\(f(\xi_i)&gt;
+M_i-\dfrac{\varepsilon}{b-a}\)</span>, 故 <span class="math display">\[
+\sum_{i=1}^nf(\xi_i)\Delta x_i&gt; \sum_{i=1}^nM_i\Delta
+x_i-\varepsilon.
+\]</span> 即存在 <span class="math inline">\(\sigma_0\)</span> 使得
+<span class="math inline">\(\sigma_0&gt; S-\varepsilon\)</span>.</p>
+<p>故 <span class="math inline">\(S\)</span> 为上确界, 同理 <span
+class="math inline">\(s\)</span> 为下确界.</p>
+</blockquote>
+</details>
+<ul>
+<li><strong>性质 2</strong> 对一个给定的分割, 增加新的分点, 则下和不减,
+上和不增.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>只需对增加一个分点的情况证明, 设增加的分点为 <span
+class="math inline">\(\bar x\)</span>, 且 <span
+class="math inline">\(x_0&lt;x_1&lt;\cdots&lt;x_{k-1}&lt;\bar
+x&lt;x_k&lt;\cdots&lt;x_n\)</span>. 则原上和 <span
+class="math display">\[
+S=\sum_{i=1, i\ne k}^nM_i\Delta x_i+M_k\Delta x_k.
+\]</span> 新的上和 <span class="math display">\[
+S&#39;=\sum_{i=1, i\ne k}^nM_i\Delta x_i+M&#39;_k(\bar
+x-x_{k-1})+M&#39;&#39;_k(x_k-\bar x).
+\]</span> 由于 <span class="math inline">\(M&#39;_k\le M_k\)</span>,
+<span class="math inline">\(M&#39;&#39;_k\le M_k\)</span>, 有 <span
+class="math inline">\(S&#39;\le S\)</span>. 同理，<span
+class="math inline">\(s&#39;\ge s\)</span>.</p>
+</blockquote>
+</details>
+<ul>
+<li><strong>性质 3</strong> 对<strong>任意</strong>两个分割 <span
+class="math inline">\(\pi_1, \pi_2\)</span>, 有 <span
+class="math inline">\(s(\pi_1)\le S(\pi_2)\)</span>.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>若 <span class="math inline">\(\pi_1, \pi_2\)</span> 相同, 显然.
+否则, 设 <span class="math inline">\(\pi\)</span> 为合并了 <span
+class="math inline">\(\pi_1, \pi_2\)</span> 的分点的分割.</p>
+<p>那么, <span class="math inline">\(\pi\)</span> 可以视为 <span
+class="math inline">\(\pi_1\)</span> 或 <span
+class="math inline">\(\pi_2\)</span> 增加分点得到.有性质 <span
+class="math inline">\(2\)</span> 可知, <span
+class="math inline">\(s(\pi_1)\le s(\pi)\le S(\pi)\le S(\pi_2)\)</span>,
+得证.</p>
+</blockquote>
+</details>
+<ul>
+<li><strong>性质 4</strong> 对一切分割 <span
+class="math inline">\(\pi\)</span>, <span class="math inline">\(\lbrace
+s\rbrace\)</span> 有上界 <span class="math inline">\(I_*\)</span>, <span
+class="math inline">\(\lbrace S\rbrace\)</span> 有下界 <span
+class="math inline">\(I^*\)</span>, 且 <span
+class="math inline">\(s(\pi_1)\le I_*\le I^*\le S(\pi_2)\)</span>. <span
+class="math inline">\(I_*\)</span> 和 <span
+class="math inline">\(I^*\)</span> 分别称为 <span
+class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 上的下积分和上积分.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>根据 性质 3, 任意 <span class="math inline">\(S\)</span> 都是 <span
+class="math inline">\(\lbrace s\rbrace\)</span> 的上界, 故有上确界 <span
+class="math inline">\(I_*\)</span>. 故 <span
+class="math inline">\(\forall s\)</span>, <span
+class="math inline">\(s\le I_*\)</span>. 同理, <span
+class="math inline">\(\lbrace S\rbrace\)</span> 有下确界 <span
+class="math inline">\(I^*\)</span>, 且 <span
+class="math inline">\(\forall S\)</span>, <span
+class="math inline">\(I^*\le S\)</span>. 由于 <span
+class="math inline">\(\forall S\)</span>, <span
+class="math inline">\(S\)</span> 是 <span class="math inline">\(\lbrace
+s\rbrace\)</span> 的上界, 故 <span class="math inline">\(I_*\le
+S\)</span>, 故 <span class="math inline">\(I_*\)</span> 是 <span
+class="math inline">\(\lbrace S\rbrace\)</span> 的一个下界, 故 <span
+class="math inline">\(I_*\le I^*\)</span>, 综合可得 <span
+class="math inline">\(\forall s, S\)</span>, <span
+class="math inline">\(s\le I_*\le I^*\le S\)</span>.</p>
+</blockquote>
+</details>
+<p><strong>可积的充要条件</strong> <span
+class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 可积的充分必要条件是 <span
+class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 有界且 <span class="math display">\[
+    \lim_{\lambda\to 0}(S-s)=0.
+\]</span> 或者后一条件也可以写为 <span class="math display">\[
+    \lim_{\lambda\to 0}\sum_{i=1}^n\omega_i\Delta x_i=0.
+\]</span></p>
+<blockquote>
+<p>用 <span class="math inline">\(\varepsilon-\delta\)</span> 语言写为:
+<span class="math inline">\(\forall \epsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta&gt;0\)</span>, 对任意模 <span
+class="math inline">\(\lambda&lt;\delta\)</span> 的分割, 均有 <span
+class="math display">\[
+\sum_{i=1}^n\omega_i\Delta x_i&lt;\varepsilon.
+\]</span></p>
+</blockquote>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><strong>必要性</strong> 由 <span class="math inline">\(f(x)\)</span>
+可积知 <span class="math inline">\(f(x)\)</span> 有界, 且 <span
+class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta &gt;0\)</span>, 对任意分割 <span
+class="math inline">\(\pi\)</span> 满足 <span
+class="math inline">\(\lambda(\pi)&lt;\delta\)</span> 时, 有 <span
+class="math inline">\(|\sigma-I|&lt;\varepsilon\)</span>, 即 <span
+class="math inline">\(I-\varepsilon&lt;\sigma&lt;I+\varepsilon\)</span>.</p>
+<p>又 <span class="math inline">\(s=\inf\lbrace \sigma\rbrace\)</span>,
+<span class="math inline">\(S=\sup\lbrace \sigma\rbrace\)</span>, 有
+<span class="math inline">\(I-\varepsilon\le s\le S\le
+I+\varepsilon\)</span>,</p>
+<p>故 <span class="math inline">\(\lim_{\lambda\to 0}S=\lim_{\lambda\to
+0}s=0\)</span>, 从而 <span class="math display">\[
+\lim_{\lambda\to 0}(S-s)=0.
+\]</span> <strong>充分性</strong> 由上知 <span
+class="math inline">\(s\le I_*\le I^*\le S\)</span>, 故 <span
+class="math inline">\(0\le I^*-I_*\le S-s\)</span>.</p>
+<p>由 <span class="math inline">\(\lim_{\lambda\to 0}(S-s)=0\)</span>,
+得 <span class="math inline">\(I^*=I_*\)</span>(设为 <span
+class="math inline">\(I\)</span>).</p>
+<p>由于 <span class="math inline">\(s\le I\le S\)</span> 且 <span
+class="math inline">\(s\le \sigma\le S\)</span>, 有 <span
+class="math inline">\(|\sigma-I|\le S-s&lt;\varepsilon\)</span>.</p>
+<p>故可积, 且积分为 <span class="math inline">\(I\)</span>.</p>
+</blockquote>
+</details>
+<h2 id="常见的可积函数">常见的可积函数</h2>
+<ul>
+<li>在 <span class="math inline">\([a, b]\)</span>
+上的连续函数可积.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>由于 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 连续, 故在 <span
+class="math inline">\([a, b]\)</span> 有界且一致连续.</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta&gt;0\)</span>, 对 <span
+class="math inline">\(\lambda&lt;\delta\)</span> 的任意分割, 在任意
+<span class="math inline">\([x_{i-1}, x_i]\)</span> 中的任意两点 <span
+class="math inline">\(x_1, x_2\)</span> 均满足 <span
+class="math inline">\(|x_1-x_2|\le \lambda&lt;\delta\)</span>. 所以,
+由一致连续性, 有 <span
+class="math inline">\(|f(x_1)-f(x_2)|&lt;\dfrac{\varepsilon}{2(b-a)}\)</span>.</p>
+<p>则 <span
+class="math inline">\(\omega_i=\sup\lbrace|f(x&#39;)-f(x&#39;&#39;):
+x&#39;,x&#39;&#39;\in[x_{i-1}, x_i]\rbrace\le
+\dfrac{\varepsilon}{2(b-a)}&lt;\dfrac{\varepsilon}{b-a}\)</span>.</p>
+<p>故 <span class="math display">\[
+\sum_{i=1}^n\omega_i\Delta
+x_i&lt;\dfrac{\varepsilon}{b-a}=\sum_{i=1}^n\Delta x_i=\varepsilon.
+\]</span> 故 <span class="math inline">\(\lim_{\lambda\to
+0}\sum_{i=1}^n\omega_i\Delta x_i=0\)</span>, <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 可积.</p>
+</blockquote>
+</details>
+<ul>
+<li>在 <span class="math inline">\([a, b]\)</span>
+上只有有限个间断点的有界函数是可积的.</li>
+</ul>
+<blockquote>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span>
+上除有限个第一类间断点外都是连续的, 则称 <span
+class="math inline">\(f\)</span> 为<strong>分段连续函数</strong>.
+此定理的一个更弱的形式为, 分段连续函数是可积的.</p>
+</blockquote>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上的振幅为 <span
+class="math inline">\(\Omega\)</span>, 共有 <span
+class="math inline">\(k\)</span> 个间断点.</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta &gt;0\)</span>, 对任意模 <span
+class="math inline">\(\lambda&lt;\min\left\lbrace\dfrac{s}{4k\Omega},
+\delta\right\rbrace\)</span> 的分割来说, 把 <span
+class="math inline">\(\sum_{i=1}^n\omega_i\Delta x_i\)</span> 分为两部分
+<span class="math display">\[
+\sum_{i=1}^n\omega_i\Delta x_i=\sum_{i\in T}\omega_i\Delta
+x_i+\sum_{i\notin T}\omega_i\Delta x_i,
+\]</span> 其中 <span class="math inline">\(T\)</span>
+是所有包含了间断点的指标集.</p>
+<p>对于前者: 由于 <span class="math inline">\(|T|\le 2k\)</span>, 故
+<span class="math display">\[
+\sum_{i\in T}\omega_i\Delta x_i\le \Omega\cdot 2k \cdot
+\lambda&lt;\dfrac{\varepsilon}{2}.
+\]</span> 对于后者, 是若干个闭区间上连续函数的黎曼和的和,
+由之前的证明可知, <span class="math display">\[
+\sum_{i\notin T}\omega_i\Delta x_i\le \dfrac{\varepsilon}{2}.
+\]</span> 综合可知, <span class="math display">\[
+\sum_{i=1}^n\omega_i\Delta x_i&lt;\varepsilon.
+\]</span> 故 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积.</p>
+</blockquote>
+</details>
+<ul>
+<li>在 <span class="math inline">\([a, b]\)</span>
+上单调有界的函数可积.</li>
+</ul>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>不妨设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 单调递增. 在区间 <span
+class="math inline">\([x_{i-1}, x_i]\)</span> 有 <span
+class="math inline">\(\omega_i=f(x_i)-f(x_{i-1})\)</span>.</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, 取
+<span
+class="math inline">\(\delta=\dfrac{\varepsilon}{f(b)-f(a)}\)</span>,
+对于模 <span class="math inline">\(\lambda&lt;\delta\)</span>
+的分割来说, 有 <span class="math display">\[
+\sum_{i=1}^n\omega_i\Delta x_i&lt;\delta \sum_{i=1}^nw_i=\varepsilon.
+\]</span> 故 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积.</p>
+</blockquote>
+</details>
+<h2 id="定积分的性质">定积分的性质</h2>
+<ol type="1">
+<li>线性性</li>
+</ol>
+<p><span class="math display">\[
+    \int_a^b (pf(x)+qg(x))\mathrm dx=p\int_a^bf(x)\mathrm
+dx+q\int_a^bg(x)\mathrm dx.
+\]</span></p>
+<ol start="2" type="1">
+<li>区间可加性, 在三个积分均可积的前提下, 有</li>
+</ol>
+<p><span class="math display">\[
+    \int_a^b f(x)\mathrm dx=\int_a^c f(x)\mathrm dx+\int_c^b f(x)\mathrm
+dx.
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>先证明 <span class="math inline">\(a&lt; c &lt; b\)</span> 的情况. 在
+<span class="math inline">\([a, b]\)</span>
+可积的前提下证明子区间可积(用振幅), 再以 <span
+class="math inline">\(c\)</span> 为分点, 取极限.</p>
+<p>然后其它情况可以取不同的点作为分点得证.</p>
+</blockquote>
+</details>
+<ol start="3" type="1">
+<li><p>设 <span class="math inline">\(f, g\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积, 且 <span
+class="math inline">\(f(x)\ge g(x)\)</span>, 则 <span
+class="math display">\[
+\int_a^b f(x)\mathrm dx\ge \int_a^bg(x)\mathrm dx.
+\]</span></p></li>
+<li><p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上<strong>连续</strong>, 且 <span
+class="math inline">\(f(x)\ge 0, f(x)\not\equiv 0\)</span>, 则 <span
+class="math display">\[
+\int_a^b f(x)\mathrm dx&gt;0.
+\]</span></p></li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>对性质 3, 由极限的性质易得.</p>
+<p>对性质 4, 不妨设有一点 <span class="math inline">\(x_0\)</span> 满足
+<span class="math inline">\(f(x_0)\ge 0\)</span>, 则由于连续性, 存在
+<span class="math inline">\(U(x_0, \delta)\)</span> 邻域(不妨设 <span
+class="math inline">\(x_0\)</span> 是内点), 对邻域内的 <span
+class="math inline">\(x\)</span> 有 <span class="math inline">\(f(x)\ge
+\dfrac{f(x_0)}{2}\)</span>. 那么 <span class="math display">\[
+\begin{aligned}
+\int_a^bf(x)\mathrm dx&amp;=\int_a^{x-\delta/2}f(x)\mathrm
+dx+\int_{x-\delta/2}^{x+\delta/2}f(x)\mathrm
+dx+\int_{x+\delta/2}^bf(x)\mathrm dx
+\\
+&amp;\ge 0+\int_{x-\delta/2}^{x+\delta/2}\dfrac{f(x_0)}{2}\mathrm dx+0
+\\
+&amp;=\dfrac{\delta f(x_0)}{2}&gt;0.
+\end{aligned}
+\]</span> 若 <span class="math inline">\(x\)</span> 是端点,
+类似可得.</p>
+</blockquote>
+</details>
+<ol start="5" type="1">
+<li>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积, 则 <span
+class="math inline">\(|f|\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 上也可积, 且 <span class="math display">\[
+\left|\int_a^bf(x)\mathrm dx\right|\le \int_a^b|f(x)|\mathrm dx.
+\]</span></li>
+</ol>
+<blockquote>
+<p>若 <span class="math inline">\(|f|\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积, 则称 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 上<strong>绝对可积</strong>, 反之不一定成立.</p>
+</blockquote>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>可积性: 由三角不等式易得 <span class="math inline">\(\omega(|f|)\le
+\omega(f)\)</span>, 故容易证得可积.</p>
+<p>由 <span class="math inline">\(-|f(x)|\le f(x)\le |f(x)|\)</span>,
+容易得到 <span class="math inline">\(-\int |f(x)|\le \int f(x)\le \int
+|f(x)|\)</span>, 从而 <span class="math inline">\(|\int f(x)|\le \int
+|f(x)|\)</span>.</p>
+</blockquote>
+</details>
+<ol start="6" type="1">
+<li>若 <span class="math inline">\(f, g\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积, 则 <span
+class="math inline">\(f\cdot g\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上也可积, 但一般地,
+积的定积分不等于定积分的积.</li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<p><img src="fg_canint.png" /></p>
+</details>
+<ol start="7" type="1">
+<li><p>(积分第一中值定理) 若 <span class="math inline">\(f, g\)</span>
+在 <span class="math inline">\([a, b]\)</span> 上可积, <span
+class="math inline">\(g\)</span> 可积且在 <span
+class="math inline">\([a, b]\)</span> 上定号, <span
+class="math inline">\(f\)</span> 的一个上下界分别为 <span
+class="math inline">\(M\)</span> 和 <span
+class="math inline">\(m\)</span>, 那么</p>
+<ul>
+<li>存在 <span class="math inline">\(\mu\in [m, M]\)</span> 使得 <span
+class="math display">\[
+\int_a^bf(x)g(x)\mathrm dx=\mu\int_a^bg(x)\mathrm dx.
+\]</span> 特别地, 若 <span class="math inline">\(g(x)\equiv 1\)</span>,
+则 <span class="math display">\[
+\int_a^bf(x)\mathrm dx=\mu(b-a).
+\]</span></li>
+<li>若进一步地, <span class="math inline">\(f, g\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上连续, 那么存在 <span
+class="math inline">\(\xi\in(a, b)\)</span> 使得 <span
+class="math display">\[
+\int_a^b f(x)g(x)\mathrm dx=f(\xi)\int_a^bg(x)\mathrm dx.
+\]</span> 特别地, 若 <span class="math inline">\(g(x)\equiv 1\)</span>,
+则 <span class="math display">\[
+\int_a^b f(x) \mathrm dx=f(\xi)(b-a).
+\]</span></li>
+</ul></li>
+</ol>
+<blockquote>
+<p>书上的证明是证明了若 <span class="math inline">\(f\)</span> 连续则
+<span class="math inline">\(\xi\)</span> 可以取到闭区间. 若 <span
+class="math inline">\(f, g\)</span> 均连续, 那么 <span
+class="math inline">\(\xi\)</span> 在开区间内也可以做到! 其实若 <span
+class="math inline">\(f\)</span> 连续, <span
+class="math inline">\(\int_a^b g(x)\mathrm dx\ne 0\)</span>, 也可以推出
+<span class="math inline">\(\xi\)</span> 在开区间内可以取到.</p>
+</blockquote>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>对于第一部分: 不妨设 <span class="math inline">\(g(x)\ge 0\)</span>,
+那么 <span class="math display">\[
+\int_a^bg(x)\ge 0.
+\]</span> 由于 <span class="math inline">\(m\le f(x)\le M\)</span>, 有
+<span class="math inline">\(mg(x)\le f(x)g(x)\le Mg(x)\)</span>. 故
+<span class="math display">\[
+m\int_a^bg(x)\mathrm dx\le \int_a^bf(x)g(x)\mathrm dx\le
+M\int_a^bg(x)\mathrm dx.
+\]</span> 于是存在 <span class="math inline">\(\mu\in [m, M]\)</span>
+使得 <span class="math display">\[
+\int_a^bf(x)g(x)\mathrm dx=\mu\int_a^b g(x)\mathrm dx.
+\]</span> 对于第二部分: 有三种情况.</p>
+<ol type="1">
+<li><p>若想证 <span class="math inline">\(\xi\)</span> 取闭区间上的情况,
+利用介值定理即可.</p></li>
+<li><p>若想证 <span class="math inline">\(\xi\)</span> 取开区间上, 在
+<span class="math inline">\(f, g\)</span> 连续的条件下, 那么先讨论 <span
+class="math inline">\(m\)</span> 和 <span
+class="math inline">\(M\)</span> 的关系, 再利用上面的性质 4 即证,
+或者你可以用微分中值定理.</p></li>
+<li><p>若想证 <span class="math inline">\(\xi\)</span> 取开区间上, 在
+<span class="math inline">\(g\)</span> 可积且 <span
+class="math inline">\(\int_a^bg(x)\mathrm dx\ne 0\)</span> 的条件下,
+那么你可以看<a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/53396732/answer/153621393">这个回答</a>.</p></li>
+</ol>
+</blockquote>
+</details>
+<ol start="8" type="1">
+<li>施瓦兹不等式: 若 <span class="math inline">\(f, g\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上可积, 则</li>
+</ol>
+<p><span class="math display">\[
+    \left(\int_a^b f(x)g(x)\mathrm dx\right)^2\le \int_a^b f^2(x)\mathrm
+dx\cdot \int_a^bg^2(x)\mathrm dx.
+\]</span></p>
+<h2 id="原函数变上限积分与不定积分">原函数、变上限积分与不定积分</h2>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上有定义. 如果在 <span
+class="math inline">\(I\)</span> 上存在 <span
+class="math inline">\(F\)</span> 使得</p>
+<p><span class="math display">\[
+    F&#39;(x)=f(x), \forall x\in I\ \textnormal{或}\ \mathrm
+dF(x)=f(x)\mathrm dx,
+\]</span></p>
+<p>则称 <span class="math inline">\(F\)</span> 是 <span
+class="math inline">\(f\)</span> 在区间 <span
+class="math inline">\(I\)</span> 上的一个原函数.</p>
+<p><strong>变上限积分</strong> 设 <span class="math inline">\(f\)</span>
+在 <span class="math inline">\(I\)</span> 上可积, <span
+class="math inline">\(a\in I\)</span>, 则定义</p>
+<p><span class="math display">\[
+    \varPhi(x)=\int_a^x f(t)\mathrm dt
+\]</span></p>
+<p>是 <span class="math inline">\(I\)</span> 上的一个关于 <span
+class="math inline">\(x\)</span> 的函数, 称为变上限积分.</p>
+<p><strong>变上限积分的连续性</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上可积, 则 <span
+class="math inline">\(\varPhi\)</span> 在 <span
+class="math inline">\(I\)</span> 上连续.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>由于 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上可积, 则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上有界, 设界为 <span
+class="math inline">\(M\)</span>.</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, 取
+<span class="math inline">\(\delta=\dfrac{\varepsilon}{M}\)</span>, 则当
+<span class="math inline">\(|\Delta x|&lt; \delta\)</span> 时, 有 <span
+class="math display">\[
+\begin{aligned}
+|\varPhi(x+\Delta x)-\varPhi(x)|&amp;=\left|\int_a^{x+\Delta
+x}f(t)\mathrm dt - \int_a^x f(t)\mathrm dt\right|
+\\
+&amp;=\left|\int_x^{x+\Delta x}f(t)\mathrm dt\right|
+\\
+&amp;=|\mu|\cdot \Delta x\ (|\mu|\le M)
+\\
+&amp;\le \varepsilon.
+\end{aligned}
+\]</span> 故 <span class="math inline">\(\varPhi\)</span> 在 <span
+class="math inline">\(I\)</span> 上连续.</p>
+</blockquote>
+</details>
+<p><strong>变上限积分可导的充分条件</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上连续, 则 <span
+class="math inline">\(\varPhi\)</span> 在 <span
+class="math inline">\(I\)</span> 上可导, 且 <span
+class="math inline">\(\varPhi&#39;(x)=f(x)\)</span>.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>由于 <span class="math display">\[
+\begin{aligned}
+\dfrac{\varPhi(x+\Delta x)-\varPhi(x)}{\Delta
+x}&amp;=\dfrac{\int_x^{x+\Delta x}f(t)\mathrm dt}{\Delta x}
+\\
+&amp;=\dfrac{f(\xi)\Delta x}{\Delta x}
+\\
+&amp;=f(\xi),
+\end{aligned}
+\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span
+class="math inline">\(x\)</span> 和 <span class="math inline">\(x+\Delta
+x\)</span> 之间. 当 <span class="math inline">\(\Delta x\to 0\)</span>
+时, 有 <span class="math inline">\(\xi\to x\)</span>.</p>
+<p>故 <span class="math display">\[
+\varPhi&#39;(x)=\lim_{\Delta x\to 0}\dfrac{\varPhi(x+\Delta
+x)-\varPhi(x)}{\Delta x}=\lim_{\xi\to x}f(\xi)=f(x).
+\]</span></p>
+</blockquote>
+</details>
+<p><strong>变上限积分在一点处可导的充分条件</strong> 若 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上可积, 在 <span
+class="math inline">\(x_0\in I\)</span> 上连续, 则 <span
+class="math inline">\(\varPhi\)</span> 在 <span
+class="math inline">\(x_0\)</span> 处可导, 且 <span
+class="math inline">\(\varPhi&#39;(x_0)=f(x_0)\)</span>.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><span class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta &gt;0\)</span>, 当 <span
+class="math inline">\(|x-x_0|&lt;\delta\)</span> 时, 有 <span
+class="math inline">\(|f(x)-f(x_0)|&lt;\varepsilon\)</span>.</p>
+<p>从而 <span class="math display">\[
+\begin{aligned}
+\left|\dfrac{\varPhi(x_0+\Delta x)-\varPhi(x_0)}{\Delta
+x}-f(x_0)\right|&amp;=\left|\dfrac{\int_{x_0}^{x_0+\Delta x}f(t)\mathrm
+dt-f(x_0)\Delta x}{\Delta x}\right|
+\\
+&amp;=\left|\dfrac{\int_{x_0}^{x_0+\Delta x}(f(t)-f(x_0))\mathrm
+dt}{\Delta x}\right|
+\\
+&amp;\le \dfrac{\int_{x_0}^{x_0+\Delta x}|f(t)-f(x_0)|\mathrm dt}{\Delta
+x}
+\\
+&amp;&lt; \dfrac{\int_{x_0}^{x_0+\Delta x}\varepsilon\mathrm dt}{\Delta
+x}=\varepsilon
+\end{aligned}
+\]</span> 故 <span
+class="math inline">\(\varPhi&#39;(x_0)=f(x_0)\)</span>.</p>
+</blockquote>
+</details>
+<p><strong>连续函数的变上限积分是一个原函数</strong> 即若 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(I\)</span> 上连续, 则其变上限积分 <span
+class="math inline">\(\varPhi(x)=\int_a^xf(t)\mathrm dt\)</span> 满足
+<span class="math display">\[
+    \varPhi&#39;(x)=f(x),
+\]</span> 故<strong>任意连续函数都有原函数</strong>.</p>
+<blockquote>
+<p>然而, 可积与存在原函数之间没有任何关联. 可积可能不存在原函数,
+存在原函数也不一定可积.</p>
+<p>例如, 根据达布定理, 若 <span class="math inline">\(f(x)\)</span>
+在区间内有定义且存在第一类间断点, 则其不存在原函数,
+但它可以是可积的.</p>
+<p>而存在原函数的函数不可积, 可见<a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/364504118/answer/961662594">此回答</a>.</p>
+</blockquote>
+<p><strong>不定积分/全部原函数</strong> 若 <span
+class="math inline">\(F(x)\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 的一个原函数, 则 <span
+class="math inline">\(f(x)\)</span> 的全部原函数可表示为 <span
+class="math inline">\(F(x)+C\)</span>, <span
+class="math inline">\(C\)</span> 为任意常数, 称为 <span
+class="math inline">\(f(x)\)</span> 的不定积分, 记为</p>
+<p><span class="math display">\[
+    \int f(x)\mathrm dx=F(x)+C.
+\]</span></p>
+<p><span class="math inline">\(f(x)\)</span>
+的不定积分是一族互相只差常数的关于 <span
+class="math inline">\(x\)</span> 的函数.</p>
+<p>有性质如下:</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \left(\int f(x)\mathrm dx\right)&#39;&amp;=f(x), &amp;\mathrm
+d\int f(x)\mathrm dx&amp;=f(x)\mathrm dx,
+        \\
+        \int F&#39;(x)\mathrm dx&amp;=F(x)+C, &amp;\int \mathrm
+dF(x)&amp;=F(x)+C.
+    \end{aligned}
+\]</span></p>
+<h2 id="牛顿-莱布尼兹公式">牛顿-莱布尼兹公式</h2>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上连续, <span
+class="math inline">\(F\)</span> 是 <span
+class="math inline">\(f\)</span> 的一个原函数, 若 <span
+class="math inline">\(a, b\in I\)</span>, 则</p>
+<p><span class="math display">\[
+    \int_a^b f(x)\mathrm dx=F(b)-F(a)=F(x)\bigg |_a^b.
+\]</span></p>
+<p>其实, 把条件弱化为 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上可积亦成立.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p><strong>若条件为连续</strong> 可知变上限积分 <span
+class="math display">\[
+\varPhi(x)=\int_a^xf(t)\mathrm dt
+\]</span> 是 <span class="math inline">\(f\)</span> 的一个原函数, 那么
+<span class="math inline">\(\varPhi(x)=F(x)+C\)</span>. 分别代入 <span
+class="math inline">\(x=a\)</span> 和 <span
+class="math inline">\(x=b\)</span>, 有 <span class="math display">\[
+\begin{aligned}
+0&amp;=F(a)+C
+\\
+\int_a^bf(t)\mathrm dt&amp;=F(b)+C
+\end{aligned}
+\]</span> 故 <span class="math display">\[
+\int_a^bf(x)\mathrm dx=F(b)-F(a).
+\]</span> <strong>若条件为可积</strong> 不妨设 <span
+class="math inline">\(a&lt; b\)</span>. 作 <span
+class="math inline">\([a, b]\)</span> 的分割为 <span
+class="math inline">\(a=x_0&lt;x_1&lt;\cdots&lt;x_{i-1}&lt;x_i&lt;\cdots&lt;x_n&lt;b\)</span>,
+那么 <span class="math display">\[
+F(b)-F(a)=\sum_{i=1}^n(F(x_i)-F(x_{i-1}))=\sum_{i=1}^nf(\xi_i)\Delta
+x_i.
+\]</span> 其中 <span class="math inline">\(\xi_i\in (x_{i-1},
+x_i)\)</span>. 取极限得 <span class="math display">\[
+\int_a^bf(x)\mathrm dx=F(b)-F(a).
+\]</span></p>
+</blockquote>
+</details>
+<p>从而定积分的计算可以转化为不定积分的计算.</p>
+<h2 id="换元积分法">换元积分法</h2>
+<p>设 <span class="math inline">\(f\)</span> 在区间 <span
+class="math inline">\(I\)</span> 上连续, <span
+class="math inline">\(x=\varphi(t)\)</span> 在区间 <span
+class="math inline">\(J\)</span> 上有连续导数, 且 <span
+class="math inline">\(\varphi(J)\subseteq I\)</span>, 则有 <span
+class="math display">\[
+    \int f(x)\mathrm dx=\int f(\varphi(t))\mathrm d\varphi(t)=\int
+f(\varphi(t))\varphi&#39;(t)\mathrm dt
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>设 <span class="math inline">\(F\)</span> 是 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上的一个原函数, 那么求导得 <span
+class="math display">\[
+\dfrac{\mathrm d}{\mathrm dt}
+F(\varphi(t))=f(\varphi(t))\varphi&#39;(t).
+\]</span></p>
+<p>故 <span class="math inline">\(F\circ \varphi\)</span> 是 <span
+class="math inline">\((f\circ \varphi)\varphi&#39;\)</span> 在 <span
+class="math inline">\(J\)</span> 上的一个原函数, 故 <span
+class="math display">\[
+\int f(\varphi(t))\varphi&#39;(t)=F(\varphi(t))+C=\int f(x)\mathrm dx.
+\]</span></p>
+</blockquote>
+</details>
+<p>由上述定理可以引申出:</p>
+<p><strong>不定积分的凑微分法</strong> 使用条件: 没啥条件.</p>
+<p><strong>不定积分的变量替代法</strong> 使用条件: 替代的 <span
+class="math inline">\(x=\varphi(t)\)</span>
+在区间上连续可导且存在反函数(代回), 故要求单调.</p>
+<p><strong>定积分的的凑微分法</strong> 使用条件: 没啥条件.
+但是要注意凑微分后的上下限保持不变(积分变量不变).</p>
+<p><strong>定积分的变量替代法</strong> 使用条件: 替代的 <span
+class="math inline">\(x=\varphi(t)\)</span> 在区间上连续可导,
+不过因为不用代回, 所以不要求有反函数. 注意要改变上下限.</p>
+<h2 id="分部积分法">分部积分法</h2>
+<p>设 <span class="math inline">\(u\)</span> 和 <span
+class="math inline">\(v\)</span> 在区间 <span
+class="math inline">\(I\)</span> 内有连续导数, 则有</p>
+<p><span class="math display">\[
+    \int u(x)\mathrm dv(x)=u(x)v(x)-\int v(x)\mathrm du(x).
+\]</span></p>
+<p>或有定积分形式为:</p>
+<p><span class="math display">\[
+    \int_a^bu(x)\mathrm dv(x)=u(x)v(x)\bigg|_a^b-\int_a^b v(x)\mathrm
+du(x).
+\]</span></p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>由乘积的求导公式可得.</p>
+</blockquote>
+</details>
+<h2 id="基本积分表">基本积分表</h2>
+<details>
+<summary>
+<b>展开</b>
+</summary>
+<p><img src="integ_table1.png" /></p>
+<p><img src="integ_table2.png" /></p>
+<p><img src="integ_table3.png" /></p>
+<p><img src="integ_table4.png" /></p>
+</details>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/24/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-II/" rel="prev" title="微积分（一）总结 PART II">
+                  <i class="fa fa-chevron-left"></i> 微积分（一）总结 PART II
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rijuyuezhu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

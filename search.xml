@@ -803,6 +803,22 @@ class="math inline">\(x=\varphi(t)\)</span>
 <p><strong>定积分的变量替代法</strong> 使用条件: 替代的 <span
 class="math inline">\(x=\varphi(t)\)</span> 在区间上连续可导,
 不过因为不用代回, 所以不要求有反函数. 注意要改变上下限.</p>
+<p><strong>一些常用结论</strong>:</p>
+<ol type="1">
+<li>对于周期函数 <span class="math inline">\(f(x)=f(x+T)\)</span>, 有
+<span class="math display">\[
+\int_a^{a+nT}f(x)\mathrm dx = n\int_b^{b+T}f(x)\mathrm dx.
+\]</span></li>
+<li>对于奇函数 <span class="math inline">\(f(x)=-f(-x)\)</span>, 有
+<span class="math display">\[
+\int_{-a}^af(x)\mathrm dx = 0.
+\]</span> (注意需要是常义积分)</li>
+<li>对于偶函数 <span class="math inline">\(f(x)=f(-x)\)</span>, 有 <span
+class="math display">\[
+\int_{-a}^af(x)\mathrm dx = 2\int_0^{a}f(x)\mathrm
+dx=2\int_{-a}^0f(x)\mathrm dx.
+\]</span></li>
+</ol>
 <h2 id="分部积分法">分部积分法</h2>
 <p>设 <span class="math inline">\(u\)</span> 和 <span
 class="math inline">\(v\)</span> 在区间 <span
@@ -3267,6 +3283,37 @@ many levels of abstraction.</li>
 <li>Week 6 slides: Regular expression, BNF, DFA, NFA, phrase-structure
 grammar, regular grammar, context-free grammar...</li>
 </ul>
+<h1 id="week-7-不同的程序设计方法">Week 7 不同的程序设计方法</h1>
+<h2 id="concepts-6">Concepts</h2>
+<h3
+id="dh-chapter-3-programming-languages-and-paradigms---part-ii-iii">DH
+Chapter 3: Programming Languages and Paradigms - PART II &amp; III</h3>
+<ul>
+<li>After programming(coding of the algorithm), there are two
+possibilities.</li>
+<li>Way I. Going through a number of transformations. The final product
+is a program on the machine level(machine language).</li>
+<li>The first transformation, compilation: from high-level program to
+assembly language.
+<ul>
+<li>Assembly language differ from machine to machine. It employ simple
+control structures like <strong>goto</strong> and
+<strong>if-then</strong> constructs. Deal with not only bits but also
+integers and strings. Refer directly to locations in the memory(read,
+store).</li>
+<li>Compiler, a computer program that runs the compilation process.</li>
+<li>System software, manufacturer-supplied programs.</li>
+</ul></li>
+<li>Way II. Interpreters and Immediate Execution.
+<ul>
+<li>Interpreters are easier to write. Interpreter-driven execution is
+easier to be traced.</li>
+</ul></li>
+<li>Algorithm Esperanto? New technological developments in software, new
+and diverse application areas.</li>
+<li>Programming paradigms(organizing principles).</li>
+</ul>
+<!-- todo -->
 ]]></content>
       <categories>
         <category>课程笔记</category>

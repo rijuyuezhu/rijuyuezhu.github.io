@@ -3,7 +3,8 @@
   <entry>
     <title>博客简介</title>
     <url>/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<p>大家好，这里是日居月诸(rijuyuezhu)的博客！我会在博客中记录下学习的各种知识，希望大家喜欢！</p>
+    <content><![CDATA[<p>大家好, 这里是日居月诸(rijuyuezhu)的博客!
+我会在博客中记录下学习的各种知识, 希望大家喜欢!</p>
 ]]></content>
   </entry>
   <entry>
@@ -1026,7 +1027,8 @@ class="math display">\[
 \]</span></p>
 <p><strong>曲线的曲率</strong></p>
 <p>定义为: <span class="math inline">\(k=\left|\lim\limits_{\Delta s\to
-0}\dfrac{\Delta \alpha}{\Delta s}\right|\)</span>.</p>
+0}\dfrac{\Delta \alpha}{\Delta s}\right|\)</span>, <span
+class="math inline">\(1/k\)</span> 称为曲率半径.</p>
 <p>公式为</p>
 <p><span class="math display">\[
     k = \dfrac{|y&#39;&#39;|}{(1+y&#39;^2)^{3/2}}.

@@ -839,6 +839,13 @@ du(x).
 <p>由乘积的求导公式可得.</p>
 </blockquote>
 </details>
+<blockquote>
+<p>常见的分部积分的技巧: 1. 幂函数与 <span class="math inline">\(e^x,
+\sin x, \cos x\)</span> 等的乘积, 把后者放到 <span
+class="math inline">\(\mathrm d\)</span> 里面去. 2.
+幂函数与对数函数、反三角函数、反双曲函数的乘积， 把前者放到 <span
+class="math inline">\(\mathrm d\)</span> 后面去.</p>
+</blockquote>
 <h2 id="基本积分表">基本积分表</h2>
 <details>
 <summary>
@@ -848,6 +855,159 @@ du(x).
 <p><img src="integ_table2.png" /></p>
 <p><img src="integ_table3.png" /></p>
 <p><img src="integ_table4.png" /></p>
+</details>
+<h2
+id="有理分式函数积分与有理三角函数的积分">有理分式函数积分与有理三角函数的积分</h2>
+<p><strong>前置知识</strong> 一个积分的算法: 求 <span
+class="math display">\[
+    I_n=\int\dfrac{\mathrm dx}{(x^2+a^2)^n}.
+\]</span></p>
+<details>
+<summary>
+<b>求法</b>
+</summary>
+<blockquote>
+<p>由于 <span class="math display">\[
+\begin{aligned}
+I_n&amp;=\int\dfrac{\mathrm dx}{(x^2+a^2)^n}
+\\
+&amp;=\dfrac{x}{(x^2+a^2)^n}+2n\int\dfrac{x^2\mathrm
+dx}{(x^2+a^2)^{n+1}}.
+\\
+&amp;=\dfrac{x}{(x^2+a^2)^n}+2n(I_n-a^2I_{n+1}).
+\end{aligned}
+\]</span> 故 <span class="math display">\[
+I_{n+1}=\dfrac{1}{2na^2}\left(\dfrac{x}{(x^2+a^2)^n}+(2n-1)I_n\right).
+\]</span></p>
+</blockquote>
+</details>
+<p><strong>有理函数积分的系统方法</strong></p>
+<ol type="1">
+<li>设对 <span class="math inline">\(f(x)=\dfrac{P(x)}{Q(x)}\)</span>
+积分, 其中 <span class="math inline">\(P(x), Q(x)\)</span> 均是多项式.
+无妨设 <span class="math inline">\(P(x)\)</span> 的次数小于 <span
+class="math inline">\(Q(x)\)</span>
+的次数(否则可以提出容易积分的多项式并变成真分式), 且 <span
+class="math inline">\(Q(x)\)</span> 为首一多项式.</li>
+<li>把 <span class="math inline">\(Q(x)\)</span> 在实数范围内分解, 变成
+<span class="math display">\[
+Q(x)=\prod_i\dfrac{1}{(x-x_i)^{\lambda_i}}\cdot
+\prod_j\dfrac{1}{(x^2+p_jx+q_j)^{\mu_j}}.
+\]</span> 其中第二项的所有的分母 <span
+class="math inline">\(\Delta&lt;0\)</span>.</li>
+<li>用待定系数法把 <span
+class="math inline">\(\dfrac{P(x)}{Q(x)}\)</span> 拆成一系列和:
+<ul>
+<li>对于每一个 <span class="math inline">\(Q(x)\)</span> 的因式 <span
+class="math inline">\(\dfrac{1}{(x-x_i)^{\lambda_i}}\)</span>,
+相应地设出 <span class="math inline">\(\sum\limits_{1\le k\le
+\lambda_i}\dfrac{A_k}{(x-x_i)^k}\)</span> 加入到和中.</li>
+<li>对于每一个 <span class="math inline">\(Q(x)\)</span> 的因式 <span
+class="math inline">\(\dfrac{1}{(x^2+p_jx+q_j)^{\mu_j}}\)</span>,
+相应地设出 <span class="math inline">\(\sum\limits_{1\le k\le
+\mu_j}\dfrac{B_kx+C_k}{(x^2+p_jx+q_j)^k}\)</span> 加入到和中.</li>
+</ul></li>
+<li>对每一项分别积分.
+<ul>
+<li>对于 <span class="math inline">\(\dfrac{A_k}{(x-x_i)^k}\)</span>,
+积分显然.</li>
+<li>对于 <span
+class="math inline">\(\dfrac{B_kx+C_k}{(x^2+p_jx+q_j)^k}\)</span>, 若
+<span class="math inline">\(B_k\ne 0\)</span>, 可以在分子上凑 <span
+class="math inline">\(B_kx+C_k=\dfrac{B_k}{2}(2x+p_j)+X\)</span>,
+拆成两部分, 前部分是 <span class="math inline">\(\dfrac{B_k}{2}\int
+\dfrac{\mathrm d(x^2+p_jx+q_j)}{(x^2+p_jx+q_j)}\)</span> 的形式,
+而后部分是 <span class="math inline">\(B_k=0\)</span> 的情形(见下).</li>
+<li>对于 <span
+class="math inline">\(\dfrac{C_k}{(x^2+p_jx+q_j)^k}\)</span>,
+分母配方后套用"前置知识"里面的公式即可.</li>
+</ul></li>
+</ol>
+<p><strong>有理三角函数积分</strong></p>
+<p>对于有理三角函数的积分 <span class="math display">\[
+\int R(\sin x, \cos x)\mathrm dx
+\]</span> 一种通用的方法是转换为有理函数的积分进行计算.</p>
+<p>总结规律如下:</p>
+<ol type="1">
+<li>若 <span class="math inline">\(R(-\sin x, \cos x)=-R(\sin x, \cos
+x)\)</span>, 则可令 <span class="math inline">\(t=\cos x\)</span>
+进行积分.</li>
+<li>若 <span class="math inline">\(R(\sin x, -\cos x)=-R(\sin x, \cos
+x)\)</span>, 则可令 <span class="math inline">\(t=\sin x\)</span>
+进行积分.</li>
+<li>若 <span class="math inline">\(R(-\sin x, -\cos x)=R(\sin x, \cos
+x)\)</span>, 则可令 <span class="math inline">\(t=\tan x\)</span>
+进行积分.</li>
+<li>不论如何, 令 <span class="math inline">\(t=\tan
+\dfrac{x}{2}\)</span>, 用万能公式一定可以做.</li>
+</ol>
+<h2 id="无理函数积分">无理函数积分</h2>
+<ol type="1">
+<li>对于 <span class="math inline">\(f(x)=R(\sqrt[m]{ax+b},
+\sqrt[n]{ax+b})\)</span> 的情况, 令 <span
+class="math inline">\(t=\sqrt[\operatorname{lcm}(m, n)]{ax+b}\)</span>
+即可.</li>
+<li>对于 <span class="math inline">\(f(x)=R\left(x,
+\sqrt[m]{\dfrac{ax+b}{cx+d}}\right)\)</span> 的情况, 令 <span
+class="math inline">\(t=\sqrt[m]{\dfrac{ax+b}{cx+d}}\)</span> 即可.</li>
+<li>对于 <span class="math inline">\(f(x)=R(x,
+\sqrt{ax^2+bx+c})\)</span> 的情况, 用欧拉代换:
+<ul>
+<li>若 <span class="math inline">\(a&gt;0\)</span>, 可令 <span
+class="math inline">\(\sqrt{ax^2+bx+c}=\sqrt a x+t\)</span>.</li>
+<li>若 <span class="math inline">\(c&gt;0\)</span>, 可令 <span
+class="math inline">\(\sqrt{ax^2+bx+c}=tx+\sqrt c\)</span>.</li>
+<li>若 <span class="math inline">\(\Delta &gt;0\)</span>, 且 <span
+class="math inline">\(ax^2+bx+c=a(x-x_1)(x-x_2)\)</span>, 可令 <span
+class="math inline">\(ax^2+bx+c=t(x-x_1)\)</span>.</li>
+</ul></li>
+</ol>
+<h2 id="定积分的应用">定积分的应用</h2>
+<p>常用推导方法: 微元法</p>
+<p><strong>计算面积</strong></p>
+<ol type="1">
+<li><span class="math inline">\(\lbrace a\le x\le b, f(x)\le y\le
+g(x)\rbrace\)</span>, 面积为 <span class="math display">\[
+\int_a^b (g(x)-f(x))\mathrm dx.
+\]</span></li>
+<li><span class="math inline">\(\lbrace a\le y\le b, \psi(y)\le x \le
+\varphi(y)\rbrace\)</span>, 面积为 <span class="math display">\[
+\int_a^b (\varphi(y)-\psi(y))\mathrm dy.
+\]</span></li>
+<li><span class="math inline">\(\lbrace a\le \theta\le b,
+\rho_1(\theta)\le \rho\le \rho_2(\theta)\rbrace\)</span>, 面积为 <span
+class="math display">\[
+\dfrac{1}{2}\int_a^b(\rho_2^2(\theta)-\rho_1^2(\theta))\mathrm d\theta.
+\]</span></li>
+<li><span class="math inline">\(\lbrace a\le \rho\le b,
+\theta_1(\rho)\le \theta \le \theta_2(\rho)\rbrace\)</span>, 面积为
+<span class="math display">\[
+\int_a^b(\theta_2(\rho)-\theta_1(\rho))\rho\mathrm d\rho.
+\]</span></li>
+</ol>
+<p><strong>计算体积</strong></p>
+<p>平行截面的面积已知的立体的体积: 若 <span class="math inline">\(a\le
+x\le b\)</span>, 在 <span class="math inline">\(x\)</span> 处截面面积为
+<span class="math inline">\(A(x)\)</span>, 那么 <span
+class="math display">\[
+    V=\int_a^bA(x)\mathrm dx.
+\]</span></p>
+<p>旋转体的体积:</p>
+<h1 id="拓展内容">拓展内容</h1>
+<h2 id="华利斯公式">华利斯公式</h2>
+<details>
+<summary>
+<b>展开图片</b>
+</summary>
+<p><img src="hls1.png" /> <img src="hls2.png" /> <img src="hls3.png" />
+<img src="hls4.png" /></p>
+</details>
+<h2 id="泰勒公式的积分型余项">泰勒公式的积分型余项</h2>
+<details>
+<summary>
+<b>展开图片</b>
+</summary>
+<p><img src="taylor_integR1.png" /> <img src="taylor_integR2.png" /></p>
 </details>
 ]]></content>
       <categories>
@@ -2209,8 +2369,10 @@ class="math inline">\(\lim\limits_{x\to
 <span class="math inline">\(\lim\limits_{n\to
 \infty}n^2(\sqrt[n]{a}-\sqrt[n+1]{a})\)</span>.</p></li>
 </ol>
-<!-- <details>
-<summary><b>解答</b></summary> -->
+<details>
+<summary>
+<b>解答</b>
+</summary>
 <blockquote>
 <p>(1) 当 <span class="math inline">\(x\to 0\)</span> 时, <span
 class="math display">\[
@@ -2267,7 +2429,7 @@ class="math display">\[
 \infty}\left[x-x^2\ln\left(1+\dfrac{1}{x}\right)\right]=\lim_{x\to\infty}\left(\dfrac{1}{2}+o(1)\right)=\dfrac{1}{2}.
 \]</span></p>
 </blockquote>
-<!-- </details> -->
+</details>
 <ol start="9" type="1">
 <li><p>写出下列函数关于 <span class="math inline">\(x\)</span> 的 <span
 class="math inline">\(n\)</span> 阶有限展开式.</p>

@@ -992,7 +992,46 @@ x\le b\)</span>, 在 <span class="math inline">\(x\)</span> 处截面面积为
 class="math display">\[
     V=\int_a^bA(x)\mathrm dx.
 \]</span></p>
-<p>旋转体的体积:</p>
+<p>旋转体的体积: 对于 <span class="math inline">\(f(x), 0&lt;a\le x\le
+b\)</span>, 它绕 <span class="math inline">\(x\)</span>
+轴的旋转体的体积为 <span class="math display">\[
+    V_x=\pi \int_a^b f^2(x)\mathrm dx.
+\]</span></p>
+<p>它绕 <span class="math inline">\(y\)</span> 轴的旋转体的体积为 <span
+class="math display">\[
+    V_y=2\pi\int_a^bx|f(x)|\mathrm dx.
+\]</span></p>
+<p><strong>计算曲线的弧长</strong></p>
+<p>对于参数方程 <span class="math inline">\(\begin{cases}x=x(t),
+\\y=y(t).\end{cases}, a\le t\le b\)</span>, 它的弧长公式为 <span
+class="math display">\[
+    L=\int_a^b\sqrt{(x&#39;(t))^2+(y&#39;(t))^2}\mathrm dt.
+\]</span> 由此可以推出, 对于 <span class="math inline">\(y=f(x), a\le
+x\le b\)</span>, 其弧长公式为 <span class="math display">\[
+    L=\int_a^b\sqrt{1+(f&#39;(x))^2}\mathrm dx.
+\]</span> 对于 <span class="math inline">\(x=\varphi(y), a\le y\le
+b\)</span>, 其弧长公式为 <span class="math display">\[
+    L=\int_a^b\sqrt{(\varphi&#39;(y))^2+1}\mathrm dy.
+\]</span> 对于 <span class="math inline">\(\rho=\rho(\theta), a\le
+\theta\le b\)</span>, 弧长公式为 <span class="math display">\[
+    L=\int_a^b\sqrt{(\rho(\theta))^2+(\rho&#39;(\theta))^2}.
+\]</span></p>
+<p><strong>旋转面的面积</strong></p>
+<p>比如 <span class="math inline">\(f(x), a\le x\le b\)</span> 绕 <span
+class="math inline">\(x\)</span> 轴旋转得到的旋转体, 有 <span
+class="math display">\[
+    \mathrm dS=2\pi f(x)\mathrm dL
+\]</span> 故 <span class="math display">\[
+    S=2\pi \int_a^b f(x)\sqrt{1+(f&#39;(x))^2}\mathrm dx.
+\]</span></p>
+<p><strong>曲线的曲率</strong></p>
+<p>定义为: <span class="math inline">\(k=\left|\lim\limits_{\Delta s\to
+0}\dfrac{\Delta \alpha}{\Delta s}\right|\)</span>.</p>
+<p>公式为</p>
+<p><span class="math display">\[
+    k = \dfrac{|y&#39;&#39;|}{(1+y&#39;^2)^{3/2}}.
+\]</span></p>
+<h2 id="广义积分">广义积分</h2>
 <h1 id="拓展内容">拓展内容</h1>
 <h2 id="华利斯公式">华利斯公式</h2>
 <details>

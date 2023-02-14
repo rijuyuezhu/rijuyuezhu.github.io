@@ -26,11 +26,11 @@ and produces some value/set of values as <strong>output</strong>.</li>
 <li><strong>Algorithm</strong> is a tool for solving a well-specified
 <strong>computational problem</strong>(specify the desired input/output
 relationship in general terms).</li>
-<li><strong>Sorting problem</strong>
+<li><strong>Sorting problem</strong>:
 <ul>
 <li>Given a seqence of <span class="math inline">\(n\)</span> numbers
 <span class="math inline">\(\langle a_1, a_2, \cdots,
-a_n\rangle\)</span></li>
+a_n\rangle\)</span>.</li>
 <li>Output a permutation of it, <span class="math inline">\(\langle
 a_1&#39;, a_2&#39;, \cdots, a_n&#39;\rangle\)</span> such that <span
 class="math inline">\(a_1&#39;\le a_2&#39;\le \cdots,
@@ -38,8 +38,8 @@ a_n&#39;\)</span>.</li>
 </ul></li>
 <li><strong>Instance of a problem</strong>: A specific input(satisfy the
 constraints in the statement).</li>
-<li><strong>Correct of an algorithm</strong>: 1. correct output; 2.
-always halts for every input instance. A correct algorithm
+<li><strong>Correctness of an algorithm</strong>: 1. correct output; 2.
+always halts for every legal input instance. A correct algorithm
 <strong>solves</strong> the given computational problem.</li>
 <li>Characteristics that are common to many algorithmic problems:
 <ul>
@@ -51,7 +51,7 @@ order to facilitate access and modifications(strengths and
 limitations).</li>
 <li>Hard problem, e.g. NP-complete problems: A class of problems that
 <ul>
-<li>An efficient problem hasn't been found.</li>
+<li>An efficient algorithm hasn't been found.</li>
 <li>Equivalent to each other.</li>
 <li>Some are similar to ordinary problems.</li>
 <li>e.g. traveling-salesman problem (TSP).</li>
@@ -75,7 +75,7 @@ resource. So we need <strong>efficiency</strong>.</li>
 dramatically in their efficiency. e.g. insertion sort and merge
 sort.</li>
 <li>Algorithms are a <strong>technology</strong>, just like other
-computer technologies. Every thing needs algorithms.</li>
+computer technologies. Everything needs algorithms.</li>
 </ul>
 <h3 id="tc-2-getting-started">TC 2 Getting Started</h3>
 <p align="center">
@@ -83,7 +83,6 @@ computer technologies. Every thing needs algorithms.</li>
 </p>
 <ul>
 <li>Definition of <strong>sorting problem</strong>(See TC 1)</li>
-<li><strong>Keys</strong>.</li>
 <li><strong>Pseudocode</strong>: clear and concise; ignore issues of
 software engineering.</li>
 <li><strong>Insertion sort</strong>. P18.</li>
@@ -133,7 +132,7 @@ class="math inline">\(n\)</span>).
 coefficient.</li>
 <li>Like the insertion sort, we write <span
 class="math inline">\(\Theta(n^2)\)</span>.</li>
-<li>Generally, One algorithm is more efficient than another if its
+<li>Generally, one algorithm is more efficient than another if its
 worst-case running time has a lower order of growth.</li>
 </ul></li>
 </ul>
@@ -147,7 +146,7 @@ sort.</li>
 <li>Meaning:
 <ol type="1">
 <li><strong>Divide</strong> Break the problem into several subproblems
-that are similar to the origin problem but smaller in size.</li>
+that are similar to the original problem but smaller in size.</li>
 <li><strong>Conquer</strong> Solve the subproblems recursively. If the
 size is small enough, solve directly.</li>
 <li><strong>Combine</strong> Combine these solutions to create a
@@ -171,14 +170,12 @@ class="math display">\[
 <b>3.1 Asymptotic notation</b>
 </p>
 <ul>
-<li><strong>Asymptotic algorithms</strong>: the running time in the
-limit.</li>
 <li><strong>Asymptotic notation</strong>: be applied to functions, not
 only running time function, but also some other functions.</li>
 <li><span class="math inline">\(\Theta\)</span>-notation means: <span
-class="math inline">\(\lbrace f(n):\)</span> there exist positive
-constants <span class="math inline">\(c_1, c_2\)</span> and <span
-class="math inline">\(n_0\)</span> such that <span
+class="math inline">\(\Theta(g(n))=\lbrace f(n):\)</span> there exist
+positive constants <span class="math inline">\(c_1, c_2\)</span> and
+<span class="math inline">\(n_0\)</span> such that <span
 class="math inline">\(0\le c_1g(n)\le f(n)\le c_2g(n)\)</span> for all
 <span class="math inline">\(n&gt;n_0\)</span> <span
 class="math inline">\(\rbrace\)</span>.
@@ -195,8 +192,8 @@ class="math inline">\(g(n)\)</span>.</li>
 ignored in determining.</li>
 </ul></li>
 <li><span class="math inline">\(O\)</span>-notation means: <span
-class="math inline">\(\lbrace f(n):\)</span> there exist positive
-constants <span class="math inline">\(c\)</span> and <span
+class="math inline">\(O(g(n))=\lbrace f(n):\)</span> there exist
+positive constants <span class="math inline">\(c\)</span> and <span
 class="math inline">\(n_0\)</span> such that <span
 class="math inline">\(0\le f(n)\le cg(n)\)</span> for all <span
 class="math inline">\(n&gt;n_0\)</span> <span
@@ -209,11 +206,11 @@ notation than <span class="math inline">\(O\)</span>-notation, <span
 class="math inline">\(\Theta(g(n))\subseteq O(g(n))\)</span>.</li>
 <li><span class="math inline">\(O(g(n))\)</span> gives a running time
 bound on every input when <span
-class="math inline">\(\Theta(g(n))\)</span> for worse-case input.</li>
+class="math inline">\(\Theta(g(n))\)</span> for worst-case input.</li>
 </ul></li>
 <li><span class="math inline">\(\Omega\)</span>-notation means: <span
-class="math inline">\(\lbrace f(n):\)</span> there exist positive
-constants <span class="math inline">\(c\)</span> and <span
+class="math inline">\(\Omega(g(n))=\lbrace f(n):\)</span> there exist
+positive constants <span class="math inline">\(c\)</span> and <span
 class="math inline">\(n_0\)</span> such that <span
 class="math inline">\(0\le cg(n) \le f(n)\)</span> for all <span
 class="math inline">\(n&gt;n_0\)</span> <span
@@ -240,34 +237,36 @@ class="math inline">\(\Leftarrow\)</span>)</li>
 <li><strong>Asymptotic notation in equations and
 inequalities</strong>(P49).</li>
 <li><span class="math inline">\(o\)</span>-notation means: <span
-class="math inline">\(\lbrace f(n):\)</span> for <strong>any</strong>
-positive constants <span class="math inline">\(c&gt;0\)</span>, there
-exists a constant <span class="math inline">\(n_0\)</span> such that
-<span class="math inline">\(0\le f(n)&lt; cg(n)\)</span> for all <span
+class="math inline">\(o(g(n))=\lbrace f(n):\)</span> for
+<strong>any</strong> positive constants <span
+class="math inline">\(c&gt;0\)</span>, there exists a constant <span
+class="math inline">\(n_0\)</span> such that <span
+class="math inline">\(0\le f(n)&lt; cg(n)\)</span> for all <span
 class="math inline">\(n&gt;n_0\)</span> <span
 class="math inline">\(\rbrace\)</span>.
 <ul>
 <li><span class="math inline">\(g(n)\)</span> is an <strong>asymptotic
-upper bound</strong> but not <strong>asymptotic tight</strong>.</li>
+upper bound</strong> but not <strong>asymptotically tight</strong>.</li>
 <li><span class="math inline">\(\displaystyle\lim_{n\to
 \infty}\dfrac{f(n)}{g(n)}=0\)</span>.</li>
 </ul></li>
 <li><span class="math inline">\(\omega\)</span>-notation means: <span
-class="math inline">\(\lbrace f(n):\)</span> for <strong>any</strong>
-positive constants <span class="math inline">\(c&gt;0\)</span>, there
-exists a constant <span class="math inline">\(n_0\)</span> such that
-<span class="math inline">\(0 \le cg(n)&lt; f(n)\)</span> for all <span
+class="math inline">\(\omega(g(n))=\lbrace f(n):\)</span> for
+<strong>any</strong> positive constants <span
+class="math inline">\(c&gt;0\)</span>, there exists a constant <span
+class="math inline">\(n_0\)</span> such that <span
+class="math inline">\(0 \le cg(n)&lt; f(n)\)</span> for all <span
 class="math inline">\(n&gt;n_0\)</span> <span
 class="math inline">\(\rbrace\)</span>.
 <ul>
 <li><span class="math inline">\(g(n)\)</span> is an <strong>asymptotic
-lower bound</strong> but not <strong>asymptotic tight</strong>.</li>
+lower bound</strong> but not <strong>asymptotically tight</strong>.</li>
 <li><span class="math inline">\(\displaystyle\lim_{n\to
 \infty}\dfrac{f(n)}{g(n)}=\infty\)</span>.</li>
 </ul></li>
 <li><strong>Transitivity, Reflexivity, Symmetry, Transpose
 symmetry</strong>.</li>
-<li><strong>Asymptotically smaller/bigger</strong>.</li>
+<li>Asymptotically smaller/bigger.</li>
 <li>Trichotomy is not applied to asymptotical notations.
 <ul>
 <li>E.g. <span class="math inline">\(f(n)=n, g(n)=n^{1+\sin n}\)</span>,
@@ -297,19 +296,6 @@ R_+, a, b\in \mathbb Z_+\)</span> <span class="math display">\[
   \left\lfloor\dfrac{a}{b}\right\rfloor\le \dfrac{a-(b-1)}{b}.
 \end{gather*}
 \]</span></li>
-<li><strong>Polynomials</strong>: For <span class="math inline">\(d\in
-\mathbb N\)</span>, a polynomial in <span
-class="math inline">\(n\)</span> of degree <span
-class="math inline">\(d\)</span> is a function <span
-class="math inline">\(p(n)\)</span> of the form <span
-class="math display">\[
-  p(n)=\sum_{i=0}^da_in^i.
-\]</span>
-<ul>
-<li><span class="math inline">\(a_i\)</span> are the coefficients, <span
-class="math inline">\(a_d\ne 0\)</span>;</li>
-<li><span class="math inline">\(p(n)=\Theta(n^d)\)</span>.</li>
-</ul></li>
 <li><span class="math inline">\(f(n)\)</span> is <strong>polynomially
 bounded</strong> if <span class="math inline">\(f(n)=O(n^k)\)</span> for
 some constant <span class="math inline">\(k\)</span>.</li>

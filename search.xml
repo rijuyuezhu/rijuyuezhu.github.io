@@ -8,6 +8,176 @@
 ]]></content>
   </entry>
   <entry>
+    <title>问题求解（二）总结</title>
+    <url>/2023/02/13/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>课程计划(尚未公布)</p>
+<span id="more"></span>
+<h1 id="week-1">Week 1</h1>
+<h2 id="concepts">Concepts</h2>
+<h3 id="tc-1-the-role-of-algorithms-in-computing">TC 1 The Role of
+Algorithms in Computing</h3>
+<p align="center">
+<b>1.1 Algorithms</b>
+</p>
+<ul>
+<li><strong>Algorithm</strong> is any well-defined computational
+procedure that taks some value/set of values as <strong>input</strong>
+and produces some value/set of values as <strong>output</strong>.</li>
+<li><strong>Algorithm</strong> is a tool for solving a well-specified
+<strong>computational problem</strong>(specify the desired input/output
+relationship in general terms).</li>
+<li><strong>Sorting problem</strong>
+<ul>
+<li>Given a seqence of <span class="math inline">\(n\)</span> numbers
+<span class="math inline">\(\langle a_1, a_2, \cdots,
+a_n\rangle\)</span></li>
+<li>Output a permutation of it, <span class="math inline">\(\langle
+a_1&#39;, a_2&#39;, \cdots, a_n&#39;\rangle\)</span> such that <span
+class="math inline">\(a_1&#39;\le a_2&#39;\le \cdots,
+a_n&#39;\)</span>.</li>
+</ul></li>
+<li><strong>Instance of a problem</strong>: A specific input(satisfy the
+constraints in the statement).</li>
+<li><strong>Correct of an algorithm</strong>: 1. correct output; 2.
+always halts for every input instance. A correct algorithm
+<strong>solves</strong> the given computational problem.</li>
+<li>Characteristics that are common to many algorithmic problems:
+<ul>
+<li>Have many candidate solutions. But we want to find the "best".</li>
+<li>Have practical applications.</li>
+</ul></li>
+<li><strong>Data Structure</strong>: A way to store and organize data in
+order to facilitate access and modifications(strengths and
+limitations).</li>
+<li>Hard problem, e.g. NP-complete problems: A class of problems that
+<ul>
+<li>An efficient problem hasn't been found.</li>
+<li>Equivalent to each other.</li>
+<li>Some are similar to ordinary problems.</li>
+<li>e.g. traveling-salesman problem (TSP).</li>
+</ul></li>
+<li><strong>Parallelism</strong>
+<ul>
+<li>Fact: physical limitations let processor clock speeds' increasing
+slow down.</li>
+<li>Chips have several processing "cores" <span
+class="math inline">\(\to\)</span> parallel computer.</li>
+<li>Algorithms with parallelism in mind, multithreaded algorithms.</li>
+</ul></li>
+</ul>
+<p align="center">
+<b>1.2 Algorithm as a technology</b>
+</p>
+<ul>
+<li><strong>Computing time and space in memory</strong> are bounded
+resource. So we need <strong>efficiency</strong>.</li>
+<li>Different algorithms devised to solve the same problem often differ
+dramatically in their efficiency. e.g. insertion sort and merge
+sort.</li>
+<li>Algorithms are a <strong>technology</strong>, just like other
+computer technologies. Every thing needs algorithms.</li>
+</ul>
+<h3 id="tc-2-getting-started">TC 2 Getting Started</h3>
+<p align="center">
+<b>2.1 Insertion sort</b>
+</p>
+<ul>
+<li>Definition of <strong>sorting problem</strong>(See TC 1)</li>
+<li><strong>Keys</strong>.</li>
+<li><strong>Pseudocode</strong>: clear and concise; ignore issues of
+software engineering.</li>
+<li><strong>Insertion sort</strong>. P18.</li>
+<li><strong>Loop invariants</strong>: show why a algorithm is
+correct.(Initialization, Maintenance, Termination).
+<ul>
+<li>The first two just like mathematical induction.</li>
+<li>The third one shows the correctness of the algorithm.</li>
+</ul></li>
+</ul>
+<p align="center">
+<b>2.2 Analyzing algorithms</b>
+</p>
+<ul>
+<li><strong>Analyzing an algorithm</strong>: predict the resouces that
+the algorithm requires. (memory, communication bandwidth, computer
+hardware, but <strong>computational time</strong> is the most
+important)</li>
+<li>RAM model.
+<ul>
+<li>One after another;</li>
+<li><strong>Arithmetic, data movement, control</strong> takes a constant
+amount of time.</li>
+<li>Data type: integer and floating point.</li>
+<li>...</li>
+</ul></li>
+<li>Analysis of insertion sort.</li>
+<li><strong>Input size</strong>: <em>number or items in the input</em>,
+<em>total number of bits</em>, ..., one or more.</li>
+<li><strong>Running time</strong> of a algorithm: the number of
+primitive operations("steps"), a function of input size (such as <span
+class="math inline">\(n\)</span>).
+<ul>
+<li>linear function, quadratic function.</li>
+</ul></li>
+<li>Worst-case analysis is more important:
+<ul>
+<li>As upper bound of the running time.</li>
+<li>For some algorithms, worst case occurs fairly often.</li>
+<li>"Average case" is often roughly as bad as the worst case.</li>
+</ul></li>
+<li>Average-case running time: probabilistic analysis.</li>
+<li>Randomized algorithm, expected running time.</li>
+<li>Order of growth(rate of growth).
+<ul>
+<li>Consider only the leading term of a formula, and ignore the constant
+coefficient.</li>
+<li>Like the insertion sort, we write <span
+class="math inline">\(\Theta(n^2)\)</span>.</li>
+<li>Generally, One algorithm is more efficient than another if its
+worst-case running time has a lower order of growth.</li>
+</ul></li>
+</ul>
+<p align="center">
+<b>2.3 Designing algorithms</b>
+</p>
+<ul>
+<li><strong>The incremental approach</strong>, e.g. insertion sort.</li>
+<li><strong>The divide-and-conquer apporach</strong>, e.g. merge
+sort.</li>
+<li>Meaning:
+<ol type="1">
+<li><strong>Divide</strong> Break the problem into several subproblems
+that are similar to the origin problem but smaller in size.</li>
+<li><strong>Conquer</strong> Solve the subproblems recursively. If the
+size is small enough, solve directly.</li>
+<li><strong>Combine</strong> Combine these solutions to create a
+solution to the origin problem.</li>
+</ol></li>
+<li>Merge procedure and its analysis.</li>
+<li>Merge sort.</li>
+<li>Analyzing divide-and-conquer algorithms. Describe its running time
+by a <strong>recurrence equation/recurrence</strong>. <span
+class="math display">\[
+  T(n)=
+  \begin{cases}
+      \Theta(1)&amp;\textnormal{if}\ n\le c,
+      \\
+      aT(n/b)+D(n)+C(n)&amp;\textnormal{otherwise}.
+  \end{cases}
+\]</span></li>
+</ul>
+<h3 id="tc-3-growth-of-functions">TC 3 Growth of Functions</h3>
+]]></content>
+      <categories>
+        <category>课程笔记</category>
+        <category>问题求解</category>
+      </categories>
+      <tags>
+        <tag>问题求解</tag>
+        <tag>计算机科学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微积分（一）总结 PART III</title>
     <url>/2023/02/05/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-III/</url>
     <content><![CDATA[<p>本文简要梳理了微积分（一）的一些内容, 并记录一些套路.</p>
@@ -3285,13 +3455,13 @@ class="math inline">\(O(1)\)</span> 处理询问即可.</p>
       </tags>
   </entry>
   <entry>
-    <title>问题求解（一）总结 PART I</title>
-    <url>/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/</url>
+    <title>问题求解（一）总结</title>
+    <url>/2023/01/17/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p><a
 href="http://cslabcms.nju.edu.cn/problem_solving/index.php/2022%E7%BA%A7--%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92_(%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F)">课程计划</a></p>
 <span id="more"></span>
-<p>This term we learned <strong>DH</strong>, <strong>UD</strong> and a
-little part of <strong>ES</strong>.</p>
+<p>This term we learned *DH<strong>, </strong>UD<strong> and a little
+part of </strong>ES**.</p>
 <p><strong>DH</strong>: we learned Chapter 1-7, 9-10 in class, and left
 Chapter 8, 11-15 out of class.</p>
 <p><strong>UD</strong>: we learned Chapter 1-11, 14-18, 21-24, 27-28 in

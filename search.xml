@@ -150,7 +150,7 @@ that are similar to the original problem but smaller in size.</li>
 <li><strong>Conquer</strong> Solve the subproblems recursively. If the
 size is small enough, solve directly.</li>
 <li><strong>Combine</strong> Combine these solutions to create a
-solution to the origin problem.</li>
+solution to the original problem.</li>
 </ol></li>
 <li>Merge procedure and its analysis.</li>
 <li>Merge sort.</li>

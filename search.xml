@@ -2085,7 +2085,7 @@ x}=\dfrac{e^x-e^{-x}}{e^x+e^{-x}},
 \\
 \operatorname{arch} x&amp;=\ln(x+\sqrt {x^2-1}),
 \\
-\operatorname{acth} x&amp;=\dfrac{1}{2}\ln\dfrac{1+x}{1-x}.
+\operatorname{arth} x&amp;=\dfrac{1}{2}\ln\dfrac{1+x}{1-x}.
 \end{aligned}
 \]</span></p></li>
 <li><p>重要的性质 <span class="math display">\[

@@ -1195,14 +1195,17 @@ du(x).
 </blockquote>
 </details>
 <blockquote>
-<p>常见的分部积分的技巧: 1. 幂函数与 <span class="math inline">\(e^x,
-\sin x, \cos x\)</span> 等的乘积, 把后者放到 <span
-class="math inline">\(\mathrm d\)</span> 里面去. 2.
-幂函数与对数函数、反三角函数、反双曲函数的乘积， 把前者放到 <span
-class="math inline">\(\mathrm d\)</span> 后面去. 3. 分母有 <span
-class="math inline">\(f^2(x)\)</span> 的形式, 可以考虑把 <span
-class="math inline">\(1/f(x)\)</span> 放到 <span
-class="math inline">\(\mathrm d\)</span> 后面去.</p>
+<p>常见的分部积分的技巧:</p>
+<ol type="1">
+<li>幂函数与 <span class="math inline">\(e^x, \sin x, \cos x\)</span>
+等的乘积, 把后者放到 <span class="math inline">\(\mathrm d\)</span>
+里面去.</li>
+<li>幂函数与对数函数、反三角函数、反双曲函数的乘积， 把前者放到 <span
+class="math inline">\(\mathrm d\)</span> 后面去.</li>
+<li>分母有 <span class="math inline">\(f^2(x)\)</span> 的形式,
+可以考虑把 <span class="math inline">\(1/f(x)\)</span> 放到 <span
+class="math inline">\(\mathrm d\)</span> 后面去.</li>
+</ol>
 </blockquote>
 <h2 id="基本积分表">基本积分表</h2>
 <details>

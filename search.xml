@@ -503,6 +503,10 @@ class="math inline">\(P\)</span>.</li>
 <p align="center">
 <b>Partial and Total Orders</b>
 </p>
+<ul>
+<li>Partial order: a relation that is reflexive, antisymmetric, and
+transitive.</li>
+</ul>
 ]]></content>
       <categories>
         <category>课程笔记</category>

@@ -25,7 +25,7 @@
 <li><strong>对称性</strong>: <span class="math inline">\(\rho(x,
 y)=\rho(y, x)\)</span>.</li>
 <li><strong>三角不等式</strong>: <span class="math inline">\(\rho(x,
-y)\le rho(x, z)+rho(z, y)\)</span>.</li>
+y)\le \rho(x, z)+\rho(z, y)\)</span>.</li>
 </ol>
 <p>则称 <span class="math inline">\(\rho(x, y)\)</span> 是 <span
 class="math inline">\(V\)</span> 上的一个<strong>距离函数</strong>.</p>

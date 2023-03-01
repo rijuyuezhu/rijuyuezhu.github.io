@@ -19,27 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="大家好, 这里是日居月诸(rijuyuezhu)的博客! 我会在博客中记录下学习的各种知识, 希望大家喜欢!">
+    <meta name="description" content="本文简要梳理了微积分（二）的一些内容, 并记录一些套路.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客简介">
-<meta property="og:url" content="http://example.com/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:title" content="微积分（二）总结 PART I">
+<meta property="og:url" content="http://example.com/2023/03/01/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/index.html">
 <meta property="og:site_name" content="Rijuyuezhu&#39;s Blog">
-<meta property="og:description" content="大家好, 这里是日居月诸(rijuyuezhu)的博客! 我会在博客中记录下学习的各种知识, 希望大家喜欢!">
+<meta property="og:description" content="本文简要梳理了微积分（二）的一些内容, 并记录一些套路.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-13T06:01:43.000Z">
-<meta property="article:modified_time" content="2023-02-11T08:55:07.460Z">
+<meta property="article:published_time" content="2023-03-01T02:37:05.000Z">
+<meta property="article:modified_time" content="2023-03-01T03:06:50.832Z">
 <meta property="article:author" content="Rijuyuezhu">
+<meta property="article:tag" content="微积分">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/">
+<link rel="canonical" href="http://example.com/2023/03/01/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/","path":"2023/01/13/博客简介/","title":"博客简介"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/03/01/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/","path":"2023/03/01/微积分（二）总结-PART-I/","title":"微积分（二）总结 PART I"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>博客简介 | Rijuyuezhu's Blog</title>
+<title>微积分（二）总结 PART I | Rijuyuezhu's Blog</title>
   
 
 
@@ -128,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -141,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">多元函数微分学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.1.</span> <span class="nav-text">多维空间与距离</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,7 +196,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -206,12 +209,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="博客简介 | Rijuyuezhu's Blog">
+      <meta itemprop="name" content="微积分（二）总结 PART I | Rijuyuezhu's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          博客简介
+          微积分（二）总结 PART I
         </h1>
 
         <div class="post-meta-container">
@@ -221,15 +224,22 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-01-13 14:01:43" itemprop="dateCreated datePublished" datetime="2023-01-13T14:01:43+08:00">2023-01-13</time>
+      <time title="创建时间：2023-03-01 10:37:05 / 修改时间：11:06:50" itemprop="dateCreated datePublished" datetime="2023-03-01T10:37:05+08:00">2023-03-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+        <i class="far fa-folder"></i>
       </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-11 16:55:07" itemprop="dateModified" datetime="2023-02-11T16:55:07+08:00">2023-02-11</time>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
+        </span>
     </span>
 
   
@@ -242,8 +252,65 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>大家好, 这里是日居月诸(rijuyuezhu)的博客!
-我会在博客中记录下学习的各种知识, 希望大家喜欢!</p>
+        <p>本文简要梳理了微积分（二）的一些内容, 并记录一些套路.</p>
+<span id="more"></span>
+<h1 id="多元函数微分学">多元函数微分学</h1>
+<h2 id="多维空间与距离">多维空间与距离</h2>
+<p>要将极限等概念推广到多维空间, 我们首先需要定义"距离".</p>
+<p><strong>距离</strong>: 在空间 <span class="math inline">\(V\)</span>
+中, 对任意 <span class="math inline">\(x, y\in V\)</span>, 存在函数
+<span class="math inline">\(\rho(x, y)\)</span> 满足:</p>
+<ol type="1">
+<li><strong>正定性</strong>: <span class="math inline">\(\rho(x, y)\ge
+0\)</span>, 且 <span class="math inline">\(\rho(x, y)=0\)</span>
+当且仅当 <span class="math inline">\(x=y\)</span>.</li>
+<li><strong>对称性</strong>: <span class="math inline">\(\rho(x,
+y)=\rho(y, x)\)</span>.</li>
+<li><strong>三角不等式</strong>: <span class="math inline">\(\rho(x,
+y)\le rho(x, z)+rho(z, y)\)</span>.</li>
+</ol>
+<p>则称 <span class="math inline">\(\rho(x, y)\)</span> 是 <span
+class="math inline">\(V\)</span> 上的一个<strong>距离函数</strong>.</p>
+<blockquote>
+<p>若再加上一条 <span class="math inline">\(\rho(\lambda x, y)=\lambda
+\rho(x, y)\)</span>, <span class="math inline">\(\lambda\)</span> 是数,
+那么称 <span class="math inline">\(\rho\)</span> 是一个范数.</p>
+</blockquote>
+<p><strong>多维欧几里得空间</strong>: 定义 <span
+class="math inline">\(\mathbb R^n=\lbrace \boldsymbol{x}=(x_1, x_2,
+\cdots, x_n), x_i\in \mathbb R, 1\le i\le n\rbrace\)</span>.
+在其上定义加法和数乘, 并定义<strong>欧几里得距离</strong>.</p>
+<p><strong>欧几里得距离</strong>: 在欧几里得空间中, 定义 <span
+class="math display">\[
+    \rho(x, y)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\cdots+(x_n-y_n)^2}
+\]</span> 是它的距离函数.</p>
+<details>
+<summary>
+<b>证明</b>
+</summary>
+<blockquote>
+<p>正定性和对称性显然. 下证三角不等式.</p>
+<p>对任意 <span class="math inline">\(a_i, b_i \in \mathbb R, 1\le i\le
+n\)</span>. 那么 <span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^n(a_i+b_i)^2&amp;=\sum_{i=1}^na_i^2+2\sum_{i=1}^na_ib_i+\sum_{i=1}^nb_i^2
+\\
+&amp;\le
+\sum_{i=1}^na_i^2+2\sqrt{\sum_{i=1}^na_i^2\sum_{i=1}^nb_i^2}+\sum_{i=1}^nb_i^2
+\\
+&amp;= \left(\sqrt{\sum_{i=1}^na_i^2}+\sqrt{\sum_{i=1}^nb_i^2}\right)^2.
+\end{aligned}
+\]</span> 于是, 可得 <span class="math display">\[
+\sqrt {\sum_{i=1}^n(a_i+b_i)^2}\le \sqrt {\sum_{i=1}^na_i^2}+\sqrt
+{\sum_{i=1}^nb_i^2}.
+\]</span> 代入可得 <span class="math inline">\(a_i=x_i-z_i\)</span>,
+<span class="math inline">\(b_i=z_i-y_i\)</span> 可得三角不等式. 故
+<span class="math inline">\(\rho\)</span> 确为距离函数.</p>
+</blockquote>
+</details>
+<p><strong>邻域</strong>: 在多维空间中, 定义 <span
+class="math inline">\(U(\boldsymbol{x},
+\delta)=\lbrace\rbrace\)</span>.</p>
 
     </div>
 
@@ -252,19 +319,20 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/01/13/2021-CCPC-Harbin-%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" rel="prev" title="2021 CCPC Harbin 解题报告">
-                  <i class="fa fa-chevron-left"></i> 2021 CCPC Harbin 解题报告
+                <a href="/2023/02/13/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E6%80%BB%E7%BB%93/" rel="prev" title="问题求解（二）总结">
+                  <i class="fa fa-chevron-left"></i> 问题求解（二）总结
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/14/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E7%BB%93-PART-I/" rel="next" title="微积分（一）总结 PART I">
-                  微积分（一）总结 PART I <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

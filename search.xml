@@ -662,6 +662,94 @@ class="math inline">\(k\)</span> at a time".</li>
 </ul></li>
 </ul></li>
 </ul>
+<h1 id="week-3">Week 3</h1>
+<h2 id="concepts-2">Concepts</h2>
+<h3 id="tc-4-divide-and-conquer">TC 4 Divide-and-Conquer</h3>
+<ul>
+<li>Three steps at each level of divide-and-conquer algorithm:
+<ul>
+<li><strong>Divide</strong> the problem into a number of subproblems
+that are smaller instances of the same problem.</li>
+<li><strong>Conquer</strong> the subproblems by solving them
+recursively(when the <strong>recursive case</strong>). If the subproblem
+sizes are small enough, however, just solve the subproblems in a
+straightforward manner(when the <strong>base case</strong>).</li>
+<li><strong>Combine</strong> the solutions to the subproblems into the
+solution for the original problem.</li>
+</ul></li>
+<li><strong>Recurrences</strong>: an equation or ineuqality that
+describes a function in terms of its value on smaller inputs.
+<ul>
+<li>Three methods to solve:
+<ul>
+<li>The substitution method: guess a bound, then prove it using
+mathematical induction.</li>
+<li>The recursion-tree method: covert the recurrence into a tree, then
+use techniques for bounding summations to solve the recurrence.</li>
+<li>The master method: solve recurrences of the form <span
+class="math display">\[
+      T(n)=aT(n/b)+f(n), a\ge 1, b&gt;1.
+  \]</span></li>
+</ul></li>
+<li>Recurrences that are not equalities but rather inequalities: we get
+a upper bound or lower bound.</li>
+<li>We often omit floors, ceilings and boundary conditions.</li>
+</ul></li>
+</ul>
+<p align="center">
+<b>4.1 The maximun-subarray problem</b>
+</p>
+<ul>
+<li>Brute-force solution: enumulate all <span class="math inline">\((i,
+j)\)</span> pairs. We get a <span
+class="math inline">\(\Omega(n^2)\)</span>.</li>
+<li>Transformation: get the difference array, then we need to find the
+maximum subarray.</li>
+<li>Solve by divide-and-conquer. Three parts: appear in the left part;
+appear in the right part; appear in the part that crosses the midpoint.
+Recursively solve the first two cases, and solve the third case by a
+linear-time algorithm.</li>
+<li>Solve the recurrence, then we get the time is <span
+class="math inline">\(\Theta(n\lg n)\)</span>.</li>
+</ul>
+<p align="center">
+<b>4.2 Strassen's algorithm for matrix multiplication</b>
+</p>
+<p><strong>A kind of divide-and-conqer solution</strong></p>
+<ul>
+<li>Divide a <span class="math inline">\(n\times n\)</span> matrix into
+four <span class="math inline">\(n/2\times n/2\)</span> matrixes.</li>
+<li>Use <span class="math display">\[
+  \begin{pmatrix}
+      C_{11} &amp; C_{12}
+      \\
+      C_{21} &amp; C_{22}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+      A_{11} &amp; A_{12}
+      \\
+      A_{21} &amp; A_{22}
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+      B_{11} &amp; B_{12}
+      \\
+      B_{21} &amp; B_{22}
+  \end{pmatrix},
+\]</span> We divide a size-<span class="math inline">\(n\)</span>
+problem into eight size-<span class="math inline">\(n/2\)</span>
+problem, and combine in <span class="math inline">\(\Theta(n^2)\)</span>
+time.</li>
+<li>We get a recurrence that <span class="math display">\[
+  T(n)=
+  \begin{cases}
+      \Theta(1) &amp; \textnormal{if } $n=1$,
+      \\
+      8T(n/2)+\Theta(n^2) &amp; \textnormal{if } n&gt;1.
+  \end{cases}
+\]</span></li>
+</ul>
 ]]></content>
       <categories>
         <category>课程笔记</category>

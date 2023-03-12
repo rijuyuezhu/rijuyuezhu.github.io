@@ -27,7 +27,7 @@
 <meta property="og:description" content="本文简要梳理了微积分（二）的一些内容, 并记录一些套路.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-01T02:37:05.000Z">
-<meta property="article:modified_time" content="2023-03-10T02:13:12.617Z">
+<meta property="article:modified_time" content="2023-03-11T15:53:36.041Z">
 <meta property="article:author" content="Rijuyuezhu">
 <meta property="article:tag" content="微积分">
 <meta property="article:tag" content="数学">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">多元函数微分学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.1.</span> <span class="nav-text">多维空间与距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%9E%81%E9%99%90%E5%92%8C%E8%BF%9E%E7%BB%AD"><span class="nav-number">1.2.</span> <span class="nav-text">重极限和连续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0-%E5%85%A8%E5%BE%AE%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">偏导数, 全微分</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">多元函数微分学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.1.</span> <span class="nav-text">多维空间与距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90%E5%92%8C%E8%BF%9E%E7%BB%AD"><span class="nav-number">1.2.</span> <span class="nav-text">多元函数的极限和连续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0-%E5%85%A8%E5%BE%AE%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">偏导数, 全微分</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -232,7 +232,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-10 10:13:12" itemprop="dateModified" datetime="2023-03-10T10:13:12+08:00">2023-03-10</time>
+      <time title="修改时间：2023-03-11 23:53:36" itemprop="dateModified" datetime="2023-03-11T23:53:36+08:00">2023-03-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -343,7 +343,7 @@ class="math inline">\(x_0\)</span> 是 <span
 class="math inline">\(S\)</span> 的外点.</p>
 <p><strong>边界点</strong>: 若对于集合 <span
 class="math inline">\(S\)</span> 和一点 <span
-class="math inline">\(x_0\in \mathbb R^n\)</span>, 对任意邻域 <span
+class="math inline">\(x_0\in \mathbb R^n\)</span>, 在任意邻域 <span
 class="math inline">\(U(x_0)\)</span> 中既有属于 <span
 class="math inline">\(S\)</span> 的点又有不属于 <span
 class="math inline">\(S\)</span> 的点, 则称 <span
@@ -354,7 +354,7 @@ class="math inline">\(S\)</span> 的边界点.</p>
 的边界, 记为 <span class="math inline">\(\partial S\)</span>.</p>
 <p><strong>聚点</strong>: 若对于集合 <span
 class="math inline">\(S\)</span> 和一点 <span
-class="math inline">\(x_0\in \mathbb R^n\)</span>, 对任意邻域 <span
+class="math inline">\(x_0\in \mathbb R^n\)</span>, 在任意邻域 <span
 class="math inline">\(U(x_0)\)</span> 中有不同于 <span
 class="math inline">\(x_0\)</span> 且属于 <span
 class="math inline">\(S\)</span> 的点, 则称 <span
@@ -363,30 +363,50 @@ class="math inline">\(S\)</span> 的聚点.</p>
 <p><strong>开集</strong>: 由内点组成的集合.</p>
 <p><strong>闭集</strong>: 补集是开集的集合.</p>
 <blockquote>
-<p>聚点包含内点和非孤立点的边界点</p>
+<p>聚点是内点, 或者非孤立点的边界点.</p>
 <p>对于集合 <span class="math inline">\(S\)</span>, <span
 class="math inline">\(S\cup \partial S\)</span> 是闭集.
 更进一步的阐述可以看<a
 target="_blank" rel="noopener" href="https://www.zhihu.com/question/378515815/answer/1071427708">这篇知乎专栏</a>.</p>
 </blockquote>
-<p><strong>连通</strong>(此处采用折线连通性): 称集合 <span
+<p><strong>连通</strong>(折线连通性): 称集合 <span
 class="math inline">\(S\)</span> 是连通的, 若对于 <span
 class="math inline">\(\forall P_1, P_2\in S\)</span>,
-存在<strong>有限条</strong>线段相接. "无洞"称为单连通,
+存在<strong>有限条</strong>线段首尾相接进行连接. "无洞"称为单连通,
 "有洞"称为复连通.</p>
 <p><strong>(开)区域</strong>: 连通的开集, 记为 <span
 class="math inline">\(D\)</span>.</p>
 <p><strong>闭区域</strong>: <span class="math inline">\(D\cup\partial
 D\)</span>, 记为 <span class="math inline">\(\overline D\)</span>.</p>
-<h2 id="重极限和连续">重极限和连续</h2>
-<p><strong>重极限</strong>: <span class="math inline">\(\forall
-\varepsilon&gt;0\)</span>, <span class="math inline">\(\exists
-\delta&gt;0\)</span>, 当 <span class="math inline">\((x, y)\in U^o((x_0,
-y_0), \delta)\)</span> 有 <span class="math inline">\(|f(x,
-y)-A|&lt;\varepsilon\)</span>, 则称 <span class="math display">\[
+<p><strong>有界集</strong>: 对集合 <span
+class="math inline">\(S\)</span>, 若存在 <span
+class="math inline">\(K&gt;0\)</span>, 使得 <span
+class="math inline">\(S\subset U(O, K)\)</span>, <span
+class="math inline">\(O\)</span> 为原点, 则称 <span
+class="math inline">\(S\)</span> 是有界集.</p>
+<h2 id="多元函数的极限和连续">多元函数的极限和连续</h2>
+<p><strong>重极限</strong>: 对于定义在 <span
+class="math inline">\(D\)</span> 上的二元函数 <span
+class="math inline">\(z=f(x, y)\)</span> 和 <span
+class="math inline">\(D\)</span> 的聚点 <span
+class="math inline">\((x_0, y_0)\)</span>, 若 <span
+class="math inline">\(\forall \varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta&gt;0\)</span>, 且当 <span
+class="math inline">\((x, y)\in U^o((x_0, y_0), \delta)\)</span> 有
+<span class="math inline">\(|f(x, y)-A|&lt;\varepsilon\)</span>, 则称
+<span class="math display">\[
     \lim_{(x, y)\to(x_0, y_0)}f(x, y)=\lim_{x\to x_0\atop y\to y_0}f(x,
 y)=A.
 \]</span></p>
+<blockquote>
+<p>点列语言: <span class="math inline">\(\displaystyle\lim_{P\to
+P_0}f(P)=A\)</span> <span class="math inline">\(\Leftrightarrow\)</span>
+<span class="math inline">\(\forall \lbrace P_n\rbrace\)</span>, <span
+class="math inline">\(P_n\ne P\)</span>, <span
+class="math inline">\(P_n\to P_0(n\to \infty)\)</span>, 有 <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}f(P_n)=A\)</span>.
+类似与海涅定理. 可以通过逆否命题来证明极限不存在.</p>
+</blockquote>
 <p><strong>累次极限</strong>: 不同于重极限 <span
 class="math inline">\(\displaystyle \lim_{x\to x_0\atop y\to y_0}f(x,
 y)\)</span>, 我们定义 <span class="math inline">\(f(x, y)\)</span> 在
@@ -394,24 +414,81 @@ y)\)</span>, 我们定义 <span class="math inline">\(f(x, y)\)</span> 在
 class="math inline">\(\displaystyle \lim_{x\to x_0}\lim_{y\to y_0}f(x,
 y)\)</span> 和 <span class="math inline">\(\displaystyle \lim_{y\to y_0}
 \lim_{x\to x_0}f(x, y)\)</span>.</p>
-<p><strong>方向极限</strong>: 从某个方向进行逼近得到的极限.</p>
+<p><strong>方向极限</strong>: 从某个方向进行逼近得到的极限. 如 <span
+class="math inline">\(\displaystyle \lim_{\rho\to 0+}f(x_0+\rho \cos
+\alpha, y_0+\rho\sin \alpha)\)</span> 为函数在 <span
+class="math inline">\((x_0, y_0)\)</span> 的一个方向向量.</p>
+<p><strong>三个极限的关系</strong>:</p>
+<ol type="1">
+<li>重极限和累次极限的关系: 两者存在与否没有必然关系,
+但若重极限和某一累次极限均存在, 那么重极限等于该累次极限;
+若两个方向极限均存在但不相等, 则重极限不存在.</li>
+<li>重极限存在, 则方向极限均存在且等于重极限; 若有方向极限不存在,
+或者有两个方向极限不相等, 那么重极限不存在.</li>
+</ol>
+<details>
+<summary>
+<b>证明</b>
+</summary>
 <blockquote>
-<p>关系:</p>
-<p>重极限和累次极限的关系: 两者存在与否没有必然关系,
-但若重极限和某一累次极限均存在, 那么重极限等于方向极限;
-若两个方向极限均存在但不相等, 则重极限不存在.</p>
-<p>重极限存在, 则方向极限均存在且等于重极限, 但反之未然.</p>
+<p><strong>首先是一些反例</strong>:</p>
+<p><span class="math inline">\(z=x\sin \dfrac{1}{y}+y\sin
+\dfrac{1}{x}\)</span> 在 <span class="math inline">\((0, 0)\)</span> 处,
+重极限为 <span class="math inline">\(0\)</span>,
+但两个累次极限不存在.</p>
+<p><span class="math inline">\(z=\dfrac{xy}{x^2+y^2}\)</span> 在 <span
+class="math inline">\((0, 0)\)</span> 处, 两个累次极限均为 <span
+class="math inline">\(0\)</span>, 但重极限不存在(以 <span
+class="math inline">\(y=kx\)</span>, 两种不同的 <span
+class="math inline">\(k\)</span> 进行逼近).</p>
+<p><span class="math inline">\(z=\dfrac{x+y}{x-y}\)</span> 在 <span
+class="math inline">\((0, 0)\)</span> 处, 两个累次极限存在但不相等.</p>
+<p><span class="math inline">\(z=\begin{cases}1, &amp; \textnormal{当
+}|y|\ge x^2\textnormal{ 或 }y=0.\\0,&amp;
+\textnormal{其它}\end{cases}\)</span> 在 <span class="math inline">\((0,
+0)\)</span> 处, 方向极限均存在且相等, 但重极限不存在.</p>
+<p><strong>下面再证明重极限、累次极限均存在时, 两者相等</strong>:</p>
+<p>设 <span class="math inline">\(z=f(x, y)\)</span> 在 <span
+class="math inline">\((x_0, y_0)\)</span> 处有 <span
+class="math inline">\(\displaystyle\lim_{x\to x_0\atop y\to y_0}f(x,
+y)=A\)</span>, 累次极限 <span class="math inline">\(\displaystyle
+\lim_{x\to x_0}\lim_{y\to y_0}f(x, y)=B\)</span>.</p>
+<p>令 <span class="math inline">\(\displaystyle\varphi(x)=\lim_{y\to
+y_0}f(x, y)\)</span>, 那么 <span
+class="math inline">\(\displaystyle\lim_{x\to
+x_0}\varphi(x)=B\)</span>.</p>
+<p>根据重极限的定义, 有 <span class="math inline">\(\forall
+\varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists\delta&gt;0\)</span>, 当 <span
+class="math inline">\(|x-x_0|&lt;\delta\)</span> 且 <span
+class="math inline">\(|y-y_0|&lt;\delta\)</span> 且 <span
+class="math inline">\((x, y)\ne (x_0, y_0)\)</span> 时, 有 <span
+class="math inline">\(|f(x, y)-f(x_0, y_0)| &lt;
+\epsilon/2\)</span>.</p>
+<p>在该式中让 <span class="math inline">\(y\to y_0\)</span>,
+由极限的保号性有, <span class="math inline">\(\forall
+\varepsilon&gt;0\)</span>, <span class="math inline">\(\exists\delta
+&gt;0\)</span>, 当 <span
+class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时, 有 <span
+class="math inline">\(|\varphi(x)-\varphi(x_0)|\le
+\epsilon/2&lt;\epsilon\)</span>. 故 <span
+class="math inline">\(\displaystyle\lim_{x\to
+x_0}\varphi(x)=A=B\)</span>.</p>
 </blockquote>
+</details>
 <p><strong>连续</strong>: 若 <span class="math inline">\(\displaystyle
-\lim_{x\to x_0\atop y\to y_0}f(x, y)=f(x_0,y_0)\)</span>, 则称 <span
-class="math inline">\(f(x, y)\)</span> 在 <span
+\lim_{x\to x_0\atop y\to y_0}f(x, y)=f(x_0,y_0)\)</span> 存在, 则称
+<span class="math inline">\(f(x, y)\)</span> 在 <span
 class="math inline">\((x_0, y_0)\)</span> 连续.</p>
-<p><strong>有界闭区域上连续函数的性质</strong>: 最大值最小值, 有界,
-介值, 零点, 一致连续.</p>
+<p><strong>连续的性质</strong>:</p>
+<ol type="1">
+<li><p>保号性, 运算法则.</p></li>
+<li><p>最大值最小值, 有界, 介值, 零点, 一致连续.</p></li>
+</ol>
 <h2 id="偏导数-全微分">偏导数, 全微分</h2>
 <p><strong>偏导数</strong>: 对于二元函数 <span
 class="math inline">\(z=f(x, y)\)</span>, 固定一个变量认为是常数,
-对另一个变量求导, 称为函数对该变量的偏导, 记为</p>
+对另一个变量求导, 称为函数对该变量的偏导数, 记为</p>
 <p><span class="math display">\[
     \dfrac{\partial z}{\partial x}\bigg|_{(x_0, y_0)}=\dfrac{\partial
 f(x_0, y_0)}{\partial x}=z_x=z&#39;_x=f_x=f&#39;_x.
@@ -421,6 +498,7 @@ f(x_0, y_0)}{\partial x}=z_x=z&#39;_x=f_x=f&#39;_x.
     \dfrac{\partial f(x_0, y_0)}{\partial x}=\lim_{x\to x_0}\dfrac{f(x,
 y_0)-f(x_0, y_0)}{x-x_0}.
 \]</span></p>
+<p>若在邻域内可导, 则称存在偏导函数.</p>
 <p><strong>全微分</strong>: 对 <span class="math inline">\(z=f(x,
 y)\)</span>, 在 <span class="math inline">\((x_0, y_0)\)</span>
 点附近定义全增量为 <span class="math display">\[

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>Redirecting</title>
+	</head>
+	<body>
+	</body>
+	<script language="javascript">
+        var domain = "blog.rijuyuezhu.top";
+        var current = window.location.href;
+        var target = current.substring(current.indexOf('/', current.indexOf(':') + 3));
+        window.location.href = "//" + domain + target;
+        location.href = "//" + domain + target;
+    </script>
+</html>

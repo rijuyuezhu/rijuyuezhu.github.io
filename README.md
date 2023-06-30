@@ -1,1 +1,0 @@
-This is my project apex site, for redirecting the github pages to a new domain
